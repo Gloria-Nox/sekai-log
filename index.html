@@ -7,120 +7,42 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
-  /* ── HERO (トップページ専用) ── */
-  .hero {
-    min-height:100vh;
-    display:grid; grid-template-columns:1fr 1fr;
-    position:relative; overflow:hidden;
-  }
-  .hero::before {
-    content:''; position:absolute; inset:0;
-    background-image:
-      linear-gradient(rgba(245,240,232,0.03) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(245,240,232,0.03) 1px,transparent 1px);
-    background-size:80px 80px; pointer-events:none;
-  }
-  .hero-left {
-    display:flex; flex-direction:column; justify-content:flex-end;
-    padding:8rem 3rem 5rem; position:relative;
-  }
-  .hero-label {
-    font-family:'Space Mono',monospace;
-    font-size:0.68rem; letter-spacing:0.3em; color:var(--accent);
-    margin-bottom:2rem;
-    display:flex; align-items:center; gap:1rem;
-    animation:fadeUp 0.8s ease 0.2s both;
-  }
+  .hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(245,240,232,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(245,240,232,0.03) 1px,transparent 1px); background-size:80px 80px; pointer-events:none; }
+  .hero-left { display:flex; flex-direction:column; justify-content:flex-end; padding:8rem 3rem 5rem; position:relative; }
+  .hero-label { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.3em; color:var(--accent); margin-bottom:2rem; display:flex; align-items:center; gap:1rem; animation:fadeUp 0.8s ease 0.2s both; }
   .hero-label::before { content:''; display:block; width:40px; height:1px; background:var(--accent); }
-  .hero-title {
-    font-family:'Shippori Mincho',serif;
-    font-size:clamp(2.8rem,6vw,6rem);
-    font-weight:700; line-height:1.1; letter-spacing:-0.02em;
-    margin-bottom:2rem;
-    animation:fadeUp 0.8s ease 0.4s both;
-  }
+  .hero-title { font-family:'Shippori Mincho',serif; font-size:clamp(2.8rem,6vw,6rem); font-weight:700; line-height:1.1; letter-spacing:-0.02em; margin-bottom:2rem; animation:fadeUp 0.8s ease 0.4s both; }
   .hero-title .accent { color:var(--accent); }
-  .hero-sub {
-    font-size:0.9rem; line-height:2; color:var(--muted);
-    max-width:400px; margin-bottom:3rem;
-    animation:fadeUp 0.8s ease 0.6s both;
-  }
-  .hero-cta {
-    display:inline-flex; align-items:center; gap:1rem;
-    font-family:'Space Mono',monospace;
-    font-size:0.75rem; letter-spacing:0.2em;
-    color:var(--paper); text-decoration:none;
-    border:1px solid rgba(245,240,232,0.3);
-    padding:1rem 2rem; transition:all 0.3s;
-    animation:fadeUp 0.8s ease 0.8s both; align-self:flex-start;
-  }
+  .hero-sub { font-size:0.9rem; line-height:2; color:var(--muted); max-width:400px; margin-bottom:3rem; animation:fadeUp 0.8s ease 0.6s both; }
+  .hero-cta { display:inline-flex; align-items:center; gap:1rem; font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; color:var(--paper); text-decoration:none; border:1px solid rgba(245,240,232,0.3); padding:1rem 2rem; transition:all 0.3s; animation:fadeUp 0.8s ease 0.8s both; align-self:flex-start; }
   .hero-cta:hover { background:var(--paper); color:var(--ink); border-color:var(--paper); }
   .hero-cta::after { content:'→'; }
   .hero-right { position:relative; overflow:hidden; animation:fadeIn 1.2s ease 0.3s both; min-height:300px; }
   .hero-visual { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
-  .visual-ring {
-    position:absolute; border-radius:50%;
-    border:1px solid rgba(123,47,255,0.3);
-    animation:rotate linear infinite;
-  }
-  .ring1{width:400px;height:400px;animation-duration:30s;}
-  .ring2{width:280px;height:280px;border-color:rgba(200,16,46,0.2);animation-duration:20s;animation-direction:reverse;}
-  .ring3{width:160px;height:160px;border-color:rgba(245,240,232,0.1);animation-duration:15s;}
+  .visual-ring { position:absolute; border-radius:50%; border:1px solid rgba(123,47,255,0.3); animation:rotate linear infinite; }
+  .ring1{width:400px;height:400px;animation-duration:30s;} .ring2{width:280px;height:280px;border-color:rgba(200,16,46,0.2);animation-duration:20s;animation-direction:reverse;} .ring3{width:160px;height:160px;border-color:rgba(245,240,232,0.1);animation-duration:15s;}
   @keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
   .visual-center { position:relative; z-index:1; text-align:center; }
-  .visual-kanji {
-    font-family:'Shippori Mincho',serif;
-    font-size:clamp(5rem,10vw,8rem); font-weight:900; line-height:1;
-    background:linear-gradient(135deg,var(--paper) 0%,var(--glow) 60%,var(--accent) 100%);
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-  }
+  .visual-kanji { font-family:'Shippori Mincho',serif; font-size:clamp(5rem,10vw,8rem); font-weight:900; line-height:1; background:linear-gradient(135deg,var(--paper) 0%,var(--glow) 60%,var(--accent) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
   .visual-sub { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.4em; color:var(--muted); margin-top:1rem; }
-  .hero-right::after {
-    content:''; position:absolute; left:0; right:0; height:2px;
-    background:linear-gradient(90deg,transparent,var(--glow),transparent);
-    animation:scan 4s ease-in-out infinite;
-  }
+  .hero-right::after { content:''; position:absolute; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--glow),transparent); animation:scan 4s ease-in-out infinite; }
   @keyframes scan{0%{top:0;opacity:0;}10%{opacity:0.6;}90%{opacity:0.6;}100%{top:100%;opacity:0;}}
-
-  /* TICKER */
-  .ticker {
-    border-top:1px solid rgba(245,240,232,0.08);
-    border-bottom:1px solid rgba(245,240,232,0.08);
-    overflow:hidden; padding:0.8rem 0;
-    background:rgba(245,240,232,0.02);
-  }
+  .ticker { border-top:1px solid rgba(245,240,232,0.08); border-bottom:1px solid rgba(245,240,232,0.08); overflow:hidden; padding:0.8rem 0; background:rgba(245,240,232,0.02); }
   .ticker-inner { display:flex; gap:4rem; animation:ticker 25s linear infinite; white-space:nowrap; }
-  .ticker-item {
-    font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.15em;
-    color:var(--muted); display:flex; align-items:center; gap:1rem;
-  }
+  .ticker-item { font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.15em; color:var(--muted); display:flex; align-items:center; gap:1rem; }
   .ticker-item::before { content:'◆'; color:var(--accent); font-size:0.5rem; }
   @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-  /* FEATURED GRID */
-  .featured-grid {
-    display:grid; grid-template-columns:2fr 1fr;
-    grid-template-rows:auto auto; gap:1px;
-    background:rgba(245,240,232,0.08);
-  }
-  .card {
-    background:var(--ink); padding:2.5rem;
-    transition:background 0.3s; cursor:pointer;
-    position:relative; overflow:hidden;
-    text-decoration:none; color:inherit; display:block;
-  }
-  .card::before {
-    content:''; position:absolute; top:0; left:0;
-    width:3px; height:0; background:var(--accent); transition:height 0.4s ease;
-  }
+  /* 注目記事グリッド */
+  .featured-grid { display:grid; grid-template-columns:2fr 1fr; grid-template-rows:auto auto; gap:1px; background:rgba(245,240,232,0.08); }
+  .card { background:var(--ink); padding:2.5rem; transition:background 0.3s; position:relative; overflow:hidden; text-decoration:none; color:inherit; display:block; }
+  .card::before { content:''; position:absolute; top:0; left:0; width:3px; height:0; background:var(--accent); transition:height 0.4s ease; }
   .card:hover { background:rgba(245,240,232,0.02); }
   .card:hover::before { height:100%; }
-  .card-tag {
-    font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.25em;
-    color:var(--accent); margin-bottom:1.2rem;
-    display:flex; align-items:center; gap:0.6rem;
-  }
+  .card-tag { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.25em; color:var(--accent); margin-bottom:1.2rem; display:flex; align-items:center; gap:0.6rem; }
   .card-tag::before { content:''; display:block; width:20px; height:1px; background:var(--accent); }
   .card-title { font-family:'Shippori Mincho',serif; font-size:1.4rem; font-weight:700; line-height:1.5; margin-bottom:1rem; letter-spacing:0.03em; }
   .card-main .card-title { font-size:2rem; }
@@ -129,19 +51,10 @@
   .card-main { grid-row:span 2; }
   .card-num { position:absolute; top:2rem; right:2.5rem; font-family:'Space Mono',monospace; font-size:4rem; font-weight:700; color:rgba(245,240,232,0.03); line-height:1; pointer-events:none; }
 
-  /* CATEGORIES */
+  /* カテゴリ */
   .categories { padding:5rem 3rem; background:rgba(245,240,232,0.02); border-top:1px solid rgba(245,240,232,0.06); }
-  .cat-grid {
-    display:grid; grid-template-columns:repeat(4,1fr);
-    gap:1px; background:rgba(245,240,232,0.08);
-    max-width:1400px; margin:0 auto;
-  }
-  .cat-item {
-    background:var(--ink); padding:2.5rem 2rem;
-    display:flex; flex-direction:column; gap:1rem;
-    cursor:pointer; transition:background 0.3s;
-    text-decoration:none; color:inherit;
-  }
+  .cat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(245,240,232,0.08); max-width:1400px; margin:0 auto; }
+  .cat-item { background:var(--ink); padding:2.5rem 2rem; display:flex; flex-direction:column; gap:1rem; transition:background 0.3s; text-decoration:none; color:inherit; }
   .cat-item:hover { background:rgba(245,240,232,0.03); }
   .cat-icon { font-size:2rem; line-height:1; }
   .cat-name { font-family:'Shippori Mincho',serif; font-size:1.1rem; font-weight:700; letter-spacing:0.05em; }
@@ -149,139 +62,85 @@
   .cat-arrow { margin-top:auto; font-size:0.75rem; color:var(--accent); opacity:0; transition:opacity 0.3s; }
   .cat-item:hover .cat-arrow { opacity:1; }
 
-  /* RECENT POSTS */
+  /* 最新記事リスト */
   .post-list { display:flex; flex-direction:column; }
-  .post-item {
-    display:grid; grid-template-columns:80px 1fr auto;
-    gap:2rem; align-items:start;
-    padding:2rem 0; border-bottom:1px solid rgba(245,240,232,0.07);
-    cursor:pointer; transition:padding-left 0.3s;
-    text-decoration:none; color:inherit;
-  }
+  .post-item { display:grid; grid-template-columns:80px 1fr auto; gap:2rem; align-items:start; padding:2rem 0; border-bottom:1px solid rgba(245,240,232,0.07); transition:padding-left 0.3s; text-decoration:none; color:inherit; }
   .post-item:hover { padding-left:0.5rem; }
   .post-num { font-family:'Space Mono',monospace; font-size:2rem; font-weight:700; color:rgba(245,240,232,0.06); line-height:1; padding-top:0.2rem; }
   .post-tag { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; color:var(--accent); margin-bottom:0.5rem; }
-  .post-title { font-family:'Shippori Mincho',serif; font-size:1.05rem; font-weight:700; line-height:1.6; margin-bottom:0.5rem; letter-spacing:0.02em; }
+  .post-title { font-family:'Shippori Mincho',serif; font-size:1.05rem; font-weight:700; line-height:1.6; letter-spacing:0.02em; }
   .post-date { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--muted); white-space:nowrap; padding-top:0.5rem; }
 
-  /* NEWSLETTER */
-  .newsletter {
-    margin:0 3rem 5rem;
-    border:1px solid rgba(245,240,232,0.1); padding:5rem;
-    display:grid; grid-template-columns:1fr 1fr; gap:4rem;
-    align-items:center; position:relative; overflow:hidden;
-  }
-  .newsletter::before {
-    content:'購読'; position:absolute; right:-1rem; top:50%;
-    transform:translateY(-50%) rotate(90deg);
-    font-family:'Shippori Mincho',serif; font-size:8rem; font-weight:900;
-    color:rgba(245,240,232,0.02); white-space:nowrap;
-  }
+  /* ニュースレター */
+  .newsletter { margin:0 3rem 5rem; border:1px solid rgba(245,240,232,0.1); padding:5rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; position:relative; overflow:hidden; }
+  .newsletter::before { content:'購読'; position:absolute; right:-1rem; top:50%; transform:translateY(-50%) rotate(90deg); font-family:'Shippori Mincho',serif; font-size:8rem; font-weight:900; color:rgba(245,240,232,0.02); white-space:nowrap; }
   .nl-label { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.3em; color:var(--accent); margin-bottom:1.5rem; }
   .nl-title { font-family:'Shippori Mincho',serif; font-size:2.2rem; font-weight:700; line-height:1.4; margin-bottom:1rem; }
   .nl-sub { font-size:0.85rem; line-height:2; color:var(--muted); }
   .nl-form { display:flex; }
-  .nl-input {
-    flex:1; min-width:0;
-    background:rgba(245,240,232,0.04); border:1px solid rgba(245,240,232,0.15); border-right:none;
-    color:var(--paper); padding:1rem 1.5rem; font-family:'Noto Serif JP',serif; font-size:0.85rem; outline:none;
-  }
+  .nl-input { flex:1; min-width:0; background:rgba(245,240,232,0.04); border:1px solid rgba(245,240,232,0.15); border-right:none; color:var(--paper); padding:1rem 1.5rem; font-family:'Noto Serif JP',serif; font-size:0.85rem; outline:none; }
   .nl-input::placeholder { color:var(--muted); }
-  .nl-btn {
-    background:var(--accent); border:1px solid var(--accent); color:var(--paper);
-    padding:1rem 2rem; font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.2em;
-    cursor:pointer; transition:all 0.3s; white-space:nowrap;
-  }
+  .nl-btn { background:var(--accent); border:1px solid var(--accent); color:var(--paper); padding:1rem 2rem; font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.2em; cursor:pointer; transition:all 0.3s; white-space:nowrap; }
   .nl-btn:hover { background:var(--paper); color:var(--accent); }
-  .nl-note { font-size:0.7rem; color:var(--muted); margin-top:1rem; line-height:1.8; }
+
+  .loading-placeholder { background:rgba(245,240,232,0.04); animation:shimmer 1.5s infinite; height:200px; }
+  @keyframes shimmer{0%{opacity:0.4;}50%{opacity:0.7;}100%{opacity:0.4;}}
 
   @media(max-width:768px){
-    .hero { grid-template-columns:1fr; min-height:auto; }
-    .hero-left { padding:7rem 1.5rem 3rem; justify-content:flex-start; }
-    .hero-right { min-height:280px; }
-    .ring1{width:250px;height:250px;} .ring2{width:170px;height:170px;} .ring3{width:95px;height:95px;}
-    .featured-grid { grid-template-columns:1fr; }
-    .card-main { grid-row:span 1; }
-    .card-main .card-title { font-size:1.6rem; }
-    .categories { padding:3rem 1.5rem; }
-    .cat-grid { grid-template-columns:repeat(2,1fr); }
-    .post-item { grid-template-columns:60px 1fr; }
-    .post-date { display:none; }
-    .newsletter { grid-template-columns:1fr; padding:3rem 1.5rem; margin:0 1.5rem 3rem; gap:2rem; }
-    .nl-title { font-size:1.7rem; }
+    .hero{grid-template-columns:1fr;min-height:auto;}
+    .hero-left{padding:7rem 1.5rem 3rem;justify-content:flex-start;}
+    .hero-right{min-height:280px;}
+    .ring1{width:250px;height:250px;}.ring2{width:170px;height:170px;}.ring3{width:95px;height:95px;}
+    .featured-grid{grid-template-columns:1fr;}
+    .card-main{grid-row:span 1;} .card-main .card-title{font-size:1.6rem;}
+    .categories{padding:3rem 1.5rem;}
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .post-item{grid-template-columns:60px 1fr;} .post-date{display:none;}
+    .newsletter{grid-template-columns:1fr;padding:3rem 1.5rem;margin:0 1.5rem 3rem;gap:2rem;}
+    .nl-title{font-size:1.7rem;}
   }
   @media(max-width:480px){
-    .hero-left { padding:6rem 1.2rem 2.5rem; }
-    .card { padding:1.8rem 1.2rem; }
-    .cat-item { padding:1.5rem 1rem; }
-    .nl-form { flex-direction:column; }
-    .nl-input { border-right:1px solid rgba(245,240,232,0.15); border-bottom:none; }
-    .nl-btn { width:100%; }
-    .newsletter { padding:2.5rem 1.2rem; margin:0 1.2rem 3rem; }
+    .hero-left{padding:6rem 1.2rem 2.5rem;}
+    .card{padding:1.8rem 1.2rem;} .cat-item{padding:1.5rem 1rem;}
+    .nl-form{flex-direction:column;}
+    .nl-input{border-right:1px solid rgba(245,240,232,0.15);border-bottom:none;}
+    .nl-btn{width:100%;}
+    .newsletter{padding:2.5rem 1.2rem;margin:0 1.2rem 3rem;}
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
-    <li class="nav-item">
-      <a href="anime.html">アニメ <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="anime.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="anime.html?decade=2020">2020年代</a>
-        <a href="anime.html?decade=2010">2010年代</a>
-        <a href="anime.html?decade=2000">2000年代</a>
-        <a href="anime.html?decade=pre2000">2000年以前</a>
-      </div>
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a>
+      <div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div>
     </li>
-    <li class="nav-item">
-      <a href="novel.html">小説 <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="novel.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="novel.html?decade=2020">2020年代</a>
-        <a href="novel.html?decade=2010">2010年代</a>
-        <a href="novel.html?decade=2000">2000年代</a>
-        <a href="novel.html?decade=pre2000">2000年以前</a>
-      </div>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a>
+      <div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div>
     </li>
-    <li class="nav-item">
-      <a href="sf.html">SF <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="sf.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="sf.html?decade=2020">2020年代</a>
-        <a href="sf.html?decade=2010">2010年代</a>
-        <a href="sf.html?decade=2000">2000年代</a>
-        <a href="sf.html?decade=pre2000">2000年以前</a>
-      </div>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a>
+      <div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div>
     </li>
     <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
   </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-label">VOL.47 — 2026年 春号</p>
+    <p class="hero-label">SEKAI LOG — 批評誌</p>
     <h1 class="hero-title">虚構の<span class="accent">地平</span>を<br>読み解く。</h1>
     <p class="hero-sub">アニメ・小説・SF・サブカルチャーの深層を探る。<br>批評という名の羅針盤で、物語の宇宙を航行する。</p>
     <a href="anime.html" class="hero-cta">最新記事を読む</a>
   </div>
   <div class="hero-right">
     <div class="hero-visual">
-      <div class="visual-ring ring1"></div>
-      <div class="visual-ring ring2"></div>
-      <div class="visual-ring ring3"></div>
+      <div class="visual-ring ring1"></div><div class="visual-ring ring2"></div><div class="visual-ring ring3"></div>
       <div class="visual-center">
         <div class="visual-kanji">世界</div>
         <div class="visual-sub">SEKAI — WORLD LOG</div>
@@ -292,17 +151,13 @@
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-inner">
-    <span class="ticker-item">新着：2026年冬アニメ総評</span>
-    <span class="ticker-item">特集：ル=グウィンの予言</span>
-    <span class="ticker-item">インタビュー：SF作家・山岸凌一</span>
-    <span class="ticker-item">書評：「無限の終焉」</span>
-    <span class="ticker-item">コラム：エヴァンゲリオンと哲学</span>
-    <span class="ticker-item">新着：2026年冬アニメ総評</span>
-    <span class="ticker-item">特集：ル=グウィンの予言</span>
-    <span class="ticker-item">インタビュー：SF作家・山岸凌一</span>
-    <span class="ticker-item">書評：「無限の終焉」</span>
-    <span class="ticker-item">コラム：エヴァンゲリオンと哲学</span>
+  <div class="ticker-inner" id="ticker-inner">
+    <span class="ticker-item">LOADING...</span>
+    <span class="ticker-item">LOADING...</span>
+    <span class="ticker-item">LOADING...</span>
+    <span class="ticker-item">LOADING...</span>
+    <span class="ticker-item">LOADING...</span>
+    <span class="ticker-item">LOADING...</span>
   </div>
 </div>
 
@@ -311,30 +166,11 @@
   <div class="section-header reveal">
     <h2 class="section-title">注目の記事</h2>
     <span class="section-en">FEATURED</span>
-    <span class="section-count">06記事</span>
   </div>
-  <div class="featured-grid reveal">
-    <a href="article.html?id=01" class="card card-main">
-      <span class="card-num">01</span>
-      <p class="card-tag">特集 / SF評論</p>
-      <h3 class="card-title">「進撃の巨人」が描いた<br>自由の矛盾——<br>終末論的世界観と現代政治哲学</h3>
-      <p class="card-excerpt">壁の内側に閉じ込められた人類の物語は、いつしか外の世界への解放を問う物語へと変貌した。だが「自由」を求めた主人公が辿り着いた地平とは何だったのか。ハンナ・アーレントの全体主義論を軸に、この世紀の傑作を読み直す。</p>
-      <div class="card-meta"><span>2026.02.28</span><span>読了時間：12分</span><span>田中 凌</span></div>
-    </a>
-    <a href="article.html?id=02" class="card">
-      <span class="card-num">02</span>
-      <p class="card-tag">小説評論</p>
-      <h3 class="card-title">円城塔「オブ・ザ・ベースボール」——言語の崩壊と再生</h3>
-      <p class="card-excerpt">言語そのものを解体し再構築する実験的手法を持つ著者の最新短篇集を精読する。</p>
-      <div class="card-meta"><span>2026.02.20</span><span>8分</span></div>
-    </a>
-    <a href="article.html?id=03" class="card">
-      <span class="card-num">03</span>
-      <p class="card-tag">アニメ批評</p>
-      <h3 class="card-title">新海誠論：距離と光——映像詩としての青春</h3>
-      <p class="card-excerpt">「天気の子」から「すずめの戸締まり」へ。光と距離の演出哲学を論じる。</p>
-      <div class="card-meta"><span>2026.02.12</span><span>10分</span></div>
-    </a>
+  <div class="featured-grid reveal" id="featured-grid">
+    <div class="card card-main loading-placeholder"></div>
+    <div class="card loading-placeholder"></div>
+    <div class="card loading-placeholder"></div>
   </div>
 </div>
 
@@ -345,11 +181,11 @@
       <h2 class="section-title">カテゴリ</h2>
       <span class="section-en">CATEGORIES</span>
     </div>
-    <div class="cat-grid reveal">
-      <a href="anime.html" class="cat-item"><span class="cat-icon">🎌</span><span class="cat-name">アニメ評論</span><span class="cat-count">142 記事</span><span class="cat-arrow">→</span></a>
-      <a href="novel.html" class="cat-item"><span class="cat-icon">📖</span><span class="cat-name">小説・文学</span><span class="cat-count">87 記事</span><span class="cat-arrow">→</span></a>
-      <a href="sf.html" class="cat-item"><span class="cat-icon">🚀</span><span class="cat-name">SF・ファンタジー</span><span class="cat-count">63 記事</span><span class="cat-arrow">→</span></a>
-      <a href="subculture.html" class="cat-item"><span class="cat-icon">🎭</span><span class="cat-name">サブカルチャー</span><span class="cat-count">95 記事</span><span class="cat-arrow">→</span></a>
+    <div class="cat-grid reveal" id="cat-grid">
+      <a href="anime.html" class="cat-item"><span class="cat-icon">🎌</span><span class="cat-name">アニメ評論</span><span class="cat-count" id="count-anime">— 記事</span><span class="cat-arrow">→</span></a>
+      <a href="novel.html" class="cat-item"><span class="cat-icon">📖</span><span class="cat-name">小説・文学</span><span class="cat-count" id="count-novel">— 記事</span><span class="cat-arrow">→</span></a>
+      <a href="sf.html" class="cat-item"><span class="cat-icon">🚀</span><span class="cat-name">SF・ファンタジー</span><span class="cat-count" id="count-sf">— 記事</span><span class="cat-arrow">→</span></a>
+      <a href="subculture.html" class="cat-item"><span class="cat-icon">🎭</span><span class="cat-name">サブカルチャー</span><span class="cat-count" id="count-subculture">— 記事</span><span class="cat-arrow">→</span></a>
     </div>
   </div>
 </div>
@@ -359,14 +195,9 @@
   <div class="section-header reveal">
     <h2 class="section-title">最新記事</h2>
     <span class="section-en">RECENT POSTS</span>
-    <span class="section-count">全記事を見る →</span>
   </div>
-  <div class="post-list reveal">
-    <a href="article.html?id=04" class="post-item"><div class="post-num">04</div><div><p class="post-tag">SF</p><p class="post-title">テッド・チャンの「あなたの人生の物語」——言語・時間・宿命論の三位一体</p></div><div class="post-date">2026.02.25</div></a>
-    <a href="article.html?id=05" class="post-item"><div class="post-num">05</div><div><p class="post-tag">アニメ</p><p class="post-title">「ぼっち・ざ・ろっく！」が描く創造的孤独——内向性とアートの関係</p></div><div class="post-date">2026.02.18</div></a>
-    <a href="article.html?id=06" class="post-item"><div class="post-num">06</div><div><p class="post-tag">サブカル</p><p class="post-title">コミックマーケットの社会学——同人文化が育んだ創作エコシステムの40年</p></div><div class="post-date">2026.02.10</div></a>
-    <a href="article.html?id=07" class="post-item"><div class="post-num">07</div><div><p class="post-tag">小説</p><p class="post-title">村上春樹「街とその不確かな壁」——反復する喪失とメタファーの迷宮</p></div><div class="post-date">2026.02.03</div></a>
-    <a href="article.html?id=08" class="post-item"><div class="post-num">08</div><div><p class="post-tag">SF</p><p class="post-title">劉慈欣「三体」と文化大革命——中国SFが映す歴史の傷</p></div><div class="post-date">2026.01.27</div></a>
+  <div class="post-list reveal" id="recent-posts">
+    <div style="padding:2rem 0;color:var(--muted);font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.2em;">LOADING...</div>
   </div>
 </div>
 
@@ -382,21 +213,111 @@
       <input type="email" class="nl-input" placeholder="your@email.com">
       <button class="nl-btn">購読する</button>
     </div>
-    <p class="nl-note">登録することで、プライバシーポリシーに同意したものとみなします。いつでも解除できます。</p>
+    <p style="font-size:0.7rem;color:var(--muted);margin-top:1rem;line-height:1.8;">登録することで、プライバシーポリシーに同意したものとみなします。いつでも解除できます。</p>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="about.html">プロフィール</a>
-    <a href="#">プライバシー</a>
-    <a href="#">お問い合わせ</a>
-    <a href="#">RSS</a>
-  </div>
+  <div class="footer-links"><a href="about.html">プロフィール</a><a href="#">プライバシー</a><a href="#">お問い合わせ</a></div>
 </footer>
 
 <script src="shared.js"></script>
+<script src="cms.js"></script>
+<script>
+  const CATEGORIES = ['anime', 'novel', 'sf', 'subculture', 'review'];
+
+  // ティッカー更新
+  function updateTicker(articles) {
+    const ticker = document.getElementById('ticker-inner');
+    if (!articles.length) return;
+    const items = [...articles, ...articles].map(a =>
+      `<span class="ticker-item">${CAT_LABELS[a.category] || ''}：${a.title || ''}</span>`
+    ).join('');
+    ticker.innerHTML = items;
+  }
+
+  // 注目記事（最新記事からランダムに3件）
+  function renderFeatured(articles) {
+    const pool = articles.slice(0, Math.min(10, articles.length));
+    const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, 3);
+    const grid = document.getElementById('featured-grid');
+    if (!shuffled.length) { grid.innerHTML = '<div class="card card-main" style="padding:3rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;grid-row:span 2;">まだ記事がありません</div>'; return; }
+
+    const [main, ...rest] = shuffled;
+    const mainUrl = `article.html?category=${main.category}&slug=${main.slug}`;
+    let html = `
+      <a href="${mainUrl}" class="card card-main">
+        <span class="card-num">01</span>
+        <p class="card-tag">${CAT_LABELS[main.category] || ''} / ${DECADE_LABELS[main.decade] || ''}</p>
+        <h3 class="card-title">${main.title || ''}</h3>
+        <p class="card-excerpt">${main.excerpt || ''}</p>
+        <div class="card-meta"><span>${formatDate(main.date)}</span><span>${main.readtime || ''}</span></div>
+      </a>`;
+    rest.forEach((a, i) => {
+      const url = `article.html?category=${a.category}&slug=${a.slug}`;
+      html += `
+        <a href="${url}" class="card">
+          <span class="card-num">0${i+2}</span>
+          <p class="card-tag">${CAT_LABELS[a.category] || ''}</p>
+          <h3 class="card-title">${a.title || ''}</h3>
+          <p class="card-excerpt">${a.excerpt || ''}</p>
+          <div class="card-meta"><span>${formatDate(a.date)}</span><span>${a.readtime || ''}</span></div>
+        </a>`;
+    });
+    grid.innerHTML = html;
+  }
+
+  // 最新記事リスト
+  function renderRecent(articles) {
+    const list = document.getElementById('recent-posts');
+    const latest = articles.slice(0, 8);
+    if (!latest.length) { list.innerHTML = '<div style="padding:2rem 0;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;">まだ記事がありません</div>'; return; }
+    list.innerHTML = latest.map((a, i) => {
+      const url = `article.html?category=${a.category}&slug=${a.slug}`;
+      return `
+        <a href="${url}" class="post-item">
+          <div class="post-num">0${i+1}</div>
+          <div>
+            <p class="post-tag">${CAT_LABELS[a.category] || ''}</p>
+            <p class="post-title">${a.title || ''}</p>
+          </div>
+          <div class="post-date">${formatDate(a.date)}</div>
+        </a>`;
+    }).join('');
+  }
+
+  // カテゴリ記事数更新
+  function updateCounts(countMap) {
+    Object.entries(countMap).forEach(([cat, count]) => {
+      const el = document.getElementById('count-' + cat);
+      if (el) el.textContent = count + ' 記事';
+    });
+  }
+
+  // 全記事を並行取得
+  async function loadAll() {
+    const results = await Promise.all(CATEGORIES.map(c => fetchArticles(c)));
+    const countMap = {};
+    CATEGORIES.forEach((c, i) => { countMap[c] = results[i].length; });
+    const allArticles = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    updateCounts(countMap);
+    updateTicker(allArticles);
+    renderFeatured(allArticles);
+    renderRecent(allArticles);
+  }
+
+  loadAll();
+
+  // Netlify Identity
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+</script>
 </body>
 </html>
