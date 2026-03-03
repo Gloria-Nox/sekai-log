@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>記事タイトル — SEKAI LOG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .article-hero {
+    padding:9rem 3rem 4rem;
+    max-width:900px; margin:0 auto;
+    position:relative;
+  }
+  .article-breadcrumb {
+    font-family:'Space Mono',monospace;
+    font-size:0.62rem; letter-spacing:0.2em; color:var(--muted);
+    margin-bottom:2rem;
+    display:flex; align-items:center; gap:0.8rem;
+  }
+  .article-breadcrumb a { color:var(--muted); text-decoration:none; transition:color 0.25s; }
+  .article-breadcrumb a:hover { color:var(--paper); }
+  .article-breadcrumb span { color:rgba(245,240,232,0.2); }
+
+  .article-tag-line {
+    font-family:'Space Mono',monospace;
+    font-size:0.65rem; letter-spacing:0.25em; color:var(--accent);
+    margin-bottom:1.5rem;
+    display:flex; align-items:center; gap:1rem;
+  }
+  .article-tag-line::before { content:''; display:block; width:30px; height:1px; background:var(--accent); }
+
+  .article-headline {
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(1.8rem,4vw,3.2rem);
+    font-weight:700; line-height:1.3;
+    letter-spacing:0.02em; margin-bottom:2rem;
+  }
+  .article-headline .accent { color:var(--accent); }
+
+  .article-info {
+    display:flex; align-items:center; gap:2rem;
+    padding:1.5rem 0;
+    border-top:1px solid rgba(245,240,232,0.08);
+    border-bottom:1px solid rgba(245,240,232,0.08);
+    flex-wrap:wrap;
+  }
+  .article-author {
+    font-family:'Space Mono',monospace;
+    font-size:0.68rem; letter-spacing:0.15em; color:var(--paper);
+  }
+  .article-date {
+    font-family:'Space Mono',monospace;
+    font-size:0.65rem; letter-spacing:0.15em; color:var(--muted);
+  }
+  .article-read-time {
+    font-family:'Space Mono',monospace;
+    font-size:0.65rem; letter-spacing:0.15em; color:var(--muted);
+    margin-left:auto;
+  }
+
+  /* 本文エリア */
+  .article-body {
+    max-width:900px; margin:0 auto;
+    padding:4rem 3rem 6rem;
+  }
+  .article-body p {
+    font-size:1rem; line-height:2.4;
+    color:rgba(245,240,232,0.88);
+    margin-bottom:2rem;
+  }
+  .article-body h2 {
+    font-family:'Shippori Mincho',serif;
+    font-size:1.6rem; font-weight:700;
+    margin:4rem 0 1.5rem;
+    padding-bottom:1rem;
+    border-bottom:1px solid rgba(245,240,232,0.1);
+  }
+  .article-body h3 {
+    font-family:'Shippori Mincho',serif;
+    font-size:1.2rem; font-weight:700;
+    margin:2.5rem 0 1rem;
+    color:var(--paper);
+  }
+  .article-body blockquote {
+    border-left:3px solid var(--accent);
+    padding:1rem 2rem;
+    margin:2rem 0;
+    background:rgba(245,240,232,0.02);
+    font-style:italic; color:var(--muted);
+    font-size:0.95rem; line-height:2;
+  }
+  .article-body .lead {
+    font-family:'Shippori Mincho',serif;
+    font-size:1.15rem; line-height:2.2;
+    color:rgba(245,240,232,0.95);
+    margin-bottom:3rem;
+    padding-bottom:2rem;
+    border-bottom:1px solid rgba(245,240,232,0.08);
+  }
+
+  /* 関連記事 */
+  .related {
+    max-width:900px; margin:0 auto;
+    padding:0 3rem 6rem;
+    border-top:1px solid rgba(245,240,232,0.08);
+    padding-top:4rem;
+  }
+  .related-title {
+    font-family:'Space Mono',monospace;
+    font-size:0.65rem; letter-spacing:0.3em; color:var(--accent);
+    margin-bottom:2rem;
+  }
+  .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(245,240,232,0.08); }
+  .related-card {
+    background:var(--ink); padding:1.5rem;
+    text-decoration:none; color:inherit;
+    transition:background 0.3s;
+    display:flex; flex-direction:column; gap:0.8rem;
+  }
+  .related-card:hover { background:rgba(245,240,232,0.02); }
+  .related-tag { font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.2em; color:var(--accent); }
+  .related-title-text { font-family:'Shippori Mincho',serif; font-size:0.9rem; font-weight:700; line-height:1.6; }
+
+  @media(max-width:768px){
+    .article-hero { padding:7rem 1.5rem 3rem; }
+    .article-body { padding:3rem 1.5rem 4rem; }
+    .article-read-time { margin-left:0; }
+    .related { padding:3rem 1.5rem 4rem; }
+    .related-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
+  <ul class="main-nav" id="main-nav">
+    <li class="nav-item">
+      <a href="anime.html">アニメ <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="anime.html?decade=latest">最新作品</a>
+        <div class="dropdown-divider"></div>
+        <a href="anime.html?decade=2020">2020年代</a>
+        <a href="anime.html?decade=2010">2010年代</a>
+        <a href="anime.html?decade=2000">2000年代</a>
+        <a href="anime.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="novel.html">小説 <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="novel.html?decade=latest">最新作品</a>
+        <div class="dropdown-divider"></div>
+        <a href="novel.html?decade=2020">2020年代</a>
+        <a href="novel.html?decade=2010">2010年代</a>
+        <a href="novel.html?decade=2000">2000年代</a>
+        <a href="novel.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="sf.html">SF <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="sf.html?decade=latest">最新作品</a>
+        <div class="dropdown-divider"></div>
+        <a href="sf.html?decade=2020">2020年代</a>
+        <a href="sf.html?decade=2010">2010年代</a>
+        <a href="sf.html?decade=2000">2000年代</a>
+        <a href="sf.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="subculture.html">サブカル</a></li>
+    <li class="nav-item"><a href="review.html">評論</a></li>
+    <li class="nav-item"><a href="about.html">ABOUT</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- 記事ヘッダー -->
+<div class="article-hero">
+  <div class="article-breadcrumb">
+    <a href="index.html">TOP</a>
+    <span>/</span>
+    <a href="anime.html">アニメ</a>
+    <span>/</span>
+    <span>記事タイトル</span>
+  </div>
+  <p class="article-tag-line">特集 / アニメ批評 / 2010年代</p>
+  <h1 class="article-headline">
+    「進撃の巨人」が描いた<span class="accent">自由の矛盾</span>——<br>
+    終末論的世界観と現代政治哲学
+  </h1>
+  <div class="article-info">
+    <span class="article-author">田中 凌</span>
+    <span class="article-date">2026年2月28日</span>
+    <span class="article-read-time">読了時間：約12分</span>
+  </div>
+</div>
+
+<!-- 記事本文 -->
+<div class="article-body">
+  <p class="lead">
+    壁の内側に閉じ込められた人類の物語は、いつしか外の世界への解放を問う物語へと変貌した。
+    だが「自由」を求めた主人公が辿り着いた地平とは何だったのか。
+    ハンナ・アーレントの全体主義論を軸に、この世紀の傑作を読み直す。
+  </p>
+
+  <h2>壁という「全体主義」のアレゴリー</h2>
+  <p>
+    「進撃の巨人」の世界において、巨大な壁は単なる物理的な障壁ではない。
+    それは人類が自らに課した認識論的な檻——知ることを禁じ、疑うことを封じる、
+    権力の物質的な表現である。この構造は、ハンナ・アーレントが「全体主義の起源」で
+    分析した近代的支配の形式と驚くほど符合する。
+  </p>
+  <p>
+    アーレントは全体主義の本質を、人間の「複数性（plurality）」の否定に見た。
+    すなわち、個々の人間が異なる視点を持ち、異なる言葉で語ることを徹底的に排除しようとする
+    政治的意志こそが、全体主義の核心だと論じた。壁内の人類に対するパラディ島の支配体制は、
+    まさにこの複数性の抹消として機能している。
+  </p>
+
+  <blockquote>
+    「壁の外には何もない。巨人だけがいる。それ以上を知ることは、壁の民にとって不要だ」
+    ——壁内の支配的イデオロギーの核心
+  </blockquote>
+
+  <h2>「自由」の逆説——エレンの選択が示すもの</h2>
+  <p>
+    主人公エレン・イェーガーの精神的遍歴は、自由への渇望から始まり、
+    その自由の本質的な矛盾へと行き着く。彼は壁の外を目指すことで自由を追い求めたが、
+    その先に待っていたのは、自由を実現するためにはさらなる支配と暴力が必要だという
+    苦い認識だった。
+  </p>
+  <p>
+    これはアーレントの議論の延長線上にある重要な問いを提起する。
+    抑圧からの解放は、それ自体で正義たりえるのか？
+    あるいは解放の行為は、新たな支配構造を不可避的に生み出してしまうのか？
+  </p>
+
+  <h2>「地鳴らし」と倫理的問い</h2>
+  <p>
+    物語後半の「地鳴らし」というエピソードは、この問いを極限まで煮詰めた場面として
+    機能している。エレンが選んだ「全人類の8割を駆逐する」という手段は、
+    目的のための手段の正当化という近代倫理の根本問題を、最も先鋭化した形で提示する。
+  </p>
+  <p>
+    ここで参照すべきはマックス・ウェーバーの「責任倫理と心情倫理」の対立だろう。
+    心情（意図）の純粋さを優先するか、結果への責任を引き受けるか——
+    エレンはその二項対立の外部に自らを置くことで、従来の倫理的思考の枠組みを
+    根本から問い直しているように見える。
+  </p>
+
+  <h2>おわりに——なぜ「進撃」は今も問い続けるのか</h2>
+  <p>
+    「進撃の巨人」が単なるエンターテインメントを超えた批評的対象となりうるのは、
+    作品が提示する問いが現代社会の根本的な緊張を映し出しているからだ。
+    民族・国家・自由・暴力——これらの概念は、二十一世紀の世界においても
+    依然として解決されていない政治的課題として残り続けている。
+  </p>
+  <p>
+    諫山創が描いたこの物語の「答えのなさ」こそが、作品の真の力だと私は考える。
+    解決を与えないことで、読者に問いを引き受けさせる——それが優れたフィクションの
+    政治的機能なのかもしれない。
+  </p>
+</div>
+
+<!-- 関連記事 -->
+<div class="related">
+  <p class="related-title">RELATED ARTICLES — 関連記事</p>
+  <div class="related-grid">
+    <a href="article.html?id=r02" class="related-card">
+      <p class="related-tag">評論 / 哲学</p>
+      <p class="related-title-text">エヴァンゲリオンと実存主義——シンジが問い続けた「生きる意味」</p>
+    </a>
+    <a href="article.html?id=a03" class="related-card">
+      <p class="related-tag">アニメ批評</p>
+      <p class="related-title-text">新海誠論：距離と光——映像詩としての青春</p>
+    </a>
+    <a href="article.html?id=r03" class="related-card">
+      <p class="related-tag">評論 / 社会学</p>
+      <p class="related-title-text">「異世界転生」というジャンルの社会学——現実逃避か、現実批判か</p>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="about.html">プロフィール</a>
+    <a href="#">プライバシー</a>
+    <a href="#">お問い合わせ</a>
+    <a href="#">RSS</a>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
