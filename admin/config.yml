@@ -1,4 +1,3 @@
-site_url: https://sekai-log.netlify.app
 backend:
   name: git-gateway
   branch: main

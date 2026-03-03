@@ -9,58 +9,23 @@
 <link rel="stylesheet" href="shared.css">
 </head>
 <body>
-
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
-    <li class="nav-item">
-      <a href="anime.html">アニメ <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="anime.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="anime.html?decade=2020">2020年代</a>
-        <a href="anime.html?decade=2010">2010年代</a>
-        <a href="anime.html?decade=2000">2000年代</a>
-        <a href="anime.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a href="novel.html">小説 <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="novel.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="novel.html?decade=2020">2020年代</a>
-        <a href="novel.html?decade=2010">2010年代</a>
-        <a href="novel.html?decade=2000">2000年代</a>
-        <a href="novel.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a href="sf.html">SF <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="sf.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="sf.html?decade=2020">2020年代</a>
-        <a href="sf.html?decade=2010">2010年代</a>
-        <a href="sf.html?decade=2000">2000年代</a>
-        <a href="sf.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
     <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
   </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
 </header>
-
 <div class="page-hero">
   <p class="page-hero-label">CATEGORY</p>
   <h1 class="page-hero-title"><span class="accent">小説</span>・文学</h1>
   <p class="page-hero-sub">言葉の密度と構造——日本文学から世界文学まで。<br>物語の根源を探る批評的読書の記録。</p>
 </div>
-
 <div class="section">
   <div class="filter-bar reveal">
     <button class="filter-btn active" data-decade="all">すべて</button>
@@ -69,71 +34,25 @@
     <button class="filter-btn" data-decade="2000">2000年代</button>
     <button class="filter-btn" data-decade="pre2000">2000年以前</button>
   </div>
-
-  <div class="articles-grid reveal" id="articles-grid">
-    <a href="article.html?id=n01" class="article-card" data-decade="2020">
-      <p class="article-tag">2020年代 / 小説評論</p>
-      <h3 class="article-title">村上春樹「街とその不確かな壁」——反復する喪失とメタファーの迷宮</h3>
-      <p class="article-excerpt">40年の時を経て完成した「世界の終り」の物語。自己と記憶の関係を読み解く。</p>
-      <div class="article-meta"><span>2026.02.03</span><span>11分</span></div>
-    </a>
-    <a href="article.html?id=n02" class="article-card" data-decade="2020">
-      <p class="article-tag">2020年代 / 小説評論</p>
-      <h3 class="article-title">円城塔「オブ・ザ・ベースボール」——言語の崩壊と再生</h3>
-      <p class="article-excerpt">言語そのものを解体し再構築する実験的手法を持つ著者の最新短篇集を精読する。</p>
-      <div class="article-meta"><span>2026.02.20</span><span>8分</span></div>
-    </a>
-    <a href="article.html?id=n03" class="article-card" data-decade="2010">
-      <p class="article-tag">2010年代 / 小説評論</p>
-      <h3 class="article-title">又吉直樹「火花」——笑いと哀愁の文学的昇華</h3>
-      <p class="article-excerpt">芸人という職業の内側から掬い取った、失敗と友情の純文学。その文体の新しさを論じる。</p>
-      <div class="article-meta"><span>2025.12.10</span><span>9分</span></div>
-    </a>
-    <a href="article.html?id=n04" class="article-card" data-decade="2010">
-      <p class="article-tag">2010年代 / 小説評論</p>
-      <h3 class="article-title">東野圭吾「祈りの幕が下りる時」——家族という謎と叙述の技巧</h3>
-      <p class="article-excerpt">加賀恭一郎シリーズの到達点。伏線の緻密さと感情の深さを解剖する。</p>
-      <div class="article-meta"><span>2025.11.18</span><span>10分</span></div>
-    </a>
-    <a href="article.html?id=n05" class="article-card" data-decade="2000">
-      <p class="article-tag">2000年代 / 小説評論</p>
-      <h3 class="article-title">舞城王太郎「煙か土か食い物」——暴力と家族の文学的地平</h3>
-      <p class="article-excerpt">ゼロ年代純文学の奇才が放った衝撃の処女作。その疾走感の正体を探る。</p>
-      <div class="article-meta"><span>2025.10.05</span><span>12分</span></div>
-    </a>
-    <a href="article.html?id=n06" class="article-card" data-decade="pre2000">
-      <p class="article-tag">2000年以前 / 小説評論</p>
-      <h3 class="article-title">大江健三郎「万延元年のフットボール」——神話と歴史の交差点</h3>
-      <p class="article-excerpt">ノーベル賞作家の代表作を現代的視点で再読する。神話的想像力と政治性の共存。</p>
-      <div class="article-meta"><span>2025.09.22</span><span>14分</span></div>
-    </a>
-  </div>
+  <div class="articles-grid reveal" id="articles-grid"></div>
+  <p id="article-count" style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--muted);margin-top:2rem;"></p>
 </div>
-
-<footer>
-  <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="about.html">プロフィール</a>
-    <a href="#">プライバシー</a>
-    <a href="#">お問い合わせ</a>
-    <a href="#">RSS</a>
-  </div>
-</footer>
-
-<script src="shared.js"></script>
+<footer><p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p><div class="footer-links"><a href="about.html">プロフィール</a><a href="#">プライバシー</a></div></footer>
+<script src="shared.js"></script><script src="cms.js"></script>
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const decadeParam = params.get('decade');
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.article-card');
-  function filterByDecade(decade) {
-    filterBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.decade === decade));
-    cards.forEach(card => {
-      card.style.display = (decade === 'all' || decade === 'latest') ? 'flex' : (card.dataset.decade === decade ? 'flex' : 'none');
-    });
+  let allArticles = [];
+  const grid = document.getElementById('articles-grid');
+  const countEl = document.getElementById('article-count');
+  const decadeParam = new URLSearchParams(window.location.search).get('decade');
+  function renderArticles(decade) {
+    const filtered = (decade === 'all' || decade === 'latest') ? allArticles : allArticles.filter(a => a.decade === decade);
+    grid.innerHTML = filtered.length === 0 ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事がありません</div>' : filtered.map(a => articleCardHTML(a)).join('');
+    countEl.textContent = filtered.length + ' 記事';
   }
-  if (decadeParam) filterByDecade(decadeParam);
-  filterBtns.forEach(btn => btn.addEventListener('click', () => filterByDecade(btn.dataset.decade)));
+  document.querySelectorAll('.filter-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); renderArticles(btn.dataset.decade); }); });
+  if (decadeParam) document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.decade === decadeParam));
+  showLoading(grid);
+  fetchArticles('novel').then(articles => { allArticles = articles; renderArticles(decadeParam || 'all'); });
 </script>
 </body>
 </html>

@@ -9,50 +9,35 @@
 <link rel="stylesheet" href="shared.css">
 </head>
 <body>
-
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
-    <li class="nav-item">
-      <a href="anime.html">アニメ <span class="caret">▼</span></a>
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a>
       <div class="dropdown">
-        <a href="anime.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="anime.html?decade=2020">2020年代</a>
-        <a href="anime.html?decade=2010">2010年代</a>
-        <a href="anime.html?decade=2000">2000年代</a>
-        <a href="anime.html?decade=pre2000">2000年以前</a>
+        <a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a>
+        <a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a>
       </div>
     </li>
-    <li class="nav-item">
-      <a href="novel.html">小説 <span class="caret">▼</span></a>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a>
       <div class="dropdown">
-        <a href="novel.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="novel.html?decade=2020">2020年代</a>
-        <a href="novel.html?decade=2010">2010年代</a>
-        <a href="novel.html?decade=2000">2000年代</a>
-        <a href="novel.html?decade=pre2000">2000年以前</a>
+        <a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a>
+        <a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a>
       </div>
     </li>
-    <li class="nav-item">
-      <a href="sf.html">SF <span class="caret">▼</span></a>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a>
       <div class="dropdown">
-        <a href="sf.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="sf.html?decade=2020">2020年代</a>
-        <a href="sf.html?decade=2010">2010年代</a>
-        <a href="sf.html?decade=2000">2000年代</a>
-        <a href="sf.html?decade=pre2000">2000年以前</a>
+        <a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a>
+        <a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a>
       </div>
     </li>
     <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
   </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
 </header>
 
 <div class="page-hero">
@@ -62,109 +47,51 @@
 </div>
 
 <div class="section">
-  <div class="filter-bar reveal" id="filter-bar">
+  <div class="filter-bar reveal">
     <button class="filter-btn active" data-decade="all">すべて</button>
     <button class="filter-btn" data-decade="2020">2020年代</button>
     <button class="filter-btn" data-decade="2010">2010年代</button>
     <button class="filter-btn" data-decade="2000">2000年代</button>
     <button class="filter-btn" data-decade="pre2000">2000年以前</button>
   </div>
-
-  <div class="articles-grid reveal" id="articles-grid">
-    <a href="article.html?id=a01" class="article-card" data-decade="2020">
-      <p class="article-tag">2020年代 / アニメ批評</p>
-      <h3 class="article-title">「ぼっち・ざ・ろっく！」が描く創造的孤独——内向性とアートの関係</h3>
-      <p class="article-excerpt">極度の人見知りが抱えるギターという孤独な対話。音楽アニメの新地平を論じる。</p>
-      <div class="article-meta"><span>2026.02.18</span><span>8分</span></div>
-    </a>
-    <a href="article.html?id=a02" class="article-card" data-decade="2010">
-      <p class="article-tag">2010年代 / アニメ批評</p>
-      <h3 class="article-title">「進撃の巨人」が描いた自由の矛盾——終末論的世界観と現代政治哲学</h3>
-      <p class="article-excerpt">ハンナ・アーレントの全体主義論を軸に、この世紀の傑作を読み直す。</p>
-      <div class="article-meta"><span>2026.02.28</span><span>12分</span></div>
-    </a>
-    <a href="article.html?id=a03" class="article-card" data-decade="2010">
-      <p class="article-tag">2010年代 / アニメ批評</p>
-      <h3 class="article-title">新海誠論：距離と光——映像詩としての青春</h3>
-      <p class="article-excerpt">「天気の子」から「すずめの戸締まり」へ。光と距離の演出哲学を論じる。</p>
-      <div class="article-meta"><span>2026.02.12</span><span>10分</span></div>
-    </a>
-    <a href="article.html?id=a04" class="article-card" data-decade="2000">
-      <p class="article-tag">2000年代 / アニメ批評</p>
-      <h3 class="article-title">「涼宮ハルヒの憂鬱」とゼロ年代オタク文化——メタ構造の誕生</h3>
-      <p class="article-excerpt">京都アニメーションが仕掛けた革命。エピソード8の衝撃と物語論的実験を考察する。</p>
-      <div class="article-meta"><span>2026.01.20</span><span>11分</span></div>
-    </a>
-    <a href="article.html?id=a05" class="article-card" data-decade="2000">
-      <p class="article-tag">2000年代 / アニメ批評</p>
-      <h3 class="article-title">「攻殻機動隊 STAND ALONE COMPLEX」——意識と模倣の哲学</h3>
-      <p class="article-excerpt">スタンドアローン・コンプレックスという概念が問いかけるもの。</p>
-      <div class="article-meta"><span>2026.01.05</span><span>14分</span></div>
-    </a>
-    <a href="article.html?id=a06" class="article-card" data-decade="pre2000">
-      <p class="article-tag">2000年以前 / アニメ批評</p>
-      <h3 class="article-title">「新世紀エヴァンゲリオン」再考——90年代精神の鏡として</h3>
-      <p class="article-excerpt">四半世紀後の視点から、庵野秀明が描いた自己と他者の境界線を読む。</p>
-      <div class="article-meta"><span>2025.12.15</span><span>15分</span></div>
-    </a>
-    <a href="article.html?id=a07" class="article-card" data-decade="pre2000">
-      <p class="article-tag">2000年以前 / アニメ批評</p>
-      <h3 class="article-title">宮崎駿の自然観——「もののけ姫」における共存という問い</h3>
-      <p class="article-excerpt">文明と自然の対立を超えた第三の道。ジブリ美学の核心に迫る。</p>
-      <div class="article-meta"><span>2025.11.30</span><span>13分</span></div>
-    </a>
-    <a href="article.html?id=a08" class="article-card" data-decade="2020">
-      <p class="article-tag">2020年代 / アニメ批評</p>
-      <h3 class="article-title">「チェンソーマン」の暴力美学——藤本タツキと快楽の倫理</h3>
-      <p class="article-excerpt">破壊と再生が繰り返される物語。その根底にある欲望の構造を解剖する。</p>
-      <div class="article-meta"><span>2025.11.10</span><span>9分</span></div>
-    </a>
-    <a href="article.html?id=a09" class="article-card" data-decade="2010">
-      <p class="article-tag">2010年代 / アニメ批評</p>
-      <h3 class="article-title">「この素晴らしい世界に祝福を！」——異世界転生とカーニバル的笑い</h3>
-      <p class="article-excerpt">バフチンのカーニバル論を援用し、コメディ異世界の深層を読む。</p>
-      <div class="article-meta"><span>2025.10.22</span><span>7分</span></div>
-    </a>
-  </div>
+  <div class="articles-grid reveal" id="articles-grid"></div>
+  <p id="article-count" style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--muted);margin-top:2rem;"></p>
 </div>
 
 <footer>
   <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="about.html">プロフィール</a>
-    <a href="#">プライバシー</a>
-    <a href="#">お問い合わせ</a>
-    <a href="#">RSS</a>
-  </div>
+  <div class="footer-links"><a href="about.html">プロフィール</a><a href="#">プライバシー</a><a href="#">お問い合わせ</a></div>
 </footer>
-
-<script src="shared.js"></script>
+<script src="shared.js"></script><script src="cms.js"></script>
 <script>
-  // フィルター機能
+  let allArticles = [];
+  const grid = document.getElementById('articles-grid');
+  const countEl = document.getElementById('article-count');
   const params = new URLSearchParams(window.location.search);
   const decadeParam = params.get('decade');
 
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.article-card');
-
-  function filterByDecade(decade) {
-    filterBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.decade === decade);
-    });
-    cards.forEach(card => {
-      const show = decade === 'all' || decade === 'latest'
-        ? true
-        : card.dataset.decade === decade;
-      card.style.display = show ? 'flex' : 'none';
-    });
+  function renderArticles(decade) {
+    const filtered = (decade === 'all' || decade === 'latest') ? allArticles : allArticles.filter(a => a.decade === decade);
+    grid.innerHTML = filtered.length === 0
+      ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事がありません</div>'
+      : filtered.map(a => articleCardHTML(a)).join('');
+    countEl.textContent = filtered.length + ' 記事';
   }
 
-  // URLパラメータで初期フィルター
-  if (decadeParam) filterByDecade(decadeParam);
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => filterByDecade(btn.dataset.decade));
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderArticles(btn.dataset.decade);
+    });
   });
+
+  if (decadeParam) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.decade === decadeParam));
+  }
+
+  showLoading(grid);
+  fetchArticles('anime').then(articles => { allArticles = articles; renderArticles(decadeParam || 'all'); });
 </script>
 </body>
 </html>
