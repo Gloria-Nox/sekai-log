@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ — SEKAI LOG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-body { max-width:700px; margin:0 auto; padding:3rem 3rem 6rem; }
+  .contact-form { display:flex; flex-direction:column; gap:2rem; }
+  .form-group { display:flex; flex-direction:column; gap:0.6rem; }
+  .form-label { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.2em; color:var(--accent); }
+  .form-input, .form-textarea {
+    background:rgba(245,240,232,0.04);
+    border:1px solid rgba(245,240,232,0.15);
+    color:var(--paper);
+    padding:1rem 1.2rem;
+    font-family:'Noto Serif JP',serif;
+    font-size:0.9rem;
+    outline:none;
+    transition:border-color 0.25s;
+    width:100%;
+  }
+  .form-input:focus, .form-textarea:focus { border-color:var(--accent); }
+  .form-input::placeholder, .form-textarea::placeholder { color:var(--muted); }
+  .form-textarea { min-height:200px; resize:vertical; }
+  .form-submit {
+    background:var(--accent); border:1px solid var(--accent);
+    color:var(--paper); padding:1rem 3rem;
+    font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em;
+    cursor:pointer; transition:all 0.3s; align-self:flex-start;
+  }
+  .form-submit:hover { background:transparent; color:var(--accent); }
+  .form-note { font-size:0.8rem; line-height:1.9; color:var(--muted); margin-bottom:2rem; }
+  @media(max-width:768px){ .contact-body { padding:2rem 1.5rem 4rem; } .form-submit { width:100%; text-align:center; } }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
+  <ul class="main-nav" id="main-nav">
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="subculture.html">サブカル</a></li>
+    <li class="nav-item"><a href="review.html">評論</a></li>
+    <li class="nav-item"><a href="about.html">ABOUT</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+</header>
+
+<div class="page-hero">
+  <p class="page-hero-label">CONTACT</p>
+  <h1 class="page-hero-title">お<span class="accent">問い合わせ</span></h1>
+  <p class="page-hero-sub">記事へのご意見・ご感想・取材依頼など、お気軽にどうぞ。</p>
+</div>
+
+<div class="contact-body">
+  <p class="form-note">通常2〜3営業日以内にご返信いたします。スパム防止のため、内容によってはご返信できない場合があります。</p>
+
+  <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/thanks.html">
+    <input type="hidden" name="form-name" value="contact">
+    <div class="form-group">
+      <label class="form-label" for="name">お名前</label>
+      <input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="email">メールアドレス</label>
+      <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="subject">件名</label>
+      <input class="form-input" type="text" id="subject" name="subject" placeholder="記事へのご意見など">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="message">メッセージ</label>
+      <textarea class="form-textarea" id="message" name="message" placeholder="メッセージをご入力ください" required></textarea>
+    </div>
+    <button type="submit" class="form-submit">送信する →</button>
+  </form>
+</div>
+
+<footer>
+  <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="about.html">プロフィール</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

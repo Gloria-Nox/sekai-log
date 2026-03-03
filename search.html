@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>検索 — SEKAI LOG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .search-bar-wrap { max-width:700px; margin:0 auto 3rem; display:flex; gap:0; }
+  .search-input {
+    flex:1; background:rgba(245,240,232,0.04);
+    border:1px solid rgba(245,240,232,0.2); border-right:none;
+    color:var(--paper); padding:1rem 1.5rem;
+    font-family:'Noto Serif JP',serif; font-size:1rem; outline:none;
+    transition:border-color 0.25s;
+  }
+  .search-input:focus { border-color:var(--accent); }
+  .search-input::placeholder { color:var(--muted); }
+  .search-btn {
+    background:var(--accent); border:1px solid var(--accent);
+    color:var(--paper); padding:1rem 2rem;
+    font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em;
+    cursor:pointer; transition:all 0.3s; white-space:nowrap;
+  }
+  .search-btn:hover { background:var(--paper); color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
+  <ul class="main-nav" id="main-nav">
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="subculture.html">サブカル</a></li>
+    <li class="nav-item"><a href="review.html">評論</a></li>
+    <li class="nav-item"><a href="about.html">ABOUT</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+</header>
+
+<div class="page-hero">
+  <p class="page-hero-label">SEARCH</p>
+  <h1 class="page-hero-title"><span class="accent">記事</span>を検索</h1>
+</div>
+
+<div class="section">
+  <div class="search-bar-wrap">
+    <input class="search-input" type="text" id="search-input" placeholder="キーワードを入力...">
+    <button class="search-btn" id="search-btn">検索 →</button>
+  </div>
+  <p id="search-status" style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--muted);margin-bottom:2rem;"></p>
+  <div class="articles-grid" id="results-grid"></div>
+</div>
+
+<footer>
+  <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="about.html">プロフィール</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+</footer>
+<script src="shared.js"></script>
+<script src="cms.js"></script>
+<script>
+  const input = document.getElementById('search-input');
+  const btn = document.getElementById('search-btn');
+  const grid = document.getElementById('results-grid');
+  const status = document.getElementById('search-status');
+
+  // URLパラメータから初期クエリ
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q');
+  if (q) { input.value = q; doSearch(q); }
+
+  btn.addEventListener('click', () => doSearch(input.value));
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(input.value); });
+
+  async function doSearch(query) {
+    if (!query.trim()) return;
+    history.replaceState(null, '', `?q=${encodeURIComponent(query)}`);
+    showLoading(grid);
+    status.textContent = '検索中...';
+    const results = await searchArticles(query);
+    if (results.length === 0) {
+      showEmpty(grid, `「${query}」の検索結果はありませんでした`);
+      status.textContent = '0 件';
+    } else {
+      grid.innerHTML = results.map(a => articleCardHTML(a)).join('');
+      status.textContent = `「${query}」の検索結果：${results.length} 件`;
+    }
+  }
+</script>
+</body>
+</html>

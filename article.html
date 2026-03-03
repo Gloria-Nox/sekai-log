@@ -4,14 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>記事 — SEKAI LOG</title>
+<!-- OGP（SNSシェア時に表示される情報） -->
+<meta property="og:site_name" content="SEKAI LOG">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sekailog">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<!-- Marked.js：マークダウンをHTMLに変換 -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
   .article-hero { padding:9rem 3rem 4rem; max-width:900px; margin:0 auto; }
-  .article-breadcrumb { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; color:var(--muted); margin-bottom:2rem; display:flex; align-items:center; gap:0.8rem; }
+  .article-breadcrumb { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; color:var(--muted); margin-bottom:2rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap; }
   .article-breadcrumb a { color:var(--muted); text-decoration:none; transition:color 0.25s; }
   .article-breadcrumb a:hover { color:var(--paper); }
   .article-breadcrumb span { color:rgba(245,240,232,0.2); }
@@ -19,27 +24,45 @@
   .article-tag-line::before { content:''; display:block; width:30px; height:1px; background:var(--accent); }
   .article-headline { font-family:'Shippori Mincho',serif; font-size:clamp(1.8rem,4vw,3.2rem); font-weight:700; line-height:1.3; letter-spacing:0.02em; margin-bottom:2rem; }
   .article-info { display:flex; align-items:center; gap:2rem; padding:1.5rem 0; border-top:1px solid rgba(245,240,232,0.08); border-bottom:1px solid rgba(245,240,232,0.08); flex-wrap:wrap; }
-  .article-date { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
-  .article-read-time { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); margin-left:auto; }
-  .article-body { max-width:900px; margin:0 auto; padding:4rem 3rem 6rem; }
+  .article-date, .article-read-time { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
+  .article-read-time { margin-left:auto; }
+  .article-body { max-width:900px; margin:0 auto; padding:4rem 3rem 3rem; }
   .article-body p { font-size:1rem; line-height:2.4; color:rgba(245,240,232,0.88); margin-bottom:2rem; }
   .article-body h2 { font-family:'Shippori Mincho',serif; font-size:1.6rem; font-weight:700; margin:4rem 0 1.5rem; padding-bottom:1rem; border-bottom:1px solid rgba(245,240,232,0.1); }
   .article-body h3 { font-family:'Shippori Mincho',serif; font-size:1.2rem; font-weight:700; margin:2.5rem 0 1rem; }
-  .article-body blockquote { border-left:3px solid var(--accent); padding:1rem 2rem; margin:2rem 0; background:rgba(245,240,232,0.02); font-style:italic; color:var(--muted); font-size:0.95rem; line-height:2; }
+  .article-body blockquote { border-left:3px solid var(--accent); padding:1rem 2rem; margin:2rem 0; background:rgba(245,240,232,0.02); color:var(--muted); font-size:0.95rem; line-height:2; }
   .article-body img { max-width:100%; height:auto; margin:2rem 0; }
   .article-body ul, .article-body ol { padding-left:2rem; margin-bottom:2rem; }
-  .article-body li { font-size:1rem; line-height:2.2; color:rgba(245,240,232,0.88); margin-bottom:0.5rem; }
+  .article-body li { font-size:1rem; line-height:2.2; color:rgba(245,240,232,0.88); margin-bottom:0.4rem; }
   .article-thumbnail { width:100%; max-height:400px; object-fit:cover; margin-bottom:3rem; }
+
+  /* SNSシェアボタン */
+  .share-section { max-width:900px; margin:0 auto; padding:2rem 3rem 4rem; border-top:1px solid rgba(245,240,232,0.08); }
+  .share-label { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.3em; color:var(--muted); margin-bottom:1.2rem; }
+  .share-btns { display:flex; gap:0.8rem; flex-wrap:wrap; }
+  .share-btn {
+    display:inline-flex; align-items:center; gap:0.6rem;
+    font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.15em;
+    text-decoration:none; padding:0.7rem 1.4rem;
+    border:1px solid rgba(245,240,232,0.2);
+    color:var(--paper); transition:all 0.25s;
+  }
+  .share-btn:hover { border-color:var(--paper); background:rgba(245,240,232,0.05); }
+  .share-btn.x { border-color:rgba(255,255,255,0.2); }
+  .share-btn.x:hover { border-color:#fff; }
+  .share-btn.copy:hover { border-color:var(--accent); color:var(--accent); }
+  .copy-done { color:var(--accent) !important; border-color:var(--accent) !important; }
+
   .loading-msg { text-align:center; padding:6rem 3rem; font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.2em; color:var(--muted); }
   @media(max-width:768px){
-    .article-hero{padding:7rem 1.5rem 3rem;}
-    .article-body{padding:3rem 1.5rem 4rem;}
-    .article-read-time{margin-left:0;}
+    .article-hero { padding:7rem 1.5rem 3rem; }
+    .article-body { padding:3rem 1.5rem 2rem; }
+    .share-section { padding:2rem 1.5rem 3rem; }
+    .article-read-time { margin-left:0; }
   }
 </style>
 </head>
 <body>
-
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
@@ -59,14 +82,17 @@
 
 <footer>
   <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
-  <div class="footer-links"><a href="about.html">プロフィール</a><a href="#">プライバシー</a></div>
+  <div class="footer-links">
+    <a href="about.html">プロフィール</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
 </footer>
 
 <script src="shared.js"></script>
 <script src="cms.js"></script>
 <script>
-  const CAT_PAGES = { anime: 'anime.html', novel: 'novel.html', sf: 'sf.html', subculture: 'subculture.html', review: 'review.html' };
-
+  const CAT_PAGES = { anime:'anime.html', novel:'novel.html', sf:'sf.html', subculture:'subculture.html', review:'review.html' };
   const params = new URLSearchParams(window.location.search);
   const category = params.get('category');
   const slug = params.get('slug');
@@ -76,41 +102,64 @@
     container.innerHTML = '<div class="loading-msg">記事が見つかりません</div>';
   } else {
     fetchArticle(category, slug).then(article => {
-      if (!article) {
-        container.innerHTML = '<div class="loading-msg">記事が見つかりません</div>';
-        return;
-      }
+      if (!article) { container.innerHTML = '<div class="loading-msg">記事が見つかりません</div>'; return; }
 
+      // OGP動的設定
       document.title = (article.title || '記事') + ' — SEKAI LOG';
+      const setMeta = (prop, val, attr='property') => {
+        let el = document.querySelector(`meta[${attr}="${prop}"]`);
+        if (!el) { el = document.createElement('meta'); el.setAttribute(attr, prop); document.head.appendChild(el); }
+        el.setAttribute('content', val);
+      };
+      setMeta('og:title', article.title || 'SEKAI LOG');
+      setMeta('og:description', article.excerpt || '');
+      setMeta('og:url', location.href);
+      setMeta('twitter:title', article.title || 'SEKAI LOG', 'name');
+      setMeta('twitter:description', article.excerpt || '', 'name');
 
-      const catLabel = CAT_LABELS[category] || category;
+      const catLabel = CAT_LABELS[category] || '';
       const decadeLabel = DECADE_LABELS[article.decade] || '';
       const tagLine = [decadeLabel, catLabel].filter(Boolean).join(' / ');
       const dateStr = formatDate(article.date);
       const catPage = CAT_PAGES[category] || 'index.html';
       const bodyHTML = article.content ? marked.parse(article.content) : '';
       const thumbHTML = article.thumbnail ? `<img src="${article.thumbnail}" class="article-thumbnail" alt="${article.title}">` : '';
+      const pageUrl = encodeURIComponent(location.href);
+      const pageTitle = encodeURIComponent(article.title || 'SEKAI LOG');
 
       container.innerHTML = `
         <div class="article-hero">
           <div class="article-breadcrumb">
-            <a href="index.html">TOP</a>
-            <span>/</span>
-            <a href="${catPage}">${catLabel}</a>
-            <span>/</span>
+            <a href="index.html">TOP</a><span>/</span>
+            <a href="${catPage}">${catLabel}</a><span>/</span>
             <span>${article.title || '記事'}</span>
           </div>
           <p class="article-tag-line">${tagLine}</p>
           <h1 class="article-headline">${article.title || ''}</h1>
           <div class="article-info">
             <span class="article-date">${dateStr}</span>
-            <span class="article-read-time">${article.readtime ? '読了時間：' + article.readtime : ''}</span>
+            <span class="article-read-time">読了 ${article.readtime || ''}</span>
           </div>
         </div>
         <div class="article-body">
           ${thumbHTML}
           ${bodyHTML}
+        </div>
+        <div class="share-section">
+          <p class="share-label">SHARE THIS ARTICLE</p>
+          <div class="share-btns">
+            <a class="share-btn x" href="https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}%20%7C%20SEKAI+LOG" target="_blank" rel="noopener">𝕏 でシェア</a>
+            <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${pageUrl}" target="_blank" rel="noopener">Facebook</a>
+            <button class="share-btn copy" id="copy-btn" onclick="copyUrl()">🔗 URLをコピー</button>
+          </div>
         </div>`;
+    });
+  }
+
+  function copyUrl() {
+    navigator.clipboard.writeText(location.href).then(() => {
+      const btn = document.getElementById('copy-btn');
+      if (btn) { btn.textContent = '✓ コピーしました'; btn.classList.add('copy-done'); setTimeout(() => { btn.textContent = '🔗 URLをコピー'; btn.classList.remove('copy-done'); }, 2000); }
     });
   }
 </script>
