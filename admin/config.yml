@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Gloria-Nox/sekai-log
   branch: main
+  base_url: https://sekai-log-oauth.yuki-work-11-11-22.workers.dev
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
