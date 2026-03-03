@@ -1,0 +1,98 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: ja
+
+collections:
+  - name: "anime"
+    label: "アニメ評論"
+    folder: "_posts/anime"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "公開日", name: "date", widget: "datetime" }
+      - label: "年代タグ"
+        name: "decade"
+        widget: "select"
+        options:
+          - { label: "2020年代", value: "2020" }
+          - { label: "2010年代", value: "2010" }
+          - { label: "2000年代", value: "2000" }
+          - { label: "2000年以前", value: "pre2000" }
+      - { label: "抜粋（一覧に表示される説明文）", name: "excerpt", widget: "text" }
+      - { label: "読了時間（例：10分）", name: "readtime", widget: "string" }
+      - { label: "アイキャッチ画像", name: "thumbnail", widget: "image", required: false }
+      - { label: "本文", name: "body", widget: "markdown" }
+
+  - name: "novel"
+    label: "小説・文学"
+    folder: "_posts/novel"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "公開日", name: "date", widget: "datetime" }
+      - label: "年代タグ"
+        name: "decade"
+        widget: "select"
+        options:
+          - { label: "2020年代", value: "2020" }
+          - { label: "2010年代", value: "2010" }
+          - { label: "2000年代", value: "2000" }
+          - { label: "2000年以前", value: "pre2000" }
+      - { label: "抜粋", name: "excerpt", widget: "text" }
+      - { label: "読了時間", name: "readtime", widget: "string" }
+      - { label: "アイキャッチ画像", name: "thumbnail", widget: "image", required: false }
+      - { label: "本文", name: "body", widget: "markdown" }
+
+  - name: "sf"
+    label: "SF・ファンタジー"
+    folder: "_posts/sf"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "公開日", name: "date", widget: "datetime" }
+      - label: "年代タグ"
+        name: "decade"
+        widget: "select"
+        options:
+          - { label: "2020年代", value: "2020" }
+          - { label: "2010年代", value: "2010" }
+          - { label: "2000年代", value: "2000" }
+          - { label: "2000年以前", value: "pre2000" }
+      - { label: "抜粋", name: "excerpt", widget: "text" }
+      - { label: "読了時間", name: "readtime", widget: "string" }
+      - { label: "アイキャッチ画像", name: "thumbnail", widget: "image", required: false }
+      - { label: "本文", name: "body", widget: "markdown" }
+
+  - name: "subculture"
+    label: "サブカルチャー"
+    folder: "_posts/subculture"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "公開日", name: "date", widget: "datetime" }
+      - { label: "抜粋", name: "excerpt", widget: "text" }
+      - { label: "読了時間", name: "readtime", widget: "string" }
+      - { label: "アイキャッチ画像", name: "thumbnail", widget: "image", required: false }
+      - { label: "本文", name: "body", widget: "markdown" }
+
+  - name: "review"
+    label: "評論"
+    folder: "_posts/review"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "公開日", name: "date", widget: "datetime" }
+      - { label: "抜粋", name: "excerpt", widget: "text" }
+      - { label: "読了時間", name: "readtime", widget: "string" }
+      - { label: "アイキャッチ画像", name: "thumbnail", widget: "image", required: false }
+      - { label: "本文", name: "body", widget: "markdown" }
