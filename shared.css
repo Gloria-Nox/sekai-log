@@ -114,7 +114,7 @@ header {
 .nav-toggle {
   display:none;
   flex-direction:column; gap:5px;
-  cursor:pointer; background:none; border:none; padding:4px; z-index:300;
+  cursor:pointer; background:none; border:none; padding:4px; z-index:9100;
 }
 .nav-toggle span {
   display:block; width:24px; height:1px;
@@ -296,7 +296,7 @@ footer {
     background:#0a0a0f;
     flex-direction:column; align-items:stretch; justify-content:flex-start;
     overflow-y:auto;
-    z-index:200; padding:5rem 0 2rem;
+    z-index:9000; padding:5rem 0 2rem;
   }
   .main-nav.open { display:flex; }
   .main-nav .nav-item { border-bottom:1px solid rgba(245,240,232,0.07); }
