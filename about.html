@@ -3,144 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABOUT — SEKAI LOG</title>
+<title>藤乃宮遊について — SEKAI LOG</title>
+<meta name="description" content="SEKAI LOG運営者・藤乃宮遊のプロフィール。SF・ファンタジー・アニメを中心に、15年間の記憶を記録に変えるための批評サイト。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<style>
-  .about-grid {
-    display:grid; grid-template-columns:1fr 2fr;
-    gap:6rem; align-items:start;
-    padding:5rem 3rem;
-    max-width:1200px; margin:0 auto;
-  }
-  .about-sidebar { position:sticky; top:8rem; }
-  .about-avatar {
-    width:100%; aspect-ratio:1;
-    background:rgba(245,240,232,0.04);
-    border:1px solid rgba(245,240,232,0.1);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Shippori Mincho',serif;
-    font-size:5rem; font-weight:900;
-    color:rgba(245,240,232,0.08);
-    margin-bottom:2rem;
-    position:relative; overflow:hidden;
-  }
-  .about-avatar::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(135deg,rgba(123,47,255,0.1),rgba(200,16,46,0.1));
-  }
-  .about-name {
-    font-family:'Shippori Mincho',serif;
-    font-size:1.6rem; font-weight:700; margin-bottom:0.5rem;
-  }
-  .about-role {
-    font-family:'Space Mono',monospace;
-    font-size:0.65rem; letter-spacing:0.25em; color:var(--accent);
-    margin-bottom:1.5rem;
-  }
-  .about-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; }
-  .about-tag {
-    font-family:'Space Mono',monospace;
-    font-size:0.6rem; letter-spacing:0.15em;
-    color:var(--muted); border:1px solid rgba(245,240,232,0.12);
-    padding:0.3rem 0.8rem;
-  }
-  .about-links { display:flex; flex-direction:column; gap:0.8rem; }
-  .about-link {
-    font-family:'Space Mono',monospace;
-    font-size:0.65rem; letter-spacing:0.15em;
-    color:var(--muted); text-decoration:none;
-    display:flex; align-items:center; gap:0.8rem;
-    transition:color 0.25s;
-  }
-  .about-link:hover { color:var(--paper); }
-  .about-link::before { content:'→'; color:var(--accent); }
-
-  .about-content h2 {
-    font-family:'Shippori Mincho',serif;
-    font-size:1.6rem; font-weight:700;
-    margin-bottom:1.5rem; padding-bottom:1rem;
-    border-bottom:1px solid rgba(245,240,232,0.1);
-  }
-  .about-content p {
-    font-size:0.95rem; line-height:2.2;
-    color:rgba(245,240,232,0.85);
-    margin-bottom:1.8rem;
-  }
-  .about-content .en-note {
-    font-family:'Space Mono',monospace;
-    font-size:0.68rem; letter-spacing:0.2em;
-    color:var(--accent); margin-bottom:3rem;
-    display:block;
-  }
-
-  .about-section { margin-bottom:4rem; }
-
-  .history-item {
-    display:grid; grid-template-columns:120px 1fr;
-    gap:2rem; padding:1.5rem 0;
-    border-bottom:1px solid rgba(245,240,232,0.07);
-  }
-  .history-year {
-    font-family:'Space Mono',monospace;
-    font-size:0.68rem; letter-spacing:0.2em; color:var(--accent);
-    padding-top:0.2rem;
-  }
-  .history-desc {
-    font-size:0.88rem; line-height:1.9;
-    color:rgba(245,240,232,0.75);
-  }
-
-  /* 編集方針 */
-  .policy-grid {
-    display:grid; grid-template-columns:1fr 1fr;
-    gap:1px; background:rgba(245,240,232,0.08);
-    margin-top:2rem;
-  }
-  .policy-item {
-    background:var(--ink); padding:2rem;
-  }
-  .policy-num {
-    font-family:'Space Mono',monospace;
-    font-size:2rem; font-weight:700;
-    color:rgba(245,240,232,0.06); margin-bottom:0.5rem;
-  }
-  .policy-title {
-    font-family:'Shippori Mincho',serif;
-    font-size:1rem; font-weight:700; margin-bottom:0.8rem;
-  }
-  .policy-desc { font-size:0.82rem; line-height:1.9; color:var(--muted); }
-
-  /* お問い合わせ */
-  .contact-section {
-    background:rgba(245,240,232,0.02);
-    border:1px solid rgba(245,240,232,0.08);
-    padding:3rem; margin-top:4rem; text-align:center;
-  }
-  .contact-title {
-    font-family:'Shippori Mincho',serif;
-    font-size:1.4rem; font-weight:700; margin-bottom:1rem;
-  }
-  .contact-desc { font-size:0.85rem; line-height:2; color:var(--muted); margin-bottom:2rem; }
-  .contact-btn {
-    display:inline-flex; align-items:center; gap:1rem;
-    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.2em;
-    color:var(--paper); text-decoration:none;
-    border:1px solid rgba(245,240,232,0.3); padding:1rem 2.5rem;
-    transition:all 0.3s;
-  }
-  .contact-btn:hover { background:var(--paper); color:var(--ink); }
-  .contact-btn::after { content:'→'; }
-
-  @media(max-width:768px){
-    .about-grid { grid-template-columns:1fr; gap:3rem; padding:3rem 1.5rem; }
-    .about-sidebar { position:static; }
-    .about-avatar { max-width:200px; }
-    .policy-grid { grid-template-columns:1fr; }
-    .history-item { grid-template-columns:90px 1fr; gap:1rem; }
-  }
-</style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EKFMMWGGZ"></script>
 <script>
@@ -149,196 +16,112 @@
   gtag("js", new Date());
   gtag("config", "G-2EKFMMWGGZ");
 </script>
+<style>
+  .about-body { max-width:820px; margin:0 auto; padding:3rem 3rem 6rem; }
+  .about-section { margin-bottom:4rem; padding-bottom:4rem; border-bottom:1px solid var(--border); }
+  .about-section:last-child { border-bottom:none; }
+  .about-label { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.3em; color:var(--accent); margin-bottom:1.2rem; display:flex; align-items:center; gap:0.8rem; }
+  .about-label::before { content:''; display:block; width:24px; height:1px; background:var(--accent); }
+  .about-h2 { font-family:'Shippori Mincho',serif; font-size:1.6rem; font-weight:700; margin-bottom:1.5rem; }
+  .about-p { font-size:0.95rem; line-height:2.3; color:var(--paper2); margin-bottom:1.2rem; }
+  .about-p strong { color:var(--paper); font-weight:700; }
+  .works-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1px; background:var(--border); margin-top:1.5rem; }
+  .work-item { background:var(--card); padding:1.2rem; font-family:'Shippori Mincho',serif; font-size:0.9rem; line-height:1.6; color:var(--paper2); }
+  .work-item span { display:block; font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.15em; color:var(--accent); margin-bottom:0.4rem; }
+  .contact-box { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent); padding:2rem; margin-top:1.5rem; }
+  .contact-box p { font-size:0.9rem; line-height:2; color:var(--paper2); margin-bottom:0.8rem; }
+  .contact-box a { color:var(--accent); text-decoration:none; font-family:'Space Mono',monospace; font-size:0.85rem; letter-spacing:0.05em; }
+  .contact-box a:hover { color:var(--accent2); text-decoration:underline; }
+  .note-box { background:linear-gradient(135deg,rgba(123,47,255,0.08),rgba(200,16,46,0.05)); border:1px solid rgba(123,47,255,0.2); padding:2rem; margin-top:1.5rem; display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
+  .note-box-text h3 { font-family:'Shippori Mincho',serif; font-size:1.2rem; font-weight:700; margin-bottom:0.5rem; }
+  .note-box-text p { font-size:0.85rem; line-height:1.9; color:var(--paper2); }
+  .note-btn { font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.2em; color:var(--paper); text-decoration:none; border:1px solid rgba(237,232,223,0.3); padding:0.8rem 1.8rem; transition:all 0.3s; white-space:nowrap; flex-shrink:0; }
+  .note-btn:hover { background:var(--paper); color:var(--ink); }
+  @media(max-width:768px){ .about-body{padding:2rem 1.5rem 4rem;} .note-box{flex-direction:column;gap:1rem;} }
+</style>
 </head>
 <body>
-
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
-    <li class="nav-item">
-      <a href="anime.html">アニメ <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="anime.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="anime.html?decade=2020">2020年代</a>
-        <a href="anime.html?decade=2010">2010年代</a>
-        <a href="anime.html?decade=2000">2000年代</a>
-        <a href="anime.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a href="novel.html">小説 <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="novel.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="novel.html?decade=2020">2020年代</a>
-        <a href="novel.html?decade=2010">2010年代</a>
-        <a href="novel.html?decade=2000">2000年代</a>
-        <a href="novel.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a href="sf.html">SF <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="sf.html?decade=latest">最新作品</a>
-        <div class="dropdown-divider"></div>
-        <a href="sf.html?decade=2020">2020年代</a>
-        <a href="sf.html?decade=2010">2010年代</a>
-        <a href="sf.html?decade=2000">2000年代</a>
-        <a href="sf.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
     <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
   </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="search.html" class="nav-search" title="検索">🔍</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
 </header>
 
 <div class="page-hero">
   <p class="page-hero-label">ABOUT</p>
-  <h1 class="page-hero-title">この<span class="accent">批評誌</span>について</h1>
-  <p class="page-hero-sub">SEKAI LOGとは何か。誰が書き、何を目指しているのか。</p>
+  <h1 class="page-hero-title">藤乃宮<span class="accent">遊</span></h1>
+  <p class="page-hero-sub">関西在住のSF考察好き。今までの記憶を、記録に変えたい。</p>
 </div>
 
-<div class="about-grid">
-  <!-- サイドバー -->
-  <div class="about-sidebar reveal">
-    <div class="about-avatar">筆</div>
-    <!-- ↓ここに自分の名前・肩書きを入れてください -->
-    <p class="about-name">【あなたの名前】</p>
-    <p class="about-role">CRITIC / EDITOR</p>
-    <div class="about-tags">
-      <span class="about-tag">アニメ批評</span>
-      <span class="about-tag">SF</span>
-      <span class="about-tag">小説</span>
-      <span class="about-tag">サブカル</span>
-      <span class="about-tag">文化評論</span>
-    </div>
-    <div class="about-links">
-      <a href="#" class="about-link">Twitter / X</a>
-      <a href="#" class="about-link">note</a>
-      <a href="#" class="about-link">お問い合わせ</a>
+<div class="about-body">
+
+  <div class="about-section reveal">
+    <p class="about-label">PROFILE</p>
+    <p class="about-p">関西在住。<strong>SF考察好き</strong>で、最近はフィギュアコレクションにもハマっている。</p>
+    <p class="about-p">2011年の「ココロコネクト」から沼にハマり、以来15年——自称最前線で作品を漁り続けている。</p>
+    <p class="about-p">得意ジャンルは<strong>SF系・ファンタジー系</strong>。単なる感想ではなく、作品の構造・時代背景・思想的文脈から読み解くことを心がけている。</p>
+  </div>
+
+  <div class="about-section reveal">
+    <p class="about-label">FAVORITE WORKS</p>
+    <h2 class="about-h2">好きな作品</h2>
+    <div class="works-grid">
+      <div class="work-item"><span>ANIME / NOVEL</span>魔法科高校の劣等生</div>
+      <div class="work-item"><span>ANIME</span>魔法少女まどか☆マギカ</div>
+      <div class="work-item"><span>MANGA / ANIME</span>ブレイクブレイド</div>
+      <div class="work-item"><span>NOVEL / ANIME</span>とある飛空士への恋歌</div>
+      <div class="work-item"><span>ANIME</span>バディ・コンプレックス</div>
     </div>
   </div>
 
-  <!-- メインコンテンツ -->
-  <div class="about-content reveal">
-
-    <div class="about-section">
-      <h2>SEKAI LOGとは</h2>
-      <span class="en-note">— What is SEKAI LOG?</span>
-      <!-- ↓この文章は仮のものです。後で書き換えてください -->
-      <p>
-        SEKAI LOG（セカイログ）は、アニメ・小説・SF・サブカルチャーを対象とした個人批評誌です。
-        単なる「面白かった」「感動した」という感想を超えて、作品が持つ思想的・文化的・社会的な意味を
-        深く掘り下げることを目的として、2020年に創刊しました。
-      </p>
-      <p>
-        「世界（SEKAI）を記録（LOG）する」という名のとおり、虚構の物語を通じて
-        私たちが生きる現実の世界を照射すること——それがこの批評誌の根本的な動機です。
-        優れたフィクションはつねに、現実以上のリアリティを持っている。そう信じています。
-      </p>
-      <p>
-        批評の方法論は一つに限りません。文学理論・哲学・社会学・心理学——
-        作品にとって最もふさわしいレンズを選び、自分の言葉で語ること。
-        それだけを一貫した姿勢として続けてきました。
-      </p>
-    </div>
-
-    <div class="about-section">
-      <h2>プロフィール</h2>
-      <span class="en-note">— Profile</span>
-      <!-- ↓この文章は仮のものです。後で書き換えてください -->
-      <p>
-        【あなたの名前】。【出身地・年齢など任意の情報】。
-        幼少期に「【印象的な作品名】」に出会い、フィクションの世界に魅了される。
-        以来、【年数】年以上にわたってアニメ・小説・SFを読み続けている。
-      </p>
-      <p>
-        【職業や肩書き】として働きながら、本業の傍らで批評活動を続けている。
-        好きな作品は【好きな作品】。影響を受けた評論家・思想家は【名前】。
-        モットーは「【あなたのモットーや座右の銘】」。
-      </p>
-    </div>
-
-    <div class="about-section">
-      <h2>これまでの歩み</h2>
-      <span class="en-note">— History</span>
-      <!-- ↓この内容は仮のものです。後で書き換えてください -->
-      <div class="history-item">
-        <div class="history-year">2020</div>
-        <div class="history-desc">SEKAI LOG をブログとして開設。月1〜2本のペースで更新を開始。</div>
-      </div>
-      <div class="history-item">
-        <div class="history-year">2021</div>
-        <div class="history-desc">SNSでの拡散をきっかけに読者が増加。週1更新に移行。</div>
-      </div>
-      <div class="history-item">
-        <div class="history-year">2022</div>
-        <div class="history-desc">「進撃の巨人」最終回考察記事が大きな反響を呼ぶ。</div>
-      </div>
-      <div class="history-item">
-        <div class="history-year">2024</div>
-        <div class="history-desc">サイトをリニューアル。カテゴリ別アーカイブを整備。</div>
-      </div>
-      <div class="history-item">
-        <div class="history-year">2026</div>
-        <div class="history-desc">現在に至る。累計記事数400本超。</div>
-      </div>
-    </div>
-
-    <div class="about-section">
-      <h2>編集方針</h2>
-      <span class="en-note">— Editorial Policy</span>
-      <div class="policy-grid">
-        <div class="policy-item">
-          <div class="policy-num">01</div>
-          <p class="policy-title">広告なし・忖度なし</p>
-          <p class="policy-desc">いかなる企業・メーカーからも広告費を受け取らない。評価はすべて独自の判断による。</p>
-        </div>
-        <div class="policy-item">
-          <div class="policy-num">02</div>
-          <p class="policy-title">感想ではなく批評</p>
-          <p class="policy-desc">「面白い・つまらない」を超えた分析と解釈。理論的根拠のある批評を目指す。</p>
-        </div>
-        <div class="policy-item">
-          <div class="policy-num">03</div>
-          <p class="policy-title">作品への敬意</p>
-          <p class="policy-desc">批判的に読む場合も、作品と作者への敬意を忘れない。悪意ある批評は書かない。</p>
-        </div>
-        <div class="policy-item">
-          <div class="policy-num">04</div>
-          <p class="policy-title">読者との対話</p>
-          <p class="policy-desc">正解のない問いを共に考える姿勢。コメントや感想を歓迎する。</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-section">
-      <p class="contact-title">お問い合わせ・寄稿のご相談</p>
-      <p class="contact-desc">
-        取材・寄稿・コラボレーションのご相談は<br>
-        以下のフォームよりお気軽にどうぞ。
-      </p>
-      <a href="#" class="contact-btn">お問い合わせフォームへ</a>
-    </div>
-
+  <div class="about-section reveal">
+    <p class="about-label">CONCEPT</p>
+    <h2 class="about-h2">このサイトについて</h2>
+    <p class="about-p"><strong>「今までの記憶を、記録に変えたい。」</strong></p>
+    <p class="about-p">15年間、膨大な作品を見てきた。しかしその多くは記憶の中に溶けていくだけで、言語化されないまま消えていく。SEKAI LOGはその記憶を批評という形で定着させるための場所だ。</p>
+    <p class="about-p">新しい視点での情報提供を目指す。コンセプトは——<strong>「世界のログ」</strong>。</p>
   </div>
+
+  <div class="about-section reveal">
+    <p class="about-label">CONTACT</p>
+    <h2 class="about-h2">お問い合わせ</h2>
+    <p class="about-p">記事へのご意見・ご感想・取材・執筆依頼などはメールにてお気軽にどうぞ。</p>
+    <div class="contact-box">
+      <p>✉️ お問い合わせ・お仕事のご依頼</p>
+      <a href="mailto:yuki.work.11.11.22@gmail.com">yuki.work.11.11.22@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="about-section reveal">
+    <p class="about-label">NOTE</p>
+    <h2 class="about-h2">noteでも発信中</h2>
+    <div class="note-box">
+      <div class="note-box-text">
+        <h3>より深い考察・有料記事はnoteへ</h3>
+        <p>SEKAI LOGの記事をさらに掘り下げた考察や、有料コンテンツはnoteで展開予定。フォローしてお待ちください。</p>
+      </div>
+      <a href="https://note.com" target="_blank" rel="noopener" class="note-btn">noteを見る →</a>
+    </div>
+  </div>
+
 </div>
 
 <footer>
-  <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
+  <p class="footer-copy">© 2026 SEKAI LOG / 藤乃宮遊. All rights reserved.</p>
   <div class="footer-links">
     <a href="about.html">プロフィール</a>
-    <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="contact.html">お問い合わせ</a>
+    <a href="mailto:yuki.work.11.11.22@gmail.com">お問い合わせ</a>
   </div>
 </footer>
-
 <script src="shared.js"></script>
 </body>
 </html>

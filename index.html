@@ -3,111 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEKAI LOG — アニメ・SF・サブカル評論誌</title>
+<title>SEKAI LOG — アニメ・SF・サブカル批評誌</title>
+<meta name="description" content="SEKAI LOG（世界のログ）。SF・アニメ・小説・サブカルチャーを批評的に読み解く批評誌。藤乃宮遊が運営。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<style>
-  .hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; position:relative; overflow:hidden; }
-  .hero::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(245,240,232,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(245,240,232,0.03) 1px,transparent 1px); background-size:80px 80px; pointer-events:none; }
-  .hero-left { display:flex; flex-direction:column; justify-content:flex-end; padding:8rem 3rem 5rem; position:relative; }
-  .hero-label { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.3em; color:var(--accent); margin-bottom:2rem; display:flex; align-items:center; gap:1rem; animation:fadeUp 0.8s ease 0.2s both; }
-  .hero-label::before { content:''; display:block; width:40px; height:1px; background:var(--accent); }
-  .hero-title { font-family:'Shippori Mincho',serif; font-size:clamp(2.8rem,6vw,6rem); font-weight:700; line-height:1.1; letter-spacing:-0.02em; margin-bottom:2rem; animation:fadeUp 0.8s ease 0.4s both; }
-  .hero-title .accent { color:var(--accent); }
-  .hero-sub { font-size:0.9rem; line-height:2; color:var(--muted); max-width:400px; margin-bottom:3rem; animation:fadeUp 0.8s ease 0.6s both; }
-  .hero-cta { display:inline-flex; align-items:center; gap:1rem; font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; color:var(--paper); text-decoration:none; border:1px solid rgba(245,240,232,0.3); padding:1rem 2rem; transition:all 0.3s; animation:fadeUp 0.8s ease 0.8s both; align-self:flex-start; }
-  .hero-cta:hover { background:var(--paper); color:var(--ink); border-color:var(--paper); }
-  .hero-cta::after { content:'→'; }
-  .hero-right { position:relative; overflow:hidden; animation:fadeIn 1.2s ease 0.3s both; min-height:300px; }
-  .hero-visual { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
-  .visual-ring { position:absolute; border-radius:50%; border:1px solid rgba(123,47,255,0.3); animation:rotate linear infinite; }
-  .ring1{width:400px;height:400px;animation-duration:30s;} .ring2{width:280px;height:280px;border-color:rgba(200,16,46,0.2);animation-duration:20s;animation-direction:reverse;} .ring3{width:160px;height:160px;border-color:rgba(245,240,232,0.1);animation-duration:15s;}
-  @keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-  .visual-center { position:relative; z-index:1; text-align:center; }
-  .visual-kanji { font-family:'Shippori Mincho',serif; font-size:clamp(5rem,10vw,8rem); font-weight:900; line-height:1; background:linear-gradient(135deg,var(--paper) 0%,var(--glow) 60%,var(--accent) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  .visual-sub { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.4em; color:var(--muted); margin-top:1rem; }
-  .hero-right::after { content:''; position:absolute; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--glow),transparent); animation:scan 4s ease-in-out infinite; }
-  @keyframes scan{0%{top:0;opacity:0;}10%{opacity:0.6;}90%{opacity:0.6;}100%{top:100%;opacity:0;}}
-  .ticker { border-top:1px solid rgba(245,240,232,0.08); border-bottom:1px solid rgba(245,240,232,0.08); overflow:hidden; padding:0.8rem 0; background:rgba(245,240,232,0.02); }
-  .ticker-inner { display:flex; gap:4rem; animation:ticker 25s linear infinite; white-space:nowrap; }
-  .ticker-item { font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.15em; color:var(--muted); display:flex; align-items:center; gap:1rem; }
-  .ticker-item::before { content:'◆'; color:var(--accent); font-size:0.5rem; }
-  @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-  /* 注目記事グリッド */
-  .featured-grid { display:grid; grid-template-columns:2fr 1fr; grid-template-rows:auto auto; gap:1px; background:rgba(245,240,232,0.08); }
-  .card { background:var(--ink); padding:2.5rem; transition:background 0.3s; position:relative; overflow:hidden; text-decoration:none; color:inherit; display:block; }
-  .card::before { content:''; position:absolute; top:0; left:0; width:3px; height:0; background:var(--accent); transition:height 0.4s ease; }
-  .card:hover { background:rgba(245,240,232,0.02); }
-  .card:hover::before { height:100%; }
-  .card-tag { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.25em; color:var(--accent); margin-bottom:1.2rem; display:flex; align-items:center; gap:0.6rem; }
-  .card-tag::before { content:''; display:block; width:20px; height:1px; background:var(--accent); }
-  .card-title { font-family:'Shippori Mincho',serif; font-size:1.4rem; font-weight:700; line-height:1.5; margin-bottom:1rem; letter-spacing:0.03em; }
-  .card-main .card-title { font-size:2rem; }
-  .card-excerpt { font-size:0.82rem; line-height:2; color:var(--muted); margin-bottom:2rem; }
-  .card-meta { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:rgba(138,128,112,0.6); display:flex; gap:1.5rem; flex-wrap:wrap; }
-  .card-main { grid-row:span 2; }
-  .card-num { position:absolute; top:2rem; right:2.5rem; font-family:'Space Mono',monospace; font-size:4rem; font-weight:700; color:rgba(245,240,232,0.03); line-height:1; pointer-events:none; }
-
-  /* カテゴリ */
-  .categories { padding:5rem 3rem; background:rgba(245,240,232,0.02); border-top:1px solid rgba(245,240,232,0.06); }
-  .cat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(245,240,232,0.08); max-width:1400px; margin:0 auto; }
-  .cat-item { background:var(--ink); padding:2.5rem 2rem; display:flex; flex-direction:column; gap:1rem; transition:background 0.3s; text-decoration:none; color:inherit; }
-  .cat-item:hover { background:rgba(245,240,232,0.03); }
-  .cat-icon { font-size:2rem; line-height:1; }
-  .cat-name { font-family:'Shippori Mincho',serif; font-size:1.1rem; font-weight:700; letter-spacing:0.05em; }
-  .cat-count { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
-  .cat-arrow { margin-top:auto; font-size:0.75rem; color:var(--accent); opacity:0; transition:opacity 0.3s; }
-  .cat-item:hover .cat-arrow { opacity:1; }
-
-  /* 最新記事リスト */
-  .post-list { display:flex; flex-direction:column; }
-  .post-item { display:grid; grid-template-columns:80px 1fr auto; gap:2rem; align-items:start; padding:2rem 0; border-bottom:1px solid rgba(245,240,232,0.07); transition:padding-left 0.3s; text-decoration:none; color:inherit; }
-  .post-item:hover { padding-left:0.5rem; }
-  .post-num { font-family:'Space Mono',monospace; font-size:2rem; font-weight:700; color:rgba(245,240,232,0.06); line-height:1; padding-top:0.2rem; }
-  .post-tag { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; color:var(--accent); margin-bottom:0.5rem; }
-  .post-title { font-family:'Shippori Mincho',serif; font-size:1.05rem; font-weight:700; line-height:1.6; letter-spacing:0.02em; }
-  .post-date { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--muted); white-space:nowrap; padding-top:0.5rem; }
-
-  /* ニュースレター */
-  .newsletter { margin:0 3rem 5rem; border:1px solid rgba(245,240,232,0.1); padding:5rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; position:relative; overflow:hidden; }
-  .newsletter::before { content:'購読'; position:absolute; right:-1rem; top:50%; transform:translateY(-50%) rotate(90deg); font-family:'Shippori Mincho',serif; font-size:8rem; font-weight:900; color:rgba(245,240,232,0.02); white-space:nowrap; }
-  .nl-label { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.3em; color:var(--accent); margin-bottom:1.5rem; }
-  .nl-title { font-family:'Shippori Mincho',serif; font-size:2.2rem; font-weight:700; line-height:1.4; margin-bottom:1rem; }
-  .nl-sub { font-size:0.85rem; line-height:2; color:var(--muted); }
-  .nl-form { display:flex; }
-  .nl-input { flex:1; min-width:0; background:rgba(245,240,232,0.04); border:1px solid rgba(245,240,232,0.15); border-right:none; color:var(--paper); padding:1rem 1.5rem; font-family:'Noto Serif JP',serif; font-size:0.85rem; outline:none; }
-  .nl-input::placeholder { color:var(--muted); }
-  .nl-btn { background:var(--accent); border:1px solid var(--accent); color:var(--paper); padding:1rem 2rem; font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.2em; cursor:pointer; transition:all 0.3s; white-space:nowrap; }
-  .nl-btn:hover { background:var(--paper); color:var(--accent); }
-
-  .loading-placeholder { background:rgba(245,240,232,0.04); animation:shimmer 1.5s infinite; height:200px; }
-  @keyframes shimmer{0%{opacity:0.4;}50%{opacity:0.7;}100%{opacity:0.4;}}
-
-  @media(max-width:768px){
-    .hero{grid-template-columns:1fr;min-height:auto;}
-    .hero-left{padding:7rem 1.5rem 3rem;justify-content:flex-start;}
-    .hero-right{min-height:280px;}
-    .ring1{width:250px;height:250px;}.ring2{width:170px;height:170px;}.ring3{width:95px;height:95px;}
-    .featured-grid{grid-template-columns:1fr;}
-    .card-main{grid-row:span 1;} .card-main .card-title{font-size:1.6rem;}
-    .categories{padding:3rem 1.5rem;}
-    .cat-grid{grid-template-columns:repeat(2,1fr);}
-    .post-item{grid-template-columns:60px 1fr;} .post-date{display:none;}
-    .newsletter{grid-template-columns:1fr;padding:3rem 1.5rem;margin:0 1.5rem 3rem;gap:2rem;}
-    .nl-title{font-size:1.7rem;}
-  }
-  @media(max-width:480px){
-    .hero-left{padding:6rem 1.2rem 2.5rem;}
-    .card{padding:1.8rem 1.2rem;} .cat-item{padding:1.5rem 1rem;}
-    .nl-form{flex-direction:column;}
-    .nl-input{border-right:1px solid rgba(245,240,232,0.15);border-bottom:none;}
-    .nl-btn{width:100%;}
-    .newsletter{padding:2.5rem 1.2rem;margin:0 1.2rem 3rem;}
-  }
-</style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EKFMMWGGZ"></script>
 <script>
@@ -116,6 +17,96 @@
   gtag("js", new Date());
   gtag("config", "G-2EKFMMWGGZ");
 </script>
+<style>
+  .hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size:80px 80px; pointer-events:none; }
+  .hero-left { display:flex; flex-direction:column; justify-content:flex-end; padding:8rem 3rem 5rem; position:relative; }
+  .hero-label { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.3em; color:var(--accent); margin-bottom:2rem; display:flex; align-items:center; gap:1rem; animation:fadeUp 0.8s ease 0.2s both; }
+  .hero-label::before { content:''; display:block; width:40px; height:1px; background:var(--accent); }
+  .hero-title { font-family:'Shippori Mincho',serif; font-size:clamp(2.5rem,5.5vw,5.5rem); font-weight:700; line-height:1.15; letter-spacing:-0.01em; margin-bottom:2rem; animation:fadeUp 0.8s ease 0.4s both; }
+  .hero-title .accent { color:var(--accent); }
+  .hero-sub { font-size:0.9rem; line-height:2.1; color:var(--paper2); max-width:420px; margin-bottom:3rem; animation:fadeUp 0.8s ease 0.6s both; }
+  .hero-cta { display:inline-flex; align-items:center; gap:1rem; font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; color:var(--paper); text-decoration:none; border:1px solid rgba(237,232,223,0.3); padding:1rem 2rem; transition:all 0.3s; animation:fadeUp 0.8s ease 0.8s both; align-self:flex-start; }
+  .hero-cta:hover { background:var(--paper); color:var(--ink); }
+  .hero-cta::after { content:'→'; }
+  .hero-right { position:relative; overflow:hidden; animation:fadeIn 1.2s ease 0.3s both; min-height:300px; }
+  .hero-visual { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+  .visual-ring { position:absolute; border-radius:50%; border:1px solid rgba(123,47,255,0.25); animation:rotate linear infinite; }
+  .ring1{width:400px;height:400px;animation-duration:30s;} .ring2{width:280px;height:280px;border-color:rgba(200,16,46,0.18);animation-duration:20s;animation-direction:reverse;} .ring3{width:160px;height:160px;border-color:rgba(237,232,223,0.08);animation-duration:15s;}
+  @keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+  .visual-center { position:relative; z-index:1; text-align:center; }
+  /* 「世界」筆文字フォント */
+  .visual-kanji { font-family:'Zen Antique Soft',serif; font-size:clamp(5rem,10vw,8rem); line-height:1; background:linear-gradient(135deg,var(--paper) 0%,var(--glow) 60%,var(--accent) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .visual-sub { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.4em; color:var(--muted); margin-top:1rem; }
+  .hero-right::after { content:''; position:absolute; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--glow),transparent); animation:scan 4s ease-in-out infinite; }
+  @keyframes scan{0%{top:0;opacity:0;}10%{opacity:0.5;}90%{opacity:0.5;}100%{top:100%;opacity:0;}}
+
+  /* ティッカー */
+  .ticker { border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden; padding:0.75rem 0; background:rgba(237,232,223,0.02); }
+  .ticker-inner { display:flex; gap:4rem; animation:ticker 30s linear infinite; white-space:nowrap; }
+  .ticker-item { font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; color:var(--muted); display:flex; align-items:center; gap:0.8rem; }
+  .ticker-item::before { content:'◆'; color:var(--accent); font-size:0.45rem; }
+  @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* 注目記事 */
+  .featured-grid { display:grid; grid-template-columns:2fr 1fr; grid-template-rows:auto auto; gap:1px; background:var(--border); }
+  .card { background:var(--card); padding:2.5rem; transition:background 0.25s; position:relative; overflow:hidden; text-decoration:none; color:inherit; display:block; }
+  .card::before { content:''; position:absolute; top:0; left:0; width:3px; height:0; background:var(--accent); transition:height 0.35s ease; }
+  .card:hover { background:#222230; }
+  .card:hover::before { height:100%; }
+  .card-tag { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.22em; color:var(--accent); margin-bottom:1.2rem; display:flex; align-items:center; gap:0.6rem; }
+  .card-tag::before { content:''; display:block; width:20px; height:1px; background:var(--accent); }
+  .card-title { font-family:'Shippori Mincho',serif; font-size:1.35rem; font-weight:700; line-height:1.55; margin-bottom:1rem; color:var(--paper); }
+  .card-main .card-title { font-size:1.9rem; }
+  .card-excerpt { font-size:0.82rem; line-height:2; color:var(--paper2); margin-bottom:2rem; }
+  .card-meta { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--muted); display:flex; gap:1.5rem; flex-wrap:wrap; }
+  .card-main { grid-row:span 2; }
+  .card-num { position:absolute; top:2rem; right:2.5rem; font-family:'Space Mono',monospace; font-size:4rem; font-weight:700; color:rgba(237,232,223,0.03); line-height:1; pointer-events:none; }
+
+  /* カテゴリ */
+  .categories { padding:5rem 3rem; background:rgba(237,232,223,0.015); border-top:1px solid var(--border); }
+  .cat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); max-width:1400px; margin:0 auto; }
+  .cat-item { background:var(--card); padding:2.5rem 2rem; display:flex; flex-direction:column; gap:0.8rem; transition:background 0.25s; text-decoration:none; color:inherit; }
+  .cat-item:hover { background:#222230; }
+  .cat-icon { font-size:1.8rem; line-height:1; }
+  .cat-name { font-family:'Shippori Mincho',serif; font-size:1.05rem; font-weight:700; color:var(--paper); }
+  .cat-count { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; color:var(--muted); }
+  .cat-arrow { margin-top:auto; font-size:0.75rem; color:var(--accent); opacity:0; transition:opacity 0.25s; }
+  .cat-item:hover .cat-arrow { opacity:1; }
+
+  /* 最新記事リスト */
+  .post-list { display:flex; flex-direction:column; }
+  .post-item { display:grid; grid-template-columns:70px 1fr auto; gap:1.8rem; align-items:start; padding:1.8rem 0; border-bottom:1px solid var(--border); transition:padding-left 0.25s; text-decoration:none; color:inherit; }
+  .post-item:hover { padding-left:0.5rem; }
+  .post-num { font-family:'Space Mono',monospace; font-size:1.8rem; font-weight:700; color:rgba(237,232,223,0.05); line-height:1; padding-top:0.2rem; }
+  .post-tag { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--accent); margin-bottom:0.4rem; }
+  .post-title { font-family:'Shippori Mincho',serif; font-size:1.02rem; font-weight:700; line-height:1.65; color:var(--paper); }
+  .post-date { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; color:var(--muted); white-space:nowrap; padding-top:0.4rem; }
+
+  /* noteバナー */
+  .note-banner { margin:0 3rem 5rem; background:linear-gradient(135deg,rgba(123,47,255,0.1),rgba(200,16,46,0.06)); border:1px solid rgba(123,47,255,0.2); padding:3rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+  .note-banner-text p:first-child { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.3em; color:var(--glow); margin-bottom:0.8rem; }
+  .note-banner-text h3 { font-family:'Shippori Mincho',serif; font-size:1.6rem; font-weight:700; margin-bottom:0.6rem; }
+  .note-banner-text p:last-child { font-size:0.85rem; color:var(--paper2); line-height:1.9; }
+  .note-banner-btn { font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.2em; color:var(--paper); text-decoration:none; border:1px solid rgba(237,232,223,0.3); padding:1rem 2.2rem; transition:all 0.3s; white-space:nowrap; flex-shrink:0; }
+  .note-banner-btn:hover { background:var(--paper); color:var(--ink); }
+
+  @media(max-width:768px){
+    .hero{grid-template-columns:1fr;min-height:auto;}
+    .hero-left{padding:7rem 1.5rem 3rem;justify-content:flex-start;}
+    .hero-right{min-height:260px;}
+    .ring1{width:240px;height:240px;}.ring2{width:165px;height:165px;}.ring3{width:90px;height:90px;}
+    .featured-grid{grid-template-columns:1fr;} .card-main{grid-row:span 1;} .card-main .card-title{font-size:1.5rem;}
+    .categories{padding:3rem 1.5rem;} .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .post-item{grid-template-columns:50px 1fr;} .post-date{display:none;}
+    .note-banner{margin:0 1.5rem 3rem;padding:2rem 1.5rem;}
+  }
+  @media(max-width:480px){
+    .hero-left{padding:6rem 1.2rem 2.5rem;}
+    .card{padding:1.8rem 1.2rem;} .cat-item{padding:1.5rem 1rem;}
+    .note-banner{margin:0 1.2rem 3rem;}
+  }
+</style>
 </head>
 <body>
 
@@ -144,7 +135,7 @@
   <div class="hero-left">
     <p class="hero-label">SEKAI LOG — 批評誌</p>
     <h1 class="hero-title">虚構の<span class="accent">地平</span>を<br>読み解く。</h1>
-    <p class="hero-sub">アニメ・小説・SF・サブカルチャーの深層を探る。<br>批評という名の羅針盤で、物語の宇宙を航行する。</p>
+    <p class="hero-sub">SF・アニメ・小説・サブカルチャーの深層を探る。<br>15年の記憶を、記録に変えるための批評の場。</p>
     <a href="all.html" class="hero-cta">最新記事を読む</a>
   </div>
   <div class="hero-right">
@@ -165,8 +156,6 @@
     <span class="ticker-item">LOADING...</span>
     <span class="ticker-item">LOADING...</span>
     <span class="ticker-item">LOADING...</span>
-    <span class="ticker-item">LOADING...</span>
-    <span class="ticker-item">LOADING...</span>
   </div>
 </div>
 
@@ -177,9 +166,8 @@
     <span class="section-en">FEATURED</span>
   </div>
   <div class="featured-grid reveal" id="featured-grid">
-    <div class="card card-main loading-placeholder"></div>
-    <div class="card loading-placeholder"></div>
-    <div class="card loading-placeholder"></div>
+    <div class="card card-main" style="grid-row:span 2;"></div>
+    <div class="card"></div><div class="card"></div>
   </div>
 </div>
 
@@ -190,7 +178,7 @@
       <h2 class="section-title">カテゴリ</h2>
       <span class="section-en">CATEGORIES</span>
     </div>
-    <div class="cat-grid reveal" id="cat-grid">
+    <div class="cat-grid reveal">
       <a href="anime.html" class="cat-item"><span class="cat-icon">🎌</span><span class="cat-name">アニメ評論</span><span class="cat-count" id="count-anime">— 記事</span><span class="cat-arrow">→</span></a>
       <a href="novel.html" class="cat-item"><span class="cat-icon">📖</span><span class="cat-name">小説・文学</span><span class="cat-count" id="count-novel">— 記事</span><span class="cat-arrow">→</span></a>
       <a href="sf.html" class="cat-item"><span class="cat-icon">🚀</span><span class="cat-name">SF・ファンタジー</span><span class="cat-count" id="count-sf">— 記事</span><span class="cat-arrow">→</span></a>
@@ -199,7 +187,7 @@
   </div>
 </div>
 
-<!-- RECENT POSTS -->
+<!-- RECENT -->
 <div class="section">
   <div class="section-header reveal">
     <h2 class="section-title">最新記事</h2>
@@ -208,128 +196,99 @@
   <div class="post-list reveal" id="recent-posts">
     <div style="padding:2rem 0;color:var(--muted);font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.2em;">LOADING...</div>
   </div>
+  <div style="text-align:center;margin-top:3rem;">
+    <a href="all.html" style="font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;color:var(--paper2);text-decoration:none;border:1px solid var(--border);padding:0.9rem 2.5rem;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--paper)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--paper2)';">全記事を見る →</a>
+  </div>
 </div>
 
-<!-- NEWSLETTER -->
-<div class="newsletter reveal">
-  <div>
-    <p class="nl-label">NEWSLETTER</p>
-    <h3 class="nl-title">新着評論を、<br>いち早く届ける。</h3>
-    <p class="nl-sub">毎週火曜日、厳選された評論・レビューをお届けします。<br>広告なし。独自の批評眼だけを。</p>
+<!-- NOTE BANNER -->
+<div class="note-banner reveal">
+  <div class="note-banner-text">
+    <p>NOTE</p>
+    <h3>より深い考察はnoteへ</h3>
+    <p>SEKAI LOGの記事をさらに掘り下げた有料コンテンツはnoteで展開予定。フォローしてお待ちください。</p>
   </div>
-  <div>
-    <div class="nl-form">
-      <input type="email" class="nl-input" placeholder="your@email.com">
-      <button class="nl-btn">購読する</button>
-    </div>
-    <p style="font-size:0.7rem;color:var(--muted);margin-top:1rem;line-height:1.8;">登録することで、プライバシーポリシーに同意したものとみなします。いつでも解除できます。</p>
-  </div>
+  <a href="https://note.com" target="_blank" rel="noopener" class="note-banner-btn">noteを見る →</a>
 </div>
 
 <footer>
-  <p class="footer-copy">© 2026 SEKAI LOG. All rights reserved.</p>
+  <p class="footer-copy">© 2026 SEKAI LOG / 藤乃宮遊. All rights reserved.</p>
   <div class="footer-links">
     <a href="about.html">プロフィール</a>
     <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="contact.html">お問い合わせ</a>
+    <a href="mailto:yuki.work.11.11.22@gmail.com">お問い合わせ</a>
   </div>
 </footer>
 
 <script src="shared.js"></script>
 <script src="cms.js"></script>
 <script>
-  const CATEGORIES = ['anime', 'novel', 'sf', 'subculture', 'review'];
+  const CATEGORIES = ['anime','novel','sf','subculture','review'];
 
-  // ティッカー更新
   function updateTicker(articles) {
     const ticker = document.getElementById('ticker-inner');
     if (!articles.length) return;
     const items = [...articles, ...articles].map(a =>
-      `<span class="ticker-item">${CAT_LABELS[a.category] || ''}：${a.title || ''}</span>`
+      `<span class="ticker-item">${CAT_LABELS[a.category]||''}：${a.title||''}</span>`
     ).join('');
     ticker.innerHTML = items;
   }
 
-  // 注目記事（最新記事からランダムに3件）
   function renderFeatured(articles) {
-    const pool = articles.slice(0, Math.min(10, articles.length));
-    const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, 3);
     const grid = document.getElementById('featured-grid');
-    if (!shuffled.length) { grid.innerHTML = '<div class="card card-main" style="padding:3rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;grid-row:span 2;">まだ記事がありません</div>'; return; }
-
+    const pool = articles.slice(0, Math.min(12, articles.length));
+    const shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, 3);
+    if (!shuffled.length) { grid.innerHTML = '<div class="card card-main" style="grid-row:span 2;padding:3rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;">まだ記事がありません</div>'; return; }
     const [main, ...rest] = shuffled;
-    const mainUrl = `article.html?category=${main.category}&slug=${main.slug}`;
-    let html = `
-      <a href="${mainUrl}" class="card card-main">
-        <span class="card-num">01</span>
-        <p class="card-tag">${CAT_LABELS[main.category] || ''} / ${DECADE_LABELS[main.decade] || ''}</p>
-        <h3 class="card-title">${main.title || ''}</h3>
-        <p class="card-excerpt">${main.excerpt || ''}</p>
-        <div class="card-meta"><span>${formatDate(main.date)}</span><span>${main.readtime || ''}</span></div>
+    let html = `<a href="article.html?category=${main.category}&slug=${main.slug}" class="card card-main">
+      <span class="card-num">01</span>
+      <p class="card-tag">${CAT_LABELS[main.category]||''} / ${DECADE_LABELS[main.decade]||''}</p>
+      <h3 class="card-title">${main.title||''}</h3>
+      <p class="card-excerpt">${main.excerpt||''}</p>
+      <div class="card-meta"><span>${formatDate(main.date)}</span><span>${main.readtime||''}</span></div>
+    </a>`;
+    rest.forEach((a,i) => {
+      html += `<a href="article.html?category=${a.category}&slug=${a.slug}" class="card">
+        <span class="card-num">0${i+2}</span>
+        <p class="card-tag">${CAT_LABELS[a.category]||''}</p>
+        <h3 class="card-title">${a.title||''}</h3>
+        <p class="card-excerpt">${a.excerpt||''}</p>
+        <div class="card-meta"><span>${formatDate(a.date)}</span></div>
       </a>`;
-    rest.forEach((a, i) => {
-      const url = `article.html?category=${a.category}&slug=${a.slug}`;
-      html += `
-        <a href="${url}" class="card">
-          <span class="card-num">0${i+2}</span>
-          <p class="card-tag">${CAT_LABELS[a.category] || ''}</p>
-          <h3 class="card-title">${a.title || ''}</h3>
-          <p class="card-excerpt">${a.excerpt || ''}</p>
-          <div class="card-meta"><span>${formatDate(a.date)}</span><span>${a.readtime || ''}</span></div>
-        </a>`;
     });
     grid.innerHTML = html;
   }
 
-  // 最新記事リスト
   function renderRecent(articles) {
     const list = document.getElementById('recent-posts');
     const latest = articles.slice(0, 8);
     if (!latest.length) { list.innerHTML = '<div style="padding:2rem 0;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;">まだ記事がありません</div>'; return; }
-    list.innerHTML = latest.map((a, i) => {
-      const url = `article.html?category=${a.category}&slug=${a.slug}`;
-      return `
-        <a href="${url}" class="post-item">
-          <div class="post-num">0${i+1}</div>
-          <div>
-            <p class="post-tag">${CAT_LABELS[a.category] || ''}</p>
-            <p class="post-title">${a.title || ''}</p>
-          </div>
-          <div class="post-date">${formatDate(a.date)}</div>
-        </a>`;
-    }).join('');
+    list.innerHTML = latest.map((a,i) => `
+      <a href="article.html?category=${a.category}&slug=${a.slug}" class="post-item">
+        <div class="post-num">0${i+1}</div>
+        <div><p class="post-tag">${CAT_LABELS[a.category]||''}</p><p class="post-title">${a.title||''}</p></div>
+        <div class="post-date">${formatDate(a.date)}</div>
+      </a>`).join('');
   }
 
-  // カテゴリ記事数更新
-  function updateCounts(countMap) {
-    Object.entries(countMap).forEach(([cat, count]) => {
+  function updateCounts(all) {
+    CATEGORIES.forEach(cat => {
       const el = document.getElementById('count-' + cat);
-      if (el) el.textContent = count + ' 記事';
+      if (el) el.textContent = all.filter(a => a.category === cat).length + ' 記事';
     });
   }
 
-  // 全記事を並行取得
-  async function loadAll() {
-    const results = await Promise.all(CATEGORIES.map(c => fetchArticles(c)));
-    const countMap = {};
-    CATEGORIES.forEach((c, i) => { countMap[c] = results[i].length; });
-    const allArticles = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
+  fetchAllLatest(100).then(all => {
+    updateCounts(all);
+    updateTicker(all);
+    renderFeatured(all);
+    renderRecent(all);
+  });
 
-    updateCounts(countMap);
-    updateTicker(allArticles);
-    renderFeatured(allArticles);
-    renderRecent(allArticles);
-  }
-
-  loadAll();
-
-  // Netlify Identity
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
-      }
+      if (!user) window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
     });
   }
 </script>

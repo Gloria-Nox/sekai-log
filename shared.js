@@ -1,8 +1,9 @@
 // ═══════════════════════════
-// SEKAI LOG — 共通JS
+// SEKAI LOG v8 — 共通JS
 // ═══════════════════════════
 
 document.addEventListener('DOMContentLoaded', () => {
+
   // スクロールフェードイン
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => entry.target.classList.add('visible'), i * 80);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
 
   // ハンバーガーメニュー
@@ -19,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('main-nav');
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      nav.classList.toggle('open');
-      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+      const isOpen = nav.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // モバイル：カテゴリ名タップでドロップダウン開閉
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // ドロップダウン内のリンクでメニューを閉じる
+    // ドロップダウン内リンクでメニューを閉じる
     nav.querySelectorAll('.dropdown a').forEach(a => {
       a.addEventListener('click', () => {
         toggle.classList.remove('open');
@@ -46,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // カテゴリナビのアクティブ状態
-  const catNavLinks = document.querySelectorAll('.cat-nav a');
   const currentPage = location.pathname.split('/').pop() || 'index.html';
-  catNavLinks.forEach(a => {
+  document.querySelectorAll('.cat-nav a').forEach(a => {
     const href = a.getAttribute('href').split('?')[0];
     if (href === currentPage) a.classList.add('active');
   });
+
 });
