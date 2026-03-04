@@ -21,7 +21,7 @@
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
     <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="sf.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
     <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
     <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
@@ -32,7 +32,7 @@
 </header>
 <div class="page-hero">
   <p class="page-hero-label">CATEGORY</p>
-  <h1 class="page-hero-title"><span class="accent">小説</span>・文学</h1>
+  <h1 class="page-hero-title"><span class="accent">SF</span>・ファンタジー</h1>
   <p class="page-hero-sub">科学と想像力の境界線——未来を先取りした物語たち。<br>国内外のSF・ファンタジーを批評的に読み解く。</p>
 </div>
 <div class="section">
@@ -52,10 +52,10 @@
     <a href="about.html">プロフィール</a>
     <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="mailto:yuki.work.11.11.22@gmail.com">お問い合わせ</a>
+    <a href="/cdn-cgi/l/email-protection#dba2aeb0b2f5acb4a9b0f5eaeaf5eaeaf5e9e99bbcb6bab2b7f5b8b4b6">お問い合わせ</a>
   </div>
 </footer>
-<script src="shared.js"></script><script src="cms.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script><script src="cms.js"></script>
 <script>
   let allArticles = [];
   const grid = document.getElementById('articles-grid');
@@ -67,9 +67,4 @@
     countEl.textContent = filtered.length + ' 記事';
   }
   document.querySelectorAll('.filter-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); renderArticles(btn.dataset.decade); }); });
-  if (decadeParam) document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.decade === decadeParam));
-  showLoading(grid);
-  fetchArticles('sf').then(articles => { allArticles = articles; renderArticles(decadeParam || 'all'); });
-</script>
-</body>
-</html>
+  if (decadeParam) document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.decade === decadePara

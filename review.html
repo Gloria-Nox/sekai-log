@@ -23,7 +23,7 @@
     <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
     <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
     <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="review.html">サブカル</a></li>
+    <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
   </ul>
@@ -45,18 +45,13 @@
     <a href="about.html">プロフィール</a>
     <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="mailto:yuki.work.11.11.22@gmail.com">お問い合わせ</a>
+    <a href="/cdn-cgi/l/email-protection#7a030f1113540d150811544b4b544b4b5448483a1d171b131654191517">お問い合わせ</a>
   </div>
 </footer>
-<script src="shared.js"></script><script src="cms.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script><script src="cms.js"></script>
 <script>
   const grid = document.getElementById('articles-grid');
   const countEl = document.getElementById('article-count');
   showLoading(grid);
   fetchArticles('review').then(articles => {
-    grid.innerHTML = articles.length === 0 ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事がありません</div>' : articles.map(a => articleCardHTML(a)).join('');
-    countEl.textContent = articles.length + ' 記事';
-  });
-</script>
-</body>
-</html>
+    grid.innerHTML = articles.length === 0 ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事が�
