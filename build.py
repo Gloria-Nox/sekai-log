@@ -3,7 +3,7 @@ from datetime import datetime
 
 posts_dir = '_posts'
 categories = ['anime', 'novel', 'sf', 'subculture', 'review']
-SITE_URL = 'https://sekai-log.pages.dev'
+SITE_URL = 'https://sekai-log.com'
 
 def parse_frontmatter(text):
     lines = text.split('\n')
