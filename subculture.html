@@ -17,22 +17,30 @@
 </script>
 </head>
 <body>
-<!-- サイト横断ナビ -->
-<div style="background:#0a0d16;border-bottom:1px solid #1a1f2e;padding:0 22px;overflow-x:auto;">
-  <div style="max-width:1100px;margin:0 auto;display:flex;gap:0;">
-    <a href="https://sekai-log.com" style="font-family:monospace;font-size:10px;letter-spacing:.1em;color:#c8102e;padding:7px 14px;text-decoration:none;border-bottom:2px solid #c8102e;white-space:nowrap;">&#128240; SEKAI LOG</a>
-    <span style="color:#1a2030;padding:7px 2px;font-size:12px;">/</span>
-    <a href="https://arknights.sekai-log.com" style="font-family:monospace;font-size:10px;letter-spacing:.1em;color:#5a7ab0;padding:7px 14px;text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;">&#127918; アークナイツ</a>
-    <span style="color:#1a2030;padding:7px 2px;font-size:12px;">/</span>
-    <span style="font-family:monospace;font-size:10px;letter-spacing:.1em;color:#2a3a50;padding:7px 14px;white-space:nowrap;cursor:not-allowed;">&#9876; ギルティギア <span style="font-size:9px;">(準備中)</span></span>
-  </div>
-</div>
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
-    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a>
+        <a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a>
+        <a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a>
+        <a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
     <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
@@ -40,31 +48,78 @@
   <a href="search.html" class="nav-search" title="検索">🔍</a>
   <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
 </header>
+
+<!-- カテゴリ横断ナビ -->
+<nav class="cat-nav">
+  <a href="all.html">すべて</a>
+  <a href="anime.html">アニメ</a>
+  <a href="novel.html">小説</a>
+  <a href="sf.html">SF</a>
+  <a href="subculture.html">サブカル</a>
+  <a href="review.html">評論</a>
+</nav>
+
 <div class="page-hero">
   <p class="page-hero-label">CATEGORY</p>
-  <h1 class="page-hero-title"><span class="accent">サブカル</span>チャー</h1>
-  <p class="page-hero-sub">主流に抗う文化の磁場——同人・ゲーム・音楽・映画。<br>周縁から世界を照らすカルチャーを深く掘り下げる。</p>
+  <h1 class="page-hero-title"><span class="accent">サブカル</span>評論</h1>
+  <p class="page-hero-sub">アニメ・ゲーム・マンガ——サブカルチャーの文化論。<br>批評の視点でポップカルチャーを読み解く。</p>
 </div>
+
 <div class="section">
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-decade="all">すべて</button>
+    <button class="filter-btn" data-decade="2020">2020年代</button>
+    <button class="filter-btn" data-decade="2010">2010年代</button>
+    <button class="filter-btn" data-decade="2000">2000年代</button>
+    <button class="filter-btn" data-decade="pre2000">2000年以前</button>
+  </div>
   <div class="articles-grid reveal" id="articles-grid"></div>
   <p id="article-count" style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--muted);margin-top:2rem;"></p>
 </div>
+
 <footer>
   <p class="footer-copy">© 2026 SEKAI LOG / 藤乃宮遊. All rights reserved.</p>
   <div class="footer-links">
     <a href="about.html">プロフィール</a>
     <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="/cdn-cgi/l/email-protection#bfc6cad4d691c8d0cdd4918e8e918e8e918d8dffd8d2ded6d391dcd0d2">お問い合わせ</a>
+    <a href="/cdn-cgi/l/email-protection#156c607e7c3b627a677e3b24243b24243b2727557278747c793b767a78">お問い合わせ</a>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script><script src="cms.js"></script>
+<script src="shared.js"></script><script src="cms.js"></script>
 <script>
+  let allArticles = [];
   const grid = document.getElementById('articles-grid');
   const countEl = document.getElementById('article-count');
-  showLoading(grid);
+  const params = new URLSearchParams(window.location.search);
+  const decadeParam = params.get('decade');
+
+  function renderArticles(decade) {
+    const filtered = (decade === 'all' || decade === 'latest') ? allArticles : allArticles.filter(a => a.decade === decade);
+    grid.innerHTML = filtered.length === 0
+      ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事がありません</div>'
+      : filtered.map(a => articleCardHTML(a)).join('');
+    countEl.textContent = filtered.length + ' 記事';
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderArticles(btn.dataset.decade);
+    });
+  });
+
   fetchArticles('subculture').then(articles => {
-    grid.innerHTML = articles.length === 0 ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事が�
+    allArticles = articles;
+    const activeDecade = decadeParam || 'all';
+    if (decadeParam) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.decade === decadeParam);
+      });
+    }
+    renderArticles(activeDecade);
+  });
 </script>
 </body>
 </html>
