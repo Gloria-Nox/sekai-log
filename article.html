@@ -204,4 +204,11 @@
   function copyUrl() {
     navigator.clipboard.writeText(location.href).then(() => {
       const btn = document.getElementById('copy-btn');
-      if (btn) { btn.textContent = '✓ コピーしました'; btn.classList.add('
+      if (btn) { btn.textContent = '✓ コピーしました';btn.classList.add('copy-done');
+        setTimeout(() => { btn.textContent = '🔗 URLをコピー'; btn.classList.remove('copy-done'); }, 2000);
+      }
+    });
+  }
+</script>
+</body>
+</html>

@@ -78,3 +78,6 @@
   }
   document.querySelectorAll('.filter-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); renderArticles(btn.dataset.decade); }); });
   if (decadeParam) document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.decade === decadeParam))
+</script>
+</body>
+</html>
