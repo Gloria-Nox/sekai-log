@@ -13,7 +13,7 @@
       <span class="network-label">SEKAI LOG NETWORK</span>
       <span class="network-sep">|</span>
       <a href="https://sekai-log.com" class="network-link network-link--active">📰 SEKAI LOG</a>
-      <a href="https://arknights.sekai-log.com" class="network-link network-link--game">🎮 アークナイツ</a>
+      <a href="https://log-ark.sekai-log.com" class="network-link network-link--game">🎮 アークナイツ</a>
       <span class="network-link network-link--soon">⚔️ ギルティギア <em>(準備中)</em></span>
     </div>`;
   document.body.insertBefore(nav, document.body.firstChild);
