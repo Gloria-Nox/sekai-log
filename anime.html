@@ -17,6 +17,16 @@
 </script>
 </head>
 <body>
+<!-- サイト横断ナビ -->
+<div style="background:#1a1a2e;border-bottom:1px solid #3a3a5a;padding:0 22px;overflow-x:auto;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;gap:0;align-items:center;">
+    <span style="font-family:monospace;font-size:9px;letter-spacing:.15em;color:#666;padding:8px 10px 8px 0;white-space:nowrap;">SEKAI LOG NETWORK</span>
+    <span style="color:#3a3a5a;padding:0 6px;font-size:12px;">|</span>
+    <a href="https://sekai-log.com" style="font-family:monospace;font-size:11px;letter-spacing:.08em;color:#e8e8f0;padding:8px 14px;text-decoration:none;background:#c8102e;white-space:nowrap;font-weight:bold;">📰 SEKAI LOG</a>
+    <a href="https://arknights.sekai-log.com" style="font-family:monospace;font-size:11px;letter-spacing:.08em;color:#7dd8f8;padding:8px 14px;text-decoration:none;border:1px solid #3a5a7a;margin-left:6px;white-space:nowrap;">🎮 アークナイツ</a>
+    <span style="font-family:monospace;font-size:11px;letter-spacing:.08em;color:#444;padding:8px 14px;border:1px solid #2a2a3a;margin-left:6px;white-space:nowrap;cursor:not-allowed;">⚔️ ギルティギア <span style="font-size:9px;color:#333;">(準備中)</span></span>
+  </div>
+</div>
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
@@ -52,7 +62,7 @@
 <!-- カテゴリ横断ナビ -->
 <nav class="cat-nav">
   <a href="all.html">すべて</a>
-  <a href="anime.html"  class="active">アニメ</a>
+  <a href="anime.html" class="active">アニメ</a>
   <a href="novel.html">小説</a>
   <a href="sf.html">SF</a>
   <a href="subculture.html">サブカル</a>
@@ -83,10 +93,21 @@
     <a href="about.html">プロフィール</a>
     <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="/cdn-cgi/l/email-protection#156c607e7c3b627a677e3b24243b24243b2727557278747c793b767a78">お問い合わせ</a>
+    <a href="/cdn-cgi/l/email-protection#324b47595b1c455d40591c03031c03031c000072555f535b5e1c515d5f">お問い合わせ</a>
   </div>
 </footer>
-<script src="shared.js"></script><script src="cms.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script><script src="cms.js">
+  fetchArticles('anime').then(articles => {
+    allArticles = articles;
+    const activeDecade = decadeParam || 'all';
+    if (decadeParam) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.decade === decadeParam);
+      });
+    }
+    renderArticles(activeDecade);
+  });
+</script>
 <script>
   let allArticles = [];
   const grid = document.getElementById('articles-grid');
@@ -110,16 +131,8 @@
     });
   });
 
-  fetchArticles('anime').then(articles => {
-    allArticles = articles;
-    const activeDecade = decadeParam || 'all';
-    if (decadeParam) {
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.decade === decadeParam);
-      });
-    }
-    renderArticles(activeDecade);
-  });
-</script>
+  if (decadeParam) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.decade === decadeParam));
+  }
 </body>
 </html>
