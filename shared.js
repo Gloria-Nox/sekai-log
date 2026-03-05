@@ -1,6 +1,23 @@
 // ═══════════════════════════
-// SEKAI LOG v8 — 共通JS
+// SEKAI LOG v9 — 共通JS
 // ═══════════════════════════
+
+// ── サイト横断ナビを自動注入（全ページ共通） ──
+(function() {
+  // すでにある場合は注入しない
+  if (document.querySelector('.site-network-nav')) return;
+  const nav = document.createElement('div');
+  nav.className = 'site-network-nav';
+  nav.innerHTML = `
+    <div class="site-network-inner">
+      <span class="network-label">SEKAI LOG NETWORK</span>
+      <span class="network-sep">|</span>
+      <a href="https://sekai-log.com" class="network-link network-link--active">📰 SEKAI LOG</a>
+      <a href="https://arknights.sekai-log.com" class="network-link network-link--game">🎮 アークナイツ</a>
+      <span class="network-link network-link--soon">⚔️ ギルティギア <em>(準備中)</em></span>
+    </div>`;
+  document.body.insertBefore(nav, document.body.firstChild);
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -25,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // モバイル：カテゴリ名タップでドロップダウン開閉
     nav.querySelectorAll('.nav-item > a').forEach(a => {
       a.addEventListener('click', (e) => {
         const dropdown = a.nextElementSibling;
@@ -36,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // ドロップダウン内リンクでメニューを閉じる
     nav.querySelectorAll('.dropdown a').forEach(a => {
       a.addEventListener('click', () => {
         toggle.classList.remove('open');
