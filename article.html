@@ -78,6 +78,16 @@
 </style>
 </head>
 <body>
+<!-- サイト横断ナビ -->
+<div style="background:#0a0d16;border-bottom:1px solid #1a1f2e;padding:0 22px;overflow-x:auto;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;gap:0;">
+    <a href="https://sekai-log.com" style="font-family:monospace;font-size:10px;letter-spacing:.1em;color:#c8102e;padding:7px 14px;text-decoration:none;border-bottom:2px solid #c8102e;white-space:nowrap;">&#128240; SEKAI LOG</a>
+    <span style="color:#1a2030;padding:7px 2px;font-size:12px;">/</span>
+    <a href="https://arknights.sekai-log.com" style="font-family:monospace;font-size:10px;letter-spacing:.1em;color:#5a7ab0;padding:7px 14px;text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;">&#127918; アークナイツ</a>
+    <span style="color:#1a2030;padding:7px 2px;font-size:12px;">/</span>
+    <span style="font-family:monospace;font-size:10px;letter-spacing:.1em;color:#2a3a50;padding:7px 14px;white-space:nowrap;cursor:not-allowed;">&#9876; ギルティギア <span style="font-size:9px;">(準備中)</span></span>
+  </div>
+</div>
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
@@ -102,11 +112,11 @@
     <a href="about.html">プロフィール</a>
     <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="mailto:yuki.work.11.11.22@gmail.com">お問い合わせ</a>
+    <a href="/cdn-cgi/l/email-protection#7b020e1012550c140910554a4a554a4a5549493b1c161a121755181416">お問い合わせ</a>
   </div>
 </footer>
 
-<script src="shared.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script>
 <script src="cms.js"></script>
 <script>
   const CAT_PAGES = {anime:'anime.html',novel:'novel.html',sf:'sf.html',subculture:'subculture.html',review:'review.html'};
@@ -194,9 +204,4 @@
   function copyUrl() {
     navigator.clipboard.writeText(location.href).then(() => {
       const btn = document.getElementById('copy-btn');
-      if (btn) { btn.textContent = '✓ コピーしました'; btn.classList.add('copy-done'); setTimeout(() => { btn.textContent = '🔗 URLをコピー'; btn.classList.remove('copy-done'); }, 2000); }
-    });
-  }
-</script>
-</body>
-</html>
+      if (btn) { btn.textContent = '✓ コピーしました'; btn.classList.add('
