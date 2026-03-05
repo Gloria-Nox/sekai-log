@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>評論 — SEKAI LOG</title>
+<title>批評・評論 — SEKAI LOG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
@@ -17,53 +17,109 @@
 </script>
 </head>
 <body>
-<!-- サイト横断ナビ -->
-<div style="background:#1a1a2e;border-bottom:1px solid #3a3a5a;padding:0 22px;overflow-x:auto;">
-  <div style="max-width:1100px;margin:0 auto;display:flex;gap:0;align-items:center;">
-    <span style="font-family:monospace;font-size:9px;letter-spacing:.15em;color:#666;padding:8px 10px 8px 0;white-space:nowrap;">SEKAI LOG NETWORK</span>
-    <span style="color:#3a3a5a;padding:0 6px;font-size:12px;">|</span>
-    <a href="https://sekai-log.com" style="font-family:monospace;font-size:11px;letter-spacing:.08em;color:#e8e8f0;padding:8px 14px;text-decoration:none;background:#c8102e;white-space:nowrap;font-weight:bold;">📰 SEKAI LOG</a>
-    <a href="https://arknights.sekai-log.com" style="font-family:monospace;font-size:11px;letter-spacing:.08em;color:#7dd8f8;padding:8px 14px;text-decoration:none;border:1px solid #3a5a7a;margin-left:6px;white-space:nowrap;">🎮 アークナイツ</a>
-    <span style="font-family:monospace;font-size:11px;letter-spacing:.08em;color:#444;padding:8px 14px;border:1px solid #2a2a3a;margin-left:6px;white-space:nowrap;cursor:not-allowed;">⚔️ ギルティギア <span style="font-size:9px;color:#333;">(準備中)</span></span>
-  </div>
-</div>
 <header>
   <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
   <ul class="main-nav" id="main-nav">
-    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="review.html">サブカル</a></li>
+    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a>
+        <a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a>
+        <a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a>
+      <div class="dropdown">
+        <a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
+        <a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a>
+        <a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="subculture.html">サブカル</a></li>
     <li class="nav-item"><a href="review.html">評論</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
   </ul>
   <a href="search.html" class="nav-search" title="検索">🔍</a>
   <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
 </header>
+
+<!-- カテゴリ横断ナビ -->
+<nav class="cat-nav">
+  <a href="all.html">すべて</a>
+  <a href="anime.html">アニメ</a>
+  <a href="novel.html">小説</a>
+  <a href="sf.html">SF</a>
+  <a href="subculture.html">サブカル</a>
+  <a href="review.html">評論</a>
+</nav>
+
 <div class="page-hero">
   <p class="page-hero-label">CATEGORY</p>
-  <h1 class="page-hero-title"><span class="accent">批評・<span class="accent">評論</span></h1>
-  <p class="page-hero-sub">単なる感想を超えた分析と解釈——思想・哲学・社会学の視点から<br>文化現象の本質に迫る本格的批評の場。</p>
+  <h1 class="page-hero-title"><span class="accent">評論</span>評論</h1>
+  <p class="page-hero-sub">作品を超えた批評——メタ的な視座で文化を論じる。<br>評論・エッセイ・考察の場。</p>
 </div>
+
 <div class="section">
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-decade="all">すべて</button>
+    <button class="filter-btn" data-decade="2020">2020年代</button>
+    <button class="filter-btn" data-decade="2010">2010年代</button>
+    <button class="filter-btn" data-decade="2000">2000年代</button>
+    <button class="filter-btn" data-decade="pre2000">2000年以前</button>
+  </div>
   <div class="articles-grid reveal" id="articles-grid"></div>
   <p id="article-count" style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--muted);margin-top:2rem;"></p>
 </div>
+
 <footer>
   <p class="footer-copy">© 2026 SEKAI LOG / 藤乃宮遊. All rights reserved.</p>
   <div class="footer-links">
     <a href="about.html">プロフィール</a>
     <a href="search.html">記事を検索</a>
     <a href="privacy.html">プライバシーポリシー</a>
-    <a href="/cdn-cgi/l/email-protection#95ece0fefcbbe2fae7febba4a4bba4a4bba7a7d5f2f8f4fcf9bbf6faf8">お問い合わせ</a>
+    <a href="/cdn-cgi/l/email-protection#156c607e7c3b627a677e3b24243b24243b2727557278747c793b767a78">お問い合わせ</a>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script><script src="cms.js"></script>
+<script src="shared.js"></script><script src="cms.js"></script>
 <script>
+  let allArticles = [];
   const grid = document.getElementById('articles-grid');
   const countEl = document.getElementById('article-count');
-  showLoading(grid);
+  const params = new URLSearchParams(window.location.search);
+  const decadeParam = params.get('decade');
+
+  function renderArticles(decade) {
+    const filtered = (decade === 'all' || decade === 'latest') ? allArticles : allArticles.filter(a => a.decade === decade);
+    grid.innerHTML = filtered.length === 0
+      ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事がありません</div>'
+      : filtered.map(a => articleCardHTML(a)).join('');
+    countEl.textContent = filtered.length + ' 記事';
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderArticles(btn.dataset.decade);
+    });
+  });
+
   fetchArticles('review').then(articles => {
-    grid.innerHTML = articles.length === 0 ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事が�
+    allArticles = articles;
+    const activeDecade = decadeParam || 'all';
+    if (decadeParam) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.decade === decadeParam);
+      });
+    }
+    renderArticles(activeDecade);
+  });
+</script>
 </body>
 </html>
