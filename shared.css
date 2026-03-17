@@ -290,6 +290,27 @@ footer::before {
 .footer-links a { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--muted); text-decoration:none; transition:color 0.2s; }
 .footer-links a:hover { color:var(--paper); }
 
+
+.writer-quick-link {
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:8500;
+  text-decoration:none;
+  font-family:'Space Mono',monospace;
+  font-size:0.62rem;
+  letter-spacing:0.14em;
+  color:var(--paper);
+  border:1px solid rgba(212,18,50,0.5);
+  background:rgba(9,9,26,0.92);
+  padding:0.65rem 0.9rem;
+  transition:all 0.2s;
+}
+.writer-quick-link:hover {
+  border-color:var(--accent);
+  background:rgba(212,18,50,0.2);
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp { from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);} }
 @keyframes fadeIn { from{opacity:0;}to{opacity:1;} }
@@ -321,6 +342,7 @@ footer::before {
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
   .page-hero { padding-top:calc(var(--network-h) + var(--header-h) + 2.5rem); padding-left:1.5rem; padding-right:1.5rem; }
+  .writer-quick-link { right:0.7rem; bottom:0.7rem; }
   .section { padding:3rem 1.5rem; }
   .articles-grid { grid-template-columns:1fr; }
   footer { padding:2rem 1.5rem; }

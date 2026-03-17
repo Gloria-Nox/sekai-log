@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>記事フォーマット生成ツール — SEKAI LOG</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .tool-wrap { max-width:980px; margin:0 auto; padding:calc(var(--network-h) + var(--header-h) + 2.8rem) 1.5rem 4rem; }
+  .gate,.tool { background:var(--card); border:1px solid var(--border2); padding:1.4rem; }
+  .tool { display:none; }
+  .f-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem; }
+  .f-grid .full { grid-column:1/-1; }
+  .label { display:block; font-size:0.7rem; color:var(--muted); margin-bottom:0.4rem; }
+  input,select,textarea { width:100%; background:#0b0b1a; border:1px solid var(--border2); color:var(--paper); padding:0.7rem; }
+  textarea { min-height:200px; }
+  .btn { margin-top:1rem; background:var(--accent); color:var(--paper); border:none; padding:0.7rem 1rem; cursor:pointer; }
+  .out { margin-top:1rem; white-space:pre-wrap; background:#060614; border:1px solid var(--border2); padding:0.9rem; }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
+  <ul class="main-nav" id="main-nav"><li class="nav-item"><a href="index.html">TOP</a></li><li class="nav-item"><a href="all.html">全記事</a></li></ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+<div class="tool-wrap">
+  <div class="gate" id="gate">
+    <p style="margin-bottom:.6rem;">編集者向けツールです。パスワードを入力してください。</p>
+    <input id="pw" type="password" placeholder="パスワード">
+    <button class="btn" id="unlock">解除</button>
+    <p id="msg" style="color:var(--accent2); margin-top:.6rem;"></p>
+  </div>
+
+  <div class="tool" id="tool">
+    <h1 style="font-size:1.2rem; margin-bottom:.7rem;">記事フォーマット生成</h1>
+    <div class="f-grid">
+      <div><label class="label">カテゴリ</label><select id="category"><option>anime</option><option>novel</option><option>sf</option><option>subculture</option><option>review</option></select></div>
+      <div><label class="label">slug（英数字ハイフン）</label><input id="slug" placeholder="my-article"></div>
+      <div><label class="label">タイトル</label><input id="title"></div>
+      <div><label class="label">公開日 (ISO)</label><input id="date" placeholder="2026-03-17T12:00:00.000+09:00"></div>
+      <div><label class="label">年代タグ（anime/novel/sfで推奨）</label><select id="decade"><option value="">(なし)</option><option value="2020">2020</option><option value="2010">2010</option><option value="2000">2000</option><option value="pre2000">pre2000</option></select></div>
+      <div><label class="label">読了時間</label><input id="readtime" placeholder="8"></div>
+      <div class="full"><label class="label">抜粋</label><textarea id="excerpt" style="min-height:90px"></textarea></div>
+      <div class="full"><label class="label">thumbnail（任意）</label><input id="thumbnail" placeholder="/images/uploads/example.jpg"></div>
+      <div class="full"><label class="label">本文 (Markdown)</label><textarea id="body"></textarea></div>
+    </div>
+    <button class="btn" id="gen">生成</button>
+    <button class="btn" id="copy" style="background:#333;">コピー</button>
+    <p id="filename" style="margin-top:.8rem;color:var(--paper2);"></p>
+    <div class="out" id="out"></div>
+  </div>
+</div>
+<script src="shared.js"></script>
+<script>
+  const gate = document.getElementById('gate');
+  const tool = document.getElementById('tool');
+  const msg = document.getElementById('msg');
+
+  document.getElementById('unlock').addEventListener('click', () => {
+    if (document.getElementById('pw').value === '1998') {
+      gate.style.display = 'none';
+      tool.style.display = 'block';
+      msg.textContent = '';
+    } else {
+      msg.textContent = 'パスワードが違います。';
+    }
+  });
+
+  function esc(s) {
+    return String(s || '').replace(/\r\n/g, '\n').trim();
+  }
+
+  document.getElementById('gen').addEventListener('click', () => {
+    const category = esc(document.getElementById('category').value);
+    const slug = esc(document.getElementById('slug').value || 'new-post');
+    const title = esc(document.getElementById('title').value);
+    const date = esc(document.getElementById('date').value) || new Date().toISOString();
+    const decade = esc(document.getElementById('decade').value);
+    const excerpt = esc(document.getElementById('excerpt').value);
+    const readtime = esc(document.getElementById('readtime').value);
+    const thumbnail = esc(document.getElementById('thumbnail').value);
+    const body = document.getElementById('body').value || '';
+
+    const d = date.slice(0, 10);
+    const fileName = `${d}-${slug}.md`;
+    const path = `_posts/${category}/${fileName}`;
+
+    const lines = ['---', `title: ${title}`, `date: ${date}`];
+    if (decade) lines.push(`decade: "${decade}"`);
+    lines.push(`excerpt: ${excerpt}`);
+    if (readtime) lines.push(`readtime: "${readtime}"`);
+    if (thumbnail) lines.push(`thumbnail: "${thumbnail}"`);
+    lines.push('---', '', body);
+
+    document.getElementById('filename').textContent = '保存先: ' + path;
+    document.getElementById('out').textContent = lines.join('\n');
+  });
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    const txt = document.getElementById('out').textContent;
+    if (!txt) return;
+    await navigator.clipboard.writeText(txt);
+  });
+</script>
+</body>
+</html>
