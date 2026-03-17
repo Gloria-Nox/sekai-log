@@ -40,13 +40,35 @@ async function fetchAllLatest(limit = 100) {
 // キーワード検索
 async function searchArticles(query) {
   if (!query || !query.trim()) return [];
-  const q = query.trim().toLowerCase();
+  const q = normalizeText(query.trim());
   const all = await loadAllArticles();
-  return all.filter(a =>
-    (a.title || '').toLowerCase().includes(q) ||
-    (a.excerpt || '').toLowerCase().includes(q) ||
-    (CAT_LABELS[a.category] || '').includes(q)
-  );
+  const scored = all.map(a => {
+    const title = normalizeText(a.title || '');
+    const excerpt = normalizeText(a.excerpt || '');
+    const content = normalizeText(a.content || '');
+    const categoryLabel = normalizeText(CAT_LABELS[a.category] || '');
+    const decadeLabel = normalizeText(DECADE_LABELS[a.decade] || '');
+
+    let score = 0;
+    if (title.includes(q)) score += 8;
+    if (excerpt.includes(q)) score += 5;
+    if (categoryLabel.includes(q)) score += 3;
+    if (decadeLabel.includes(q)) score += 2;
+    if (content.includes(q)) score += 1;
+
+    return { article: a, score };
+  }).filter(x => x.score > 0);
+
+  scored.sort((x, y) => {
+    if (y.score !== x.score) return y.score - x.score;
+    return String(y.article.date || '').localeCompare(String(x.article.date || ''));
+  });
+
+  return scored.map(x => x.article);
+}
+
+function normalizeText(text) {
+  return String(text || '').normalize('NFKC').toLowerCase();
 }
 
 // 日付フォーマット
