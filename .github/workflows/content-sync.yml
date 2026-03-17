@@ -1,0 +1,38 @@
+name: Content Sync Build
+
+on:
+  push:
+    branches: ["main", "work"]
+    paths:
+      - "_posts/**"
+      - "build.py"
+      - ".github/workflows/content-sync.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-generated-files:
+    if: "!contains(github.event.head_commit.message, '[skip content-sync]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build JSON/sitemap/robots
+        run: python build.py
+      - name: Commit generated files
+        run: |
+          if git diff --quiet articles.json sitemap.xml robots.txt; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles.json sitemap.xml robots.txt
+          git commit -m "chore: sync generated content files [skip content-sync]"
+          git push

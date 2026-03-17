@@ -290,6 +290,15 @@ footer::before {
 .footer-links a { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--muted); text-decoration:none; transition:color 0.2s; }
 .footer-links a:hover { color:var(--paper); }
 
+
+.writer-footer-link {
+  color: var(--accent) !important;
+  border-bottom: 1px solid transparent;
+}
+.writer-footer-link:hover {
+  border-bottom-color: var(--accent);
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp { from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);} }
 @keyframes fadeIn { from{opacity:0;}to{opacity:1;} }

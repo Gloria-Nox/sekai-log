@@ -69,8 +69,7 @@
 <div class="contact-body">
   <p class="form-note">通常2〜3営業日以内にご返信いたします。スパム防止のため、内容によってはご返信できない場合があります。</p>
 
-  <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/thanks.html">
-    <input type="hidden" name="form-name" value="contact">
+  <form class="contact-form" id="contact-form">
     <div class="form-group">
       <label class="form-label" for="name">お名前</label>
       <input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
@@ -99,6 +98,20 @@
     <a href="contact.html">お問い合わせ</a>
   </div>
 </footer>
+
 <script src="shared.js"></script>
+<script>
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim() || 'SEKAI LOG お問い合わせ';
+    const message = document.getElementById('message').value.trim();
+    const body = `お名前: ${name}\nメール: ${email}\n\n${message}`;
+    window.location.href = `mailto:contact@sekai-log.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setTimeout(() => { window.location.href = 'thanks.html'; }, 300);
+  });
+</script>
 </body>
 </html>
