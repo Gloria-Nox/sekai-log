@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>記事フォーマット生成ツール — SEKAI LOG</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .tool-wrap {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: calc(var(--network-h) + var(--header-h) + 2.2rem) 1.2rem 4rem;
+  }
+  .tool-lead {
+    margin-bottom: 1rem;
+    color: #2a2a2a;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  .gate,
+  .tool {
+    background: #f7f7f9;
+    border: 1px solid #dadbe3;
+    color: #1f2230;
+    padding: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .tool { display: none; }
+  .writer-grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 540px) minmax(320px, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .pane {
+    background: #fff;
+    border: 1px solid #dddfea;
+    padding: 1rem;
+  }
+  .f-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  .f-grid .full { grid-column: 1 / -1; }
+  .label {
+    display: block;
+    font-size: 0.73rem;
+    color: #5d637a;
+    margin-bottom: 0.35rem;
+  }
+  input, select, textarea {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cfd3e1;
+    color: #1f2230;
+    padding: 0.65rem;
+    border-radius: 6px;
+  }
+  textarea { min-height: 140px; }
+  #body { min-height: 220px; }
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+  }
+  .btn {
+    background: #2a61ff;
+    color: #fff;
+    border: none;
+    padding: 0.62rem 0.9rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.8rem;
+  }
+  .btn.secondary { background: #4d5466; }
+  .btn.success { background: #0b8d5f; }
+  .map-box {
+    margin-top: 0.8rem;
+    background: #f0f4ff;
+    border: 1px solid #d1dcff;
+    padding: 0.8rem;
+    font-size: 0.78rem;
+    line-height: 1.8;
+  }
+  .out {
+    margin-top: 0.6rem;
+    white-space: pre-wrap;
+    background: #fbfbfd;
+    border: 1px solid #d8dbe8;
+    padding: 0.8rem;
+    color: #222;
+    min-height: 130px;
+  }
+  .preview-wrap {
+    border: 1px solid #d8dbe8;
+    background: #fff;
+    min-height: 540px;
+    padding: 1rem;
+    color: #222;
+    overflow: auto;
+  }
+  .preview-wrap h1,.preview-wrap h2,.preview-wrap h3 { color:#111; margin:0.8rem 0 0.5rem; }
+  .preview-wrap p { line-height: 1.85; margin: 0.6rem 0; }
+  .preview-wrap img { max-width: 100%; border:1px solid #e1e1e1; margin: 0.7rem 0; }
+  .preview-meta {
+    font-size: 0.78rem;
+    color: #65708c;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #eceff8;
+    padding-bottom: 0.6rem;
+  }
+  @media (max-width: 1000px) {
+    .writer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
+  <ul class="main-nav" id="main-nav"><li class="nav-item"><a href="index.html">TOP</a></li><li class="nav-item"><a href="all.html">全記事</a></li></ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<div class="tool-wrap">
+  <p class="tool-lead">投稿原稿を作って、<strong>Markdown（.md）をそのまま保存</strong>できます。<br>下のラベルはすべて日本語ですが、システムに必要な項目へ自動変換されます。</p>
+
+  <div class="gate" id="gate">
+    <p style="margin-bottom:.6rem;">編集者向けツールです。パスワードを入力してください。</p>
+    <input id="pw" type="password" placeholder="パスワード">
+    <button class="btn" id="unlock">解除</button>
+    <p id="msg" style="color:#d41232; margin-top:.6rem;"></p>
+  </div>
+
+  <div class="tool" id="tool">
+    <div class="writer-grid">
+      <div class="pane">
+        <h2 style="margin-bottom:.8rem;">入力フォーム</h2>
+        <div class="f-grid">
+          <div>
+            <label class="label">カテゴリ</label>
+            <select id="category">
+              <option value="anime">アニメ評論</option>
+              <option value="novel">小説・文学</option>
+              <option value="sf">SF・ファンタジー</option>
+              <option value="subculture">サブカルチャー</option>
+              <option value="review">評論</option>
+            </select>
+          </div>
+          <div><label class="label">スラッグ（URL用 英数字-）</label><input id="slug" placeholder="my-article"></div>
+          <div><label class="label">タイトル</label><input id="title"></div>
+          <div><label class="label">公開日 (ISO)</label><input id="date" placeholder="2026-03-17T12:00:00.000+09:00"></div>
+          <div>
+            <label class="label">年代タグ（アニメ/小説/SFで使用）</label>
+            <select id="decade"><option value="">なし</option><option value="2020">2020年代</option><option value="2010">2010年代</option><option value="2000">2000年代</option><option value="pre2000">2000年以前</option></select>
+          </div>
+          <div><label class="label">読了時間（数字だけOK）</label><input id="readtime" placeholder="8"></div>
+          <div class="full"><label class="label">一覧用の説明文（抜粋）</label><textarea id="excerpt" style="min-height:90px"></textarea></div>
+          <div class="full"><label class="label">アイキャッチ画像URL（任意）</label><input id="thumbnail" placeholder="/images/uploads/example.jpg"></div>
+          <div class="full"><label class="label">本文（Markdown）</label><textarea id="body" placeholder="# 見出し\n本文\n\n![画像説明](/images/uploads/sample.jpg)"></textarea></div>
+        </div>
+
+        <div class="f-grid" style="margin-top:.8rem;">
+          <div class="full">
+            <label class="label">投稿API URL（Cloudflare Worker）</label>
+            <input id="api-endpoint" placeholder="https://xxxxx.workers.dev/publish">
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn" id="gen">フォーマット生成</button>
+          <button class="btn success" id="download">.md をダウンロード</button>
+          <button class="btn secondary" id="copy">コピー</button>
+          <button class="btn" id="publish" style="background:#b2183e;">GitHubへ投稿</button>
+        </div>
+
+        <p id="filename" style="margin-top:.8rem;color:#555;"></p>
+        <p id="publish-status" style="margin-top:.3rem;font-size:.8rem;color:#6b7288;"></p>
+        <div class="out" id="out"></div>
+
+        <div class="map-box">
+          <strong>項目の対応（日本語 → システム内部）</strong><br>
+          カテゴリ → <code>category</code> / タイトル → <code>title</code> / 公開日 → <code>date</code><br>
+          年代タグ → <code>decade</code> / 説明文 → <code>excerpt</code> / 読了時間 → <code>readtime</code><br>
+          アイキャッチ画像URL → <code>thumbnail</code> / 本文 → Markdown本文
+        </div>
+      </div>
+
+      <div class="pane">
+        <h2 style="margin-bottom:.8rem;">完成プレビュー（同時表示）</h2>
+        <div class="preview-wrap" id="preview"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="shared.js"></script>
+<script>
+  const gate = document.getElementById('gate');
+  const tool = document.getElementById('tool');
+  const msg = document.getElementById('msg');
+  const preview = document.getElementById('preview');
+  const publishStatus = document.getElementById('publish-status');
+  const endpointInput = document.getElementById('api-endpoint');
+  const WRITER_API_ENDPOINT = window.WRITER_API_ENDPOINT || '';
+  if (endpointInput) endpointInput.value = WRITER_API_ENDPOINT;
+
+  const categoryLabels = {
+    anime: 'アニメ評論', novel: '小説・文学', sf: 'SF・ファンタジー',
+    subculture: 'サブカルチャー', review: '評論'
+  };
+
+  document.getElementById('unlock').addEventListener('click', () => {
+    if (document.getElementById('pw').value === '1998') {
+      gate.style.display = 'none';
+      tool.style.display = 'block';
+      msg.textContent = '';
+      updateOutputAndPreview();
+    } else {
+      msg.textContent = 'パスワードが違います。';
+    }
+  });
+
+  function esc(s) {
+    return String(s || '').replace(/\r\n/g, '\n').trim();
+  }
+
+  function getForm() {
+    const category = esc(document.getElementById('category').value);
+    const slug = esc(document.getElementById('slug').value || 'new-post');
+    const title = esc(document.getElementById('title').value);
+    const date = esc(document.getElementById('date').value) || new Date().toISOString();
+    const decade = esc(document.getElementById('decade').value);
+    const excerpt = esc(document.getElementById('excerpt').value);
+    const readtime = esc(document.getElementById('readtime').value);
+    const thumbnail = esc(document.getElementById('thumbnail').value);
+    const body = document.getElementById('body').value || '';
+
+    const d = date.slice(0, 10);
+    const fileName = `${d}-${slug}.md`;
+    const path = `_posts/${category}/${fileName}`;
+
+    const lines = ['---', `title: ${title}`, `date: ${date}`];
+    if (decade) lines.push(`decade: "${decade}"`);
+    lines.push(`excerpt: ${excerpt}`);
+    if (readtime) lines.push(`readtime: "${readtime}"`);
+    if (thumbnail) lines.push(`thumbnail: "${thumbnail}"`);
+    lines.push('---', '', body);
+
+    return { category, slug, title, date, decade, excerpt, readtime, thumbnail, body, fileName, path, text: lines.join('\n') };
+  }
+
+  function updateOutputAndPreview() {
+    const data = getForm();
+    document.getElementById('filename').textContent = '保存先: ' + data.path;
+    document.getElementById('out').textContent = data.text;
+
+    const html = data.body ? marked.parse(data.body) : '<p>ここに本文プレビューが表示されます。</p>';
+    const thumb = data.thumbnail ? `<img src="${data.thumbnail}" alt="thumbnail">` : '';
+    preview.innerHTML = `
+      <div class="preview-meta">${categoryLabels[data.category] || data.category} / ${data.decade || '年代タグなし'} / ${data.date}</div>
+      <h1>${data.title || 'タイトル未入力'}</h1>
+      <p>${data.excerpt || '説明文（抜粋）が未入力です。'}</p>
+      ${thumb}
+      <hr style="margin:1rem 0;border:none;border-top:1px solid #eceff8;">
+      ${html}
+    `;
+  }
+
+  function validateForPublish(data) {
+    if (!data.title) return 'タイトルを入力してください。';
+    if (!data.excerpt) return '説明文（抜粋）を入力してください。';
+    if (!data.body.trim()) return '本文を入力してください。';
+    if (!data.slug) return 'スラッグを入力してください。';
+    if (!/^[-a-zA-Z0-9_]+$/.test(data.slug)) return 'スラッグは英数字・ハイフン・アンダースコアのみです。';
+    return '';
+  }
+
+  async function publishToGitHub() {
+    const data = getForm();
+    const endpoint = (endpointInput?.value || '').trim();
+    const err = validateForPublish(data);
+    if (err) {
+      publishStatus.textContent = err;
+      publishStatus.style.color = '#c52a2a';
+      return;
+    }
+    if (!endpoint) {
+      publishStatus.textContent = '投稿API URLを入力してください。';
+      publishStatus.style.color = '#c52a2a';
+      return;
+    }
+
+    publishStatus.textContent = '投稿中...';
+    publishStatus.style.color = '#4b5563';
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          password: document.getElementById('pw').value,
+          category: data.category,
+          slug: data.slug,
+          title: data.title,
+          date: data.date,
+          decade: data.decade,
+          excerpt: data.excerpt,
+          readtime: data.readtime,
+          thumbnail: data.thumbnail,
+          body: data.body
+        })
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(result.error || ('投稿に失敗しました: ' + res.status));
+      }
+      publishStatus.textContent = `投稿完了: ${result.path || data.path}`;
+      publishStatus.style.color = '#0b8d5f';
+    } catch (e) {
+      publishStatus.textContent = String(e.message || e);
+      publishStatus.style.color = '#c52a2a';
+    }
+  }
+
+  ['category','slug','title','date','decade','excerpt','readtime','thumbnail','body']
+    .forEach(id => document.getElementById(id).addEventListener('input', updateOutputAndPreview));
+
+  document.getElementById('gen').addEventListener('click', updateOutputAndPreview);
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    const txt = document.getElementById('out').textContent;
+    if (!txt) return;
+    await navigator.clipboard.writeText(txt);
+  });
+
+  document.getElementById('publish').addEventListener('click', publishToGitHub);
+
+  document.getElementById('download').addEventListener('click', () => {
+    const data = getForm();
+    const blob = new Blob([data.text], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = data.fileName;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+</script>
+</body>
+</html>
