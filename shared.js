@@ -4,8 +4,15 @@
 
 // ── サイト横断ナビを自動注入（全ページ共通） ──
 (function() {
+  // canonical自動セット
+  const canonical = document.createElement('link');
+  canonical.rel = 'canonical';
+  canonical.href = window.location.href.split('?')[0];
+  document.head.appendChild(canonical);
+
   // すでにある場合は注入しない
   if (document.querySelector('.site-network-nav')) return;
+
   const nav = document.createElement('div');
   nav.className = 'site-network-nav';
   nav.innerHTML = `
