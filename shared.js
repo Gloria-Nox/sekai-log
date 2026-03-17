@@ -17,6 +17,24 @@
       <span class="network-link network-link--soon">⚔️ ギルティギア <em>(準備中)</em></span>
     </div>`;
   document.body.insertBefore(nav, document.body.firstChild);
+
+  // 記事作成ツールへのクイックリンク
+  if (!document.querySelector('.writer-quick-link')) {
+    const link = document.createElement('a');
+    link.className = 'writer-quick-link';
+    link.href = 'writer.html';
+    link.textContent = '✍ 投稿ツール';
+    document.body.appendChild(link);
+  }
+
+  const footer = document.querySelector('footer .footer-links');
+  if (footer && !footer.querySelector('.writer-footer-link')) {
+    const f = document.createElement('a');
+    f.className = 'writer-footer-link';
+    f.href = 'writer.html';
+    f.textContent = '投稿ツール';
+    footer.appendChild(f);
+  }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
