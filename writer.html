@@ -161,13 +161,22 @@
           <div class="full"><label class="label">本文（Markdown）</label><textarea id="body" placeholder="# 見出し\n本文\n\n![画像説明](/images/uploads/sample.jpg)"></textarea></div>
         </div>
 
+        <div class="f-grid" style="margin-top:.8rem;">
+          <div class="full">
+            <label class="label">投稿API URL（Cloudflare Worker）</label>
+            <input id="api-endpoint" placeholder="https://xxxxx.workers.dev/publish">
+          </div>
+        </div>
+
         <div class="btn-row">
           <button class="btn" id="gen">フォーマット生成</button>
           <button class="btn success" id="download">.md をダウンロード</button>
           <button class="btn secondary" id="copy">コピー</button>
+          <button class="btn" id="publish" style="background:#b2183e;">GitHubへ投稿</button>
         </div>
 
         <p id="filename" style="margin-top:.8rem;color:#555;"></p>
+        <p id="publish-status" style="margin-top:.3rem;font-size:.8rem;color:#6b7288;"></p>
         <div class="out" id="out"></div>
 
         <div class="map-box">
@@ -193,6 +202,11 @@
   const tool = document.getElementById('tool');
   const msg = document.getElementById('msg');
   const preview = document.getElementById('preview');
+  const publishStatus = document.getElementById('publish-status');
+  const endpointInput = document.getElementById('api-endpoint');
+  const WRITER_API_ENDPOINT = window.WRITER_API_ENDPOINT || '';
+  if (endpointInput) endpointInput.value = WRITER_API_ENDPOINT;
+
   const categoryLabels = {
     anime: 'アニメ評論', novel: '小説・文学', sf: 'SF・ファンタジー',
     subculture: 'サブカルチャー', review: '評論'
@@ -255,6 +269,62 @@
     `;
   }
 
+  function validateForPublish(data) {
+    if (!data.title) return 'タイトルを入力してください。';
+    if (!data.excerpt) return '説明文（抜粋）を入力してください。';
+    if (!data.body.trim()) return '本文を入力してください。';
+    if (!data.slug) return 'スラッグを入力してください。';
+    if (!/^[-a-zA-Z0-9_]+$/.test(data.slug)) return 'スラッグは英数字・ハイフン・アンダースコアのみです。';
+    return '';
+  }
+
+  async function publishToGitHub() {
+    const data = getForm();
+    const endpoint = (endpointInput?.value || '').trim();
+    const err = validateForPublish(data);
+    if (err) {
+      publishStatus.textContent = err;
+      publishStatus.style.color = '#c52a2a';
+      return;
+    }
+    if (!endpoint) {
+      publishStatus.textContent = '投稿API URLを入力してください。';
+      publishStatus.style.color = '#c52a2a';
+      return;
+    }
+
+    publishStatus.textContent = '投稿中...';
+    publishStatus.style.color = '#4b5563';
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          password: document.getElementById('pw').value,
+          category: data.category,
+          slug: data.slug,
+          title: data.title,
+          date: data.date,
+          decade: data.decade,
+          excerpt: data.excerpt,
+          readtime: data.readtime,
+          thumbnail: data.thumbnail,
+          body: data.body
+        })
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(result.error || ('投稿に失敗しました: ' + res.status));
+      }
+      publishStatus.textContent = `投稿完了: ${result.path || data.path}`;
+      publishStatus.style.color = '#0b8d5f';
+    } catch (e) {
+      publishStatus.textContent = String(e.message || e);
+      publishStatus.style.color = '#c52a2a';
+    }
+  }
+
   ['category','slug','title','date','decade','excerpt','readtime','thumbnail','body']
     .forEach(id => document.getElementById(id).addEventListener('input', updateOutputAndPreview));
 
@@ -265,6 +335,8 @@
     if (!txt) return;
     await navigator.clipboard.writeText(txt);
   });
+
+  document.getElementById('publish').addEventListener('click', publishToGitHub);
 
   document.getElementById('download').addEventListener('click', () => {
     const data = getForm();

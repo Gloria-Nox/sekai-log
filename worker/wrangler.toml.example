@@ -1,0 +1,16 @@
+name = "sekai-log-writer"
+main = "publish-worker.js"
+compatibility_date = "2026-03-17"
+
+# Optional (Workers.dev custom route)
+# routes = ["https://writer-api.example.com/publish"]
+
+[vars]
+GITHUB_OWNER = "Gloria-Nox"
+GITHUB_REPO = "sekai-log"
+GITHUB_BRANCH = "main"
+WRITER_ALLOWED_ORIGIN = "https://sekai-log.com"
+
+# Secrets (set via wrangler secret put)
+# GITHUB_TOKEN
+# WRITER_PASSWORD
