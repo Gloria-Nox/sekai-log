@@ -26,6 +26,15 @@
     link.textContent = '✍ 投稿ツール';
     document.body.appendChild(link);
   }
+
+  const footer = document.querySelector('footer .footer-links');
+  if (footer && !footer.querySelector('.writer-footer-link')) {
+    const f = document.createElement('a');
+    f.className = 'writer-footer-link';
+    f.href = 'writer.html';
+    f.textContent = '投稿ツール';
+    footer.appendChild(f);
+  }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {

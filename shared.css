@@ -298,17 +298,26 @@ footer::before {
   z-index:8500;
   text-decoration:none;
   font-family:'Space Mono',monospace;
-  font-size:0.62rem;
+  font-size:0.68rem;
   letter-spacing:0.14em;
-  color:var(--paper);
+  color:#0d0d1b;
   border:1px solid rgba(212,18,50,0.5);
-  background:rgba(9,9,26,0.92);
+  background:#ffd7de;
   padding:0.65rem 0.9rem;
+  border-radius:8px;
   transition:all 0.2s;
+  box-shadow:0 4px 14px rgba(0,0,0,0.2);
 }
 .writer-quick-link:hover {
   border-color:var(--accent);
-  background:rgba(212,18,50,0.2);
+  background:#ffebef;
+}
+.writer-footer-link {
+  color: var(--accent) !important;
+  border-bottom: 1px solid transparent;
+}
+.writer-footer-link:hover {
+  border-bottom-color: var(--accent);
 }
 
 /* ── ANIMATIONS ── */
