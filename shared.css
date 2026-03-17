@@ -286,7 +286,7 @@ footer::before {
   background:linear-gradient(90deg, transparent, rgba(212,18,50,0.35), transparent);
 }
 .footer-copy { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--muted); }
-.footer-links { display:flex; gap:2rem; flex-wrap:wrap; }
+.footer-links { display:flex; gap:2rem; flex-wrap:wrap; margin-left:auto; justify-content:flex-end; }
 .footer-links a { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--muted); text-decoration:none; transition:color 0.2s; }
 .footer-links a:hover { color:var(--paper); }
 
