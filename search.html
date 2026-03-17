@@ -99,7 +99,10 @@
       showEmpty(grid, `「${query}」の検索結果はありませんでした`);
       status.textContent = '0 件';
     } else {
-      grid.innerHTML = results.
+      grid.innerHTML = results.map(a => articleCardHTML(a)).join('');
+      status.textContent = `${results.length} 件`;
+    }
+  }
 </script>
 </body>
 </html>
