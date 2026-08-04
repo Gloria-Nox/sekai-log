@@ -1,11 +1,13 @@
-name: Content Sync Build
+name: Build public site
 
 on:
   push:
-    branches: ["main", "work"]
+    branches: ["main"]
     paths:
       - "_posts/**"
       - "build.py"
+      - "shared.css"
+      - "shared.js"
       - ".github/workflows/content-sync.yml"
   workflow_dispatch:
 
@@ -23,16 +25,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Build JSON/sitemap/robots
-        run: python build.py
+      - name: Validate and build public pages
+        run: |
+          python -m py_compile build.py
+          python build.py
       - name: Commit generated files
         run: |
-          if git diff --quiet articles.json sitemap.xml robots.txt; then
+          if git diff --quiet; then
             echo "No generated changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add articles.json sitemap.xml robots.txt
-          git commit -m "chore: sync generated content files [skip content-sync]"
+          git add --all articles index.html all.html anime.html novel.html sf.html subculture.html review.html about.html privacy.html contact.html search.html article.html articles.json feed.xml sitemap.xml robots.txt
+          git commit -m "chore: rebuild public site [skip content-sync]"
           git push

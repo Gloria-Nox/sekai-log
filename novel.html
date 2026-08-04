@@ -1,125 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小説・文学 — SEKAI LOG</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<!-- Google Analytics -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小説の記事 — SEKAI LOG</title>
+  <meta name="description" content="小説とライトノベルを、時代やジャンルの境界から読む。">
+  <link rel="canonical" href="https://sekai-log.com/novel.html">
+  <link rel="alternate" type="application/rss+xml" title="SEKAI LOG RSS" href="https://sekai-log.com/feed.xml">
+  <meta property="og:site_name" content="SEKAI LOG">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="小説の記事 — SEKAI LOG">
+  <meta property="og:description" content="小説とライトノベルを、時代やジャンルの境界から読む。">
+  <meta property="og:url" content="https://sekai-log.com/novel.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#f5f1e8">
+  <link rel="stylesheet" href="/shared.css">
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EKFMMWGGZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-2EKFMMWGGZ");
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-2EKFMMWGGZ',{'anonymize_ip':true});</script>
 </head>
 <body>
-<header>
-  <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
-  <ul class="main-nav" id="main-nav">
-    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
-        <a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a>
-        <a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
-    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
-        <a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a>
-        <a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
-    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a>
-      <div class="dropdown">
-        <a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div>
-        <a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a>
-        <a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a>
-      </div>
-    </li>
-    <li class="nav-item"><a href="subculture.html">サブカル</a></li>
-    <li class="nav-item"><a href="review.html">評論</a></li>
-    <li class="nav-item"><a href="about.html">ABOUT</a></li>
-  </ul>
-  <a href="search.html" class="nav-search" title="検索">🔍</a>
-  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+
+<a class="skip-link" href="#main">本文へ移動</a>
+<header class="site-header">
+  <a class="brand" href="/index.html" aria-label="SEKAI LOG ホーム">
+    <span class="brand-mark" aria-hidden="true">SL</span>
+    <span><strong>SEKAI LOG</strong><small>FICTION &amp; CULTURE REVIEW</small></span>
+  </a>
+  <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション"><a href="/index.html" class="">ホーム</a><a href="/all.html" class="">記事一覧</a><a href="/anime.html" class="">アニメ</a><a href="/novel.html" class="is-active">小説</a><a href="/sf.html" class="">SF</a><a href="/subculture.html" class="">サブカルチャー</a><a href="/review.html" class="">評論</a></nav>
 </header>
+  <main id="main">
+<section class="page-title">
+  <p>NOVEL</p><h1>小説</h1><div><span>01 STORIES</span><p>小説とライトノベルを、時代やジャンルの境界から読む。</p></div>
+</section>
+<section class="archive-wrap">
+  <label class="filter-box"><span>記事を絞り込む</span><input id="article-filter" type="search" placeholder="作品名・キーワード" autocomplete="off"></label>
+  <p class="filter-status" id="filter-status" aria-live="polite">1件の記事</p>
+  <div class="story-grid story-grid--archive" id="article-list"><article class="story-card" data-search="『ココロコネクト』はsfだったのか——心を実験する青春物語 人格入れ替わり、欲望解放、時間退行。青春群像劇として知られる『ココロコネクト』を、人間の心へ条件を加える思考実験として読み直す。 小説 2011年に原作小説と出会い、2012年にテレビアニメを見たとき、私は『ココロコネクト』を少し変わった青春群像劇として受け取っていた。文化研究部の5人が人格入れ替わりなどの現象に巻き込まれ、秘密や感情を隠せなくなる物語。その入口は、恋愛と友情のドラマに見える。
 
-<!-- カテゴリ横断ナビ -->
-<nav class="cat-nav">
-  <a href="all.html">すべて</a>
-  <a href="anime.html">アニメ</a>
-  <a href="novel.html">小説</a>
-  <a href="sf.html">SF</a>
-  <a href="subculture.html">サブカル</a>
-  <a href="review.html">評論</a>
-</nav>
+しかし年月を置いて振り返ると、別の輪郭が見えてくる。本作は「心へ外部から条件を加えたら、人間関係はどう変わるか」を繰り返す思考実験として読める。
 
-<div class="page-hero">
-  <p class="page-hero-label">CATEGORY</p>
-  <h1 class="page-hero-title"><span class="accent">小説</span>評論</h1>
-  <p class="page-hero-sub">物語の構造と言語——文学を批評的に読み解く。<br>ライトノベルから純文学まで、小説の深層を探る。</p>
-</div>
+## フーセンカズラは観察者である
 
-<div class="section">
-  <div class="filter-bar reveal">
-    <button class="filter-btn active" data-decade="all">すべて</button>
-    <button class="filter-btn" data-decade="2020">2020年代</button>
-    <button class="filter-btn" data-decade="2010">2010年代</button>
-    <button class="filter-btn" data-decade="2000">2000年代</button>
-    <button class="filter-btn" data-decade="pre2000">2000年以前</button>
+現象を起こすフーセンカズラは、5人の成長を願う教師ではない。十分な説明や同意もなく、人格入れ替わり、欲望解放、時間退行、感情伝導といった状況を与える。その態度は超越的で、倫理を共有しない観察者に近い。
+
+重要なのは、現象の仕組みが科学的に説明されるかどうかではない。ひとつの条件を変え、その結果として人間の行動や関係がどう変化するかを見る。この構造がsf的なのだ。
+
+## 心が操作可能な対象になる
+
+人格入れ替わりでは、身体と自己認識の結びつきが揺らぐ。欲望解放では、衝動を抑えるはずの境界が外される。感情伝導では、自分だけのものだと思っていた感情が他人へ漏れ出す。
+
+どの現象も、登場人物が普段は管理している内面の一部を、外から操作可能な対象へ変える。5人は「本当の自分を隠していた罰」を受けるのではない。人が他者と暮らすために使っている距離や抑制を、強制的に剥がされる。
+
+## 本音を言えば解決する、ではない
+
+青春物語では、本音を打ち明けることが救いとして描かれやすい。だが『ココロコネクト』は、本音が常に正しく、共有すれば必ず分かり合えるとは限らないことも示す。
+
+感情には矛盾があり、本人にも整理できないものがある。知られたくない気持ちを守ることも、人間関係には必要だ。だからフーセンカズラの実験は、5人を成長させる装置である以前に、プライバシーと自己決定を奪う暴力として見える。
+
+## sfと呼びにくい理由
+
+宇宙船も研究施設も登場せず、現象の原理も説明されない。そのため、一般的なジャンル区分では「学園」「青春」「恋愛」「超常」と呼ぶ方が自然だろう。
+
+それでもsf的な読み方には意味がある。sfの面白さはガジェットだけでなく、「もしこの条件が変わったら、人間はどうなるか」という問いにも宿るからだ。本作は青春の悩みを語るために、心の境界へ直接触れる装置を導入した。
+
+## 15年後に残った問い
+
+人間の心は、どこまで本人だけのものなのか。秘密を持ったままでも信頼関係は作れるのか。外から感情を変えられたとき、それでもその選択を自分のものと言えるのか。
+
+『ココロコネクト』は答えを理論として説明しない。5人が傷つき、言葉を選び直し、関係を作り直す過程として見せる。青春物語の形を借りた心の実験。その異様さこそ、長く記憶に残った理由なのだと思う。">
+  <a class="story-art art--novel" href="/articles/kokoro-connect-sf.html" aria-label="『ココロコネクト』はSFだったのか——心を実験する青春物語を読む">
+    <span>NOVEL</span>
+  </a>
+  <div class="story-copy">
+    <p class="eyebrow"><span>小説</span><time datetime="2026-03-03T17:59:00.000+09:00">2026.03.03</time></p>
+    <h2><a href="/articles/kokoro-connect-sf.html">『ココロコネクト』はSFだったのか——心を実験する青春物語</a></h2>
+    <p>人格入れ替わり、欲望解放、時間退行。青春群像劇として知られる『ココロコネクト』を、人間の心へ条件を加える思考実験として読み直す。</p>
+    <div class="story-meta"><span>読了 3分</span><span>ネタバレあり</span></div>
   </div>
-  <div class="articles-grid reveal" id="articles-grid"></div>
-  <p id="article-count" style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--muted);margin-top:2rem;"></p>
-</div>
+</article></div>
+  <p class="empty-state" id="empty-state" hidden>該当する記事はありません。</p>
+</section></main>
 
-<footer>
-  <p class="footer-copy">© 2026 SEKAI LOG / 藤乃宮遊. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="about.html">プロフィール</a>
-    <a href="search.html">記事を検索</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="/cdn-cgi/l/email-protection#156c607e7c3b627a677e3b24243b24243b2727557278747c793b767a78">お問い合わせ</a>
+<footer class="site-footer">
+  <div>
+    <p class="footer-brand">SEKAI LOG</p>
+    <p>アニメ・小説・SFを、見終えた後からもう一度考える個人批評誌。</p>
   </div>
+  <nav aria-label="フッターナビゲーション">
+    <a href="/about.html">このサイトについて</a>
+    <a href="/privacy.html">プライバシー・広告</a>
+    <a href="/contact.html">お問い合わせ</a>
+    <a href="/feed.xml">RSS</a>
+  </nav>
+  <p class="affiliate-disclosure">Amazonのアソシエイトとして、SEKAI LOGは適格販売により収入を得ています。</p>
+  <p class="copyright">© 2026 SEKAI LOG / 藤乃宮遊</p>
 </footer>
-<script src="shared.js"></script><script src="cms.js"></script>
-<script>
-  let allArticles = [];
-  const grid = document.getElementById('articles-grid');
-  const countEl = document.getElementById('article-count');
-  const params = new URLSearchParams(window.location.search);
-  const decadeParam = params.get('decade');
-
-  function renderArticles(decade) {
-    const filtered = (decade === 'all' || decade === 'latest') ? allArticles : allArticles.filter(a => a.decade === decade);
-    grid.innerHTML = filtered.length === 0
-      ? '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:\'Space Mono\',monospace;font-size:0.7rem;letter-spacing:0.2em;">まだ記事がありません</div>'
-      : filtered.map(a => articleCardHTML(a)).join('');
-    countEl.textContent = filtered.length + ' 記事';
-  }
-
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderArticles(btn.dataset.decade);
-    });
-  });
-
-  fetchArticles('novel').then(articles => {
-    allArticles = articles;
-    const activeDecade = decadeParam || 'all';
-    if (decadeParam) {
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.decade === decadeParam);
-      });
-    }
-    renderArticles(activeDecade);
-  });
-</script>
+  <script src="/shared.js" defer></script>
 </body>
 </html>
