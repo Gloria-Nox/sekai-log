@@ -1,88 +1,33 @@
-// ═══════════════════════════
-// SEKAI LOG v9 — 共通JS
-// ═══════════════════════════
+(() => {
+  const menuButton = document.querySelector('.menu-button');
+  const navigation = document.getElementById('site-nav');
 
-// ── サイト横断ナビを自動注入（全ページ共通） ──
-(function() {
-  // canonical自動セット
-  const canonical = document.createElement('link');
-  canonical.rel = 'canonical';
-  canonical.href = window.location.href.split('?')[0];
-  document.head.appendChild(canonical);
+  if (menuButton && navigation) {
+    menuButton.addEventListener('click', () => {
+      const open = navigation.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? 'CLOSE' : 'MENU';
+    });
+  }
 
-  // すでにある場合は注入しない
-  if (document.querySelector('.site-network-nav')) return;
+  const input = document.getElementById('article-filter');
+  const cards = Array.from(document.querySelectorAll('#article-list .story-card'));
+  const status = document.getElementById('filter-status');
+  const empty = document.getElementById('empty-state');
 
-  const nav = document.createElement('div');
-  nav.className = 'site-network-nav';
-  nav.innerHTML = `
-    <div class="site-network-inner">
-      <span class="network-label">SEKAI LOG NETWORK</span>
-      <span class="network-sep">|</span>
-      <a href="https://sekai-log.com" class="network-link network-link--active">📰 SEKAI LOG</a>
-      <a href="https://log-ark.sekai-log.com" class="network-link network-link--game">🎮 アークナイツ</a>
-      <span class="network-link network-link--soon">⚔️ ギルティギア <em>(準備中)</em></span>
-    </div>`;
-  document.body.insertBefore(nav, document.body.firstChild);
-
-
-  const footer = document.querySelector('footer .footer-links');
-  if (footer && !footer.querySelector('.writer-footer-link')) {
-    const f = document.createElement('a');
-    f.className = 'writer-footer-link';
-    f.href = 'writer.html';
-    f.textContent = '投稿ツール';
-    footer.appendChild(f);
+  if (input && cards.length) {
+    const normalize = (value) => String(value || '').normalize('NFKC').toLowerCase().trim();
+    const filter = () => {
+      const query = normalize(input.value);
+      let visible = 0;
+      cards.forEach((card) => {
+        const matched = !query || normalize(card.dataset.search).includes(query);
+        card.hidden = !matched;
+        if (matched) visible += 1;
+      });
+      if (status) status.textContent = `${visible}件の記事`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+    input.addEventListener('input', filter);
   }
 })();
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  // スクロールフェードイン
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      }
-    });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => observer.observe(el));
-
-  // ハンバーガーメニュー
-  const toggle = document.getElementById('nav-toggle');
-  const nav = document.getElementById('main-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.classList.toggle('open', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    nav.querySelectorAll('.nav-item > a').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const dropdown = a.nextElementSibling;
-        if (dropdown && dropdown.classList.contains('dropdown') && window.innerWidth <= 768) {
-          e.preventDefault();
-          dropdown.classList.toggle('open');
-        }
-      });
-    });
-
-    nav.querySelectorAll('.dropdown a').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.classList.remove('open');
-        nav.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  // カテゴリナビのアクティブ状態
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.cat-nav a').forEach(a => {
-    const href = a.getAttribute('href').split('?')[0];
-    if (href === currentPage) a.classList.add('active');
-  });
-
-});

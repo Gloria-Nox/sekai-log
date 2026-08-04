@@ -1,108 +1,275 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>検索 — SEKAI LOG</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<style>
-  .search-bar-wrap { max-width:700px; margin:0 auto 3rem; display:flex; gap:0; }
-  .search-input {
-    flex:1; background:rgba(245,240,232,0.04);
-    border:1px solid rgba(245,240,232,0.2); border-right:none;
-    color:var(--paper); padding:1rem 1.5rem;
-    font-family:'Noto Serif JP',serif; font-size:1rem; outline:none;
-    transition:border-color 0.25s;
-  }
-  .search-input:focus { border-color:var(--accent); }
-  .search-input::placeholder { color:var(--muted); }
-  .search-btn {
-    background:var(--accent); border:1px solid var(--accent);
-    color:var(--paper); padding:1rem 2rem;
-    font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em;
-    cursor:pointer; transition:all 0.3s; white-space:nowrap;
-  }
-  .search-btn:hover { background:var(--paper); color:var(--accent); }
-</style>
-<!-- Google Analytics -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>記事一覧 — SEKAI LOG</title>
+  <meta name="description" content="公開中の記事を新しい順に掲載しています。">
+  <link rel="canonical" href="https://sekai-log.com/all.html">
+  <link rel="alternate" type="application/rss+xml" title="SEKAI LOG RSS" href="https://sekai-log.com/feed.xml">
+  <meta property="og:site_name" content="SEKAI LOG">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="記事一覧 — SEKAI LOG">
+  <meta property="og:description" content="公開中の記事を新しい順に掲載しています。">
+  <meta property="og:url" content="https://sekai-log.com/all.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#f5f1e8">
+  <link rel="stylesheet" href="/shared.css">
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EKFMMWGGZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-2EKFMMWGGZ");
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-2EKFMMWGGZ',{'anonymize_ip':true});</script>
 </head>
 <body>
-</div>
-<header>
-  <a href="index.html" class="logo"><span class="logo-dot"></span>SEKAI LOG</a>
-  <ul class="main-nav" id="main-nav">
-    <li class="nav-item"><a href="anime.html">アニメ <span class="caret">▼</span></a><div class="dropdown"><a href="anime.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="anime.html?decade=2020">2020年代</a><a href="anime.html?decade=2010">2010年代</a><a href="anime.html?decade=2000">2000年代</a><a href="anime.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="novel.html">小説 <span class="caret">▼</span></a><div class="dropdown"><a href="novel.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="novel.html?decade=2020">2020年代</a><a href="novel.html?decade=2010">2010年代</a><a href="novel.html?decade=2000">2000年代</a><a href="novel.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="sf.html">SF <span class="caret">▼</span></a><div class="dropdown"><a href="sf.html?decade=latest">最新作品</a><div class="dropdown-divider"></div><a href="sf.html?decade=2020">2020年代</a><a href="sf.html?decade=2010">2010年代</a><a href="sf.html?decade=2000">2000年代</a><a href="sf.html?decade=pre2000">2000年以前</a></div></li>
-    <li class="nav-item"><a href="subculture.html">サブカル</a></li>
-    <li class="nav-item"><a href="review.html">評論</a></li>
-    <li class="nav-item"><a href="about.html">ABOUT</a></li>
-  </ul>
-  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+
+<a class="skip-link" href="#main">本文へ移動</a>
+<header class="site-header">
+  <a class="brand" href="/index.html" aria-label="SEKAI LOG ホーム">
+    <span class="brand-mark" aria-hidden="true">SL</span>
+    <span><strong>SEKAI LOG</strong><small>FICTION &amp; CULTURE REVIEW</small></span>
+  </a>
+  <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション"><a href="/index.html" class="">ホーム</a><a href="/all.html" class="is-active">記事一覧</a><a href="/anime.html" class="">アニメ</a><a href="/novel.html" class="">小説</a><a href="/sf.html" class="">SF</a><a href="/subculture.html" class="">サブカルチャー</a><a href="/review.html" class="">評論</a></nav>
 </header>
+  <main id="main">
+<section class="page-title">
+  <p>ALL STORIES</p><h1>記事一覧</h1><div><span>06 STORIES</span><p>公開中の記事を新しい順に掲載しています。</p></div>
+</section>
+<section class="archive-wrap">
+  <label class="filter-box"><span>記事を絞り込む</span><input id="article-filter" type="search" placeholder="作品名・キーワード" autocomplete="off"></label>
+  <p class="filter-status" id="filter-status" aria-live="polite">6件の記事</p>
+  <div class="story-grid story-grid--archive" id="article-list"><article class="story-card" data-search="『ココロコネクト』はsfだったのか——心を実験する青春物語 人格入れ替わり、欲望解放、時間退行。青春群像劇として知られる『ココロコネクト』を、人間の心へ条件を加える思考実験として読み直す。 小説 2011年に原作小説と出会い、2012年にテレビアニメを見たとき、私は『ココロコネクト』を少し変わった青春群像劇として受け取っていた。文化研究部の5人が人格入れ替わりなどの現象に巻き込まれ、秘密や感情を隠せなくなる物語。その入口は、恋愛と友情のドラマに見える。
 
-<div class="page-hero">
-  <p class="page-hero-label">SEARCH</p>
-  <h1 class="page-hero-title"><span class="accent">記事</span>を検索</h1>
-</div>
+しかし年月を置いて振り返ると、別の輪郭が見えてくる。本作は「心へ外部から条件を加えたら、人間関係はどう変わるか」を繰り返す思考実験として読める。
 
-<div class="section">
-  <div class="search-bar-wrap">
-    <input class="search-input" type="text" id="search-input" placeholder="キーワードを入力...">
-    <button class="search-btn" id="search-btn">検索 →</button>
+## フーセンカズラは観察者である
+
+現象を起こすフーセンカズラは、5人の成長を願う教師ではない。十分な説明や同意もなく、人格入れ替わり、欲望解放、時間退行、感情伝導といった状況を与える。その態度は超越的で、倫理を共有しない観察者に近い。
+
+重要なのは、現象の仕組みが科学的に説明されるかどうかではない。ひとつの条件を変え、その結果として人間の行動や関係がどう変化するかを見る。この構造がsf的なのだ。
+
+## 心が操作可能な対象になる
+
+人格入れ替わりでは、身体と自己認識の結びつきが揺らぐ。欲望解放では、衝動を抑えるはずの境界が外される。感情伝導では、自分だけのものだと思っていた感情が他人へ漏れ出す。
+
+どの現象も、登場人物が普段は管理している内面の一部を、外から操作可能な対象へ変える。5人は「本当の自分を隠していた罰」を受けるのではない。人が他者と暮らすために使っている距離や抑制を、強制的に剥がされる。
+
+## 本音を言えば解決する、ではない
+
+青春物語では、本音を打ち明けることが救いとして描かれやすい。だが『ココロコネクト』は、本音が常に正しく、共有すれば必ず分かり合えるとは限らないことも示す。
+
+感情には矛盾があり、本人にも整理できないものがある。知られたくない気持ちを守ることも、人間関係には必要だ。だからフーセンカズラの実験は、5人を成長させる装置である以前に、プライバシーと自己決定を奪う暴力として見える。
+
+## sfと呼びにくい理由
+
+宇宙船も研究施設も登場せず、現象の原理も説明されない。そのため、一般的なジャンル区分では「学園」「青春」「恋愛」「超常」と呼ぶ方が自然だろう。
+
+それでもsf的な読み方には意味がある。sfの面白さはガジェットだけでなく、「もしこの条件が変わったら、人間はどうなるか」という問いにも宿るからだ。本作は青春の悩みを語るために、心の境界へ直接触れる装置を導入した。
+
+## 15年後に残った問い
+
+人間の心は、どこまで本人だけのものなのか。秘密を持ったままでも信頼関係は作れるのか。外から感情を変えられたとき、それでもその選択を自分のものと言えるのか。
+
+『ココロコネクト』は答えを理論として説明しない。5人が傷つき、言葉を選び直し、関係を作り直す過程として見せる。青春物語の形を借りた心の実験。その異様さこそ、長く記憶に残った理由なのだと思う。">
+  <a class="story-art art--novel" href="/articles/kokoro-connect-sf.html" aria-label="『ココロコネクト』はSFだったのか——心を実験する青春物語を読む">
+    <span>NOVEL</span>
+  </a>
+  <div class="story-copy">
+    <p class="eyebrow"><span>小説</span><time datetime="2026-03-03T17:59:00.000+09:00">2026.03.03</time></p>
+    <h2><a href="/articles/kokoro-connect-sf.html">『ココロコネクト』はSFだったのか——心を実験する青春物語</a></h2>
+    <p>人格入れ替わり、欲望解放、時間退行。青春群像劇として知られる『ココロコネクト』を、人間の心へ条件を加える思考実験として読み直す。</p>
+    <div class="story-meta"><span>読了 3分</span><span>ネタバレあり</span></div>
   </div>
-  <p id="search-status" style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--muted);margin-bottom:2rem;"></p>
-  <div class="articles-grid" id="results-grid"></div>
-</div>
+</article><article class="story-card" data-search="『ウマ娘』が映した競馬の記憶——スペシャルウィークとサイレンススズカ 実在馬の戦績をなぞるだけでなく、史実では叶わなかった可能性を描いたアニメ第1期。二人の走りから、競馬の記憶をフィクションへ移す方法を考える。 アニメ 1998年の日本ダービーを制したスペシャルウィークと、同年の天皇賞（秋）で競走を中止したサイレンススズカ。アニメ『ウマ娘 プリティーダービー』第1期は、実在馬の戦績を少女たちの物語へ翻案し、史実を知る観客と知らない観客の両方に届く入口を作った。
 
-<footer>
-  <p class="footer-copy">© 2026 SEKAI LOG / 藤乃宮遊. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="about.html">プロフィール</a>
-    <a href="search.html">記事を検索</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="/cdn-cgi/l/email-protection#7d04081614530a120f16534c4c534c4c534f4f3d1a101c1411531e1210">お問い合わせ</a>
+## 擬人化は、記録に感情の声を与える
+
+競走馬の記録には、着順、タイム、血統、故障といった事実が残る。一方で、本人が何を望み、どう感じたかを人間の言葉で確かめることはできない。
+
+『ウマ娘』の擬人化は、その空白へ物語を置く。スペシャルウィークの追走や、サイレンススズカの逃げを、目標や葛藤を持つキャラクターの行動として組み直す。これは史実の再現ではなく、記録を受け取った側が抱いた感情を翻訳する方法だ。
+
+だからこそ、どこまでが史実で、どこからが作品の解釈なのかを分けて見る必要もある。キャラクターの台詞を、そのまま実在馬の意思だと扱うことはできない。それでも、過去のレースを見直すきっかけとしてフィクションが機能する価値は大きい。
+
+## サイレンススズカに与えられた「その先」
+
+現実のサイレンススズカは、1998年の天皇賞（秋）で左前脚を骨折し、予後不良と診断された。アニメもレース中の故障を描くが、物語の中では回復し、再び走る未来を与える。
+
+この改変は、悲劇を都合よく消したものにも見えうる。けれど作品は故障の恐怖や周囲の動揺を飛ばさず、そのうえで「もし走り続けられたなら」という願いを選ぶ。史実を上書きするのではなく、ファンが抱え続けた未完の可能性を、別の世界線として提示したと読める。
+
+## スペシャルウィークは二つの母を背負う
+
+スペシャルウィークの物語には、「日本一のウマ娘になる」というまっすぐな目標がある。アニメでは、生みの母と育ての母という設定を通じて、期待を背負うことと、自分で走る理由を見つけることが結びつけられる。
+
+彼女の強さは、天才か努力家かという単純な分類には収まらない。セイウンスカイ、キングヘイロー、エルコンドルパサー、グラスワンダーらとの関係を通じ、勝利だけでは測れない同世代の厚みが描かれる。ライバルを倒す対象だけにせず、それぞれの目標を持つ存在として置いたことが、第1期の群像劇を支えている。
+
+## 史実への入口としてのアニメ
+
+実在の競馬を知らないまま見ても、物語は成立する。しかしモデルとなった馬やレースを調べると、台詞や演出の意味が増えていく。フィクションから記録へ戻り、記録を知った後でもう一度フィクションを見る。この往復が『ウマ娘』独自の鑑賞体験を生む。
+
+第1期が描いたのは、史実を忠実に再現することだけではない。過去を忘れないために、物語は何を変え、何を残せるのかという試みだった。勝敗の一覧には収まらない記憶を、走る少女たちの現在形として手渡す。そこに、この翻案の強さがある。">
+  <a class="story-art art--anime" href="/articles/uma-musume-memory.html" aria-label="『ウマ娘』が映した競馬の記憶——スペシャルウィークとサイレンススズカを読む">
+    <span>ANIME</span>
+  </a>
+  <div class="story-copy">
+    <p class="eyebrow"><span>アニメ</span><time datetime="2026-03-03T16:40:00.000+09:00">2026.03.03</time></p>
+    <h2><a href="/articles/uma-musume-memory.html">『ウマ娘』が映した競馬の記憶——スペシャルウィークとサイレンススズカ</a></h2>
+    <p>実在馬の戦績をなぞるだけでなく、史実では叶わなかった可能性を描いたアニメ第1期。二人の走りから、競馬の記憶をフィクションへ移す方法を考える。</p>
+    <div class="story-meta"><span>読了 3分</span><span>ネタバレあり</span></div>
   </div>
+</article><article class="story-card" data-search="『進撃の巨人』が描いた自由の矛盾——壁の外へ出たあとに残るもの 壁の内側から始まった自由への渇望は、なぜ他者の自由を奪う選択へ向かったのか。エレンの行動を、単純な善悪ではなく自由の矛盾から読み直す。 アニメ 『進撃の巨人』は、壁に囲まれた世界から始まる。少年エレンにとって、壁の外へ出ることはそのまま自由を意味していた。ところが物語が進み、海の向こうにも人間が暮らしていると知ったとき、「外」は解放の場所ではなく新たな対立の場所へ変わる。
+
+## 壁は無知を守る装置だった
+
+巨大な壁は巨人を防ぐだけでなく、内側の人々から歴史と選択肢を奪う。安全と引き換えに、誰が敵なのか、自分たちは何者なのかを考える材料まで隠してしまう。
+
+この構造が巧みなのは、壁を壊せば問題が解決するとは描かないところだ。隠されていた事実を知ることは、自由の獲得であると同時に、過去の暴力と現在の敵意を引き受けることでもある。知識は人を自由にするが、無垢なままではいさせてくれない。
+
+## 自由を求める者が、自由を奪う
+
+エレンの願いは一貫している。自分と仲間から、選ぶ自由を奪うものを排除したい。しかし敵が明確な怪物ではなく、恐怖や歴史を抱えた人間だと分かった後も、その論理は止まらない。
+
+自分たちが生きるために相手の可能性を消す。その選択は、自由を最大化しようとするほど他者の自由を奪うという矛盾を露出させる。エレンは突然別人になったのではなく、幼い頃からの衝動を世界規模で実行できる力を得てしまった、と見ることもできる。
+
+## 未来を知ることは自由なのか
+
+作中では記憶と時間が複雑に接続され、未来の断片が現在の選択へ影響する。先を知っている者は有利に見えるが、見えた未来に縛られれば、選択はむしろ狭くなる。
+
+エレンがどこまで自由に選び、どこから既に見た未来をなぞったのかは簡単に分けられない。この曖昧さが、「自分の意志で選ぶ」とは何かを観客へ返してくる。
+
+## 海の向こうにも生活がある
+
+物語後半は、敵と呼ばれてきた側にも家族、仕事、恐怖があることを丁寧に見せる。視点が変われば、正義の配置も変わる。だからといって両者の責任が同じになるわけではないが、一方の物語だけで全体を説明できなくなる。
+
+『進撃の巨人』が最後まで手放さないのは、自由への憧れそのものではない。その憧れを絶対化したとき、誰の声が消えるのかという問いだ。壁の外に出ても、他者と生きる限り制約は残る。その不完全な自由をどう扱うか。作品の余韻は、そこにある。">
+  <a class="story-art art--anime" href="/articles/attack-on-titan-freedom.html" aria-label="『進撃の巨人』が描いた自由の矛盾——壁の外へ出たあとに残るものを読む">
+    <span>ANIME</span>
+  </a>
+  <div class="story-copy">
+    <p class="eyebrow"><span>アニメ</span><time datetime="2026-02-28T10:00:00.000Z">2026.02.28</time></p>
+    <h2><a href="/articles/attack-on-titan-freedom.html">『進撃の巨人』が描いた自由の矛盾——壁の外へ出たあとに残るもの</a></h2>
+    <p>壁の内側から始まった自由への渇望は、なぜ他者の自由を奪う選択へ向かったのか。エレンの行動を、単純な善悪ではなく自由の矛盾から読み直す。</p>
+    <div class="story-meta"><span>読了 3分</span><span>ネタバレあり</span></div>
+  </div>
+</article><article class="story-card" data-search="『ぼっち・ざ・ろっく！』が描く創造的孤独——変わらないまま、外へ出る 後藤ひとりは人見知りを克服したから舞台に立てたのか。誇張された内面描写とバンドの関係から、作品が描く『変化』のかたちを考える。 アニメ 『ぼっち・ざ・ろっく！』の主人公・後藤ひとりは、ギターが上達すれば自然に友人ができると考えて練習を続ける。だが技術が身についても、教室で声をかけることはできない。このずれが、作品の笑いと痛みの出発点になっている。
+
+## ギターは会話の代わりだった
+
+ひとりにとってギターは、最初から仲間と音を合わせるための道具ではない。自室で一人でも完結でき、動画投稿サイトでは顔を見せずに反応を得られる。対面の会話を避けながら、他者との接点だけは持てる都合のいい回路だった。
+
+それは逃避であると同時に、確かな蓄積でもある。誰にも会えない時間に練習した技術が、結束バンドの危機を支える。孤独は単純に取り除くべき欠点ではなく、彼女の表現を作った時間でもある。
+
+## 内面を「作画」で外に出す
+
+本作では、ひとりの不安が写実的な芝居だけで表現されない。身体が崩れ、別の素材に変わり、画面そのものが壊れたような表現へ飛躍する。現実には見えない心の動きを、アニメーションのルールを変えることで観客に共有させる。
+
+この誇張が優れているのは、人見知りをかわいい記号だけにしない点だ。本人にとっては、店に入ることや注文することさえ大事件である。その主観的な大きさを、作品は笑いへ変えながらも小さく扱わない。
+
+## バンドは治療装置ではない
+
+結束バンドに入った後も、ひとりは急に社交的にならない。会話は途切れ、逃げ腰になり、注目されれば混乱する。それでも、以前なら自室だけで終わっていた演奏が、誰かの音を聴き、その場に応答するものへ変わっていく。
+
+バンドが与えるのは「性格の矯正」ではなく、自分のまま参加できる役割だ。虹夏、リョウ、喜多も彼女を完全に理解するわけではない。理解しきれない四人が、それぞれの目的を持ったまま同じ曲を演奏する。そこに、共同制作の現実味がある。
+
+## 変化は小さくてもいい
+
+成長物語では、主人公が弱点を克服した瞬間が大きく描かれやすい。『ぼっち・ざ・ろっく！』はむしろ、変わりきらない人間が一歩だけ外へ出ることを何度も描く。
+
+孤独が消えなくても、表現は誰かに届く。うまく話せなくても、同じ場所に立つことはできる。その控えめな肯定が、この作品を音楽アニメであると同時に、創作を続ける人の物語にしている。">
+  <a class="story-art art--anime" href="/articles/bocchi-creative-solitude.html" aria-label="『ぼっち・ざ・ろっく！』が描く創造的孤独——変わらないまま、外へ出るを読む">
+    <span>ANIME</span>
+  </a>
+  <div class="story-copy">
+    <p class="eyebrow"><span>アニメ</span><time datetime="2026-02-18T10:00:00.000Z">2026.02.18</time></p>
+    <h2><a href="/articles/bocchi-creative-solitude.html">『ぼっち・ざ・ろっく！』が描く創造的孤独——変わらないまま、外へ出る</a></h2>
+    <p>後藤ひとりは人見知りを克服したから舞台に立てたのか。誇張された内面描写とバンドの関係から、作品が描く『変化』のかたちを考える。</p>
+    <div class="story-meta"><span>読了 3分</span><span>ネタバレあり</span></div>
+  </div>
+</article><article class="story-card" data-search="劉慈欣『三体』と文化大革命——宇宙へ拡大された人間不信 文化大革命の暴力から始まる『三体』は、なぜ宇宙文明の物語へ進むのか。葉文潔の選択と暗黒森林の発想を、人間への信頼が崩れる過程から読む。 sf 劉慈欣『三体』の物語は、宇宙船ではなく文化大革命期の公開批判から始まる。物理学者だった父を暴力で失った葉文潔は、人間社会への信頼を深く損なう。その経験が、やがて地球外文明へ向けた決定的な選択につながっていく。
+
+## 歴史は背景ではなく、選択の原因である
+
+文化大革命を単なる時代設定として扱うと、『三体』の核心を見落とす。葉文潔が見たのは、一時的な混乱だけではない。知識や倫理が政治的熱狂によって反転し、昨日までの隣人が暴力へ加わる光景だ。
+
+その経験の後で地球外文明の存在を知った彼女にとって、人類は無条件に守るべき共同体ではなくなる。外部からの力に人類の再編を託そうとする発想は極端だが、彼女の履歴から切り離された突飛な悪意ではない。
+
+## 科学が揺らぐとき
+
+物語の現在では、科学者たちが説明不能な現象に直面する。再現できるはずの実験結果が乱れ、科学の基盤そのものが疑われていく。ここで起きているのは、新しい理論への更新ではなく、「世界は理解可能である」という信頼への攻撃だ。
+
+歴史の場面で社会への信頼が壊れ、現在の場面で自然法則への信頼が壊れる。二つの崩壊が重なることで、作品のスケールは個人の絶望から文明の危機へ接続される。
+
+## 暗黒森林は普遍的な真理か
+
+シリーズで示される暗黒森林の発想は、互いの意図を確かめきれない宇宙では、発見した文明を先に排除することが合理的になりうる、というものだ。強烈なモデルだが、作中で提示されたからといって現実の宇宙の法則と決まったわけではない。
+
+むしろ重要なのは、信頼を置けないという前提を採用した瞬間、予防的な攻撃が合理性を帯びてしまうことだ。相手も同じ判断をすると予測すれば、対話の前に排除するしかなくなる。これは宇宙文明の仮説であると同時に、人間社会が繰り返してきた恐怖の論理でもある。
+
+## 宇宙規模でも消えない問い
+
+『三体』の魅力は巨大なアイデアにあるが、その出発点は一人の人間が世界への信頼を失う過程にある。人類は救う価値があるのか。他者を信頼することは合理的なのか。文明が生き残るためなら、どこまで非情になれるのか。
+
+宇宙へ舞台を広げても、問いは人間の歴史から離れない。だから『三体』の恐怖は、遠い星の脅威だけではなく、私たちが既に知っている不信と暴力の延長として迫ってくる。">
+  <a class="story-art art--sf" href="/articles/three-body-history.html" aria-label="劉慈欣『三体』と文化大革命——宇宙へ拡大された人間不信を読む">
+    <span>SCIENCE FICTION</span>
+  </a>
+  <div class="story-copy">
+    <p class="eyebrow"><span>SF</span><time datetime="2026-01-27T10:00:00.000Z">2026.01.27</time></p>
+    <h2><a href="/articles/three-body-history.html">劉慈欣『三体』と文化大革命——宇宙へ拡大された人間不信</a></h2>
+    <p>文化大革命の暴力から始まる『三体』は、なぜ宇宙文明の物語へ進むのか。葉文潔の選択と暗黒森林の発想を、人間への信頼が崩れる過程から読む。</p>
+    <div class="story-meta"><span>読了 3分</span><span>ネタバレあり</span></div>
+  </div>
+</article><article class="story-card" data-search="『新世紀エヴァンゲリオン』再考——他者を恐れながら、それでも関わる物語 エヴァを『難解な設定のアニメ』で終わらせず、碇シンジと他者との距離から読み直す。atフィールド、人類補完計画、最終回を一本の問いでつなぐ批評。 アニメ 1995年に放送された『新世紀エヴァンゲリオン』は、巨大ロボットと使徒の戦いを描きながら、物語の重心を少しずつ登場人物の内面へ移していく。設定を解読する面白さは確かにある。しかし、長く残るのは用語の答えではなく、碇シンジが何度も突きつけられる「他者とどう関わるか」という問いだ。
+
+## atフィールドは心の比喩でもある
+
+作中のatフィールドは、使徒やエヴァが展開する防壁である一方、「自分と他人を分ける境界」としても語られる。境界があるから個人は個人でいられる。しかし同じ境界が、完全には理解し合えない孤独も生む。
+
+シンジは傷つけられることを恐れ、他者の期待に応えることで居場所を確保しようとする。父の命令に従い、周囲に必要とされればエヴァに乗る。その選択は消極的に見えるが、彼にとっては拒絶を避けるための切実な生存戦略でもある。
+
+## 「逃げちゃダメだ」を成功談にしない
+
+有名な「逃げちゃダメだ」という反復は、勇気を与える標語として切り取られがちだ。けれど本編は、戦う決意さえすれば人間が健全になれるとは描かない。乗るたびに承認が得られる一方、心身は傷つき、本人の意思と周囲の都合の境界も曖昧になる。
+
+ここに作品の厳しさがある。逃げないことが常に正しいのではない。逃げるか、残るかを自分で選べない状態そのものが問題なのだ。シンジの停滞は意志の弱さだけではなく、選択肢を奪う大人たちと組織の問題でもある。
+
+## 補完が消してしまうもの
+
+人類補完計画は、個人を隔てる壁をなくし、ひとつに溶かそうとする。誤解も拒絶も起きない世界は、一見すると救済に見える。だが他者との差が消えれば、受け入れられる喜びも、自分の言葉で関係を結び直す可能性も消える。
+
+テレビシリーズ終盤が内面の対話へ踏み込むのは、世界設定の説明を放棄したからというだけではない。物語の最後に残った問題が、「世界は何でできているか」ではなく「自分をどう認識するか」だったからだと読める。
+
+## いま見直す理由
+
+エヴァは、孤独を克服して明るく社交的になれ、と迫る作品ではない。他者との間にはどうしても境界があり、近づけば傷つく。それでも、他者の視線だけで決めた自分から少し離れ、関係を選び直す余地はある。
+
+難解な固有名詞の奥にあるのは、驚くほど日常的な問題だ。分かり合えない相手と、どの距離で生きるのか。その答えが一つに定まらないからこそ、『新世紀エヴァンゲリオン』は現在も見返され続けている。">
+  <a class="story-art art--anime" href="/articles/evangelion-boundaries.html" aria-label="『新世紀エヴァンゲリオン』再考——他者を恐れながら、それでも関わる物語を読む">
+    <span>ANIME</span>
+  </a>
+  <div class="story-copy">
+    <p class="eyebrow"><span>アニメ</span><time datetime="2025-12-15T10:00:00.000Z">2025.12.15</time></p>
+    <h2><a href="/articles/evangelion-boundaries.html">『新世紀エヴァンゲリオン』再考——他者を恐れながら、それでも関わる物語</a></h2>
+    <p>エヴァを『難解な設定のアニメ』で終わらせず、碇シンジと他者との距離から読み直す。ATフィールド、人類補完計画、最終回を一本の問いでつなぐ批評。</p>
+    <div class="story-meta"><span>読了 3分</span><span>ネタバレあり</span></div>
+  </div>
+</article></div>
+  <p class="empty-state" id="empty-state" hidden>該当する記事はありません。</p>
+</section></main>
+
+<footer class="site-footer">
+  <div>
+    <p class="footer-brand">SEKAI LOG</p>
+    <p>アニメ・小説・SFを、見終えた後からもう一度考える個人批評誌。</p>
+  </div>
+  <nav aria-label="フッターナビゲーション">
+    <a href="/about.html">このサイトについて</a>
+    <a href="/privacy.html">プライバシー・広告</a>
+    <a href="/contact.html">お問い合わせ</a>
+    <a href="/feed.xml">RSS</a>
+  </nav>
+  <p class="affiliate-disclosure">Amazonのアソシエイトとして、SEKAI LOGは適格販売により収入を得ています。</p>
+  <p class="copyright">© 2026 SEKAI LOG / 藤乃宮遊</p>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script>
-<script src="cms.js"></script>
-<script>
-  const input = document.getElementById('search-input');
-  const btn = document.getElementById('search-btn');
-  const grid = document.getElementById('results-grid');
-  const status = document.getElementById('search-status');
-
-  // URLパラメータから初期クエリ
-  const params = new URLSearchParams(window.location.search);
-  const q = params.get('q');
-  if (q) { input.value = q; doSearch(q); }
-
-  btn.addEventListener('click', () => doSearch(input.value));
-  input.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(input.value); });
-
-  async function doSearch(query) {
-    if (!query.trim()) return;
-    history.replaceState(null, '', `?q=${encodeURIComponent(query)}`);
-    showLoading(grid);
-    status.textContent = '検索中...';
-    const results = await searchArticles(query);
-    if (results.length === 0) {
-      showEmpty(grid, `「${query}」の検索結果はありませんでした`);
-      status.textContent = '0 件';
-    } else {
-      grid.innerHTML = results.map(a => articleCardHTML(a)).join('');
-      status.textContent = `${results.length} 件`;
-    }
-  }
-</script>
+  <script src="/shared.js" defer></script>
 </body>
 </html>
