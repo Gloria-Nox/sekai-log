@@ -13,6 +13,7 @@ import math
 import re
 import shutil
 from datetime import datetime
+from email.utils import format_datetime
 from pathlib import Path
 from urllib.parse import quote
 
@@ -165,6 +166,16 @@ def load_articles() -> tuple[list[dict], list[str]]:
             raise SystemExit(f"{rel}: published article requires an ASCII slug")
         plain_chars = len(re.sub(r"[#*`>\[\]()_-]", "", body).replace("\n", ""))
         read_minutes = max(1, math.ceil(plain_chars / 450))
+        amazon_items = []
+        for index in range(1, 6):
+            suffix = "" if index == 1 else f"_{index}"
+            amazon_url = data.get(f"amazon_url{suffix}", "")
+            if amazon_url:
+                amazon_items.append({
+                    "url": amazon_url,
+                    "label": data.get(f"amazon_label{suffix}", "Amazonで見る"),
+                    "note": data.get(f"amazon_note{suffix}", ""),
+                })
         article = {
             "title": data["title"],
             "date": data["date"],
@@ -179,6 +190,7 @@ def load_articles() -> tuple[list[dict], list[str]]:
             "amazon_url": data.get("amazon_url", ""),
             "amazon_label": data.get("amazon_label", "Amazonで見る"),
             "amazon_note": data.get("amazon_note", ""),
+            "amazon_items": amazon_items,
             "content": body,
             "source": rel,
         }
@@ -372,12 +384,13 @@ def render_article(article: dict, all_articles: list[dict]) -> str:
         toc_html = '<nav class="toc" aria-label="目次"><p>この記事の内容</p><ol>' + "".join(
             f'<li><a href="#{section}">{html.escape(label)}</a></li>' for section, label in toc
         ) + "</ol></nav>"
-    affiliate = ""
-    if article["amazon_url"]:
-        affiliate = f"""<aside class="product-card">
-  <p>RELATED ITEM / 広告</p><h2>{html.escape(article['amazon_note'] or article['title'])}</h2>
-  <a href="{safe_url(article['amazon_url'])}" rel="nofollow sponsored noopener" target="_blank">{html.escape(article['amazon_label'])} →</a>
+    affiliate = "\n".join(
+        f"""<aside class="product-card">
+  <p>RELATED ITEM / 広告</p><h2>{html.escape(item['note'] or article['title'])}</h2>
+  <a href="{safe_url(item['url'])}" rel="nofollow sponsored noopener" target="_blank">{html.escape(item['label'])} →</a>
 </aside>"""
+        for item in article["amazon_items"]
+    )
     related = [
         a for a in all_articles
         if a["slug"] != article["slug"] and a["category"] == article["category"]
@@ -467,7 +480,8 @@ def build_feed(articles: list[dict]) -> str:
     items = []
     for article in articles[:20]:
         url = f"{SITE_URL}/{article['url']}"
-        items.append(f"""<item><title>{html.escape(article['title'])}</title><link>{url}</link><guid>{url}</guid><pubDate>{parse_date(article['date']).strftime('%a, %d %b %Y %H:%M:%S +0000')}</pubDate><description>{html.escape(article['excerpt'])}</description></item>""")
+        published = format_datetime(parse_date(article["date"]))
+        items.append(f"""<item><title>{html.escape(article['title'])}</title><link>{url}</link><guid>{url}</guid><pubDate>{published}</pubDate><description>{html.escape(article['excerpt'])}</description></item>""")
     return f"""<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>SEKAI LOG</title><link>{SITE_URL}</link><description>アニメ・SF・小説の個人批評誌</description><language>ja</language>{''.join(items)}</channel></rss>"""
 
 
