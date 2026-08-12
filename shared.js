@@ -7,15 +7,13 @@
     menuButton.addEventListener('click', () => {
       const open = navigation.classList.toggle('is-open');
       menuButton.setAttribute('aria-expanded', String(open));
-      menuButton.textContent = open ? 'CLOSE' : 'MENU';
+      menuButton.textContent = open ? '閉じる' : 'MENU';
     });
   }
 
+  const normalize = (value) => String(value || '').normalize('NFKC').toLowerCase().trim();
   const articleInput = document.getElementById('article-filter');
   const articleCards = Array.from(document.querySelectorAll('#article-list .story-card'));
-  const articleStatus = document.getElementById('filter-status');
-  const articleEmpty = document.getElementById('empty-state');
-  const normalize = (value) => String(value || '').normalize('NFKC').toLowerCase().trim();
   if (articleInput && articleCards.length) {
     const filterArticles = () => {
       const query = normalize(articleInput.value);
@@ -25,8 +23,10 @@
         card.hidden = !matched;
         if (matched) visible += 1;
       });
-      if (articleStatus) articleStatus.textContent = `${visible}件の記事`;
-      if (articleEmpty) articleEmpty.hidden = visible !== 0;
+      const status = document.getElementById('filter-status');
+      const empty = document.getElementById('empty-state');
+      if (status) status.textContent = `${visible}件の記事`;
+      if (empty) empty.hidden = visible !== 0;
     };
     articleInput.addEventListener('input', filterArticles);
   }
@@ -36,6 +36,7 @@
 
   let anime = [];
   try { anime = JSON.parse(dataNode.textContent); } catch (error) { console.error(error); return; }
+  if (!anime.length) return;
 
   const $ = (selector) => document.querySelector(selector);
   const result = $('#anime-result');
@@ -44,7 +45,8 @@
   const timeFilter = $('#time-filter');
   const selectorNote = $('#selector-note');
   const spinButton = $('#spin-button');
-  const orbit = $('#roulette-orbit');
+  const wheel = $('#roulette-wheel');
+  const wheelLabels = $('#wheel-labels');
   const grid = $('#anime-grid');
   const search = $('#anime-search');
   const catalogStatus = $('#catalog-status');
@@ -54,11 +56,13 @@
   const dialogContent = $('#dialog-content');
   const dialogClose = $('#dialog-close');
   const tag = 'sekailog-22';
-  let current = anime[0];
+  const wheelSize = 8;
   let activeGenre = 'all';
   let displayLimit = 12;
-  let spinTimer = null;
+  let currentRotation = 0;
+  let spinning = false;
 
+  const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
   const track = (name, params = {}) => {
     if (typeof window.gtag === 'function') window.gtag('event', name, params);
   };
@@ -81,101 +85,114 @@
     : `https://www.amazon.co.jp/s?k=${encodeURIComponent(item.amazon_query || `${item.title} 1`)}&tag=${tag}`;
   const watchUrl = (item) => `https://www.justwatch.com/jp/検索?q=${encodeURIComponent(item.title)}`;
   const initials = (item) => item.glyph || item.title.slice(0, 2);
-  const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+
+  const candidates = () => anime.filter((item) =>
+    (genreFilter.value === 'all' || item.genres.includes(genreFilter.value)) &&
+    (moodFilter.value === 'all' || item.moods.includes(moodFilter.value)) &&
+    timeMatch(item, timeFilter.value)
+  );
+
+  const wheelItems = (pool) => Array.from({length: wheelSize}, (_, index) => pool[index % pool.length]);
+
+  const paintWheel = () => {
+    const pool = candidates();
+    if (!pool.length) {
+      wheelLabels.innerHTML = '';
+      spinButton.disabled = true;
+      selectorNote.textContent = 'その組み合わせは0作品。条件をひとつ戻してみて。';
+      selectorNote.classList.add('is-error');
+      return [];
+    }
+    spinButton.disabled = false;
+    selectorNote.classList.remove('is-error');
+    selectorNote.textContent = pool.length === anime.length
+      ? `全${anime.length}作品が入っています。`
+      : `${pool.length}作品まで絞りました。`;
+    const visible = wheelItems(pool);
+    wheelLabels.innerHTML = visible.map((item, index) => {
+      const angle = index * (360 / wheelSize) + (180 / wheelSize);
+      return `<span style="--angle:${angle}deg"><b>${escapeHtml(initials(item))}</b><small>${escapeHtml(item.title)}</small></span>`;
+    }).join('');
+    return visible;
+  };
+
+  const actionLinks = (item, includeShare = false) => `
+    <a class="action-primary" href="${escapeHtml(item.official_url)}" target="_blank" rel="noopener" data-action="official" data-title="${escapeHtml(item.title)}">公式サイトへ <span>↗</span></a>
+    <a href="${escapeHtml(watchUrl(item))}" target="_blank" rel="noopener" data-action="watch" data-title="${escapeHtml(item.title)}">どこで観られる？ <span>↗</span></a>
+    <a href="${escapeHtml(amazonUrl(item))}" target="_blank" rel="nofollow sponsored noopener" data-action="amazon" data-title="${escapeHtml(item.title)}">原作を見る <small>Amazon広告</small><span>↗</span></a>
+    ${includeShare ? '<button type="button" id="share-result">友だちに送る <span>↗</span></button>' : ''}`;
+
+  const characterMarkup = (item) => item.characters.map((person) => `
+    <li><b>${escapeHtml(person.name)}</b><span>${escapeHtml(person.role)}</span></li>`).join('');
 
   const poster = (item, size = '') => `
     <div class="anime-poster ${size}" style="--poster:${escapeHtml(item.accent)}" aria-hidden="true">
-      <span class="poster-grid"></span><b>${escapeHtml(initials(item))}</b><small>${escapeHtml(item.year)}</small><i>${escapeHtml(item.genres[0])}</i>
+      <span class="poster-spark">✦</span><b>${escapeHtml(initials(item))}</b><small>${escapeHtml(item.genres[0])}</small>
     </div>`;
 
-  const characterMarkup = (item) => item.characters.map((person, index) => `
-    <li><span>0${index + 1}</span><div><b>${escapeHtml(person.name)}</b><p>${escapeHtml(person.role)}</p></div></li>`).join('');
-
-  const actionLinks = (item, location) => `
-    <a class="action-primary" href="${escapeHtml(item.official_url)}" target="_blank" rel="noopener" data-action="official" data-title="${escapeHtml(item.title)}">公式サイト <span>↗</span></a>
-    <a href="${escapeHtml(watchUrl(item))}" target="_blank" rel="noopener" data-action="watch" data-title="${escapeHtml(item.title)}">視聴先を探す <span>↗</span></a>
-    <a href="${escapeHtml(amazonUrl(item))}" target="_blank" rel="nofollow sponsored noopener" data-action="amazon" data-title="${escapeHtml(item.title)}">原作をAmazonで見る <small>広告</small><span>↗</span></a>
-    ${location === 'result' ? '<button type="button" id="share-result">結果を共有 <span>↗</span></button>' : ''}`;
-
-  const renderResult = (item, animate = false) => {
-    current = item;
-    result.style.setProperty('--poster', item.accent);
-    result.classList.toggle('is-revealing', animate);
+  const renderResult = (item) => {
+    result.classList.remove('is-empty');
+    result.classList.add('is-revealing');
     result.innerHTML = `
-      <div class="result-poster-wrap">${poster(item, 'anime-poster--large')}<button class="save-button" type="button" data-save="${escapeHtml(item.id)}" aria-label="${escapeHtml(item.title)}を保存">＋ SAVE</button></div>
+      <div class="result-burst" aria-hidden="true">あたり！</div>
+      ${poster(item, 'anime-poster--result')}
       <div class="result-copy">
-        <div class="result-meta"><span>${escapeHtml(item.format)}</span><span>${item.year}</span><span>${item.episodes}話 / ${totalLabel(item)}</span></div>
-        <p class="result-kicker">YOUR NEXT WORLD IS</p>
+        <p class="result-picked">今夜はこれ。</p>
         <h2>${escapeHtml(item.title)}</h2>
-        <div class="genre-row">${item.genres.map((genre) => `<span>${escapeHtml(genre)}</span>`).join('')}</div>
+        <div class="result-meta"><span>${escapeHtml(item.format)}</span><span>${item.episodes}話</span><span>${totalLabel(item)}</span></div>
         <p class="result-summary">${escapeHtml(item.summary)}</p>
-        <details class="character-details"><summary>主なキャラクター <span>＋</span></summary><ul>${characterMarkup(item)}</ul></details>
-        <div class="result-actions">${actionLinks(item, 'result')}</div>
-        <p class="affiliate-mini">Amazonリンクはアソシエイト広告です。価格・在庫はリンク先でご確認ください。</p>
+        <ul class="quick-characters">${characterMarkup(item)}</ul>
+        <div class="result-actions">${actionLinks(item, true)}</div>
+        <p class="affiliate-mini">Amazonリンクはアソシエイト広告です。</p>
       </div>`;
+    window.setTimeout(() => result.classList.remove('is-revealing'), 600);
     const shareButton = $('#share-result');
     if (shareButton) shareButton.addEventListener('click', () => share(item));
-    updateSavedButtons();
-  };
-
-  const candidates = () => {
-    const genre = genreFilter.value;
-    const mood = moodFilter.value;
-    const time = timeFilter.value;
-    return anime.filter((item) =>
-      (genre === 'all' || item.genres.includes(genre)) &&
-      (mood === 'all' || item.moods.includes(mood)) &&
-      timeMatch(item, time)
-    );
   };
 
   const spin = () => {
-    if (spinTimer) return;
-    const pool = candidates();
-    if (!pool.length) {
-      selectorNote.textContent = 'その組み合わせでは候補がありません。条件を一つゆるめてください。';
-      selectorNote.classList.add('is-error');
-      return;
-    }
-    selectorNote.classList.remove('is-error');
+    if (spinning) return;
+    const visible = paintWheel();
+    if (!visible.length) return;
+    spinning = true;
     spinButton.disabled = true;
-    orbit.classList.add('is-spinning');
-    result.classList.add('is-loading');
-    let ticks = 0;
-    spinTimer = window.setInterval(() => {
-      const preview = pool[Math.floor(Math.random() * pool.length)];
-      orbit.querySelector('span').textContent = initials(preview);
-      ticks += 1;
-      if (ticks >= 10) {
-        window.clearInterval(spinTimer);
-        spinTimer = null;
-        const selected = pool[Math.floor(Math.random() * pool.length)];
-        renderResult(selected, true);
-        orbit.querySelector('span').textContent = '世界';
-        orbit.classList.remove('is-spinning');
-        result.classList.remove('is-loading');
-        spinButton.disabled = false;
-        selectorNote.textContent = `${pool.length}作品から「${selected.title}」を選びました。`;
-        $('#result-count').textContent = `${String(anime.indexOf(selected) + 1).padStart(2, '0')} / ${String(anime.length).padStart(2, '0')}`;
-        track('roulette_complete', { anime_title: selected.title, candidate_count: pool.length });
-        result.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
-      }
-    }, 75);
-    track('roulette_start', { genre: genreFilter.value, mood: moodFilter.value, time: timeFilter.value });
+    spinButton.querySelector('strong').textContent = '回転中';
+    const segment = Math.floor(Math.random() * wheelSize);
+    const selected = visible[segment];
+    const segmentCenter = segment * (360 / wheelSize) + (180 / wheelSize);
+    const base = currentRotation + 1800;
+    const correction = (360 - ((base + segmentCenter) % 360)) % 360;
+    currentRotation = base + correction;
+    wheel.classList.add('is-spinning');
+    wheel.style.transform = `rotate(${currentRotation}deg)`;
+    selectorNote.textContent = 'さて、どれになる…？';
+
+    const finish = () => {
+      wheel.classList.remove('is-spinning');
+      spinButton.disabled = false;
+      spinButton.querySelector('strong').textContent = 'もう一回';
+      selectorNote.textContent = `「${selected.title}」に決まり。`;
+      renderResult(selected);
+      spinning = false;
+      track('roulette_complete', {anime_title: selected.title, candidate_count: candidates().length});
+      if (window.innerWidth < 880) result.scrollIntoView({behavior: 'smooth', block: 'start'});
+    };
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.setTimeout(finish, reduced ? 120 : 2300);
+    track('roulette_start', {genre: genreFilter.value, mood: moodFilter.value, time: timeFilter.value});
   };
 
   const cardMarkup = (item) => `
     <article class="anime-tile" data-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="${escapeHtml(item.title)}の詳細を見る">
       ${poster(item)}
-      <div class="tile-copy"><div><span>${item.year}</span><span>${item.episodes}話</span></div><h3>${escapeHtml(item.title)}</h3><p>${item.genres.map(escapeHtml).join(' / ')}</p></div>
-      <button class="tile-save save-button" data-save="${escapeHtml(item.id)}" type="button" aria-label="${escapeHtml(item.title)}を保存">＋</button>
+      <div class="tile-copy"><div><span>${item.year}</span><span>${item.episodes}話</span></div><h3>${escapeHtml(item.title)}</h3><p>${item.genres.map(escapeHtml).join('・')}</p></div>
     </article>`;
 
   const filteredCatalog = () => {
     const query = normalize(search.value);
     return anime.filter((item) => {
       const genreMatch = activeGenre === 'all' || item.genres.includes(activeGenre);
-      const haystack = normalize([item.title, item.reading, item.summary, ...item.genres, ...item.characters.map((p) => p.name)].join(' '));
+      const haystack = normalize([item.title, item.reading, item.summary, ...item.genres, ...item.characters.map((person) => person.name)].join(' '));
       return genreMatch && (!query || haystack.includes(query));
     });
   };
@@ -183,56 +200,38 @@
   const renderCatalog = () => {
     const matches = filteredCatalog();
     grid.innerHTML = matches.slice(0, displayLimit).map(cardMarkup).join('');
-    catalogStatus.textContent = `${matches.length}作品中 ${Math.min(matches.length, displayLimit)}作品を表示`;
+    catalogStatus.textContent = `${Math.min(matches.length, displayLimit)} / ${matches.length}作品`;
     showMore.hidden = displayLimit >= matches.length;
-    updateSavedButtons();
   };
 
   const openDialog = (item) => {
+    if (!dialog || !dialogContent || !item) return;
     dialogContent.innerHTML = `
       <div class="dialog-layout">${poster(item, 'anime-poster--dialog')}<div class="dialog-copy">
-        <p class="dialog-index">WORLD FILE / ${String(anime.indexOf(item) + 1).padStart(2, '0')}</p><h2>${escapeHtml(item.title)}</h2>
-        <div class="result-meta"><span>${escapeHtml(item.format)}</span><span>${item.year}</span><span>${item.episodes}話 / ${totalLabel(item)}</span></div>
+        <p class="dialog-index">${item.year} / ${escapeHtml(item.format)}</p><h2>${escapeHtml(item.title)}</h2>
         <div class="genre-row">${item.genres.map((genre) => `<span>${escapeHtml(genre)}</span>`).join('')}</div>
         <p class="result-summary">${escapeHtml(item.summary)}</p>
-        <h3>CHARACTERS</h3><ul class="dialog-characters">${characterMarkup(item)}</ul>
-        <div class="result-actions">${actionLinks(item, 'dialog')}</div>
+        <h3>主なキャラクター</h3><ul class="dialog-characters">${characterMarkup(item)}</ul>
+        <div class="result-actions">${actionLinks(item)}</div>
       </div></div>`;
     if (typeof dialog.showModal === 'function') dialog.showModal(); else dialog.setAttribute('open', '');
-    track('anime_detail_open', { anime_title: item.title });
-  };
-
-  const savedIds = () => {
-    try { return JSON.parse(localStorage.getItem('sekai-log-saved') || '[]'); } catch { return []; }
-  };
-  const toggleSave = (id) => {
-    const saved = new Set(savedIds());
-    if (saved.has(id)) saved.delete(id); else saved.add(id);
-    localStorage.setItem('sekai-log-saved', JSON.stringify([...saved]));
-    updateSavedButtons();
-    track('anime_save', { anime_id: id, saved: saved.has(id) });
-  };
-  const updateSavedButtons = () => {
-    const saved = new Set(savedIds());
-    document.querySelectorAll('[data-save]').forEach((button) => {
-      const active = saved.has(button.dataset.save);
-      button.classList.toggle('is-saved', active);
-      if (button.classList.contains('tile-save')) button.textContent = active ? '✓' : '＋';
-      else button.textContent = active ? '✓ SAVED' : '＋ SAVE';
-    });
+    track('anime_detail_open', {anime_title: item.title});
   };
 
   const share = async (item) => {
-    const text = `SEKAI LOGのルーレットで「${item.title}」が選ばれました。`;
-    const url = `${location.origin}${location.pathname}#result`;
+    const text = `アニメルーレットの結果は「${item.title}」でした。`;
+    const url = `${location.origin}${location.pathname}#roulette`;
     if (navigator.share) {
-      try { await navigator.share({title: item.title, text, url}); track('share_result', {anime_title: item.title, method: 'native'}); return; } catch (error) { if (error.name === 'AbortError') return; }
+      try { await navigator.share({title: 'SEKAI LOG', text, url}); return; }
+      catch (error) { if (error.name === 'AbortError') return; }
     }
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${text}\n${url}`)}`, '_blank', 'noopener');
-    track('share_result', {anime_title: item.title, method: 'x'});
   };
 
   const initDailyGame = () => {
+    const hintList = $('#hint-list');
+    const choicesNode = $('#game-choices');
+    if (!hintList || !choicesNode) return;
     const date = new Date();
     const key = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
     const yesterday = new Date(date); yesterday.setDate(date.getDate() - 1);
@@ -241,23 +240,23 @@
     const answer = anime[seed % anime.length];
     const decoys = anime.filter((item) => item.id !== answer.id).sort((a, b) => ((seed * (anime.indexOf(a) + 3)) % 97) - ((seed * (anime.indexOf(b) + 3)) % 97)).slice(0, 3);
     const choices = [...decoys, answer].sort((a, b) => ((seed + anime.indexOf(a) * 13) % 31) - ((seed + anime.indexOf(b) * 13) % 31));
-    const hints = [`${answer.year}年に始まった${answer.format}`, `ジャンルは「${answer.genres.slice(0, 2).join('・')}」`, answer.hint];
-    $('#hint-list').innerHTML = hints.map((hint, index) => `<div><span>HINT 0${index + 1}</span><p>${escapeHtml(hint)}</p></div>`).join('');
-    $('#game-choices').innerHTML = choices.map((item) => `<button type="button" data-answer="${escapeHtml(item.id)}">${escapeHtml(item.title)}</button>`).join('');
+    const hints = [`${answer.year}年スタート`, `ジャンルは「${answer.genres.slice(0, 2).join('・')}」`, answer.hint];
+    hintList.innerHTML = hints.map((hint, index) => `<div><span>ヒント${index + 1}</span><p>${escapeHtml(hint)}</p></div>`).join('');
+    choicesNode.innerHTML = choices.map((item) => `<button type="button" data-answer="${escapeHtml(item.id)}">${escapeHtml(item.title)}</button>`).join('');
     const played = localStorage.getItem('sekai-log-daily') === key;
     const streak = Number(localStorage.getItem('sekai-log-streak') || 0);
     $('#game-streak').textContent = String(streak);
-    if (played) $('#game-message').textContent = '今日は回答済みです。明日また挑戦してください。';
-    $('#game-choices').addEventListener('click', (event) => {
+    if (played) $('#game-message').textContent = '今日は回答済み。また明日！';
+    choicesNode.addEventListener('click', (event) => {
       const button = event.target.closest('[data-answer]');
       if (!button || localStorage.getItem('sekai-log-daily') === key) return;
       const correct = button.dataset.answer === answer.id;
-      document.querySelectorAll('[data-answer]').forEach((choice) => {
+      choicesNode.querySelectorAll('[data-answer]').forEach((choice) => {
         choice.disabled = true;
         if (choice.dataset.answer === answer.id) choice.classList.add('is-correct');
       });
       if (!correct) button.classList.add('is-wrong');
-      $('#game-message').textContent = correct ? `正解。「${answer.title}」です。` : `惜しい。正解は「${answer.title}」でした。`;
+      $('#game-message').textContent = correct ? `正解！「${answer.title}」です。` : `残念。答えは「${answer.title}」でした。`;
       localStorage.setItem('sekai-log-daily', key);
       const lastPlayed = localStorage.getItem('sekai-log-last-daily');
       const nextStreak = correct ? (lastPlayed === yesterdayKey ? streak + 1 : 1) : 0;
@@ -268,6 +267,10 @@
     });
   };
 
+  [genreFilter, moodFilter, timeFilter].forEach((filter) => filter.addEventListener('change', paintWheel));
+  $('#clear-filters').addEventListener('click', () => {
+    genreFilter.value = 'all'; moodFilter.value = 'all'; timeFilter.value = 'all'; paintWheel();
+  });
   spinButton.addEventListener('click', spin);
   search.addEventListener('input', () => { displayLimit = 12; renderCatalog(); });
   chips.forEach((button) => button.addEventListener('click', () => {
@@ -279,26 +282,22 @@
   }));
   showMore.addEventListener('click', () => { displayLimit += 12; renderCatalog(); });
   grid.addEventListener('click', (event) => {
-    const save = event.target.closest('[data-save]');
-    if (save) { event.stopPropagation(); toggleSave(save.dataset.save); return; }
     const tile = event.target.closest('.anime-tile');
     if (tile) openDialog(anime.find((item) => item.id === tile.dataset.id));
   });
   grid.addEventListener('keydown', (event) => {
-    if ((event.key === 'Enter' || event.key === ' ') && event.target.classList.contains('anime-tile')) { event.preventDefault(); event.target.click(); }
-  });
-  result.addEventListener('click', (event) => {
-    const save = event.target.closest('[data-save]');
-    if (save) toggleSave(save.dataset.save);
+    if ((event.key === 'Enter' || event.key === ' ') && event.target.classList.contains('anime-tile')) {
+      event.preventDefault(); event.target.click();
+    }
   });
   document.addEventListener('click', (event) => {
     const link = event.target.closest('[data-action]');
     if (link) track('outbound_click', {destination: link.dataset.action, anime_title: link.dataset.title});
   });
-  dialogClose.addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  if (dialogClose) dialogClose.addEventListener('click', () => dialog.close());
+  if (dialog) dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 
-  renderResult(current);
+  paintWheel();
   renderCatalog();
   initDailyGame();
 })();
