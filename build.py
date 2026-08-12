@@ -216,9 +216,9 @@ def load_anime() -> list[dict]:
 
 def nav(current: str = "") -> str:
     links = [
-        ("index", "作品を探す", "index.html#discover"),
-        ("catalog", "作品図鑑", "index.html#catalog"),
-        ("game", "今日のゲーム", "index.html#daily-game"),
+        ("index", "ルーレット", "index.html#roulette"),
+        ("catalog", "アニメ一覧", "index.html#catalog"),
+        ("game", "3ヒント", "index.html#daily-game"),
         ("all", "読みもの", "all.html"),
     ]
     items = "".join(
@@ -230,7 +230,7 @@ def nav(current: str = "") -> str:
 <header class="site-header">
   <a class="brand" href="/index.html" aria-label="SEKAI LOG ホーム">
     <span class="brand-mark" aria-hidden="true">SL</span>
-    <span><strong>SEKAI LOG</strong><small>ANIME DISCOVERY PLAYGROUND</small></span>
+    <span><strong>SEKAI LOG</strong><small>きょう観るアニメ、ここで決めよ。</small></span>
   </a>
   <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
   <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">{items}</nav>
@@ -242,7 +242,7 @@ def footer() -> str:
 <footer class="site-footer">
   <div>
     <p class="footer-brand">SEKAI LOG</p>
-    <p>気分と時間から、次に見るアニメへ。選ぶ、遊ぶ、そしてすぐ作品の世界へ進めるアニメ発見サイト。</p>
+    <p>観たいのに、決まらない。そんな夜のためのアニメくじ。</p>
   </div>
   <nav aria-label="フッターナビゲーション">
     <a href="/about.html">このサイトについて</a>
@@ -292,7 +292,7 @@ def page(
   <meta property="og:description" content="{html.escape(description, quote=True)}">
   <meta property="og:url" content="{html.escape(canonical_url, quote=True)}">
   <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#08111f">
+  <meta name="theme-color" content="#5b4bff">
   <link rel="stylesheet" href="/shared.css">
 {schema}
 {analytics()}
@@ -330,39 +330,45 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
     anime_json = json.dumps(anime, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     latest = "".join(card(item) for item in articles[:3])
     body = f"""
-<section class="discovery-hero" id="discover">
-  <div class="hero-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
-  <div class="discovery-intro">
-    <p class="signal"><span></span> NEXT WORLD SELECTOR / {len(anime):02d} TITLES</p>
-    <h1>次の一本は、<br><em>考える前に回せ。</em></h1>
-    <p class="discovery-lead">いまの気分と使える時間を選ぶだけ。候補が決まったら、公式サイト・視聴先・原作へそのまま進めます。</p>
-    <div class="hero-facts" aria-label="サイトの特徴"><span><b>{len(anime)}</b>作品から選出</span><span><b>3</b>条件で絞り込み</span><span><b>1</b>タップで作品へ</span></div>
+<section class="pop-hero" id="discover">
+  <div class="pop-hero-copy">
+    <p class="pop-kicker"><span>NEW</span> アニメ選びに、くじ引きを。</p>
+    <h1>今夜なに観る？<br><em>回して決めよ。</em></h1>
+    <p>候補は{len(anime)}作品。条件を選んでも、ぜんぶ運任せでもOK。決まったら、観られる場所や公式サイトへすぐ飛べます。</p>
+    <a class="jump-roulette" href="#roulette">さっそく回す <span>↓</span></a>
   </div>
-
-  <div class="selector-shell" aria-label="アニメルーレット">
-    <div class="selector-topline"><span>WORLD SELECTOR</span><span class="selector-status"><i></i> READY</span></div>
-    <div class="selector-controls">
-      <label><span>01 / ジャンル</span><select id="genre-filter"><option value="all">なんでも</option><option>ファンタジー</option><option>SF</option><option>青春</option><option>アクション</option><option>ミステリー</option><option>日常</option><option>スポーツ</option></select></label>
-      <label><span>02 / 気分</span><select id="mood-filter"><option value="all">おまかせ</option><option>熱くなりたい</option><option>笑いたい</option><option>泣きたい</option><option>考えたい</option><option>癒やされたい</option><option>ハラハラしたい</option></select></label>
-      <label><span>03 / 使える時間</span><select id="time-filter"><option value="all">制限なし</option><option value="short">3時間まで</option><option value="medium">1日で完走</option><option value="long">じっくり</option></select></label>
-    </div>
-    <div class="roulette-stage">
-      <div class="roulette-orbit" id="roulette-orbit" aria-hidden="true"><span>世界</span><i></i><i></i><i></i></div>
-      <button class="spin-button" id="spin-button" type="button"><span>ROULETTE</span><strong>この条件で回す</strong><i>→</i></button>
-    </div>
-    <p class="selector-note" id="selector-note" aria-live="polite">条件を選ぶか、そのまま運に任せてください。</p>
+  <div class="pop-hero-art" aria-hidden="true">
+    <img src="/assets/sekai-log-hero.webp" alt="">
+    <span class="hero-sticker hero-sticker--one">どれにする？</span>
+    <span class="hero-sticker hero-sticker--two">26作品</span>
   </div>
 </section>
 
-<section class="result-zone" id="result" aria-live="polite">
-  <div class="result-heading"><p>SELECTED WORLD</p><span id="result-count">01 / {len(anime):02d}</span></div>
-  <article class="anime-result" id="anime-result"></article>
+<section class="roulette-playground" id="roulette">
+  <header class="pop-section-heading"><div><span>01</span><h2>アニメルーレット</h2></div><p>迷ったら、押す。それだけ。</p></header>
+  <div class="filter-bar" aria-label="ルーレットの条件">
+    <label><span>ジャンル</span><select id="genre-filter"><option value="all">なんでも</option><option>ファンタジー</option><option>SF</option><option>青春</option><option>アクション</option><option>ミステリー</option><option>日常</option><option>スポーツ</option></select></label>
+    <label><span>いまの気分</span><select id="mood-filter"><option value="all">おまかせ</option><option>熱くなりたい</option><option>笑いたい</option><option>泣きたい</option><option>考えたい</option><option>癒やされたい</option><option>ハラハラしたい</option></select></label>
+    <label><span>使える時間</span><select id="time-filter"><option value="all">気にしない</option><option value="short">3時間まで</option><option value="medium">1日で見切る</option><option value="long">じっくり観る</option></select></label>
+    <button class="clear-filters" id="clear-filters" type="button">条件をリセット</button>
+  </div>
+  <div class="roulette-layout">
+    <div class="wheel-machine">
+      <div class="wheel-pointer" aria-hidden="true"></div>
+      <div class="roulette-wheel" id="roulette-wheel" aria-hidden="true"><div class="wheel-labels" id="wheel-labels"></div></div>
+      <button class="spin-button" id="spin-button" type="button"><span>タップ！</span><strong>まわす</strong></button>
+      <p class="selector-note" id="selector-note" aria-live="polite">いまは全作品が入っています。</p>
+    </div>
+    <article class="anime-result is-empty" id="anime-result" aria-live="polite">
+      <div class="empty-result"><span>?</span><h3>ここに結果が出ます</h3><p>ホイール中央の「まわす」を押してください。</p></div>
+    </article>
+  </div>
 </section>
 
 <section class="catalog-section" id="catalog">
-  <header class="experience-heading"><div><p>WORLD INDEX</p><h2>眺めて選ぶ、作品図鑑。</h2></div><p>ルーレットに任せたくない日は、タグとタイトルから直接探せます。</p></header>
+  <header class="pop-section-heading"><div><span>02</span><h2>自分で選ぶ</h2></div><p>くじじゃなく、ちゃんと探したい日はこちら。</p></header>
   <div class="catalog-tools">
-    <label class="catalog-search"><span>SEARCH</span><input id="anime-search" type="search" placeholder="作品名・ジャンル・キャラクター" autocomplete="off"></label>
+    <label class="catalog-search"><span>検索</span><input id="anime-search" type="search" placeholder="作品名・キャラ名を入力" autocomplete="off"></label>
     <div class="catalog-chips" id="catalog-chips" aria-label="ジャンルで絞り込む"><button class="is-active" data-genre="all" type="button">すべて</button><button data-genre="ファンタジー" type="button">ファンタジー</button><button data-genre="SF" type="button">SF</button><button data-genre="青春" type="button">青春</button><button data-genre="アクション" type="button">アクション</button><button data-genre="ミステリー" type="button">ミステリー</button></div>
   </div>
   <div class="anime-grid" id="anime-grid"></div>
@@ -370,16 +376,16 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
 </section>
 
 <section class="daily-game" id="daily-game">
-  <div class="game-copy"><p class="signal"><span></span> DAILY MINI GAME</p><h2>3つのヒントで<br>今日の作品を当てる。</h2><p>答えは毎日0時に切り替わります。連続正解はこの端末に記録されます。</p><div class="streak"><span>STREAK</span><b id="game-streak">0</b><small>DAYS</small></div></div>
+  <div class="game-copy"><p class="game-label">毎日1問</p><h2>3ヒント<br>アニメ当て</h2><p>分かった時点で答えてOK。問題は毎日0時に入れ替わります。</p><div class="streak"><span>連続正解</span><b id="game-streak">0</b><small>日</small></div></div>
   <div class="game-board">
     <div class="hint-list" id="hint-list"></div>
     <div class="game-choices" id="game-choices"></div>
-    <p class="game-message" id="game-message" aria-live="polite">ヒントを読んで作品を選んでください。</p>
+    <p class="game-message" id="game-message" aria-live="polite">どの作品でしょう？</p>
   </div>
 </section>
 
 <section class="reading-section">
-  <header class="experience-heading"><div><p>READ AFTER WATCHING</p><h2>見終わったあとに、読む。</h2></div><a href="/all.html">読みものをすべて見る →</a></header>
+  <header class="pop-section-heading"><div><span>03</span><h2>読みもの</h2></div><a href="/all.html">記事を全部見る →</a></header>
   <div class="story-grid story-grid--archive">{latest}</div>
 </section>
 
@@ -388,7 +394,7 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
 <script id="anime-data" type="application/json">{anime_json}</script>"""
     schema = [
         {"@context": "https://schema.org", "@type": "WebSite", "name": SITE_NAME, "url": SITE_URL,
-         "description": "気分と時間から次に見るアニメを選べる、ルーレットと作品図鑑。"},
+         "description": "気分と時間で絞って回せる、アニメルーレット。"},
         {"@context": "https://schema.org", "@type": "ItemList", "name": "SEKAI LOG アニメ作品図鑑",
          "numberOfItems": len(anime), "itemListElement": [
              {"@type": "ListItem", "position": index + 1, "name": item["title"], "url": item["official_url"]}
@@ -396,8 +402,8 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
          ]},
     ]
     return page(
-        "SEKAI LOG — 次に見るアニメをルーレットで決める",
-        "気分・ジャンル・使える時間から次に見るアニメを選べるルーレット。あらすじ、キャラクター、公式サイト、原作へのリンクをひとまとめに紹介します。",
+        "SEKAI LOG — 今夜のアニメをルーレットで決めよう",
+        "観るアニメが決まらない夜に。ジャンル・気分・時間で絞って回せる、無料のアニメルーレット。",
         body, current="index", canonical=SITE_URL + "/", structured_data=schema,
     )
 
