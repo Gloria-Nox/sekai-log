@@ -269,6 +269,7 @@ def page(
     canonical: str = "",
     page_type: str = "website",
     structured_data: dict | list | None = None,
+    asset_version: str = "",
 ) -> str:
     canonical_url = canonical or SITE_URL + "/"
     schema = ""
@@ -276,6 +277,7 @@ def page(
         schema = '<script type="application/ld+json">' + json.dumps(
             structured_data, ensure_ascii=False, separators=(",", ":")
         ).replace("</", "<\\/") + "</script>"
+    asset_suffix = f"?v={asset_version}" if asset_version else ""
     return f"""<!doctype html>
 <html lang="ja">
 <head>
@@ -293,7 +295,7 @@ def page(
   <meta property="og:url" content="{html.escape(canonical_url, quote=True)}">
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#5b4bff">
-  <link rel="stylesheet" href="/shared.css">
+  <link rel="stylesheet" href="/shared.css{asset_suffix}">
 {schema}
 {analytics()}
 </head>
@@ -301,7 +303,7 @@ def page(
 {nav(current)}
   <main id="main">{body}</main>
 {footer()}
-  <script src="/shared.js" defer></script>
+  <script src="/shared.js{asset_suffix}" defer></script>
 </body>
 </html>
 """
@@ -405,6 +407,7 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
         "SEKAI LOG — 今夜のアニメをルーレットで決めよう",
         "観るアニメが決まらない夜に。ジャンル・気分・時間で絞って回せる、無料のアニメルーレット。",
         body, current="index", canonical=SITE_URL + "/", structured_data=schema,
+        asset_version="20260812-pop2",
     )
 
 
