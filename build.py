@@ -21,6 +21,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).parent
 POSTS_DIR = ROOT / "_posts"
 ARTICLE_DIR = ROOT / "articles"
+ANIME_DATA = ROOT / "data" / "anime.json"
 SITE_URL = "https://sekai-log.com"
 SITE_NAME = "SEKAI LOG"
 AUTHOR = "藤乃宮遊"
@@ -199,9 +200,27 @@ def load_articles() -> tuple[list[dict], list[str]]:
     return articles, notes
 
 
+def load_anime() -> list[dict]:
+    anime = json.loads(ANIME_DATA.read_text(encoding="utf-8"))
+    required = {"id", "title", "year", "genres", "moods", "episodes", "minutes", "summary", "characters", "official_url"}
+    ids: set[str] = set()
+    for item in anime:
+        missing = sorted(required - item.keys())
+        if missing:
+            raise SystemExit(f"anime {item.get('id', '?')}: missing {', '.join(missing)}")
+        if item["id"] in ids:
+            raise SystemExit(f"anime: duplicate id {item['id']}")
+        ids.add(item["id"])
+    return anime
+
+
 def nav(current: str = "") -> str:
-    links = [("index", "ホーム", "index.html"), ("all", "記事一覧", "all.html")]
-    links += [(key, value[0], f"{key}.html") for key, value in CATEGORIES.items()]
+    links = [
+        ("index", "作品を探す", "index.html#discover"),
+        ("catalog", "作品図鑑", "index.html#catalog"),
+        ("game", "今日のゲーム", "index.html#daily-game"),
+        ("all", "読みもの", "all.html"),
+    ]
     items = "".join(
         f'<a href="/{url}" class="{("is-active" if current == key else "")}">{label}</a>'
         for key, label, url in links
@@ -211,7 +230,7 @@ def nav(current: str = "") -> str:
 <header class="site-header">
   <a class="brand" href="/index.html" aria-label="SEKAI LOG ホーム">
     <span class="brand-mark" aria-hidden="true">SL</span>
-    <span><strong>SEKAI LOG</strong><small>FICTION &amp; CULTURE REVIEW</small></span>
+    <span><strong>SEKAI LOG</strong><small>ANIME DISCOVERY PLAYGROUND</small></span>
   </a>
   <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
   <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">{items}</nav>
@@ -223,7 +242,7 @@ def footer() -> str:
 <footer class="site-footer">
   <div>
     <p class="footer-brand">SEKAI LOG</p>
-    <p>アニメ・小説・SFを、見終えた後からもう一度考える個人批評誌。</p>
+    <p>気分と時間から、次に見るアニメへ。選ぶ、遊ぶ、そしてすぐ作品の世界へ進めるアニメ発見サイト。</p>
   </div>
   <nav aria-label="フッターナビゲーション">
     <a href="/about.html">このサイトについて</a>
@@ -273,7 +292,7 @@ def page(
   <meta property="og:description" content="{html.escape(description, quote=True)}">
   <meta property="og:url" content="{html.escape(canonical_url, quote=True)}">
   <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#f5f1e8">
+  <meta name="theme-color" content="#08111f">
   <link rel="stylesheet" href="/shared.css">
 {schema}
 {analytics()}
@@ -307,47 +326,79 @@ def card(article: dict, *, featured: bool = False) -> str:
 </article>"""
 
 
-def render_home(articles: list[dict]) -> str:
-    feature = articles[0]
-    rest = "".join(card(item) for item in articles[1:5])
-    counts = "".join(
-        f'<a href="/{key}.html"><strong>{label[0]}</strong><span>{sum(a["category"] == key for a in articles):02d}</span></a>'
-        for key, label in CATEGORIES.items()
-    )
+def render_home(articles: list[dict], anime: list[dict]) -> str:
+    anime_json = json.dumps(anime, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    latest = "".join(card(item) for item in articles[:3])
     body = f"""
-<section class="home-hero">
-  <div class="hero-kicker">PERSONAL REVIEW JOURNAL / KANSAI</div>
-  <div class="hero-grid">
-    <div>
-      <p class="hero-index">ISSUE 001 — 2026</p>
-      <h1>好きだった作品を、<br><em>考えた言葉</em>で残す。</h1>
-      <p class="hero-lead">アニメ、SF、小説、サブカルチャー。あらすじではなく、見終えたあとに残る問いを記録する個人批評誌です。</p>
-      <a class="text-link" href="/all.html">すべての記事を読む <span>→</span></a>
+<section class="discovery-hero" id="discover">
+  <div class="hero-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="discovery-intro">
+    <p class="signal"><span></span> NEXT WORLD SELECTOR / {len(anime):02d} TITLES</p>
+    <h1>次の一本は、<br><em>考える前に回せ。</em></h1>
+    <p class="discovery-lead">いまの気分と使える時間を選ぶだけ。候補が決まったら、公式サイト・視聴先・原作へそのまま進めます。</p>
+    <div class="hero-facts" aria-label="サイトの特徴"><span><b>{len(anime)}</b>作品から選出</span><span><b>3</b>条件で絞り込み</span><span><b>1</b>タップで作品へ</span></div>
+  </div>
+
+  <div class="selector-shell" aria-label="アニメルーレット">
+    <div class="selector-topline"><span>WORLD SELECTOR</span><span class="selector-status"><i></i> READY</span></div>
+    <div class="selector-controls">
+      <label><span>01 / ジャンル</span><select id="genre-filter"><option value="all">なんでも</option><option>ファンタジー</option><option>SF</option><option>青春</option><option>アクション</option><option>ミステリー</option><option>日常</option><option>スポーツ</option></select></label>
+      <label><span>02 / 気分</span><select id="mood-filter"><option value="all">おまかせ</option><option>熱くなりたい</option><option>笑いたい</option><option>泣きたい</option><option>考えたい</option><option>癒やされたい</option><option>ハラハラしたい</option></select></label>
+      <label><span>03 / 使える時間</span><select id="time-filter"><option value="all">制限なし</option><option value="short">3時間まで</option><option value="medium">1日で完走</option><option value="long">じっくり</option></select></label>
     </div>
-    <aside class="hero-note"><span>EDITOR'S NOTE</span><p>結論を急がず、作品のどこに心が止まったのかを言葉にする。SEKAI LOGを、そのための静かな読書室に作り直しました。</p></aside>
+    <div class="roulette-stage">
+      <div class="roulette-orbit" id="roulette-orbit" aria-hidden="true"><span>世界</span><i></i><i></i><i></i></div>
+      <button class="spin-button" id="spin-button" type="button"><span>ROULETTE</span><strong>この条件で回す</strong><i>→</i></button>
+    </div>
+    <p class="selector-note" id="selector-note" aria-live="polite">条件を選ぶか、そのまま運に任せてください。</p>
   </div>
 </section>
-<section class="home-section">
-  <header class="section-heading"><div><p>FEATURED</p><h2>まず読んでほしい一本</h2></div><span>01</span></header>
-  {card(feature, featured=True)}
+
+<section class="result-zone" id="result" aria-live="polite">
+  <div class="result-heading"><p>SELECTED WORLD</p><span id="result-count">01 / {len(anime):02d}</span></div>
+  <article class="anime-result" id="anime-result"></article>
 </section>
-<section class="home-section">
-  <header class="section-heading"><div><p>LATEST STORIES</p><h2>新着の記事</h2></div><a href="/all.html">一覧を見る →</a></header>
-  <div class="story-grid">{rest}</div>
+
+<section class="catalog-section" id="catalog">
+  <header class="experience-heading"><div><p>WORLD INDEX</p><h2>眺めて選ぶ、作品図鑑。</h2></div><p>ルーレットに任せたくない日は、タグとタイトルから直接探せます。</p></header>
+  <div class="catalog-tools">
+    <label class="catalog-search"><span>SEARCH</span><input id="anime-search" type="search" placeholder="作品名・ジャンル・キャラクター" autocomplete="off"></label>
+    <div class="catalog-chips" id="catalog-chips" aria-label="ジャンルで絞り込む"><button class="is-active" data-genre="all" type="button">すべて</button><button data-genre="ファンタジー" type="button">ファンタジー</button><button data-genre="SF" type="button">SF</button><button data-genre="青春" type="button">青春</button><button data-genre="アクション" type="button">アクション</button><button data-genre="ミステリー" type="button">ミステリー</button></div>
+  </div>
+  <div class="anime-grid" id="anime-grid"></div>
+  <div class="catalog-end"><p id="catalog-status" aria-live="polite"></p><button id="show-more" class="outline-button" type="button">もっと見る ＋</button></div>
 </section>
-<section class="category-strip" aria-label="カテゴリ一覧">{counts}</section>
-<section class="home-section manifesto">
-  <p class="eyebrow"><span>OUR APPROACH</span></p>
-  <h2>作品紹介で終わらず、<br>「なぜ残ったか」まで書く。</h2>
-  <div><p>公式情報と個人の解釈を分け、事実に根拠のない断定は避けます。ネタバレは明示し、関連商品を紹介する場合は広告であることを表示します。</p><a class="text-link" href="/about.html">編集方針を読む <span>→</span></a></div>
-</section>"""
+
+<section class="daily-game" id="daily-game">
+  <div class="game-copy"><p class="signal"><span></span> DAILY MINI GAME</p><h2>3つのヒントで<br>今日の作品を当てる。</h2><p>答えは毎日0時に切り替わります。連続正解はこの端末に記録されます。</p><div class="streak"><span>STREAK</span><b id="game-streak">0</b><small>DAYS</small></div></div>
+  <div class="game-board">
+    <div class="hint-list" id="hint-list"></div>
+    <div class="game-choices" id="game-choices"></div>
+    <p class="game-message" id="game-message" aria-live="polite">ヒントを読んで作品を選んでください。</p>
+  </div>
+</section>
+
+<section class="reading-section">
+  <header class="experience-heading"><div><p>READ AFTER WATCHING</p><h2>見終わったあとに、読む。</h2></div><a href="/all.html">読みものをすべて見る →</a></header>
+  <div class="story-grid story-grid--archive">{latest}</div>
+</section>
+
+<dialog class="anime-dialog" id="anime-dialog" aria-label="作品の詳細"><button class="dialog-close" id="dialog-close" type="button" aria-label="閉じる">×</button><div id="dialog-content"></div></dialog>
+<noscript><p class="noscript-note">ルーレットと作品検索を使うにはJavaScriptを有効にしてください。<a href="/all.html">読みものはこちら</a></p></noscript>
+<script id="anime-data" type="application/json">{anime_json}</script>"""
+    schema = [
+        {"@context": "https://schema.org", "@type": "WebSite", "name": SITE_NAME, "url": SITE_URL,
+         "description": "気分と時間から次に見るアニメを選べる、ルーレットと作品図鑑。"},
+        {"@context": "https://schema.org", "@type": "ItemList", "name": "SEKAI LOG アニメ作品図鑑",
+         "numberOfItems": len(anime), "itemListElement": [
+             {"@type": "ListItem", "position": index + 1, "name": item["title"], "url": item["official_url"]}
+             for index, item in enumerate(anime)
+         ]},
+    ]
     return page(
-        "SEKAI LOG — アニメ・SF・小説の個人批評誌",
-        "アニメ、SF、小説、サブカルチャーを、作品に残る問いから読み解く個人批評サイト。",
-        body,
-        current="index",
-        canonical=SITE_URL + "/",
-        structured_data={"@context": "https://schema.org", "@type": "WebSite", "name": SITE_NAME, "url": SITE_URL},
+        "SEKAI LOG — 次に見るアニメをルーレットで決める",
+        "気分・ジャンル・使える時間から次に見るアニメを選べるルーレット。あらすじ、キャラクター、公式サイト、原作へのリンクをひとまとめに紹介します。",
+        body, current="index", canonical=SITE_URL + "/", structured_data=schema,
     )
 
 
@@ -358,8 +409,8 @@ def render_archive(articles: list[dict], category: str | None = None) -> str:
         title = f"{label}の記事 — SEKAI LOG"
         current = category
     else:
-        label, english, description = "記事一覧", "ALL STORIES", "公開中の記事を新しい順に掲載しています。"
-        title = "記事一覧 — SEKAI LOG"
+        label, english, description = "読みもの", "READING LOG", "見終わったあとに考えたい作品の評論を、新しい順に掲載しています。"
+        title = "読みもの — SEKAI LOG"
         current = "all"
     cards = "".join(card(item) for item in selected)
     body = f"""
@@ -439,19 +490,19 @@ def render_article(article: dict, all_articles: list[dict]) -> str:
 
 def render_about() -> str:
     body = """
-<section class="page-title"><p>ABOUT</p><h1>このサイトについて</h1><div><span>PERSONAL REVIEW JOURNAL</span><p>記憶を、考えた言葉として残す。</p></div></section>
+<section class="page-title"><p>ABOUT</p><h1>このサイトについて</h1><div><span>ANIME DISCOVERY PLAYGROUND</span><p>次に見る一本を、迷う時間ごと楽しくする。</p></div></section>
 <div class="prose-page">
   <section><p class="eyebrow"><span>PROFILE</span></p><h2>藤乃宮 遊</h2><p>関西在住。2011年ごろからアニメやライトノベルを追い、SF・ファンタジーを中心に作品を見てきました。設定の整理だけではなく、作品が人間や社会をどう捉えているかを考えるのが好きです。</p></section>
-  <section><p class="eyebrow"><span>WHY SEKAI LOG</span></p><h2>好きだった理由を、忘れないために。</h2><p>見た作品の数が増えるほど、強く心を動かされた瞬間まで輪郭を失っていきます。SEKAI LOGは、感想を消費して次へ進むのではなく、「なぜ残ったのか」を立ち止まって書くための場所です。</p></section>
-  <section><p class="eyebrow"><span>EDITORIAL POLICY</span></p><h2>事実と解釈を分けて書く。</h2><ul><li>公式情報や確認できる記録と、筆者個人の解釈を区別します。</li><li>作品の核心に触れる記事には、ネタバレ表示を付けます。</li><li>誤りが分かった場合は、内容を確認して修正します。</li><li>商品リンクには広告であることを明示し、作品と関係のない商品は勧めません。</li></ul></section>
-  <section><p class="eyebrow"><span>FAVORITES</span></p><h2>よく読む・見る領域</h2><div class="tag-cloud"><span>SF</span><span>ファンタジー</span><span>ライトノベル</span><span>アニメーション</span><span>作品構造</span><span>メディア史</span></div></section>
+  <section><p class="eyebrow"><span>WHY SEKAI LOG</span></p><h2>選べない夜を、遊べる時間に。</h2><p>配信サービスを開いても、候補を眺めるだけで時間が過ぎる。SEKAI LOGは、気分・ジャンル・使える時間から候補を絞り、ルーレットで最後の一押しをする場所です。決まったあとは公式情報、視聴先、原作へすぐ進めます。</p></section>
+  <section><p class="eyebrow"><span>DATA POLICY</span></p><h2>短く、確かに、行動できる情報を。</h2><ul><li>あらすじと人物紹介は核心のネタバレを避け、独自の文章で要約します。</li><li>作品情報は公式サイトを優先し、配信状況は外部サービスの最新表示で確認できる導線を設けます。</li><li>権利が明確でない場面写真やポスターは転載しません。</li><li>商品リンクには広告であることを明示し、Amazonアソシエイトの規約に沿って掲載します。</li></ul></section>
+  <section><p class="eyebrow"><span>WHAT REMAINS</span></p><h2>評論記事は「見たあと」の場所へ。</h2><p>これまで公開した評論は削除せず、読みものとして残しています。作品を選ぶ場所と、見終わった作品を考える場所。その両方を一つのサイトでつなぎます。</p></section>
 </div>"""
-    return page("このサイトについて — SEKAI LOG", "SEKAI LOGと運営者・藤乃宮遊のプロフィール、編集方針。", body, current="about", canonical=SITE_URL + "/about.html")
+    return page("このサイトについて — SEKAI LOG", "次に見るアニメを選ぶSEKAI LOGの使い方と、運営者・藤乃宮遊の情報方針。", body, current="about", canonical=SITE_URL + "/about.html")
 
 
 def render_privacy() -> str:
     body = """
-<section class="page-title"><p>PRIVACY &amp; ADVERTISING</p><h1>プライバシー・広告</h1><div><span>UPDATED 2026.08.04</span><p>アクセス解析、広告、著作権に関する方針です。</p></div></section>
+<section class="page-title"><p>PRIVACY &amp; ADVERTISING</p><h1>プライバシー・広告</h1><div><span>UPDATED 2026.08.12</span><p>アクセス解析、広告、著作権に関する方針です。</p></div></section>
 <div class="prose-page legal">
   <section><h2>アクセス解析</h2><p>当サイトは、閲覧状況を把握し改善するためGoogle Analyticsを利用しています。Google AnalyticsはCookie等を用いて閲覧情報を収集します。収集される情報や利用方法については、Googleのプライバシーポリシーをご確認ください。ブラウザの設定やGoogleのオプトアウト機能により収集を制限できます。</p></section>
   <section><h2>Amazonアソシエイト</h2><p>Amazonのアソシエイトとして、SEKAI LOGは適格販売により収入を得ています。商品リンクには「広告」または同等の表示を付けます。リンク先の商品価格・在庫・販売条件は変更される場合があり、購入時にはAmazon.co.jpの表示が適用されます。</p></section>
@@ -482,7 +533,7 @@ def build_feed(articles: list[dict]) -> str:
         url = f"{SITE_URL}/{article['url']}"
         published = format_datetime(parse_date(article["date"]))
         items.append(f"""<item><title>{html.escape(article['title'])}</title><link>{url}</link><guid>{url}</guid><pubDate>{published}</pubDate><description>{html.escape(article['excerpt'])}</description></item>""")
-    return f"""<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>SEKAI LOG</title><link>{SITE_URL}</link><description>アニメ・SF・小説の個人批評誌</description><language>ja</language>{''.join(items)}</channel></rss>"""
+    return f"""<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>SEKAI LOG 読みもの</title><link>{SITE_URL}</link><description>アニメを見終わったあとに読む評論とコラム</description><language>ja</language>{''.join(items)}</channel></rss>"""
 
 
 def build_sitemap(articles: list[dict]) -> str:
@@ -500,13 +551,14 @@ def write(path: Path, content: str) -> None:
 
 def main() -> None:
     articles, notes = load_articles()
+    anime = load_anime()
     if not articles:
         raise SystemExit("No published articles")
     if ARTICLE_DIR.exists():
         shutil.rmtree(ARTICLE_DIR)
     ARTICLE_DIR.mkdir()
 
-    write(ROOT / "index.html", render_home(articles))
+    write(ROOT / "index.html", render_home(articles, anime))
     write(ROOT / "all.html", render_archive(articles))
     for category in CATEGORIES:
         write(ROOT / f"{category}.html", render_archive(articles, category))
@@ -522,7 +574,7 @@ def main() -> None:
     write(ROOT / "feed.xml", build_feed(articles))
     write(ROOT / "sitemap.xml", build_sitemap(articles))
     write(ROOT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
-    print(f"\nPublished: {len(articles)} / Drafts: {len(notes)}")
+    print(f"\nPublished: {len(articles)} articles / {len(anime)} anime / Drafts: {len(notes)}")
     for note in notes:
         print(note)
 
