@@ -12,6 +12,7 @@ import json
 import math
 import re
 import shutil
+import sqlite3
 from datetime import datetime
 from email.utils import format_datetime
 from pathlib import Path
@@ -21,7 +22,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).parent
 POSTS_DIR = ROOT / "_posts"
 ARTICLE_DIR = ROOT / "articles"
-ANIME_DATA = ROOT / "data" / "anime.json"
+ANIME_DB = ROOT / "data" / "anime.sqlite3"
 SITE_URL = "https://sekai-log.com"
 SITE_NAME = "SEKAI LOG"
 AUTHOR = "藤乃宮遊"
@@ -201,11 +202,43 @@ def load_articles() -> tuple[list[dict], list[str]]:
 
 
 def load_anime() -> list[dict]:
-    anime = json.loads(ANIME_DATA.read_text(encoding="utf-8"))
+    db = sqlite3.connect(ANIME_DB)
+    db.row_factory = sqlite3.Row
+    anime: list[dict] = []
+    for row in db.execute("SELECT * FROM anime WHERE enabled=1 ORDER BY sort_order,id"):
+        item = dict(row)
+        item["genres"] = [value[0] for value in db.execute(
+            "SELECT name FROM anime_genre WHERE anime_id=? ORDER BY position", (row["id"],)
+        )]
+        item["moods"] = [value[0] for value in db.execute(
+            "SELECT name FROM anime_mood WHERE anime_id=? ORDER BY position", (row["id"],)
+        )]
+        item["characters"] = [dict(value) for value in db.execute(
+            "SELECT name,role FROM anime_character WHERE anime_id=? ORDER BY position", (row["id"],)
+        )]
+        links = [dict(value) for value in db.execute(
+            "SELECT kind,provider,label,url,is_affiliate,position FROM anime_link WHERE anime_id=? ORDER BY kind,position",
+            (row["id"],),
+        )]
+        item["links"] = links
+        for link in links:
+            if link["kind"] == "official":
+                item["official_url"] = link["url"]
+            elif link["kind"] == "source":
+                item["source_record_url"] = link["url"]
+            elif link["kind"] == "commerce" and link["provider"] == "Amazon":
+                item["amazon_url"] = link["url"]
+            elif link["kind"] == "watch" and link["provider"] == "Amazon Prime Video":
+                item["prime_video_url"] = link["url"]
+            elif link["kind"] == "watch" and link["provider"] == "JustWatch":
+                item["watch_url"] = link["url"]
+        anime.append(item)
+    db.close()
     required = {"id", "title", "year", "genres", "moods", "episodes", "minutes", "summary", "characters", "official_url"}
     ids: set[str] = set()
     for item in anime:
-        missing = sorted(required - item.keys())
+        effective_required = required - ({"official_url"} if item.get("source_record_url") else set())
+        missing = sorted(effective_required - item.keys())
         if missing:
             raise SystemExit(f"anime {item.get('id', '?')}: missing {', '.join(missing)}")
         if item["id"] in ids:
@@ -399,7 +432,7 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
          "description": "気分と時間で絞って回せる、アニメルーレット。"},
         {"@context": "https://schema.org", "@type": "ItemList", "name": "SEKAI LOG アニメ作品図鑑",
          "numberOfItems": len(anime), "itemListElement": [
-             {"@type": "ListItem", "position": index + 1, "name": item["title"], "url": item["official_url"]}
+             {"@type": "ListItem", "position": index + 1, "name": item["title"], "url": item.get("official_url") or item["source_record_url"]}
              for index, item in enumerate(anime)
          ]},
     ]
@@ -407,7 +440,7 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
         "SEKAI LOG — 今夜のアニメをルーレットで決めよう",
         "観るアニメが決まらない夜に。ジャンル・気分・時間で絞って回せる、無料のアニメルーレット。",
         body, current="index", canonical=SITE_URL + "/", structured_data=schema,
-        asset_version="20260812-covers100",
+        asset_version="20260812-db300",
     )
 
 

@@ -55,7 +55,6 @@
   const dialog = $('#anime-dialog');
   const dialogContent = $('#dialog-content');
   const dialogClose = $('#dialog-close');
-  const tag = 'sekailog-22';
   const wheelSize = 8;
   let activeGenre = 'all';
   let displayLimit = 12;
@@ -80,10 +79,6 @@
     if (value === 'long') return total > 600;
     return true;
   };
-  const amazonUrl = (item) => item.amazon_asin
-    ? `https://www.amazon.co.jp/dp/${encodeURIComponent(item.amazon_asin)}?tag=${tag}`
-    : `https://www.amazon.co.jp/s?k=${encodeURIComponent(item.amazon_query || `${item.title} 1`)}&tag=${tag}`;
-  const watchUrl = (item) => `https://www.justwatch.com/jp/検索?q=${encodeURIComponent(item.title)}`;
   const initials = (item) => item.glyph || item.title.slice(0, 2);
 
   document.addEventListener('error', (event) => {
@@ -124,12 +119,13 @@
   };
 
   const actionLinks = (item, includeShare = false) => `
-    <a class="action-primary" href="${escapeHtml(item.official_url)}" target="_blank" rel="noopener" data-action="official" data-title="${escapeHtml(item.title)}">公式サイトへ <span>↗</span></a>
-    <a href="${escapeHtml(watchUrl(item))}" target="_blank" rel="noopener" data-action="watch" data-title="${escapeHtml(item.title)}">どこで観られる？ <span>↗</span></a>
-    <a href="${escapeHtml(amazonUrl(item))}" target="_blank" rel="nofollow sponsored noopener" data-action="amazon" data-title="${escapeHtml(item.title)}">原作を見る <small>Amazon広告</small><span>↗</span></a>
+    ${item.official_url ? `<a class="action-primary" href="${escapeHtml(item.official_url)}" target="_blank" rel="noopener" data-action="official" data-title="${escapeHtml(item.title)}">公式サイトへ <span>↗</span></a>` : `<a class="action-primary" href="${escapeHtml(item.source_record_url)}" target="_blank" rel="noopener" data-action="source" data-title="${escapeHtml(item.title)}">作品データへ <span>↗</span></a>`}
+    <a href="${escapeHtml(item.watch_url)}" target="_blank" rel="noopener" data-action="watch" data-title="${escapeHtml(item.title)}">配信先を調べる <span>↗</span></a>
+    <a href="${escapeHtml(item.prime_video_url)}" target="_blank" rel="nofollow sponsored noopener" data-action="prime-video" data-title="${escapeHtml(item.title)}">Prime Videoで探す <small>Amazon広告</small><span>↗</span></a>
+    <a href="${escapeHtml(item.amazon_url)}" target="_blank" rel="nofollow sponsored noopener" data-action="amazon" data-title="${escapeHtml(item.title)}">原作・関連商品 <small>Amazon広告</small><span>↗</span></a>
     ${includeShare ? '<button type="button" id="share-result">友だちに送る <span>↗</span></button>' : ''}`;
 
-  const characterMarkup = (item) => item.characters.map((person) => `
+  const characterMarkup = (item) => (item.characters || []).map((person) => `
     <li><b>${escapeHtml(person.name)}</b><span>${escapeHtml(person.role)}</span></li>`).join('');
 
   const poster = (item, size = '') => {
@@ -155,7 +151,7 @@
         <h2>${escapeHtml(item.title)}</h2>
         <div class="result-meta"><span>${escapeHtml(item.format)}</span><span>${item.episodes}話</span><span>${totalLabel(item)}</span></div>
         <p class="result-summary">${escapeHtml(item.summary)}</p>
-        <ul class="quick-characters">${characterMarkup(item)}</ul>
+        ${(item.characters || []).length ? `<ul class="quick-characters">${characterMarkup(item)}</ul>` : ''}
         <div class="result-actions">${actionLinks(item, true)}</div>
         <p class="affiliate-mini">Amazonリンクはアソシエイト広告です。</p>
       </div>`;
@@ -225,7 +221,7 @@
         <p class="dialog-index">${item.year} / ${escapeHtml(item.format)}</p><h2>${escapeHtml(item.title)}</h2>
         <div class="genre-row">${item.genres.map((genre) => `<span>${escapeHtml(genre)}</span>`).join('')}</div>
         <p class="result-summary">${escapeHtml(item.summary)}</p>
-        <h3>主なキャラクター</h3><ul class="dialog-characters">${characterMarkup(item)}</ul>
+        ${(item.characters || []).length ? `<h3>主なキャラクター</h3><ul class="dialog-characters">${characterMarkup(item)}</ul>` : ''}
         <div class="result-actions">${actionLinks(item)}</div>
       </div></div>`;
     if (typeof dialog.showModal === 'function') dialog.showModal(); else dialog.setAttribute('open', '');
