@@ -38,6 +38,14 @@ amazon_label: "原作小説をAmazonで見る"
 amazon_note: "この記事で扱った原作小説"
 ```
 
+複数の商品を紹介する場合は、2件目以降へ `_2`〜`_5` を付けます。
+
+```yaml
+amazon_url_2: "https://link.amazon/..."
+amazon_label_2: "関連書籍をAmazonで見る"
+amazon_note_2: "本文と直接関係する関連書籍"
+```
+
 商品カードには自動で「広告」と `rel="nofollow sponsored"` が付きます。作品と直接関係のない商品や、推薦理由を書けない商品は載せません。
 
 ## 公開前チェック

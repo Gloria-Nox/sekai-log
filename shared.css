@@ -242,6 +242,7 @@ button, input { font: inherit; }
 .toc a { text-decoration: none; }
 .toc a:hover { color: var(--accent); }
 .product-card { margin-top: 4rem; padding: 2rem; border: 1px solid var(--ink); background: #fffaf1; font-family: var(--sans); }
+.product-card + .product-card { margin-top: 1.5rem; }
 .product-card > p { color: var(--accent); font-size: .6rem; font-weight: 900; letter-spacing: .15em; }
 .product-card h2 { margin: 1rem 0; padding: 0; border: 0; font-family: var(--serif); font-size: 1.3rem; }
 .product-card a { display: inline-block; padding: .8rem 1rem; background: var(--ink); color: white; text-decoration: none; font-size: .72rem; font-weight: 800; }
