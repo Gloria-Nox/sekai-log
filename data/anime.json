@@ -1,210 +1,3921 @@
 [
   {
-    "id": "frieren", "title": "葬送のフリーレン", "reading": "そうそうのフリーレン", "year": 2023,
-    "genres": ["ファンタジー", "ドラマ"], "moods": ["泣きたい", "癒やされたい", "考えたい"],
-    "episodes": 28, "minutes": 24, "format": "TVシリーズ", "accent": "#8bd3c7", "glyph": "FR",
+    "id": "frieren",
+    "title": "葬送のフリーレン",
+    "reading": "そうそうのフリーレン",
+    "year": 2023,
+    "genres": [
+      "ファンタジー",
+      "ドラマ"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "考えたい"
+    ],
+    "episodes": 28,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#8bd3c7",
+    "glyph": "FR",
     "summary": "冒険はもう終わった。でも、仲間のことを何も知らなかった。長命の魔法使いフリーレンが、かつての旅をたどり直します。",
-    "characters": [{"name": "フリーレン", "role": "時間感覚の異なるエルフの魔法使い"}, {"name": "フェルン", "role": "フリーレンと旅する若き魔法使い"}, {"name": "シュタルク", "role": "臆病さと強さを抱えた戦士"}],
-    "official_url": "https://frieren-anime.jp/", "amazon_query": "葬送のフリーレン 1", "hint": "旅の目的地は、かつての仲間の魂と話せるとされる場所。"
+    "characters": [
+      {
+        "name": "フリーレン",
+        "role": "時間感覚の異なるエルフの魔法使い"
+      },
+      {
+        "name": "フェルン",
+        "role": "フリーレンと旅する若き魔法使い"
+      },
+      {
+        "name": "シュタルク",
+        "role": "臆病さと強さを抱えた戦士"
+      }
+    ],
+    "official_url": "https://frieren-anime.jp/",
+    "amazon_query": "葬送のフリーレン 1",
+    "hint": "旅の目的地は、かつての仲間の魂と話せるとされる場所。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1015/138006.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1015/138006t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/52991"
   },
   {
-    "id": "dungeon-meshi", "title": "ダンジョン飯", "reading": "だんじょんめし", "year": 2024,
-    "genres": ["ファンタジー", "コメディ"], "moods": ["笑いたい", "元気になりたい", "考えたい"],
-    "episodes": 24, "minutes": 24, "format": "TVシリーズ", "accent": "#f4b860", "glyph": "DM",
+    "id": "dungeon-meshi",
+    "title": "ダンジョン飯",
+    "reading": "だんじょんめし",
+    "year": 2024,
+    "genres": [
+      "ファンタジー",
+      "コメディ"
+    ],
+    "moods": [
+      "笑いたい",
+      "元気になりたい",
+      "考えたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#f4b860",
+    "glyph": "DM",
     "summary": "妹を助けたい。でも食料がない。ならば迷宮の魔物を食べよう——腹が減るほどおいしそうな、異色のダンジョン攻略です。",
-    "characters": [{"name": "ライオス", "role": "魔物への好奇心が強すぎる戦士"}, {"name": "マルシル", "role": "魔物食に抵抗するエルフの魔法使い"}, {"name": "センシ", "role": "迷宮の食を知り尽くした戦士"}],
-    "official_url": "https://delicious-in-dungeon.com/", "amazon_query": "ダンジョン飯 1", "hint": "スライム、バジリスク、動く鎧まで食材候補になる。"
+    "characters": [
+      {
+        "name": "ライオス",
+        "role": "魔物への好奇心が強すぎる戦士"
+      },
+      {
+        "name": "マルシル",
+        "role": "魔物食に抵抗するエルフの魔法使い"
+      },
+      {
+        "name": "センシ",
+        "role": "迷宮の食を知り尽くした戦士"
+      }
+    ],
+    "official_url": "https://delicious-in-dungeon.com/",
+    "amazon_query": "ダンジョン飯 1",
+    "hint": "スライム、バジリスク、動く鎧まで食材候補になる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1711/142478.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1711/142478t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/52701"
   },
   {
-    "id": "kusuriya", "title": "薬屋のひとりごと", "reading": "くすりやのひとりごと", "year": 2023,
-    "genres": ["ミステリー", "歴史", "ドラマ"], "moods": ["考えたい", "ハラハラしたい", "笑いたい"],
-    "episodes": 24, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#d889a5", "glyph": "MY",
+    "id": "kusuriya",
+    "title": "薬屋のひとりごと",
+    "reading": "くすりやのひとりごと",
+    "year": 2023,
+    "genres": [
+      "ミステリー",
+      "歴史",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "笑いたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#d889a5",
+    "glyph": "MY",
     "summary": "毒を見ると目が輝く薬屋の少女・猫猫。後宮で起きる妙な事件を、知識と観察力でさっさと解いていきます。",
-    "characters": [{"name": "猫猫", "role": "毒見役となった元薬屋"}, {"name": "壬氏", "role": "後宮を管理する謎多き美形の宦官"}, {"name": "玉葉妃", "role": "猫猫を侍女に迎える上級妃"}],
-    "official_url": "https://kusuriyanohitorigoto.jp/", "amazon_query": "薬屋のひとりごと 1 小説", "hint": "主人公が喜ぶのは宝石よりも珍しい毒。"
+    "characters": [
+      {
+        "name": "猫猫",
+        "role": "毒見役となった元薬屋"
+      },
+      {
+        "name": "壬氏",
+        "role": "後宮を管理する謎多き美形の宦官"
+      },
+      {
+        "name": "玉葉妃",
+        "role": "猫猫を侍女に迎える上級妃"
+      }
+    ],
+    "official_url": "https://kusuriyanohitorigoto.jp/",
+    "amazon_query": "薬屋のひとりごと 1 小説",
+    "hint": "主人公が喜ぶのは宝石よりも珍しい毒。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1708/138033.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1708/138033t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/54492"
   },
   {
-    "id": "bocchi", "title": "ぼっち・ざ・ろっく！", "reading": "ぼっちざろっく", "year": 2022,
-    "genres": ["青春", "音楽", "コメディ"], "moods": ["笑いたい", "元気になりたい", "癒やされたい"],
-    "episodes": 12, "minutes": 24, "format": "TVシリーズ", "accent": "#ff85b3", "glyph": "BR",
+    "id": "bocchi",
+    "title": "ぼっち・ざ・ろっく！",
+    "reading": "ぼっちざろっく",
+    "year": 2022,
+    "genres": [
+      "青春",
+      "音楽",
+      "コメディ"
+    ],
+    "moods": [
+      "笑いたい",
+      "元気になりたい",
+      "癒やされたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff85b3",
+    "glyph": "BR",
     "summary": "ギターは弾ける。でも人とは話せない。後藤ひとりがバンドに拾われ、ライブハウスで少しずつ居場所を作ります。",
-    "characters": [{"name": "後藤ひとり", "role": "承認欲求と演奏力を秘めたギタリスト"}, {"name": "伊地知虹夏", "role": "バンドを支える明るいドラマー"}, {"name": "山田リョウ", "role": "マイペースなベーシスト"}],
-    "official_url": "https://bocchi.rocks/", "amazon_query": "ぼっち・ざ・ろっく 1", "hint": "主人公の居場所は押し入れからライブハウスへ広がっていく。"
+    "characters": [
+      {
+        "name": "後藤ひとり",
+        "role": "承認欲求と演奏力を秘めたギタリスト"
+      },
+      {
+        "name": "伊地知虹夏",
+        "role": "バンドを支える明るいドラマー"
+      },
+      {
+        "name": "山田リョウ",
+        "role": "マイペースなベーシスト"
+      }
+    ],
+    "official_url": "https://bocchi.rocks/",
+    "amazon_query": "ぼっち・ざ・ろっく 1",
+    "hint": "主人公の居場所は押し入れからライブハウスへ広がっていく。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1448/127956.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1448/127956t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/47917"
   },
   {
-    "id": "sao", "title": "ソードアート・オンライン", "reading": "そーどあーとおんらいん", "year": 2012,
-    "genres": ["SF", "ファンタジー", "アクション"], "moods": ["熱くなりたい", "ハラハラしたい", "泣きたい"],
-    "episodes": 14, "minutes": 24, "format": "アインクラッド編", "accent": "#62b8ff", "glyph": "SAO",
+    "id": "sao",
+    "title": "ソードアート・オンライン",
+    "reading": "そーどあーとおんらいん",
+    "year": 2012,
+    "genres": [
+      "SF",
+      "ファンタジー",
+      "アクション"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 14,
+    "minutes": 24,
+    "format": "アインクラッド編",
+    "accent": "#62b8ff",
+    "glyph": "SAO",
     "summary": "ゲームからログアウトできない。死んだら現実でも死ぬ。浮遊城アインクラッドから脱出するため、キリトは剣を取ります。",
-    "characters": [{"name": "キリト", "role": "単独行動を選ぶ黒衣の剣士"}, {"name": "アスナ", "role": "攻略組を率いる閃光の剣士"}, {"name": "ユイ", "role": "二人と出会う記憶を失った少女"}],
-    "official_url": "https://www.swordart-online.net/aincrad/", "amazon_asin": "B01HAWPIT8", "amazon_query": "ソードアート・オンライン 1 アインクラッド", "hint": "舞台は100層からなる天空の浮遊城。"
+    "characters": [
+      {
+        "name": "キリト",
+        "role": "単独行動を選ぶ黒衣の剣士"
+      },
+      {
+        "name": "アスナ",
+        "role": "攻略組を率いる閃光の剣士"
+      },
+      {
+        "name": "ユイ",
+        "role": "二人と出会う記憶を失った少女"
+      }
+    ],
+    "official_url": "https://www.swordart-online.net/aincrad/",
+    "amazon_asin": "B01HAWPIT8",
+    "amazon_query": "ソードアート・オンライン 1 アインクラッド",
+    "hint": "舞台は100層からなる天空の浮遊城。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/11/39717.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/11/39717t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/11757"
   },
   {
-    "id": "steins-gate", "title": "STEINS;GATE", "reading": "しゅたいんずげーと", "year": 2011,
-    "genres": ["SF", "ミステリー", "サスペンス"], "moods": ["考えたい", "ハラハラしたい", "泣きたい"],
-    "episodes": 24, "minutes": 24, "format": "TVシリーズ", "accent": "#79d2a6", "glyph": "SG",
+    "id": "steins-gate",
+    "title": "STEINS;GATE",
+    "reading": "しゅたいんずげーと",
+    "year": 2011,
+    "genres": [
+      "SF",
+      "ミステリー",
+      "サスペンス"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#79d2a6",
+    "glyph": "SG",
     "summary": "電子レンジで過去へメールが送れた。軽い気持ちの実験が取り返しのつかない結果を呼ぶ、秋葉原発のタイムリープものです。",
-    "characters": [{"name": "岡部倫太郎", "role": "鳳凰院凶真を名乗る発明サークルの代表"}, {"name": "牧瀬紅莉栖", "role": "若き脳科学研究者"}, {"name": "椎名まゆり", "role": "研究所に集う岡部の幼なじみ"}],
-    "official_url": "https://steinsgate.tv/", "amazon_query": "STEINS GATE 1 漫画", "hint": "合言葉は「エル・プサイ・コングルゥ」。"
+    "characters": [
+      {
+        "name": "岡部倫太郎",
+        "role": "鳳凰院凶真を名乗る発明サークルの代表"
+      },
+      {
+        "name": "牧瀬紅莉栖",
+        "role": "若き脳科学研究者"
+      },
+      {
+        "name": "椎名まゆり",
+        "role": "研究所に集う岡部の幼なじみ"
+      }
+    ],
+    "official_url": "https://steinsgate.tv/",
+    "amazon_query": "STEINS GATE 1 漫画",
+    "hint": "合言葉は「エル・プサイ・コングルゥ」。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1935/127974.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1935/127974t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/9253"
   },
   {
-    "id": "madoka", "title": "魔法少女まどか☆マギカ", "reading": "まほうしょうじょまどかまぎか", "year": 2011,
-    "genres": ["ファンタジー", "ミステリー", "ドラマ"], "moods": ["考えたい", "ハラハラしたい", "泣きたい"],
-    "episodes": 12, "minutes": 24, "format": "TVシリーズ", "accent": "#ef9bc1", "glyph": "MM",
+    "id": "madoka",
+    "title": "魔法少女まどか☆マギカ",
+    "reading": "まほうしょうじょまどかまぎか",
+    "year": 2011,
+    "genres": [
+      "ファンタジー",
+      "ミステリー",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ef9bc1",
+    "glyph": "MM",
     "summary": "願いを一つ叶える代わりに、魔法少女になってほしい。その甘い誘いの裏側を知った少女たちは、何を選ぶのか。",
-    "characters": [{"name": "鹿目まどか", "role": "契約を前に迷う心優しい中学生"}, {"name": "暁美ほむら", "role": "転校してきた謎めいた魔法少女"}, {"name": "巴マミ", "role": "二人を導く先輩の魔法少女"}],
-    "official_url": "https://www.madoka-magica.com/tv/", "amazon_query": "魔法少女まどか マギカ 漫画 1", "hint": "白い小動物は、願いを一つ叶える契約を持ちかける。"
+    "characters": [
+      {
+        "name": "鹿目まどか",
+        "role": "契約を前に迷う心優しい中学生"
+      },
+      {
+        "name": "暁美ほむら",
+        "role": "転校してきた謎めいた魔法少女"
+      },
+      {
+        "name": "巴マミ",
+        "role": "二人を導く先輩の魔法少女"
+      }
+    ],
+    "official_url": "https://www.madoka-magica.com/tv/",
+    "amazon_query": "魔法少女まどか マギカ 漫画 1",
+    "hint": "白い小動物は、願いを一つ叶える契約を持ちかける。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/11/55225.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/11/55225t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/9756"
   },
   {
-    "id": "odd-taxi", "title": "オッドタクシー", "reading": "おっどたくしー", "year": 2021,
-    "genres": ["ミステリー", "ドラマ", "コメディ"], "moods": ["考えたい", "ハラハラしたい", "笑いたい"],
-    "episodes": 13, "minutes": 24, "format": "TVシリーズ", "accent": "#f0c85a", "glyph": "OT",
+    "id": "odd-taxi",
+    "title": "オッドタクシー",
+    "reading": "おっどたくしー",
+    "year": 2021,
+    "genres": [
+      "ミステリー",
+      "ドラマ",
+      "コメディ"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "笑いたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#f0c85a",
+    "glyph": "OT",
     "summary": "ただのタクシー内の雑談に見えて、全部がつながっている。無口な運転手・小戸川を中心に進む13話のミステリーです。",
-    "characters": [{"name": "小戸川", "role": "偏屈で観察眼の鋭いタクシー運転手"}, {"name": "白川", "role": "小戸川が通う病院の看護師"}, {"name": "柿花", "role": "婚活に焦る小戸川の友人"}],
-    "official_url": "https://oddtaxi.jp/", "amazon_query": "オッドタクシー 漫画 1", "hint": "何気ない車内会話が、少女失踪事件へつながる。"
+    "characters": [
+      {
+        "name": "小戸川",
+        "role": "偏屈で観察眼の鋭いタクシー運転手"
+      },
+      {
+        "name": "白川",
+        "role": "小戸川が通う病院の看護師"
+      },
+      {
+        "name": "柿花",
+        "role": "婚活に焦る小戸川の友人"
+      }
+    ],
+    "official_url": "https://oddtaxi.jp/",
+    "amazon_query": "オッドタクシー 漫画 1",
+    "hint": "何気ない車内会話が、少女失踪事件へつながる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1981/113348.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1981/113348t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/46102"
   },
   {
-    "id": "lycoris", "title": "リコリス・リコイル", "reading": "りこりすりこいる", "year": 2022,
-    "genres": ["アクション", "日常", "ドラマ"], "moods": ["熱くなりたい", "笑いたい", "ハラハラしたい"],
-    "episodes": 13, "minutes": 24, "format": "TVシリーズ", "accent": "#e65f72", "glyph": "LR",
+    "id": "lycoris",
+    "title": "リコリス・リコイル",
+    "reading": "りこりすりこいる",
+    "year": 2022,
+    "genres": [
+      "アクション",
+      "日常",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "笑いたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#e65f72",
+    "glyph": "LR",
     "summary": "喫茶店で働く二人の少女、その裏の仕事は犯罪を防ぐエージェント。正反対の千束とたきなが東京を駆け回ります。",
-    "characters": [{"name": "錦木千束", "role": "不殺を貫く最強クラスのエージェント"}, {"name": "井ノ上たきな", "role": "本部復帰を目指す合理主義者"}, {"name": "ミズキ", "role": "喫茶リコリコの店員兼情報担当"}],
-    "official_url": "https://lycoris-recoil.com/", "amazon_query": "リコリス・リコイル Ordinary days", "hint": "表向きの拠点は和洋折衷の喫茶店。"
+    "characters": [
+      {
+        "name": "錦木千束",
+        "role": "不殺を貫く最強クラスのエージェント"
+      },
+      {
+        "name": "井ノ上たきな",
+        "role": "本部復帰を目指す合理主義者"
+      },
+      {
+        "name": "ミズキ",
+        "role": "喫茶リコリコの店員兼情報担当"
+      }
+    ],
+    "official_url": "https://lycoris-recoil.com/",
+    "amazon_query": "リコリス・リコイル Ordinary days",
+    "hint": "表向きの拠点は和洋折衷の喫茶店。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1261/127311.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1261/127311t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/50709"
   },
   {
-    "id": "cyberpunk", "title": "サイバーパンク エッジランナーズ", "reading": "さいばーぱんくえっじらんなーず", "year": 2022,
-    "genres": ["SF", "アクション", "ドラマ"], "moods": ["熱くなりたい", "泣きたい", "ハラハラしたい"],
-    "episodes": 10, "minutes": 25, "format": "配信シリーズ", "accent": "#f2eb41", "glyph": "CE",
+    "id": "cyberpunk",
+    "title": "サイバーパンク エッジランナーズ",
+    "reading": "さいばーぱんくえっじらんなーず",
+    "year": 2022,
+    "genres": [
+      "SF",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "泣きたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 10,
+    "minutes": 25,
+    "format": "配信シリーズ",
+    "accent": "#f2eb41",
+    "glyph": "CE",
     "summary": "金もコネもない少年が、身体改造ひとつで街を駆け上がる。派手で速くて容赦がない、全10話のSFアクションです。",
-    "characters": [{"name": "デイビッド", "role": "身体改造を選ぶストリートキッド"}, {"name": "ルーシー", "role": "月を夢見る謎多きネットランナー"}, {"name": "メイン", "role": "傭兵チームを率いる大男"}],
-    "official_url": "https://www.cyberpunk.net/ja/edgerunners", "amazon_query": "サイバーパンク エッジランナーズ", "hint": "登場人物の夢の場所は、夜空に見える月。"
+    "characters": [
+      {
+        "name": "デイビッド",
+        "role": "身体改造を選ぶストリートキッド"
+      },
+      {
+        "name": "ルーシー",
+        "role": "月を夢見る謎多きネットランナー"
+      },
+      {
+        "name": "メイン",
+        "role": "傭兵チームを率いる大男"
+      }
+    ],
+    "official_url": "https://www.cyberpunk.net/ja/edgerunners",
+    "amazon_query": "サイバーパンク エッジランナーズ",
+    "hint": "登場人物の夢の場所は、夜空に見える月。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1818/126435.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1818/126435t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/42310"
   },
   {
-    "id": "violet", "title": "ヴァイオレット・エヴァーガーデン", "reading": "ゔぁいおれっとえゔぁーがーでん", "year": 2018,
-    "genres": ["ファンタジー", "ドラマ"], "moods": ["泣きたい", "癒やされたい", "考えたい"],
-    "episodes": 13, "minutes": 24, "format": "TVシリーズ", "accent": "#8fb7d9", "glyph": "VE",
+    "id": "violet",
+    "title": "ヴァイオレット・エヴァーガーデン",
+    "reading": "ゔぁいおれっとえゔぁーがーでん",
+    "year": 2018,
+    "genres": [
+      "ファンタジー",
+      "ドラマ"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "考えたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#8fb7d9",
+    "glyph": "VE",
     "summary": "戦うことしか知らない少女が、手紙の代筆を始める。誰かの気持ちを言葉にしながら、「愛してる」の意味を探します。",
-    "characters": [{"name": "ヴァイオレット", "role": "感情を言葉にする自動手記人形"}, {"name": "クラウディア", "role": "郵便社を営む元軍人"}, {"name": "ギルベルト", "role": "彼女に言葉を残した少佐"}],
-    "official_url": "https://violet-evergarden.jp/", "amazon_query": "ヴァイオレット・エヴァーガーデン 小説", "hint": "仕事は依頼人の想いを手紙にすること。"
+    "characters": [
+      {
+        "name": "ヴァイオレット",
+        "role": "感情を言葉にする自動手記人形"
+      },
+      {
+        "name": "クラウディア",
+        "role": "郵便社を営む元軍人"
+      },
+      {
+        "name": "ギルベルト",
+        "role": "彼女に言葉を残した少佐"
+      }
+    ],
+    "official_url": "https://violet-evergarden.jp/",
+    "amazon_query": "ヴァイオレット・エヴァーガーデン 小説",
+    "hint": "仕事は依頼人の想いを手紙にすること。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1795/95088.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1795/95088t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/33352"
   },
   {
-    "id": "mob-psycho", "title": "モブサイコ100", "reading": "もぶさいこひゃく", "year": 2016,
-    "genres": ["アクション", "コメディ", "青春"], "moods": ["熱くなりたい", "笑いたい", "元気になりたい"],
-    "episodes": 12, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#b789e8", "glyph": "MP",
+    "id": "mob-psycho",
+    "title": "モブサイコ100",
+    "reading": "もぶさいこひゃく",
+    "year": 2016,
+    "genres": [
+      "アクション",
+      "コメディ",
+      "青春"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "笑いたい",
+      "元気になりたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#b789e8",
+    "glyph": "MP",
     "summary": "超能力は最強、自己評価は最低。普通に生きたい中学生・モブが、怪しい師匠と一緒に霊や自分の感情と向き合います。",
-    "characters": [{"name": "影山茂夫", "role": "感情を抑えて生きる超能力者"}, {"name": "霊幻新隆", "role": "口のうまさで渡り歩く自称霊能力者"}, {"name": "エクボ", "role": "世界征服を狙う上級悪霊"}],
-    "official_url": "https://mobpsycho100.com/", "amazon_query": "モブサイコ100 1", "hint": "感情のメーターが100に達すると何かが起きる。"
+    "characters": [
+      {
+        "name": "影山茂夫",
+        "role": "感情を抑えて生きる超能力者"
+      },
+      {
+        "name": "霊幻新隆",
+        "role": "口のうまさで渡り歩く自称霊能力者"
+      },
+      {
+        "name": "エクボ",
+        "role": "世界征服を狙う上級悪霊"
+      }
+    ],
+    "official_url": "https://mobpsycho100.com/",
+    "amazon_query": "モブサイコ100 1",
+    "hint": "感情のメーターが100に達すると何かが起きる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/8/80356.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/8/80356t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/32182"
   },
   {
-    "id": "haikyu", "title": "ハイキュー!!", "reading": "はいきゅー", "year": 2014,
-    "genres": ["スポーツ", "青春", "ドラマ"], "moods": ["熱くなりたい", "元気になりたい", "泣きたい"],
-    "episodes": 25, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#ee792f", "glyph": "HQ",
+    "id": "haikyu",
+    "title": "ハイキュー!!",
+    "reading": "はいきゅー",
+    "year": 2014,
+    "genres": [
+      "スポーツ",
+      "青春",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "元気になりたい",
+      "泣きたい"
+    ],
+    "episodes": 25,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#ee792f",
+    "glyph": "HQ",
     "summary": "身長は低い。でも誰より高く跳ぶ。日向と天才セッター影山が、反発しながら最強の速攻を作っていきます。",
-    "characters": [{"name": "日向翔陽", "role": "跳躍力で高さに挑むミドルブロッカー"}, {"name": "影山飛雄", "role": "精密なトスを操るセッター"}, {"name": "澤村大地", "role": "烏野高校をまとめる主将"}],
-    "official_url": "https://haikyu.jp/", "amazon_query": "ハイキュー 1", "hint": "主人公が憧れた選手の呼び名は「小さな巨人」。"
+    "characters": [
+      {
+        "name": "日向翔陽",
+        "role": "跳躍力で高さに挑むミドルブロッカー"
+      },
+      {
+        "name": "影山飛雄",
+        "role": "精密なトスを操るセッター"
+      },
+      {
+        "name": "澤村大地",
+        "role": "烏野高校をまとめる主将"
+      }
+    ],
+    "official_url": "https://haikyu.jp/",
+    "amazon_query": "ハイキュー 1",
+    "hint": "主人公が憧れた選手の呼び名は「小さな巨人」。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/7/76014.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/7/76014t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/20583"
   },
   {
-    "id": "psycho-pass", "title": "PSYCHO-PASS サイコパス", "reading": "さいこぱす", "year": 2012,
-    "genres": ["SF", "ミステリー", "アクション"], "moods": ["考えたい", "ハラハラしたい", "熱くなりたい"],
-    "episodes": 22, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#49b3a1", "glyph": "PP",
+    "id": "psycho-pass",
+    "title": "PSYCHO-PASS サイコパス",
+    "reading": "さいこぱす",
+    "year": 2012,
+    "genres": [
+      "SF",
+      "ミステリー",
+      "アクション"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "熱くなりたい"
+    ],
+    "episodes": 22,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#49b3a1",
+    "glyph": "PP",
     "summary": "犯罪を犯す前に、銃が人を裁く社会。新人監視官・常守朱は、その便利すぎる仕組みを疑い始めます。",
-    "characters": [{"name": "常守朱", "role": "正義感と柔軟さを持つ新人監視官"}, {"name": "狡噛慎也", "role": "猟犬として犯罪者を追う執行官"}, {"name": "槙島聖護", "role": "システムの外側に立つ男"}],
-    "official_url": "https://psycho-pass.com/", "amazon_query": "PSYCHO-PASS 監視官 常守朱 1", "hint": "犯罪を犯す前の人間を銃が裁く社会。"
+    "characters": [
+      {
+        "name": "常守朱",
+        "role": "正義感と柔軟さを持つ新人監視官"
+      },
+      {
+        "name": "狡噛慎也",
+        "role": "猟犬として犯罪者を追う執行官"
+      },
+      {
+        "name": "槙島聖護",
+        "role": "システムの外側に立つ男"
+      }
+    ],
+    "official_url": "https://psycho-pass.com/",
+    "amazon_query": "PSYCHO-PASS 監視官 常守朱 1",
+    "hint": "犯罪を犯す前の人間を銃が裁く社会。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1314/142015.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1314/142015t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/13601"
   },
   {
-    "id": "made-in-abyss", "title": "メイドインアビス", "reading": "めいどいんあびす", "year": 2017,
-    "genres": ["ファンタジー", "ミステリー", "アドベンチャー"], "moods": ["ハラハラしたい", "考えたい", "泣きたい"],
-    "episodes": 13, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#67b7c5", "glyph": "MA",
+    "id": "made-in-abyss",
+    "title": "メイドインアビス",
+    "reading": "めいどいんあびす",
+    "year": 2017,
+    "genres": [
+      "ファンタジー",
+      "ミステリー",
+      "アドベンチャー"
+    ],
+    "moods": [
+      "ハラハラしたい",
+      "考えたい",
+      "泣きたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#67b7c5",
+    "glyph": "MA",
     "summary": "かわいい絵柄で、冒険はかなり過酷。少女リコとロボットのレグが、戻るほど苦しくなる巨大な穴の底を目指します。",
-    "characters": [{"name": "リコ", "role": "深界を目指す見習い探窟家"}, {"name": "レグ", "role": "記憶を失った少年型ロボット"}, {"name": "ナナチ", "role": "深界で暮らす成れ果て"}],
-    "official_url": "http://miabyss.com/", "amazon_query": "メイドインアビス 1", "hint": "深く潜るほど、地上へ戻る代償が重くなる。"
+    "characters": [
+      {
+        "name": "リコ",
+        "role": "深界を目指す見習い探窟家"
+      },
+      {
+        "name": "レグ",
+        "role": "記憶を失った少年型ロボット"
+      },
+      {
+        "name": "ナナチ",
+        "role": "深界で暮らす成れ果て"
+      }
+    ],
+    "official_url": "http://miabyss.com/",
+    "amazon_query": "メイドインアビス 1",
+    "hint": "深く潜るほど、地上へ戻る代償が重くなる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/6/86733.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/6/86733t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/34599"
   },
   {
-    "id": "evangelion", "title": "新世紀エヴァンゲリオン", "reading": "しんせいきえゔぁんげりおん", "year": 1995,
-    "genres": ["SF", "アクション", "ドラマ"], "moods": ["考えたい", "ハラハラしたい", "泣きたい"],
-    "episodes": 26, "minutes": 24, "format": "TVシリーズ", "accent": "#9e7acc", "glyph": "EVA",
+    "id": "evangelion",
+    "title": "新世紀エヴァンゲリオン",
+    "reading": "しんせいきえゔぁんげりおん",
+    "year": 1995,
+    "genres": [
+      "SF",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 26,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#9e7acc",
+    "glyph": "EVA",
     "summary": "久しぶりに会った父から言われたのは、巨大兵器に乗れ。14歳の碇シンジは、逃げたい気持ちのまま戦場へ出ます。",
-    "characters": [{"name": "碇シンジ", "role": "初号機に乗る14歳の少年"}, {"name": "綾波レイ", "role": "感情を表に出さない零号機パイロット"}, {"name": "惣流・アスカ・ラングレー", "role": "自信に満ちた弐号機パイロット"}],
-    "official_url": "https://www.evangelion.co.jp/", "amazon_query": "新世紀エヴァンゲリオン 漫画 1", "hint": "父から届いた手紙をきっかけに、少年は第3新東京市へ来る。"
+    "characters": [
+      {
+        "name": "碇シンジ",
+        "role": "初号機に乗る14歳の少年"
+      },
+      {
+        "name": "綾波レイ",
+        "role": "感情を表に出さない零号機パイロット"
+      },
+      {
+        "name": "惣流・アスカ・ラングレー",
+        "role": "自信に満ちた弐号機パイロット"
+      }
+    ],
+    "official_url": "https://www.evangelion.co.jp/",
+    "amazon_query": "新世紀エヴァンゲリオン 漫画 1",
+    "hint": "父から届いた手紙をきっかけに、少年は第3新東京市へ来る。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1314/108941.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1314/108941t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/30"
   },
   {
-    "id": "code-geass", "title": "コードギアス 反逆のルルーシュ", "reading": "こーどぎあすはんぎゃくのるるーしゅ", "year": 2006,
-    "genres": ["SF", "アクション", "ドラマ"], "moods": ["熱くなりたい", "ハラハラしたい", "考えたい"],
-    "episodes": 25, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#bb4d68", "glyph": "CG",
+    "id": "code-geass",
+    "title": "コードギアス 反逆のルルーシュ",
+    "reading": "こーどぎあすはんぎゃくのるるーしゅ",
+    "year": 2006,
+    "genres": [
+      "SF",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "考えたい"
+    ],
+    "episodes": 25,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#bb4d68",
+    "glyph": "CG",
     "summary": "一度だけ、誰にでも命令できる力を得た少年。ルルーシュは仮面をかぶり、帝国を相手に大きな賭けへ出ます。",
-    "characters": [{"name": "ルルーシュ", "role": "知略とギアスで世界を変えようとする少年"}, {"name": "枢木スザク", "role": "帝国の内側から改革を目指す親友"}, {"name": "C.C.", "role": "ルルーシュに力を与えた不老の少女"}],
-    "official_url": "https://geass.jp/first/", "amazon_query": "コードギアス 反逆のルルーシュ 漫画 1", "hint": "主人公のもう一つの名は、仮面の反逆者「ゼロ」。"
+    "characters": [
+      {
+        "name": "ルルーシュ",
+        "role": "知略とギアスで世界を変えようとする少年"
+      },
+      {
+        "name": "枢木スザク",
+        "role": "帝国の内側から改革を目指す親友"
+      },
+      {
+        "name": "C.C.",
+        "role": "ルルーシュに力を与えた不老の少女"
+      }
+    ],
+    "official_url": "https://geass.jp/first/",
+    "amazon_query": "コードギアス 反逆のルルーシュ 漫画 1",
+    "hint": "主人公のもう一つの名は、仮面の反逆者「ゼロ」。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1032/135088.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1032/135088t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/1575"
   },
   {
-    "id": "cowboy-bebop", "title": "カウボーイビバップ", "reading": "かうぼーいびばっぷ", "year": 1998,
-    "genres": ["SF", "アクション", "ドラマ"], "moods": ["熱くなりたい", "笑いたい", "考えたい"],
-    "episodes": 26, "minutes": 24, "format": "TVシリーズ", "accent": "#eab04d", "glyph": "CB",
+    "id": "cowboy-bebop",
+    "title": "カウボーイビバップ",
+    "reading": "かうぼーいびばっぷ",
+    "year": 1998,
+    "genres": [
+      "SF",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "笑いたい",
+      "考えたい"
+    ],
+    "episodes": 26,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#eab04d",
+    "glyph": "CB",
     "summary": "賞金首を追って、だいたい失敗。宇宙船ビバップ号に集まった訳ありの面々が、太陽系を気ままに渡ります。",
-    "characters": [{"name": "スパイク", "role": "過去を隠す飄々とした賞金稼ぎ"}, {"name": "ジェット", "role": "ビバップ号を所有する元刑事"}, {"name": "フェイ", "role": "多額の借金を抱える記憶喪失の女"}],
-    "official_url": "https://www.cowboy-bebop.net/", "amazon_query": "カウボーイビバップ", "hint": "宇宙船の名前は音楽ジャンルに由来する。"
+    "characters": [
+      {
+        "name": "スパイク",
+        "role": "過去を隠す飄々とした賞金稼ぎ"
+      },
+      {
+        "name": "ジェット",
+        "role": "ビバップ号を所有する元刑事"
+      },
+      {
+        "name": "フェイ",
+        "role": "多額の借金を抱える記憶喪失の女"
+      }
+    ],
+    "official_url": "https://www.cowboy-bebop.net/",
+    "amazon_query": "カウボーイビバップ",
+    "hint": "宇宙船の名前は音楽ジャンルに由来する。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/4/19644.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/4/19644t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/1"
   },
   {
-    "id": "k-on", "title": "けいおん！", "reading": "けいおん", "year": 2009,
-    "genres": ["日常", "青春", "音楽"], "moods": ["癒やされたい", "笑いたい", "元気になりたい"],
-    "episodes": 14, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#e99b67", "glyph": "KO",
+    "id": "k-on",
+    "title": "けいおん！",
+    "reading": "けいおん",
+    "year": 2009,
+    "genres": [
+      "日常",
+      "青春",
+      "音楽"
+    ],
+    "moods": [
+      "癒やされたい",
+      "笑いたい",
+      "元気になりたい"
+    ],
+    "episodes": 14,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#e99b67",
+    "glyph": "KO",
     "summary": "練習よりお茶の時間が長い日もある。楽器初心者の唯と軽音部の仲間たちが過ごす、ゆるい放課後です。",
-    "characters": [{"name": "平沢唯", "role": "直感でギターを鳴らす初心者"}, {"name": "秋山澪", "role": "恥ずかしがり屋のベース担当"}, {"name": "田井中律", "role": "勢いで部を引っ張るドラム担当"}],
-    "official_url": "https://www.tbs.co.jp/anime/k-on/", "amazon_query": "けいおん 1 かきふらい", "hint": "部活の時間は、練習よりお茶が長いこともある。"
+    "characters": [
+      {
+        "name": "平沢唯",
+        "role": "直感でギターを鳴らす初心者"
+      },
+      {
+        "name": "秋山澪",
+        "role": "恥ずかしがり屋のベース担当"
+      },
+      {
+        "name": "田井中律",
+        "role": "勢いで部を引っ張るドラム担当"
+      }
+    ],
+    "official_url": "https://www.tbs.co.jp/anime/k-on/",
+    "amazon_query": "けいおん 1 かきふらい",
+    "hint": "部活の時間は、練習よりお茶が長いこともある。",
+    "image_url": "https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A11963-3127912345.1323767945.jpg",
+    "image_thumb": "https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A11963-3127912345.1323767945.jpg",
+    "image_credit": "Anime News Network",
+    "image_source_url": "https://animenewsnetwork.com/encyclopedia/anime.php?id=11963"
   },
   {
-    "id": "jujutsu", "title": "呪術廻戦", "reading": "じゅじゅつかいせん", "year": 2020,
-    "genres": ["アクション", "ファンタジー", "ドラマ"], "moods": ["熱くなりたい", "ハラハラしたい", "泣きたい"],
-    "episodes": 24, "minutes": 24, "format": "TVシリーズ 第1期", "accent": "#4a8aac", "glyph": "JK",
+    "id": "jujutsu",
+    "title": "呪術廻戦",
+    "reading": "じゅじゅつかいせん",
+    "year": 2020,
+    "genres": [
+      "アクション",
+      "ファンタジー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ 第1期",
+    "accent": "#4a8aac",
+    "glyph": "JK",
     "summary": "呪いの王の指を飲み込んでしまった高校生・虎杖悠仁。人を助け、自分の死に方を選ぶために呪術師になります。",
-    "characters": [{"name": "虎杖悠仁", "role": "宿儺を内に宿す身体能力抜群の少年"}, {"name": "伏黒恵", "role": "式神を操る同級生の呪術師"}, {"name": "釘崎野薔薇", "role": "芯の強い呪術師の少女"}],
-    "official_url": "https://jujutsukaisen.jp/", "amazon_query": "呪術廻戦 1", "hint": "主人公は特級呪物を飲み込んでしまう。"
+    "characters": [
+      {
+        "name": "虎杖悠仁",
+        "role": "宿儺を内に宿す身体能力抜群の少年"
+      },
+      {
+        "name": "伏黒恵",
+        "role": "式神を操る同級生の呪術師"
+      },
+      {
+        "name": "釘崎野薔薇",
+        "role": "芯の強い呪術師の少女"
+      }
+    ],
+    "official_url": "https://jujutsukaisen.jp/",
+    "amazon_query": "呪術廻戦 1",
+    "hint": "主人公は特級呪物を飲み込んでしまう。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1792/138022.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1792/138022t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/51009"
   },
   {
-    "id": "demon-slayer", "title": "鬼滅の刃 竈門炭治郎 立志編", "reading": "きめつのやいば", "year": 2019,
-    "genres": ["アクション", "ファンタジー", "ドラマ"], "moods": ["熱くなりたい", "泣きたい", "ハラハラしたい"],
-    "episodes": 26, "minutes": 24, "format": "TVシリーズ", "accent": "#3fa176", "glyph": "DS",
+    "id": "demon-slayer",
+    "title": "鬼滅の刃 竈門炭治郎 立志編",
+    "reading": "きめつのやいば",
+    "year": 2019,
+    "genres": [
+      "アクション",
+      "ファンタジー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "泣きたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 26,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#3fa176",
+    "glyph": "DS",
     "summary": "家族を鬼に奪われ、妹だけが鬼になった。炭治郎は禰豆子を人間へ戻す方法を探して、鬼狩りの剣士になります。",
-    "characters": [{"name": "竈門炭治郎", "role": "嗅覚と優しさを持つ鬼狩りの少年"}, {"name": "竈門禰豆子", "role": "鬼となっても兄を守る妹"}, {"name": "我妻善逸", "role": "恐怖の中で力を発揮する剣士"}],
-    "official_url": "https://kimetsu.com/anime/risshihen/", "amazon_query": "鬼滅の刃 1", "hint": "妹は竹筒をくわえ、兄と共に旅をする。"
+    "characters": [
+      {
+        "name": "竈門炭治郎",
+        "role": "嗅覚と優しさを持つ鬼狩りの少年"
+      },
+      {
+        "name": "竈門禰豆子",
+        "role": "鬼となっても兄を守る妹"
+      },
+      {
+        "name": "我妻善逸",
+        "role": "恐怖の中で力を発揮する剣士"
+      }
+    ],
+    "official_url": "https://kimetsu.com/anime/risshihen/",
+    "amazon_query": "鬼滅の刃 1",
+    "hint": "妹は竹筒をくわえ、兄と共に旅をする。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1286/99889t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/38000"
   },
   {
-    "id": "attack-on-titan", "title": "進撃の巨人", "reading": "しんげきのきょじん", "year": 2013,
-    "genres": ["アクション", "ミステリー", "ダークファンタジー"], "moods": ["ハラハラしたい", "熱くなりたい", "考えたい"],
-    "episodes": 25, "minutes": 24, "format": "TVシリーズ Season 1", "accent": "#a56045", "glyph": "AT",
+    "id": "attack-on-titan",
+    "title": "進撃の巨人",
+    "reading": "しんげきのきょじん",
+    "year": 2013,
+    "genres": [
+      "アクション",
+      "ミステリー",
+      "ダークファンタジー"
+    ],
+    "moods": [
+      "ハラハラしたい",
+      "熱くなりたい",
+      "考えたい"
+    ],
+    "episodes": 25,
+    "minutes": 24,
+    "format": "TVシリーズ Season 1",
+    "accent": "#a56045",
+    "glyph": "AT",
     "summary": "巨大な壁が破られ、日常が終わる。エレンは巨人を一匹残らず駆逐し、壁の外の自由を見ると誓います。",
-    "characters": [{"name": "エレン", "role": "壁の外の自由を求める少年"}, {"name": "ミカサ", "role": "エレンを守る高い戦闘力の持ち主"}, {"name": "アルミン", "role": "知略で仲間を支える幼なじみ"}],
-    "official_url": "https://shingeki.tv/season1/", "amazon_query": "進撃の巨人 1", "hint": "人類は三重の巨大な壁の内側で暮らしている。"
+    "characters": [
+      {
+        "name": "エレン",
+        "role": "壁の外の自由を求める少年"
+      },
+      {
+        "name": "ミカサ",
+        "role": "エレンを守る高い戦闘力の持ち主"
+      },
+      {
+        "name": "アルミン",
+        "role": "知略で仲間を支える幼なじみ"
+      }
+    ],
+    "official_url": "https://shingeki.tv/season1/",
+    "amazon_query": "進撃の巨人 1",
+    "hint": "人類は三重の巨大な壁の内側で暮らしている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1173/92110.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1173/92110t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/35760"
   },
   {
-    "id": "re-zero", "title": "Re:ゼロから始める異世界生活", "reading": "りぜろからはじめるいせかいせいかつ", "year": 2016,
-    "genres": ["ファンタジー", "ミステリー", "ドラマ"], "moods": ["ハラハラしたい", "泣きたい", "考えたい"],
-    "episodes": 25, "minutes": 25, "format": "TVシリーズ 第1期", "accent": "#775fc3", "glyph": "RZ",
+    "id": "re-zero",
+    "title": "Re:ゼロから始める異世界生活",
+    "reading": "りぜろからはじめるいせかいせいかつ",
+    "year": 2016,
+    "genres": [
+      "ファンタジー",
+      "ミステリー",
+      "ドラマ"
+    ],
+    "moods": [
+      "ハラハラしたい",
+      "泣きたい",
+      "考えたい"
+    ],
+    "episodes": 25,
+    "minutes": 25,
+    "format": "TVシリーズ 第1期",
+    "accent": "#775fc3",
+    "glyph": "RZ",
     "summary": "異世界でもらった力は、死んだら時間が戻ること。誰にも説明できないまま、スバルは何度も最悪の日をやり直します。",
-    "characters": [{"name": "ナツキ・スバル", "role": "死に戻りを誰にも話せない青年"}, {"name": "エミリア", "role": "銀髪のハーフエルフの少女"}, {"name": "レム", "role": "ロズワール邸で働く双子の妹"}],
-    "official_url": "https://re-zero.com/tv/", "amazon_query": "Reゼロから始める異世界生活 1", "hint": "主人公だけが死の記憶を持って時間をやり直す。"
+    "characters": [
+      {
+        "name": "ナツキ・スバル",
+        "role": "死に戻りを誰にも話せない青年"
+      },
+      {
+        "name": "エミリア",
+        "role": "銀髪のハーフエルフの少女"
+      },
+      {
+        "name": "レム",
+        "role": "ロズワール邸で働く双子の妹"
+      }
+    ],
+    "official_url": "https://re-zero.com/tv/",
+    "amazon_query": "Reゼロから始める異世界生活 1",
+    "hint": "主人公だけが死の記憶を持って時間をやり直す。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1706/144725.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1706/144725t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/54857"
   },
   {
-    "id": "spy-family", "title": "SPY×FAMILY", "reading": "すぱいふぁみりー", "year": 2022,
-    "genres": ["コメディ", "アクション", "日常"], "moods": ["笑いたい", "癒やされたい", "元気になりたい"],
-    "episodes": 25, "minutes": 24, "format": "TVシリーズ Season 1", "accent": "#80aa94", "glyph": "SF",
+    "id": "spy-family",
+    "title": "SPY×FAMILY",
+    "reading": "すぱいふぁみりー",
+    "year": 2022,
+    "genres": [
+      "コメディ",
+      "アクション",
+      "日常"
+    ],
+    "moods": [
+      "笑いたい",
+      "癒やされたい",
+      "元気になりたい"
+    ],
+    "episodes": 25,
+    "minutes": 24,
+    "format": "TVシリーズ Season 1",
+    "accent": "#80aa94",
+    "glyph": "SF",
     "summary": "父はスパイ、母は殺し屋、娘は人の心が読める。お互いの正体を隠したまま、三人は家族のふりを始めます。",
-    "characters": [{"name": "ロイド", "role": "父を演じる西国の敏腕スパイ"}, {"name": "ヨル", "role": "妻を演じる市役所勤めの殺し屋"}, {"name": "アーニャ", "role": "人の心を読める少女"}],
-    "official_url": "https://spy-family.net/", "amazon_query": "SPY FAMILY 1", "hint": "家族全員が、それぞれ大きな秘密を隠している。"
+    "characters": [
+      {
+        "name": "ロイド",
+        "role": "父を演じる西国の敏腕スパイ"
+      },
+      {
+        "name": "ヨル",
+        "role": "妻を演じる市役所勤めの殺し屋"
+      },
+      {
+        "name": "アーニャ",
+        "role": "人の心を読める少女"
+      }
+    ],
+    "official_url": "https://spy-family.net/",
+    "amazon_query": "SPY FAMILY 1",
+    "hint": "家族全員が、それぞれ大きな秘密を隠している。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1441/122795.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1441/122795t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/50265"
   },
   {
-    "id": "oshi-no-ko", "title": "【推しの子】", "reading": "おしのこ", "year": 2023,
-    "genres": ["ミステリー", "ドラマ", "芸能"], "moods": ["ハラハラしたい", "考えたい", "泣きたい"],
-    "episodes": 11, "minutes": 30, "format": "TVシリーズ 第1期", "accent": "#d96aa7", "glyph": "ONK",
+    "id": "oshi-no-ko",
+    "title": "【推しの子】",
+    "reading": "おしのこ",
+    "year": 2023,
+    "genres": [
+      "ミステリー",
+      "ドラマ",
+      "芸能"
+    ],
+    "moods": [
+      "ハラハラしたい",
+      "考えたい",
+      "泣きたい"
+    ],
+    "episodes": 11,
+    "minutes": 30,
+    "format": "TVシリーズ 第1期",
+    "accent": "#d96aa7",
+    "glyph": "ONK",
     "summary": "推していたアイドルの子どもに転生した。夢のような始まりから一転、双子は芸能界で母の残した謎を追います。",
-    "characters": [{"name": "アクア", "role": "復讐のため芸能界へ進む双子の兄"}, {"name": "ルビー", "role": "母のようなアイドルを目指す妹"}, {"name": "アイ", "role": "嘘を愛として届ける天性のアイドル"}],
-    "official_url": "https://ichigoproduction.com/Season1/", "amazon_query": "推しの子 1", "hint": "主人公たちの瞳には星が宿る。"
+    "characters": [
+      {
+        "name": "アクア",
+        "role": "復讐のため芸能界へ進む双子の兄"
+      },
+      {
+        "name": "ルビー",
+        "role": "母のようなアイドルを目指す妹"
+      },
+      {
+        "name": "アイ",
+        "role": "嘘を愛として届ける天性のアイドル"
+      }
+    ],
+    "official_url": "https://ichigoproduction.com/Season1/",
+    "amazon_query": "推しの子 1",
+    "hint": "主人公たちの瞳には星が宿る。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1006/143302.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1006/143302t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/55791"
   },
   {
-    "id": "vinland-saga", "title": "ヴィンランド・サガ", "reading": "ゔぃんらんどさが", "year": 2019,
-    "genres": ["歴史", "アクション", "ドラマ"], "moods": ["熱くなりたい", "考えたい", "泣きたい"],
-    "episodes": 24, "minutes": 24, "format": "TVシリーズ Season 1", "accent": "#8a6c4c", "glyph": "VS",
+    "id": "vinland-saga",
+    "title": "ヴィンランド・サガ",
+    "reading": "ゔぃんらんどさが",
+    "year": 2019,
+    "genres": [
+      "歴史",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "考えたい",
+      "泣きたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ Season 1",
+    "accent": "#8a6c4c",
+    "glyph": "VS",
     "summary": "父の仇を討つため、その仇の傭兵団で戦う。少年トルフィンの復讐が、11世紀ヨーロッパの戦乱と重なります。",
-    "characters": [{"name": "トルフィン", "role": "復讐に生きる若き戦士"}, {"name": "アシェラッド", "role": "知略に長けた傭兵団の首領"}, {"name": "クヌート", "role": "戦乱の中で変わっていく王子"}],
-    "official_url": "https://vinlandsaga.jp/", "amazon_query": "ヴィンランド・サガ 1", "hint": "父が少年へ残した言葉は「本当の戦士には剣など要らぬ」。"
+    "characters": [
+      {
+        "name": "トルフィン",
+        "role": "復讐に生きる若き戦士"
+      },
+      {
+        "name": "アシェラッド",
+        "role": "知略に長けた傭兵団の首領"
+      },
+      {
+        "name": "クヌート",
+        "role": "戦乱の中で変わっていく王子"
+      }
+    ],
+    "official_url": "https://vinlandsaga.jp/",
+    "amazon_query": "ヴィンランド・サガ 1",
+    "hint": "父が少年へ残した言葉は「本当の戦士には剣など要らぬ」。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1500/103005.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1500/103005t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/37521"
+  },
+  {
+    "id": "anime-1bb1d46b46",
+    "title": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+    "reading": "はがねのれんきんじゅつし",
+    "year": 2009,
+    "genres": [
+      "ファンタジー",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 64,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#f4c84b",
+    "summary": "禁忌を犯して身体を失った兄弟が、元に戻る方法を探す。派手な錬金術の奥に、国と家族の話がぎっしり。",
+    "characters": [
+      {
+        "name": "エドワード",
+        "role": "小柄で短気な国家錬金術師"
+      },
+      {
+        "name": "アルフォンス",
+        "role": "鎧に魂を定着させた弟"
+      }
+    ],
+    "official_url": "https://www.hagaren.jp/fa/",
+    "amazon_query": "鋼の錬金術師 完全版 1",
+    "hint": "兄の右腕と弟の魂は、一組の鎧につながっている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1208/94745.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1208/94745t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/5114"
+  },
+  {
+    "id": "anime-c78660f70e",
+    "title": "HUNTER×HUNTER",
+    "reading": "はんたーはんたー",
+    "year": 2011,
+    "genres": [
+      "アクション",
+      "ファンタジー",
+      "アドベンチャー"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "癒やされたい"
+    ],
+    "episodes": 148,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "父を探してハンター試験へ。明るい冒険から始まり、行く先ごとに戦いのルールも空気も変わる長編。",
+    "characters": [
+      {
+        "name": "ゴン",
+        "role": "父を追う真っすぐな少年"
+      },
+      {
+        "name": "キルア",
+        "role": "暗殺一家を飛び出した親友"
+      }
+    ],
+    "official_url": "https://www.ntv.co.jp/hunterhunter/",
+    "amazon_query": "HUNTER×HUNTER 1",
+    "hint": "主人公の父もまた、世界を旅するハンター。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1337/99013.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1337/99013t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/11061"
+  },
+  {
+    "id": "anime-e8b7ac7668",
+    "title": "ONE PIECE",
+    "reading": "わんぴーす",
+    "year": 1999,
+    "genres": [
+      "アドベンチャー",
+      "アクション",
+      "コメディ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "笑いたい"
+    ],
+    "episodes": 1144,
+    "minutes": 25,
+    "format": "TVシリーズ",
+    "accent": "#ff5ca8",
+    "summary": "海賊王を目指すルフィが仲間を増やし、島から島へ。長いけれど、一区切りずつなら驚くほど入りやすい。",
+    "characters": [
+      {
+        "name": "モンキー・D・ルフィ",
+        "role": "海賊王を目指す麦わら帽子の船長"
+      },
+      {
+        "name": "ロロノア・ゾロ",
+        "role": "世界一の剣豪を目指す三刀流の剣士"
+      }
+    ],
+    "official_url": "https://one-piece.com/",
+    "amazon_query": "ONE PIECE 1",
+    "hint": "主人公の身体はゴムのように伸びる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1244/138851.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/r/167x242/images/anime/1244/138851.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/21"
+  },
+  {
+    "id": "anime-9d90636d2c",
+    "title": "NARUTO -ナルト-",
+    "reading": "なると",
+    "year": 2002,
+    "genres": [
+      "アクション",
+      "ファンタジー",
+      "青春"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "癒やされたい"
+    ],
+    "episodes": 220,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "里の落ちこぼれ忍者が、火影になると宣言。孤独だった少年が仲間と居場所を手に入れていく。",
+    "characters": [
+      {
+        "name": "うずまきナルト",
+        "role": "火影を夢見る騒がしい忍者"
+      },
+      {
+        "name": "うちはサスケ",
+        "role": "復讐を抱えた天才忍者"
+      }
+    ],
+    "official_url": "https://naruto-official.com/",
+    "amazon_query": "NARUTO ナルト 1",
+    "hint": "主人公の腹には九尾の狐が封じられている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1141/142503.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1141/142503t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/20"
+  },
+  {
+    "id": "anime-89777d3688",
+    "title": "BLEACH",
+    "reading": "ぶりーち",
+    "year": 2004,
+    "genres": [
+      "アクション",
+      "ファンタジー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "癒やされたい"
+    ],
+    "episodes": 366,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#7567ff",
+    "summary": "死神の力を受け取った高校生が、刀一本で悪霊と戦う。制服、斬魄刀、敵味方の名乗りまで全部が格好いい。",
+    "characters": [
+      {
+        "name": "黒崎一護",
+        "role": "死神代行となった高校生"
+      },
+      {
+        "name": "朽木ルキア",
+        "role": "一護へ力を渡した死神"
+      }
+    ],
+    "official_url": "https://bleach-anime.com/",
+    "amazon_query": "BLEACH 1",
+    "hint": "死神の刀には、それぞれ名前と能力がある。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1541/147774.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1541/147774t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/269"
+  },
+  {
+    "id": "anime-100431b750",
+    "title": "ドラゴンボールZ",
+    "reading": "どらごんぼーるぜっと",
+    "year": 1989,
+    "genres": [
+      "アクション",
+      "SF",
+      "ファンタジー"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "考えたい"
+    ],
+    "episodes": 291,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff5ca8",
+    "summary": "悟空の出自が明かされ、戦いは地球から宇宙へ。強敵が来る、修業する、さらに強くなる。その原液。",
+    "characters": [
+      {
+        "name": "孫悟空",
+        "role": "地球を守るサイヤ人"
+      },
+      {
+        "name": "ベジータ",
+        "role": "誇り高きサイヤ人の王子"
+      }
+    ],
+    "official_url": "https://dragon-ball-official.com/",
+    "amazon_query": "ドラゴンボール 完全版 1",
+    "hint": "戦闘力を測る機械が、数字ごと壊れる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1277/142022.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1277/142022t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/813"
+  },
+  {
+    "id": "anime-4dcdde9a96",
+    "title": "僕のヒーローアカデミア",
+    "reading": "ぼくのひーろーあかでみあ",
+    "year": 2022,
+    "genres": [
+      "アクション",
+      "青春",
+      "ファンタジー"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "癒やされたい"
+    ],
+    "episodes": 25,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "能力のない少年が、最高のヒーローから力を託される。学校生活も救助訓練も、本番はいつも全力。",
+    "characters": [
+      {
+        "name": "緑谷出久",
+        "role": "ヒーローを分析し続けた無個性の少年"
+      },
+      {
+        "name": "爆豪勝己",
+        "role": "勝利へ執着する幼なじみ"
+      }
+    ],
+    "official_url": "https://heroaca.com/",
+    "amazon_query": "僕のヒーローアカデミア 1",
+    "hint": "人口の多くが「個性」と呼ばれる能力を持つ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1483/126005.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1483/126005t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/49918"
+  },
+  {
+    "id": "anime-dcf45661ac",
+    "title": "チェンソーマン",
+    "reading": "ちぇんそーまん",
+    "year": 2022,
+    "genres": [
+      "アクション",
+      "ダークファンタジー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "借金まみれの少年の夢は、普通の朝飯と普通の恋。チェンソーの悪魔と一体化してから、普通がいちばん遠くなる。",
+    "characters": [
+      {
+        "name": "デンジ",
+        "role": "ささやかな生活を夢見るデビルハンター"
+      },
+      {
+        "name": "マキマ",
+        "role": "デンジを公安へ誘う上司"
+      }
+    ],
+    "official_url": "https://chainsawman.dog/",
+    "amazon_query": "チェンソーマン 1",
+    "hint": "胸のスターターロープを引くと変身する。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1806/126216.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1806/126216t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/44511"
+  },
+  {
+    "id": "anime-7264ddbb11",
+    "title": "ダンダダン",
+    "reading": "だんだだん",
+    "year": 2024,
+    "genres": [
+      "アクション",
+      "SF",
+      "コメディ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "考えたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#48c9f4",
+    "summary": "幽霊を信じる女子と宇宙人を信じる男子。互いを否定するため出かけた先で、両方とも本物だと分かる。",
+    "characters": [
+      {
+        "name": "モモ",
+        "role": "幽霊を信じる勝ち気な女子高生"
+      },
+      {
+        "name": "オカルン",
+        "role": "宇宙人を信じるオカルト少年"
+      }
+    ],
+    "official_url": "https://anime-dandadan.com/",
+    "amazon_query": "ダンダダン 1",
+    "hint": "幽霊派と宇宙人派、どちらも正しかった。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1584/143719.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1584/143719t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/57334"
+  },
+  {
+    "id": "anime-57856a3616",
+    "title": "DEATH NOTE",
+    "reading": "ですのーと",
+    "year": 2006,
+    "genres": [
+      "ミステリー",
+      "サスペンス",
+      "ダークファンタジー"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 37,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "名前を書けば人が死ぬノートを拾った天才高校生。正義を名乗るキラと、顔の見えない探偵Lの頭脳戦。",
+    "characters": [
+      {
+        "name": "夜神月",
+        "role": "犯罪者のいない世界を作ろうとする高校生"
+      },
+      {
+        "name": "L",
+        "role": "キラを追う正体不明の名探偵"
+      }
+    ],
+    "official_url": "https://www.ntv.co.jp/deathnote/",
+    "amazon_query": "DEATH NOTE 1",
+    "hint": "相手の顔と本名を知れば、ノートで殺せる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1079/138100.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1079/138100t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/1535"
+  },
+  {
+    "id": "anime-e63d88bd7b",
+    "title": "MONSTER",
+    "reading": "もんすたー",
+    "year": 2004,
+    "genres": [
+      "ミステリー",
+      "サスペンス",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 74,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "命を救った少年は、後に怪物と呼ばれる殺人犯になった。医師テンマは自分の選択に決着をつけるため欧州を追う。",
+    "characters": [
+      {
+        "name": "天馬賢三",
+        "role": "命の平等を信じる脳外科医"
+      },
+      {
+        "name": "ヨハン",
+        "role": "美しい顔を持つ謎の青年"
+      }
+    ],
+    "official_url": "https://www.ntv.co.jp/monster/",
+    "amazon_query": "MONSTER 浦沢直樹 1",
+    "hint": "医師が救った一つの命から事件が始まる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/10/18793.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/10/18793t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/19"
+  },
+  {
+    "id": "anime-bce8c9aca4",
+    "title": "PLUTO",
+    "reading": "ぷるーとぅ",
+    "year": 2023,
+    "genres": [
+      "SF",
+      "ミステリー",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 8,
+    "minutes": 61,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "世界最高水準のロボットが順番に破壊される。刑事ゲジヒトが追うのは、憎しみを持つはずのない存在。",
+    "characters": [
+      {
+        "name": "ゲジヒト",
+        "role": "連続破壊事件を追うロボット刑事"
+      },
+      {
+        "name": "アトム",
+        "role": "高性能と優しさを併せ持つ少年型ロボット"
+      }
+    ],
+    "official_url": "https://pluto-anime.com/",
+    "amazon_query": "PLUTO 1 浦沢直樹",
+    "hint": "被害者の頭部には角のような物が残される。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1021/138568.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1021/138568t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/35737"
+  },
+  {
+    "id": "anime-5d7ccd4f75",
+    "title": "僕だけがいない街",
+    "reading": "ぼくだけがいないまち",
+    "year": 2016,
+    "genres": [
+      "ミステリー",
+      "サスペンス",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "事件の直前へ時間が巻き戻る男が、十八年前の小学生時代へ。誘拐を止め、失った人を救うため教室からやり直す。",
+    "characters": [
+      {
+        "name": "藤沼悟",
+        "role": "過去へ戻る現象に巻き込まれる青年"
+      },
+      {
+        "name": "雛月加代",
+        "role": "悟が救おうとする同級生"
+      }
+    ],
+    "official_url": "https://bokumachi-anime.com/",
+    "amazon_query": "僕だけがいない街 1",
+    "hint": "危機の前に数分だけ戻る現象が、ある日十八年を飛ぶ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/10/77957.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/10/77957t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/31043"
+  },
+  {
+    "id": "anime-cc69bbb195",
+    "title": "サマータイムレンダ",
+    "reading": "さまーたいむれんだ",
+    "year": 2022,
+    "genres": [
+      "ミステリー",
+      "SF",
+      "サスペンス"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい",
+      "熱くなりたい"
+    ],
+    "episodes": 25,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "幼なじみの葬儀で島へ帰った青年。そこには死んだはずの人と同じ姿をした「影」がいる。",
+    "characters": [
+      {
+        "name": "網代慎平",
+        "role": "故郷の島へ戻った青年"
+      },
+      {
+        "name": "小舟潮",
+        "role": "海の事故で亡くなった幼なじみ"
+      }
+    ],
+    "official_url": "https://summertime-anime.com/",
+    "amazon_query": "サマータイムレンダ 1",
+    "hint": "主人公は死ぬと一定の時点へ戻る。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1120/120796.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1120/120796t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/47194"
+  },
+  {
+    "id": "anime-893bd7724c",
+    "title": "天国大魔境",
+    "reading": "てんごくだいまきょう",
+    "year": 2023,
+    "genres": [
+      "SF",
+      "ミステリー",
+      "アドベンチャー"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 13,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#7567ff",
+    "summary": "崩壊した日本を旅する二人と、壁の中で育つ子どもたち。二つの話が近づくほど謎が増える。",
+    "characters": [
+      {
+        "name": "マル",
+        "role": "天国を探して旅する少年"
+      },
+      {
+        "name": "キルコ",
+        "role": "銃を手にマルを護衛する便利屋"
+      }
+    ],
+    "official_url": "https://tdm-anime.com/",
+    "amazon_query": "天国大魔境 1",
+    "hint": "外の世界には人を食う異形がいる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1121/133132.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1121/133132t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/53393"
+  },
+  {
+    "id": "anime-88b7ac9112",
+    "title": "約束のネバーランド",
+    "reading": "やくそくのねばーらんど",
+    "year": 2019,
+    "genres": [
+      "ミステリー",
+      "サスペンス",
+      "ダークファンタジー"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 12,
+    "minutes": 22,
+    "format": "TVシリーズ",
+    "accent": "#ff5ca8",
+    "summary": "幸せな孤児院の正体を知った子どもたち。武器ではなく観察と駆け引きで、全員脱出を目指す。",
+    "characters": [
+      {
+        "name": "エマ",
+        "role": "誰も置いていかないと決める少女"
+      },
+      {
+        "name": "ノーマン",
+        "role": "冷静な判断力を持つ少年"
+      }
+    ],
+    "official_url": "https://neverland-anime.com/",
+    "amazon_query": "約束のネバーランド 1",
+    "hint": "孤児院の子どもたちは首に番号を持つ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1830/118780.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1830/118780t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/37779"
+  },
+  {
+    "id": "anime-f4959b4dda",
+    "title": "かぐや様は告らせたい",
+    "reading": "かぐやさまはこくらせたい",
+    "year": 2019,
+    "genres": [
+      "恋愛",
+      "コメディ",
+      "青春"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 25,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "両想いなのに、告白したほうが負け。生徒会室で繰り広げる恋愛頭脳戦は、だいたい意地の張り合い。",
+    "characters": [
+      {
+        "name": "四宮かぐや",
+        "role": "誇り高い生徒会副会長"
+      },
+      {
+        "name": "白銀御行",
+        "role": "努力家の生徒会長"
+      }
+    ],
+    "official_url": "https://kaguya.love/",
+    "amazon_query": "かぐや様は告らせたい 1",
+    "hint": "互いに相手から告白させようとしている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1295/106551.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1295/106551t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/37999"
+  },
+  {
+    "id": "anime-7f0bd82782",
+    "title": "とらドラ！",
+    "reading": "とらどら",
+    "year": 2008,
+    "genres": [
+      "恋愛",
+      "青春",
+      "コメディ"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 25,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "目つきが怖い男子と、小柄で凶暴な女子。互いの親友への片思いを手伝う同盟から始まる。",
+    "characters": [
+      {
+        "name": "高須竜児",
+        "role": "家事万能だが目つきで誤解される高校生"
+      },
+      {
+        "name": "逢坂大河",
+        "role": "手乗りタイガーと恐れられる少女"
+      }
+    ],
+    "official_url": "https://www.tv-tokyo.co.jp/anime/toradora/",
+    "amazon_query": "とらドラ 1 竹宮ゆゆこ",
+    "hint": "二人は互いの親友に片思いしている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/13/22128.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/13/22128t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/4224"
+  },
+  {
+    "id": "anime-e5097ca841",
+    "title": "その着せ替え人形は恋をする",
+    "reading": "そのびすくどーるはこいをする",
+    "year": 2022,
+    "genres": [
+      "恋愛",
+      "青春",
+      "コメディ"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "雛人形の衣装を作る男子と、コスプレしたい人気者の女子。好きなものを隠さない二人の共同作業。",
+    "characters": [
+      {
+        "name": "五条新菜",
+        "role": "衣装作りに腕を振るう高校生"
+      },
+      {
+        "name": "喜多川海夢",
+        "role": "好きに一直線なコスプレ初心者"
+      }
+    ],
+    "official_url": "https://bisquedoll-anime.com/",
+    "amazon_query": "その着せ替え人形は恋をする 1",
+    "hint": "雛人形の衣装作りがコスプレへつながる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1179/119897.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1179/119897t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/48736"
+  },
+  {
+    "id": "anime-87f2412b8c",
+    "title": "ホリミヤ",
+    "reading": "ほりみや",
+    "year": 2021,
+    "genres": [
+      "恋愛",
+      "青春",
+      "日常"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 13,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "学校では華やかな堀さんと、地味に見える宮村くん。家での顔を知った二人は、無理なく距離を縮めていく。",
+    "characters": [
+      {
+        "name": "堀京子",
+        "role": "家では弟の世話をする人気者"
+      },
+      {
+        "name": "宮村伊澄",
+        "role": "学校外ではピアス姿になる物静かな男子"
+      }
+    ],
+    "official_url": "https://horimiya-anime.com/",
+    "amazon_query": "ホリミヤ 1",
+    "hint": "学校と家で、二人の見た目は大きく変わる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1695/111486.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1695/111486t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/42897"
+  },
+  {
+    "id": "anime-cb5076186e",
+    "title": "やはり俺の青春ラブコメはまちがっている。",
+    "reading": "やはりおれのせいしゅんらぶこめはまちがっている",
+    "year": 2013,
+    "genres": [
+      "青春",
+      "恋愛",
+      "ドラマ"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "考えたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#f4c84b",
+    "summary": "ひねくれ者の高校生が奉仕部へ。正論で問題を片づけるほど、人間関係の面倒さが残る。",
+    "characters": [
+      {
+        "name": "比企谷八幡",
+        "role": "ぼっちを理屈で正当化する高校生"
+      },
+      {
+        "name": "雪ノ下雪乃",
+        "role": "完璧主義の奉仕部部長"
+      }
+    ],
+    "official_url": "https://www.tbs.co.jp/anime/oregairu/",
+    "amazon_query": "やはり俺の青春ラブコメはまちがっている 1",
+    "hint": "部活の名は、相談事を解決する奉仕部。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1786/120117.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1786/120117t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/14813"
+  },
+  {
+    "id": "anime-b50c7cf418",
+    "title": "スキップとローファー",
+    "reading": "すきっぷとろーふぁー",
+    "year": 2023,
+    "genres": [
+      "青春",
+      "日常",
+      "恋愛"
+    ],
+    "moods": [
+      "癒やされたい",
+      "笑いたい",
+      "泣きたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "地方から東京の進学校へ来たみつみ。初日から迷子でも、まっすぐさで教室の空気を少しずつ変える。",
+    "characters": [
+      {
+        "name": "岩倉美津未",
+        "role": "官僚を目指して上京した新入生"
+      },
+      {
+        "name": "志摩聡介",
+        "role": "自然体で人当たりのよい同級生"
+      }
+    ],
+    "official_url": "https://skip-and-loafer.com/",
+    "amazon_query": "スキップとローファー 1",
+    "hint": "主人公は石川県から東京へ進学する。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1518/138730.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1518/138730t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/50416"
+  },
+  {
+    "id": "anime-4dbe112b9c",
+    "title": "アオのハコ",
+    "reading": "あおのはこ",
+    "year": 2024,
+    "genres": [
+      "青春",
+      "恋愛",
+      "スポーツ"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "熱くなりたい"
+    ],
+    "episodes": 25,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "バドミントン部の男子と、バスケ部の先輩。朝練で顔を合わせるだけだった関係が、同居で一気に近くなる。",
+    "characters": [
+      {
+        "name": "猪股大喜",
+        "role": "千夏に憧れるバドミントン部員"
+      },
+      {
+        "name": "鹿野千夏",
+        "role": "全国を目指すバスケ部の先輩"
+      }
+    ],
+    "official_url": "https://aonohako-anime.com/",
+    "amazon_query": "アオのハコ 1",
+    "hint": "憧れの先輩と突然同じ家で暮らすことになる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1496/147108.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1496/147108t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/57181"
+  },
+  {
+    "id": "anime-27ae5d6333",
+    "title": "青春ブタ野郎はバニーガール先輩の夢を見ない",
+    "reading": "せいしゅんぶたやろうはばにーがーるせんぱいのゆめをみない",
+    "year": 2018,
+    "genres": [
+      "青春",
+      "恋愛",
+      "ミステリー"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "考えたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "周囲から見えなくなった先輩を、なぜか咲太だけが認識できる。思春期の悩みが奇妙な現象になる。",
+    "characters": [
+      {
+        "name": "梓川咲太",
+        "role": "遠慮なく本音を言う高校生"
+      },
+      {
+        "name": "桜島麻衣",
+        "role": "人から見えなくなった人気女優"
+      }
+    ],
+    "official_url": "https://ao-buta.com/tv/",
+    "amazon_query": "青春ブタ野郎はバニーガール先輩の夢を見ない",
+    "hint": "図書館にバニーガール姿の先輩が現れる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1301/93586.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1301/93586t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/37450"
+  },
+  {
+    "id": "anime-e372a41970",
+    "title": "CLANNAD AFTER STORY",
+    "reading": "くらなどあふたーすとーりー",
+    "year": 2008,
+    "genres": [
+      "ドラマ",
+      "恋愛",
+      "日常"
+    ],
+    "moods": [
+      "泣きたい",
+      "考えたい",
+      "癒やされたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#f4c84b",
+    "summary": "高校を出た後も人生は続く。恋人から夫婦、仕事、家族へ。青春ものの先まで正面から描く。",
+    "characters": [
+      {
+        "name": "岡崎朋也",
+        "role": "社会へ出て家庭を築く青年"
+      },
+      {
+        "name": "古河渚",
+        "role": "朋也と歩み続ける穏やかな女性"
+      }
+    ],
+    "official_url": "https://www.tbs.co.jp/clannad/",
+    "amazon_query": "CLANNAD 光見守る坂道で",
+    "hint": "卒業後の仕事と家庭まで描かれる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1299/110774.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1299/110774t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/4181"
+  },
+  {
+    "id": "anime-fcd3bafdcb",
+    "title": "この素晴らしい世界に祝福を！",
+    "reading": "このすばらしいせかいにしゅくふくを",
+    "year": 2016,
+    "genres": [
+      "コメディ",
+      "ファンタジー",
+      "アドベンチャー"
+    ],
+    "moods": [
+      "笑いたい",
+      "熱くなりたい",
+      "癒やされたい"
+    ],
+    "episodes": 10,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "異世界転生したのに、仲間は癖の強い三人だけ。クエストより借金と揉め事が増えていく。",
+    "characters": [
+      {
+        "name": "カズマ",
+        "role": "現実的で口の悪い転生者"
+      },
+      {
+        "name": "アクア",
+        "role": "能力は高いがトラブルも呼ぶ女神"
+      }
+    ],
+    "official_url": "https://konosuba.com/1st/",
+    "amazon_query": "この素晴らしい世界に祝福を 1",
+    "hint": "爆裂魔法を一日一回だけ撃つ魔法使いがいる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1895/142748.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1895/142748t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/30831"
+  },
+  {
+    "id": "anime-4ec4282165",
+    "title": "銀魂",
+    "reading": "ぎんたま",
+    "year": 2015,
+    "genres": [
+      "コメディ",
+      "アクション",
+      "SF"
+    ],
+    "moods": [
+      "笑いたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 51,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "宇宙人が来た江戸で万事屋を営む銀時たち。ふざけ倒した次の週に、急に刀を抜いて泣かせにくる。",
+    "characters": [
+      {
+        "name": "坂田銀時",
+        "role": "甘い物好きの万事屋"
+      },
+      {
+        "name": "志村新八",
+        "role": "ツッコミと道場再興を担う少年"
+      }
+    ],
+    "official_url": "https://www.bn-pictures.co.jp/gintama/",
+    "amazon_query": "銀魂 1",
+    "hint": "江戸には宇宙人が来航し、侍は廃刀令の中にいる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/3/72078.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/3/72078t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/28977"
+  },
+  {
+    "id": "anime-eea1de9132",
+    "title": "日常",
+    "reading": "にちじょう",
+    "year": 2011,
+    "genres": [
+      "コメディ",
+      "日常",
+      "青春"
+    ],
+    "moods": [
+      "笑いたい",
+      "癒やされたい"
+    ],
+    "episodes": 26,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "遅刻、宿題、鹿との格闘。普通の学校生活が、毎回とんでもない作画と勢いで大事件になる。",
+    "characters": [
+      {
+        "name": "相生祐子",
+        "role": "元気に騒動を広げる高校生"
+      },
+      {
+        "name": "東雲なの",
+        "role": "ねじ巻きを隠したいロボットの少女"
+      }
+    ],
+    "official_url": "https://www.kyotoanimation.co.jp/works/nichijou/",
+    "amazon_query": "日常 1 あらゐけいいち",
+    "hint": "校長が校庭で鹿と格闘する。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/3/75617.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/3/75617t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/10165"
+  },
+  {
+    "id": "anime-1a0e677b7f",
+    "title": "斉木楠雄のΨ難",
+    "reading": "さいきくすおのさいなん",
+    "year": 2016,
+    "genres": [
+      "コメディ",
+      "日常",
+      "SF"
+    ],
+    "moods": [
+      "笑いたい",
+      "癒やされたい",
+      "考えたい"
+    ],
+    "episodes": 120,
+    "minutes": 5,
+    "format": "TVシリーズ",
+    "accent": "#48c9f4",
+    "summary": "超能力なら何でもできる。だからこそ普通に暮らしたい斉木の周りへ、普通ではない同級生が集まる。",
+    "characters": [
+      {
+        "name": "斉木楠雄",
+        "role": "目立たず暮らしたい万能超能力者"
+      },
+      {
+        "name": "燃堂力",
+        "role": "斉木が思考を読めない単純な同級生"
+      }
+    ],
+    "official_url": "https://www.saikikusuo.com/",
+    "amazon_query": "斉木楠雄のΨ難 1",
+    "hint": "主人公はコーヒーゼリーを好む超能力者。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1973/142750.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1973/142750t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/33255"
+  },
+  {
+    "id": "anime-de831aec6a",
+    "title": "ゆるキャン△",
+    "reading": "ゆるきゃん",
+    "year": 2018,
+    "genres": [
+      "日常",
+      "アウトドア",
+      "コメディ"
+    ],
+    "moods": [
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "冬の湖畔で一人キャンプするリンと、富士山を見に来たなでしこ。焚き火と温かいごはんで十分楽しい。",
+    "characters": [
+      {
+        "name": "志摩リン",
+        "role": "静かなソロキャンプを好む高校生"
+      },
+      {
+        "name": "各務原なでしこ",
+        "role": "食べることとキャンプが大好きな転校生"
+      }
+    ],
+    "official_url": "https://yurucamp.jp/first/",
+    "amazon_query": "ゆるキャン 1",
+    "hint": "舞台の中心は冬の山梨と静岡。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/4/89877.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/4/89877t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/34798"
+  },
+  {
+    "id": "anime-b51ddc91e9",
+    "title": "のんのんびより",
+    "reading": "のんのんびより",
+    "year": 2013,
+    "genres": [
+      "日常",
+      "コメディ",
+      "癒やし"
+    ],
+    "moods": [
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "全校生徒はたった五人。田んぼ道、駄菓子屋、秘密基地。田舎の一年をゆっくり遊ぶ。",
+    "characters": [
+      {
+        "name": "宮内れんげ",
+        "role": "独特な感性を持つ小学一年生"
+      },
+      {
+        "name": "一条蛍",
+        "role": "東京から転校してきた小学五年生"
+      }
+    ],
+    "official_url": "https://nonnontv.com/tvanime/",
+    "amazon_query": "のんのんびより 1",
+    "hint": "学校では小学生と中学生が同じ教室で学ぶ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/2/51581.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/2/51581t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/17549"
+  },
+  {
+    "id": "anime-0491c5905e",
+    "title": "宇宙よりも遠い場所",
+    "reading": "そらよりもとおいばしょ",
+    "year": 2018,
+    "genres": [
+      "青春",
+      "アドベンチャー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "泣きたい",
+      "考えたい"
+    ],
+    "episodes": 13,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "何かを始めたい女子高生四人が南極へ。準備、訓練、船酔いまで、旅の全部が青春になる。",
+    "characters": [
+      {
+        "name": "玉木マリ",
+        "role": "高校生活で何かを始めたい少女"
+      },
+      {
+        "name": "小淵沢報瀬",
+        "role": "母を探して南極を目指す少女"
+      }
+    ],
+    "official_url": "https://yorimoi.com/",
+    "amazon_query": "宇宙よりも遠い場所 コミック 1",
+    "hint": "少女たちの目的地は南極。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/6/89879.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/6/89879t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/35839"
+  },
+  {
+    "id": "anime-65178abe04",
+    "title": "3月のライオン",
+    "reading": "さんがつのらいおん",
+    "year": 2016,
+    "genres": [
+      "ドラマ",
+      "日常",
+      "青春"
+    ],
+    "moods": [
+      "泣きたい",
+      "考えたい",
+      "癒やされたい"
+    ],
+    "episodes": 22,
+    "minutes": 25,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "一人暮らしの若い棋士が、三姉妹の食卓に救われる。勝負の厳しさと人の温かさが同じ画面にある。",
+    "characters": [
+      {
+        "name": "桐山零",
+        "role": "孤独を抱える高校生棋士"
+      },
+      {
+        "name": "川本あかり",
+        "role": "妹たちを支える川本家の長女"
+      }
+    ],
+    "official_url": "https://3lion-anime.com/",
+    "amazon_query": "3月のライオン 1",
+    "hint": "主人公は中学生でプロ棋士になった。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/3/82899.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/3/82899t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/31646"
+  },
+  {
+    "id": "anime-f6aff19a99",
+    "title": "四月は君の嘘",
+    "reading": "しがつはきみのうそ",
+    "year": 2014,
+    "genres": [
+      "青春",
+      "音楽",
+      "恋愛"
+    ],
+    "moods": [
+      "泣きたい",
+      "元気になりたい",
+      "癒やされたい"
+    ],
+    "episodes": 22,
+    "minutes": 22,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "母の死後、ピアノの音が聞こえなくなった少年。自由奔放なヴァイオリニストに引っ張られ、舞台へ戻る。",
+    "characters": [
+      {
+        "name": "有馬公生",
+        "role": "演奏を止めた元天才ピアニスト"
+      },
+      {
+        "name": "宮園かをり",
+        "role": "型破りな演奏をするヴァイオリニスト"
+      }
+    ],
+    "official_url": "https://www.kimiuso.jp/",
+    "amazon_query": "四月は君の嘘 1",
+    "hint": "主人公には自分のピアノの音だけが聞こえない。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1405/143284.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1405/143284t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/23273"
+  },
+  {
+    "id": "anime-d72ad2f40e",
+    "title": "あの日見た花の名前を僕達はまだ知らない。",
+    "reading": "あのひみたはなのなまえをぼくたちはまだしらない",
+    "year": 2011,
+    "genres": [
+      "ドラマ",
+      "青春",
+      "ファンタジー"
+    ],
+    "moods": [
+      "泣きたい",
+      "考えたい",
+      "熱くなりたい"
+    ],
+    "episodes": 11,
+    "minutes": 22,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "離れ離れになった幼なじみたちの前へ、亡くなった少女が現れる。言えなかったことを夏のうちに。",
+    "characters": [
+      {
+        "name": "宿海仁太",
+        "role": "引きこもりがちな元リーダー"
+      },
+      {
+        "name": "本間芽衣子",
+        "role": "仁太にだけ見える幼なじみ"
+      }
+    ],
+    "official_url": "https://www.anohana.jp/tv/",
+    "amazon_query": "あの日見た花の名前を僕達はまだ知らない 1",
+    "hint": "亡くなった少女は、願いを叶えてほしいと頼む。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/5/79697.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/5/79697t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/9989"
+  },
+  {
+    "id": "anime-5413cfca46",
+    "title": "Angel Beats!",
+    "reading": "えんじぇるびーつ",
+    "year": 2010,
+    "genres": [
+      "ドラマ",
+      "コメディ",
+      "ファンタジー"
+    ],
+    "moods": [
+      "泣きたい",
+      "考えたい",
+      "笑いたい"
+    ],
+    "episodes": 13,
+    "minutes": 26,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "死後の学園で、理不尽な人生へ反抗する生徒たち。銃撃戦の合間に、一人ずつ生前の心残りが見えてくる。",
+    "characters": [
+      {
+        "name": "音無結弦",
+        "role": "記憶を失って死後の世界へ来た少年"
+      },
+      {
+        "name": "仲村ゆり",
+        "role": "死んだ世界戦線を率いる少女"
+      }
+    ],
+    "official_url": "https://www.angelbeats.jp/",
+    "amazon_query": "Angel Beats Heaven's Door 1",
+    "hint": "舞台は死後の世界にある学校。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1244/111115.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1244/111115t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/6547"
+  },
+  {
+    "id": "anime-33ddf7a72b",
+    "title": "映画 聲の形",
+    "reading": "えいがこえのかたち",
+    "year": 2016,
+    "genres": [
+      "ドラマ",
+      "青春",
+      "映画"
+    ],
+    "moods": [
+      "泣きたい",
+      "考えたい"
+    ],
+    "episodes": 1,
+    "minutes": 130,
+    "format": "映画",
+    "accent": "#f4c84b",
+    "summary": "小学生の頃に同級生を傷つけた少年が、高校生になって彼女を探す。謝罪だけでは終わらない再会。",
+    "characters": [
+      {
+        "name": "石田将也",
+        "role": "過去のいじめを悔いる高校生"
+      },
+      {
+        "name": "西宮硝子",
+        "role": "聴覚障害を持つ将也の元同級生"
+      }
+    ],
+    "official_url": "https://koenokatachi-movie.com/",
+    "amazon_query": "聲の形 1",
+    "hint": "二人は手話と筆談を交えて向き合う。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1122/96435.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1122/96435t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/28851"
+  },
+  {
+    "id": "anime-5c62572d1e",
+    "title": "君の名は。",
+    "reading": "きみのなは",
+    "year": 2016,
+    "genres": [
+      "恋愛",
+      "ファンタジー",
+      "映画"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "熱くなりたい"
+    ],
+    "episodes": 1,
+    "minutes": 106,
+    "format": "映画",
+    "accent": "#54d7ad",
+    "summary": "東京の男子高校生と、山奥の女子高校生の身体が入れ替わる。会ったことのない相手を、記憶が消える前に探す。",
+    "characters": [
+      {
+        "name": "立花瀧",
+        "role": "東京で暮らす男子高校生"
+      },
+      {
+        "name": "宮水三葉",
+        "role": "糸守町を出たい女子高校生"
+      }
+    ],
+    "official_url": "https://www.kiminona.com/",
+    "amazon_query": "小説 君の名は",
+    "hint": "眠ると二人の身体が入れ替わる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/5/87048.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/5/87048t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/32281"
+  },
+  {
+    "id": "anime-5e82227e38",
+    "title": "天気の子",
+    "reading": "てんきのこ",
+    "year": 2019,
+    "genres": [
+      "恋愛",
+      "ファンタジー",
+      "映画"
+    ],
+    "moods": [
+      "泣きたい",
+      "癒やされたい",
+      "熱くなりたい"
+    ],
+    "episodes": 1,
+    "minutes": 112,
+    "format": "映画",
+    "accent": "#8d77d8",
+    "summary": "雨が続く東京で、祈ると空を晴れにできる少女と出会う。天気と引き換えにするものは思ったより重い。",
+    "characters": [
+      {
+        "name": "森嶋帆高",
+        "role": "離島から東京へ家出した少年"
+      },
+      {
+        "name": "天野陽菜",
+        "role": "空を晴れにする力を持つ少女"
+      }
+    ],
+    "official_url": "https://tenkinoko.com/",
+    "amazon_query": "小説 天気の子",
+    "hint": "少女が祈ると、局地的に空が晴れる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1880/101146.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1880/101146t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/38826"
+  },
+  {
+    "id": "anime-f10ebd4a8b",
+    "title": "すずめの戸締まり",
+    "reading": "すずめのとじまり",
+    "year": 2022,
+    "genres": [
+      "アドベンチャー",
+      "ファンタジー",
+      "映画"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい"
+    ],
+    "episodes": 1,
+    "minutes": 121,
+    "format": "映画",
+    "accent": "#7567ff",
+    "summary": "災いを呼ぶ扉を閉めるため、すずめは日本を縦断する。相棒はなぜか三本脚の小さな椅子。",
+    "characters": [
+      {
+        "name": "岩戸鈴芽",
+        "role": "九州で暮らす高校生"
+      },
+      {
+        "name": "宗像草太",
+        "role": "災いの扉を閉じる旅の青年"
+      }
+    ],
+    "official_url": "https://suzume-tojimari-movie.jp/",
+    "amazon_query": "小説 すずめの戸締まり",
+    "hint": "旅の相棒は三本脚の椅子に姿を変えられる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1598/128450.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1598/128450t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/50594"
+  },
+  {
+    "id": "anime-c67cba1777",
+    "title": "機動戦士ガンダム 水星の魔女",
+    "reading": "きどうせんしがんだむすいせいのまじょ",
+    "year": 2023,
+    "genres": [
+      "SF",
+      "アクション",
+      "学園"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "水星育ちの少女がモビルスーツ学園へ。決闘に勝ったら、学園一の令嬢の花婿候補になった。",
+    "characters": [
+      {
+        "name": "スレッタ・マーキュリー",
+        "role": "水星から来た内気なパイロット"
+      },
+      {
+        "name": "ミオリネ・レンブラン",
+        "role": "学園を支配する企業家の娘"
+      }
+    ],
+    "official_url": "https://g-witch.net/",
+    "amazon_query": "機動戦士ガンダム 水星の魔女 小説",
+    "hint": "決闘の勝者はホルダーと呼ばれる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1023/134768.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1023/134768t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/53199"
+  },
+  {
+    "id": "anime-3c26dffc8a",
+    "title": "86―エイティシックス―",
+    "reading": "えいてぃしっくす",
+    "year": 2021,
+    "genres": [
+      "SF",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "無人兵器だと発表された戦争。その中には、国から人間扱いされない若者たちが乗っている。",
+    "characters": [
+      {
+        "name": "シン",
+        "role": "エイティシックス部隊を率いる少年"
+      },
+      {
+        "name": "レーナ",
+        "role": "遠隔地から部隊を指揮する共和国軍人"
+      }
+    ],
+    "official_url": "https://anime-86.com/",
+    "amazon_query": "86 エイティシックス 1",
+    "hint": "無人機という建前の兵器には人間が乗っている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1321/117508.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1321/117508t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/48569"
+  },
+  {
+    "id": "anime-551efa7e17",
+    "title": "天元突破グレンラガン",
+    "reading": "てんげんとっぱぐれんらがん",
+    "year": 2007,
+    "genres": [
+      "SF",
+      "アクション",
+      "アドベンチャー"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 27,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "地下で暮らす少年が、ドリルと小さなロボットで地上へ。話が進むたび、敵も味方も規模が大きくなる。",
+    "characters": [
+      {
+        "name": "シモン",
+        "role": "穴掘りが得意な気弱な少年"
+      },
+      {
+        "name": "カミナ",
+        "role": "地上を信じる大グレン団の兄貴分"
+      }
+    ],
+    "official_url": "https://www.gurren-lagann.net/tv/",
+    "amazon_query": "天元突破グレンラガン 漫画 1",
+    "hint": "主人公の武器も合体の鍵もドリル。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/4/5123.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/4/5123t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/2001"
+  },
+  {
+    "id": "anime-9817aae803",
+    "title": "キルラキル",
+    "reading": "きるらきる",
+    "year": 2013,
+    "genres": [
+      "アクション",
+      "コメディ",
+      "学園"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "笑いたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff5ca8",
+    "summary": "父の仇を追う少女が、制服で身分が決まる学園へ殴り込む。勢いと大文字の字幕が全部押し切る。",
+    "characters": [
+      {
+        "name": "纏流子",
+        "role": "片太刀バサミを持つ転校生"
+      },
+      {
+        "name": "鬼龍院皐月",
+        "role": "本能字学園を支配する生徒会長"
+      }
+    ],
+    "official_url": "https://www.kill-la-kill.jp/",
+    "amazon_query": "キルラキル 漫画 1",
+    "hint": "特殊な制服が着る者へ力を与える。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1464/111943.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1464/111943t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/18679"
+  },
+  {
+    "id": "anime-86034c1309",
+    "title": "攻殻機動隊 STAND ALONE COMPLEX",
+    "reading": "こうかくきどうたいすたんどあろーんこんぷれっくす",
+    "year": 2002,
+    "genres": [
+      "SF",
+      "ミステリー",
+      "アクション"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 26,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "身体の機械化と脳のネット接続が当たり前の社会。公安9課が、電脳犯罪と政治の裏側を追う。",
+    "characters": [
+      {
+        "name": "草薙素子",
+        "role": "公安9課を率いる全身義体の少佐"
+      },
+      {
+        "name": "バトー",
+        "role": "少佐を支える屈強な捜査官"
+      }
+    ],
+    "official_url": "https://www.production-ig.co.jp/works/ghost-in-the-shell-sac/",
+    "amazon_query": "攻殻機動隊 1 士郎正宗",
+    "hint": "捜査対象は「笑い男」と呼ばれるハッカー。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/11/50857.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/11/50857t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/467"
+  },
+  {
+    "id": "anime-4587e7f44c",
+    "title": "serial experiments lain",
+    "reading": "しりあるえくすぺりめんつれいん",
+    "year": 1998,
+    "genres": [
+      "SF",
+      "ミステリー",
+      "心理"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 13,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "亡くなった同級生からメールが届く。無口な少女lainがネットへ深く潜るほど、現実との境目が薄くなる。",
+    "characters": [
+      {
+        "name": "岩倉玲音",
+        "role": "ワイヤードへ惹かれていく中学生"
+      },
+      {
+        "name": "瑞城ありす",
+        "role": "玲音を気にかける同級生"
+      }
+    ],
+    "official_url": "https://www.nbcuni.co.jp/rondorobe/anime/lain/",
+    "amazon_query": "serial experiments lain",
+    "hint": "死んだ同級生から電子メールが届く。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1718/91550.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1718/91550t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/339"
+  },
+  {
+    "id": "anime-399d4f2638",
+    "title": "AKIRA",
+    "reading": "あきら",
+    "year": 1988,
+    "genres": [
+      "SF",
+      "アクション",
+      "映画"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 1,
+    "minutes": 124,
+    "format": "映画",
+    "accent": "#7567ff",
+    "summary": "崩壊後のネオ東京で、少年の超能力が暴走する。バイク、都市、肉体の変形まで画面の密度が異常。",
+    "characters": [
+      {
+        "name": "金田正太郎",
+        "role": "赤いバイクを駆る少年グループのリーダー"
+      },
+      {
+        "name": "島鉄雄",
+        "role": "力に飲み込まれていく幼なじみ"
+      }
+    ],
+    "official_url": "https://www.bandaivisual.co.jp/akira/",
+    "amazon_query": "AKIRA 1 大友克洋",
+    "hint": "舞台は新首都ネオ東京。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1408/114012.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1408/114012t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/47"
+  },
+  {
+    "id": "anime-bc6d209e0c",
+    "title": "銀河英雄伝説",
+    "reading": "ぎんがえいゆうでんせつ",
+    "year": 1988,
+    "genres": [
+      "SF",
+      "歴史",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "泣きたい"
+    ],
+    "episodes": 110,
+    "minutes": 26,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "銀河帝国と自由惑星同盟、二人の天才が宇宙を挟んで戦う。戦争より会議のほうが怖いこともある。",
+    "characters": [
+      {
+        "name": "ラインハルト",
+        "role": "帝国を変えようとする若き軍人"
+      },
+      {
+        "name": "ヤン・ウェンリー",
+        "role": "歴史家志望の同盟軍提督"
+      }
+    ],
+    "official_url": "https://www.ginei.jp/",
+    "amazon_query": "銀河英雄伝説 1 黎明篇",
+    "hint": "敵対する二人の名将を並行して描く。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1976/142016.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1976/142016t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/820"
+  },
+  {
+    "id": "anime-7d172e823c",
+    "title": "Fate/Zero",
+    "reading": "ふぇいとぜろ",
+    "year": 2012,
+    "genres": [
+      "ファンタジー",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "七人の魔術師が英霊を召喚し、万能の願望機を奪い合う。理想のためなら手段を選ばない大人たちの聖杯戦争。",
+    "characters": [
+      {
+        "name": "衛宮切嗣",
+        "role": "結果のために非情な手段を選ぶ魔術師殺し"
+      },
+      {
+        "name": "セイバー",
+        "role": "切嗣陣営に召喚された騎士王"
+      }
+    ],
+    "official_url": "https://www.fate-zero.jp/",
+    "amazon_query": "Fate Zero 1 小説",
+    "hint": "英霊はセイバーやアーチャーなど七つのクラスで現れる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1522/117645.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1522/117645t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/11741"
+  },
+  {
+    "id": "anime-c7e3be3c75",
+    "title": "Fate/stay night [Unlimited Blade Works]",
+    "reading": "ふぇいとすていないとあんりみてっどぶれいどわーくす",
+    "year": 2015,
+    "genres": [
+      "ファンタジー",
+      "アクション",
+      "恋愛"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "正義の味方を目指す高校生が、英霊同士の聖杯戦争へ。遠坂凛と組み、理想の行き先を突きつけられる。",
+    "characters": [
+      {
+        "name": "衛宮士郎",
+        "role": "正義の味方を目指す高校生"
+      },
+      {
+        "name": "遠坂凛",
+        "role": "アーチャーを従える魔術師"
+      }
+    ],
+    "official_url": "https://www.fate-sn.com/ubw/",
+    "amazon_query": "Fate stay night Unlimited Blade Works 漫画 1",
+    "hint": "主人公の得意な魔術は物の構造を読むこと。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1881/124810.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1881/124810t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/28701"
+  },
+  {
+    "id": "anime-e785a06584",
+    "title": "無職転生 ～異世界行ったら本気だす～",
+    "reading": "むしょくてんせいいせかいいったらほんきだす",
+    "year": 2021,
+    "genres": [
+      "ファンタジー",
+      "アドベンチャー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "泣きたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "人生を投げていた男が、赤ん坊から異世界をやり直す。才能だけでなく、前世の弱さも持ち越している。",
+    "characters": [
+      {
+        "name": "ルーデウス",
+        "role": "前世の後悔を抱えて生まれ直した少年"
+      },
+      {
+        "name": "ロキシー",
+        "role": "ルーデウスへ魔術を教える師匠"
+      }
+    ],
+    "official_url": "https://mushokutensei.jp/",
+    "amazon_query": "無職転生 1",
+    "hint": "主人公は赤ん坊の頃から前世の記憶を持つ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1028/117777.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1028/117777t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/45576"
+  },
+  {
+    "id": "anime-36259a2f8a",
+    "title": "転生したらスライムだった件",
+    "reading": "てんせいしたらすらいむだったけん",
+    "year": 2021,
+    "genres": [
+      "ファンタジー",
+      "アドベンチャー",
+      "コメディ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "異世界で最弱そうなスライムに転生。能力を取り込み、魔物たちの住める国まで作ってしまう。",
+    "characters": [
+      {
+        "name": "リムル",
+        "role": "多彩な能力を得た転生スライム"
+      },
+      {
+        "name": "ヴェルドラ",
+        "role": "リムルと友達になる暴風竜"
+      }
+    ],
+    "official_url": "https://www.ten-sura.com/anime/tensura",
+    "amazon_query": "転生したらスライムだった件 1 小説",
+    "hint": "倒した相手の能力を取り込める。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1271/109841.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1271/109841t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/39551"
+  },
+  {
+    "id": "anime-386aa46e25",
+    "title": "オーバーロード",
+    "reading": "おーばーろーど",
+    "year": 2015,
+    "genres": [
+      "ファンタジー",
+      "ダークファンタジー",
+      "アクション"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff5ca8",
+    "summary": "サービス終了を待っていたら、ゲーム世界から出られなくなった。最強の骸骨魔法使いが配下を率いる側の異世界もの。",
+    "characters": [
+      {
+        "name": "アインズ",
+        "role": "大墳墓を統べる骸骨の魔法使い"
+      },
+      {
+        "name": "アルベド",
+        "role": "アインズへ絶対の忠誠を誓う守護者統括"
+      }
+    ],
+    "official_url": "https://overlord-anime.com/",
+    "amazon_query": "オーバーロード 1",
+    "hint": "主人公は人間ではなくアンデッドの支配者。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1945/136600.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1945/136600t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/29803"
+  },
+  {
+    "id": "anime-02915d021e",
+    "title": "ノーゲーム・ノーライフ",
+    "reading": "のーげーむのーらいふ",
+    "year": 2014,
+    "genres": [
+      "ファンタジー",
+      "コメディ",
+      "ゲーム"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#48c9f4",
+    "summary": "ゲーム無敗の兄妹が、あらゆる争いをゲームで決める世界へ。腕力ゼロでも、読み合いなら負けない。",
+    "characters": [
+      {
+        "name": "空",
+        "role": "駆け引きとハッタリに強い兄"
+      },
+      {
+        "name": "白",
+        "role": "計算と先読みを担う天才の妹"
+      }
+    ],
+    "official_url": "https://ngnl.jp/tv/",
+    "amazon_query": "ノーゲーム ノーライフ 1",
+    "hint": "国境も王位もゲームの勝敗で決まる。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1074/111944.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1074/111944t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/19815"
+  },
+  {
+    "id": "anime-aaafb22f81",
+    "title": "ダンジョンに出会いを求めるのは間違っているだろうか",
+    "reading": "だんじょんにであいをもとめるのはまちがっているだろうか",
+    "year": 2015,
+    "genres": [
+      "ファンタジー",
+      "アクション",
+      "アドベンチャー"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 13,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#48c9f4",
+    "summary": "迷宮都市で駆け出し冒険者が成長する。憧れの剣姫に追いつきたい一心で、危険な階層へ。",
+    "characters": [
+      {
+        "name": "ベル・クラネル",
+        "role": "英雄を夢見る駆け出し冒険者"
+      },
+      {
+        "name": "ヘスティア",
+        "role": "ベルを見守る小さなファミリアの女神"
+      }
+    ],
+    "official_url": "https://danmachi.com/danmachi/",
+    "amazon_query": "ダンまち 1",
+    "hint": "神々は地上で冒険者のファミリアを作る。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1172/148981.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1172/148981t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/28121"
+  },
+  {
+    "id": "anime-71eee2e6ac",
+    "title": "盾の勇者の成り上がり",
+    "reading": "たてのゆうしゃのなりあがり",
+    "year": 2019,
+    "genres": [
+      "ファンタジー",
+      "アドベンチャー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "泣きたい"
+    ],
+    "episodes": 25,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#7567ff",
+    "summary": "異世界へ召喚された四聖勇者の一人は、攻撃できない盾担当。裏切りで信用を失った底から始まる。",
+    "characters": [
+      {
+        "name": "岩谷尚文",
+        "role": "人を信じられなくなった盾の勇者"
+      },
+      {
+        "name": "ラフタリア",
+        "role": "尚文と旅する亜人の剣士"
+      }
+    ],
+    "official_url": "https://shieldhero-anime.jp/1st/",
+    "amazon_query": "盾の勇者の成り上がり 1",
+    "hint": "四人の勇者のうち、主人公だけが盾を持つ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1490/101365.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1490/101365t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/35790"
+  },
+  {
+    "id": "anime-e5c4f126a5",
+    "title": "ワンパンマン",
+    "reading": "わんぱんまん",
+    "year": 2015,
+    "genres": [
+      "アクション",
+      "コメディ",
+      "SF"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "どんな怪人も一撃で倒すヒーロー。強すぎて退屈なサイタマの前で、街だけが毎回派手に壊れる。",
+    "characters": [
+      {
+        "name": "サイタマ",
+        "role": "趣味でヒーローをする最強の男"
+      },
+      {
+        "name": "ジェノス",
+        "role": "サイタマへ弟子入りしたサイボーグ"
+      }
+    ],
+    "official_url": "https://onepunchman-anime.net/",
+    "amazon_query": "ワンパンマン 1",
+    "hint": "主人公は腕立て・腹筋・スクワットを毎日続けた。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/12/76049.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/12/76049t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/30276"
+  },
+  {
+    "id": "anime-b531a3c086",
+    "title": "王様ランキング",
+    "reading": "おうさまらんきんぐ",
+    "year": 2021,
+    "genres": [
+      "ファンタジー",
+      "アドベンチャー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "泣きたい"
+    ],
+    "episodes": 23,
+    "minutes": 22,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "耳が聞こえず非力な王子ボッジ。笑われても、影の一族カゲと一緒に強さの意味を探す。",
+    "characters": [
+      {
+        "name": "ボッジ",
+        "role": "王になる夢を持つ小さな王子"
+      },
+      {
+        "name": "カゲ",
+        "role": "ボッジの初めての友達になる影の一族"
+      }
+    ],
+    "official_url": "https://osama-ranking.com/",
+    "amazon_query": "王様ランキング 1",
+    "hint": "王子は耳が聞こえず、言葉を話せない。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1347/117616.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1347/117616t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/40834"
+  },
+  {
+    "id": "anime-d266234f88",
+    "title": "宝石の国",
+    "reading": "ほうせきのくに",
+    "year": 2017,
+    "genres": [
+      "ファンタジー",
+      "ミステリー",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "考えたい"
+    ],
+    "episodes": 12,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#48c9f4",
+    "summary": "宝石の身体を持つ者たちが月人と戦う。役立たずとされたフォスが、欠けて変わるたび何かを失う。",
+    "characters": [
+      {
+        "name": "フォスフォフィライト",
+        "role": "硬度が低く壊れやすい宝石"
+      },
+      {
+        "name": "シンシャ",
+        "role": "毒液のため孤独に暮らす宝石"
+      }
+    ],
+    "official_url": "https://land-of-the-lustrous.com/",
+    "amazon_query": "宝石の国 1",
+    "hint": "登場人物の身体は宝石でできている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/3/88293.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/3/88293t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/35557"
+  },
+  {
+    "id": "anime-e71c11ad64",
+    "title": "ブルーロック",
+    "reading": "ぶるーろっく",
+    "year": 2022,
+    "genres": [
+      "スポーツ",
+      "青春",
+      "サスペンス"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "泣きたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ef718a",
+    "summary": "日本一のストライカーを作るため、FW三百人を施設へ閉じ込める。協調性よりエゴを競うサッカー。",
+    "characters": [
+      {
+        "name": "潔世一",
+        "role": "ゴールへの答えを探す高校生FW"
+      },
+      {
+        "name": "蜂楽廻",
+        "role": "独特のドリブル感覚を持つ選手"
+      }
+    ],
+    "official_url": "https://bluelock-pr.com/",
+    "amazon_query": "ブルーロック 1",
+    "hint": "脱落者は日本代表になる資格を失う。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1258/126929.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1258/126929t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/49596"
+  },
+  {
+    "id": "anime-c4e6166238",
+    "title": "SLAM DUNK",
+    "reading": "すらむだんく",
+    "year": 1993,
+    "genres": [
+      "スポーツ",
+      "青春",
+      "コメディ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "泣きたい",
+      "笑いたい"
+    ],
+    "episodes": 101,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "不良少年が好きな女子に近づくためバスケ部へ。初心者の勢いが、本物の勝負欲へ変わっていく。",
+    "characters": [
+      {
+        "name": "桜木花道",
+        "role": "自称天才のバスケ初心者"
+      },
+      {
+        "name": "流川楓",
+        "role": "全国を目指す寡黙なエース"
+      }
+    ],
+    "official_url": "https://slamdunk-movie.jp/",
+    "amazon_query": "SLAM DUNK 新装再編版 1",
+    "hint": "主人公は高校入学までに五十人へ振られている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/12/86890.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/12/86890t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/170"
+  },
+  {
+    "id": "anime-292a72ed6f",
+    "title": "ちはやふる",
+    "reading": "ちはやふる",
+    "year": 2011,
+    "genres": [
+      "スポーツ",
+      "青春",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "泣きたい",
+      "考えたい"
+    ],
+    "episodes": 25,
+    "minutes": 22,
+    "format": "TVシリーズ",
+    "accent": "#7567ff",
+    "summary": "百人一首を畳の上で奪い合う競技かるた。音を聞いた瞬間に手が飛ぶ、静かで激しい部活もの。",
+    "characters": [
+      {
+        "name": "綾瀬千早",
+        "role": "クイーンを目指すかるた一筋の高校生"
+      },
+      {
+        "name": "真島太一",
+        "role": "努力と戦略で千早を支える幼なじみ"
+      }
+    ],
+    "official_url": "https://www.ntv.co.jp/chihayafuru/",
+    "amazon_query": "ちはやふる 1",
+    "hint": "札を読む最初の音だけで勝負が決まることがある。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/3/35749.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/3/35749t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/10800"
+  },
+  {
+    "id": "anime-a56f038efd",
+    "title": "ウマ娘 プリティーダービー",
+    "reading": "うまむすめぷりてぃーだーびー",
+    "year": 2018,
+    "genres": [
+      "スポーツ",
+      "青春",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "泣きたい",
+      "考えたい"
+    ],
+    "episodes": 13,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "実在競走馬の名を持つウマ娘たちが、憧れのレースへ。勝者の裏にある故障や敗北まで熱い。",
+    "characters": [
+      {
+        "name": "スペシャルウィーク",
+        "role": "日本一を目指して上京したウマ娘"
+      },
+      {
+        "name": "サイレンススズカ",
+        "role": "先頭を走り続ける孤高のウマ娘"
+      }
+    ],
+    "official_url": "https://anime-umamusume.jp/archive/1st/",
+    "amazon_query": "ウマ娘 プリティーダービー STARTING GATE",
+    "hint": "レースの後、勝者はウイニングライブへ立つ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1683/91888.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1683/91888t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/35249"
+  },
+  {
+    "id": "anime-1522361502",
+    "title": "ゴールデンカムイ",
+    "reading": "ごーるでんかむい",
+    "year": 2020,
+    "genres": [
+      "アドベンチャー",
+      "歴史",
+      "コメディ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "笑いたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "日露戦争帰りの兵士とアイヌの少女が、北海道で金塊を追う。食文化の話から変人同士の殺し合いまで振れ幅が広い。",
+    "characters": [
+      {
+        "name": "杉元佐一",
+        "role": "不死身と呼ばれた元兵士"
+      },
+      {
+        "name": "アシㇼパ",
+        "role": "自然と文化の知識で旅を導くアイヌの少女"
+      }
+    ],
+    "official_url": "https://kamuy-anime.com/",
+    "amazon_query": "ゴールデンカムイ 1",
+    "hint": "金塊の手掛かりは囚人の刺青に分けられている。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1763/108108.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1763/108108t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/40059"
+  },
+  {
+    "id": "anime-3e6f56edff",
+    "title": "キングダム",
+    "reading": "きんぐだむ",
+    "year": 2020,
+    "genres": [
+      "歴史",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "ハラハラしたい",
+      "泣きたい"
+    ],
+    "episodes": 26,
+    "minutes": 25,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "戦災孤児の少年・信が天下の大将軍を目指す。名もない歩兵から、大軍を動かす将へ。",
+    "characters": [
+      {
+        "name": "信",
+        "role": "天下の大将軍を目指す戦災孤児"
+      },
+      {
+        "name": "嬴政",
+        "role": "中華統一を目指す若き秦王"
+      }
+    ],
+    "official_url": "https://kingdom-anime.com/",
+    "amazon_query": "キングダム 1",
+    "hint": "舞台は春秋戦国時代の中国。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1443/111830.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1443/111830t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/40682"
+  },
+  {
+    "id": "anime-05c730c908",
+    "title": "Dr.STONE",
+    "reading": "どくたーすとーん",
+    "year": 2019,
+    "genres": [
+      "SF",
+      "アドベンチャー",
+      "コメディ"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "笑いたい"
+    ],
+    "episodes": 24,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "全人類が石になって数千年。科学少年・千空が、ゼロから電気も薬も文明も作り直す。",
+    "characters": [
+      {
+        "name": "石神千空",
+        "role": "科学で文明を取り戻す高校生"
+      },
+      {
+        "name": "大木大樹",
+        "role": "体力と誠実さで千空を支える親友"
+      }
+    ],
+    "official_url": "https://dr-stone.jp/",
+    "amazon_query": "Dr.STONE 1",
+    "hint": "石器時代から携帯電話まで作ろうとする。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1613/102576.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1613/102576t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/38691"
+  },
+  {
+    "id": "anime-6674ddd120",
+    "title": "陰の実力者になりたくて！",
+    "reading": "かげのじつりょくしゃになりたくて",
+    "year": 2022,
+    "genres": [
+      "ファンタジー",
+      "アクション",
+      "コメディ"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 20,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "本人は秘密組織ごっこのつもり。適当に作った設定が全部本当で、部下たちは真剣に世界を救っている。",
+    "characters": [
+      {
+        "name": "シド",
+        "role": "陰の実力者を演じ続ける転生者"
+      },
+      {
+        "name": "アルファ",
+        "role": "シャドウガーデンを率いる最初の配下"
+      }
+    ],
+    "official_url": "https://shadow-garden.jp/1st/",
+    "amazon_query": "陰の実力者になりたくて 1",
+    "hint": "でっち上げた闇の教団が実在していた。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1091/128729.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1091/128729t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/48316"
+  },
+  {
+    "id": "anime-8524d9e17e",
+    "title": "BEASTARS",
+    "reading": "びーすたーず",
+    "year": 2019,
+    "genres": [
+      "ドラマ",
+      "青春",
+      "ミステリー"
+    ],
+    "moods": [
+      "泣きたい",
+      "考えたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 12,
+    "minutes": 22,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "肉食獣と草食獣が同じ学校で暮らす社会。優しいオオカミの本能と恋が、食殺事件で揺れる。",
+    "characters": [
+      {
+        "name": "レゴシ",
+        "role": "自分の肉食性を恐れるハイイロオオカミ"
+      },
+      {
+        "name": "ハル",
+        "role": "周囲の目に屈しないドワーフウサギ"
+      }
+    ],
+    "official_url": "https://bst-anime.com/",
+    "amazon_query": "BEASTARS 1",
+    "hint": "学園で草食獣の生徒が食殺される。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1713/145599.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1713/145599t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/39195"
+  },
+  {
+    "id": "anime-0b79e7ad95",
+    "title": "少女終末旅行",
+    "reading": "しょうじょしゅうまつりょこう",
+    "year": 2017,
+    "genres": [
+      "SF",
+      "日常",
+      "アドベンチャー"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "癒やされたい"
+    ],
+    "episodes": 12,
+    "minutes": 23,
+    "format": "TVシリーズ",
+    "accent": "#f4c84b",
+    "summary": "人のいなくなった巨大都市を、少女二人が半装軌車で進む。食料は少ないけれど、会話は妙にのんびり。",
+    "characters": [
+      {
+        "name": "チト",
+        "role": "読書と記録を好む慎重な少女"
+      },
+      {
+        "name": "ユーリ",
+        "role": "食べることを優先する楽天家"
+      }
+    ],
+    "official_url": "https://girls-last-tour.com/",
+    "amazon_query": "少女終末旅行 1",
+    "hint": "二人はケッテンクラートで廃墟を旅する。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/12/88321.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/12/88321t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/35838"
+  },
+  {
+    "id": "anime-1e5cb4de2f",
+    "title": "カードキャプターさくら",
+    "reading": "かーどきゃぷたーさくら",
+    "year": 1998,
+    "genres": [
+      "ファンタジー",
+      "日常",
+      "恋愛"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "笑いたい"
+    ],
+    "episodes": 70,
+    "minutes": 25,
+    "format": "TVシリーズ",
+    "accent": "#8d77d8",
+    "summary": "封印が解けた魔法のカードを集める小学生・さくら。衣装も魔法も毎回違い、日常の優しさは変わらない。",
+    "characters": [
+      {
+        "name": "木之本桜",
+        "role": "クロウカードを集める小学四年生"
+      },
+      {
+        "name": "ケルベロス",
+        "role": "封印の獣を名乗る案内役"
+      }
+    ],
+    "official_url": "https://ccsakura-official.com/",
+    "amazon_query": "カードキャプターさくら 1",
+    "hint": "魔法の杖は鍵の姿で持ち歩ける。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/8/60781.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/8/60781t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/232"
+  },
+  {
+    "id": "anime-2c9139558f",
+    "title": "美少女戦士セーラームーン",
+    "reading": "びしょうじょせんしせーらーむーん",
+    "year": 1992,
+    "genres": [
+      "ファンタジー",
+      "アクション",
+      "恋愛"
+    ],
+    "moods": [
+      "熱くなりたい",
+      "癒やされたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 46,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#54d7ad",
+    "summary": "泣き虫の中学生が月の戦士へ変身。仲間を集め、前世から続く運命と東京を狙う敵に向き合う。",
+    "characters": [
+      {
+        "name": "月野うさぎ",
+        "role": "セーラームーンへ変身する中学生"
+      },
+      {
+        "name": "水野亜美",
+        "role": "水の力を使う頭脳派の戦士"
+      }
+    ],
+    "official_url": "https://sailormoon-official.com/",
+    "amazon_query": "美少女戦士セーラームーン 完全版 1",
+    "hint": "主人公を導くのは額に三日月を持つ黒猫。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1440/92258.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1440/92258t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/530"
+  },
+  {
+    "id": "anime-8c83c240df",
+    "title": "パプリカ",
+    "reading": "ぱぷりか",
+    "year": 2006,
+    "genres": [
+      "SF",
+      "ミステリー",
+      "映画"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 1,
+    "minutes": 90,
+    "format": "映画",
+    "accent": "#54d7ad",
+    "summary": "他人の夢へ入る装置が盗まれ、夢が現実へあふれ出す。パレードが街を飲み込む映像体験。",
+    "characters": [
+      {
+        "name": "千葉敦子",
+        "role": "夢を研究する冷静な精神医療科学者"
+      },
+      {
+        "name": "パプリカ",
+        "role": "夢の中で患者を導く敦子の別人格"
+      }
+    ],
+    "official_url": "https://www.sonypictures.jp/he/815804",
+    "amazon_query": "パプリカ 筒井康隆",
+    "hint": "夢へ入る装置の名はDCミニ。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1929/93629.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1929/93629t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/1943"
+  },
+  {
+    "id": "anime-f16087fc6a",
+    "title": "PERFECT BLUE",
+    "reading": "ぱーふぇくとぶるー",
+    "year": 1998,
+    "genres": [
+      "ミステリー",
+      "サスペンス",
+      "映画"
+    ],
+    "moods": [
+      "考えたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 1,
+    "minutes": 81,
+    "format": "映画",
+    "accent": "#7567ff",
+    "summary": "アイドルを辞めて俳優になった未麻。演じた自分、ネット上の自分、現実の自分が見分けにくくなる。",
+    "characters": [
+      {
+        "name": "霧越未麻",
+        "role": "俳優へ転身した元アイドル"
+      },
+      {
+        "name": "ルミ",
+        "role": "未麻を支える元アイドルのマネージャー"
+      }
+    ],
+    "official_url": "https://www.madhouse.co.jp/works/1999-1997/works_movie_perfectblue.html",
+    "amazon_query": "パーフェクトブルー 竹内義和",
+    "hint": "主人公の日記が本人の知らないネット上で更新される。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1254/134212.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1254/134212t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/437"
+  },
+  {
+    "id": "anime-4dbcc39465",
+    "title": "Vivy -Fluorite Eye's Song-",
+    "reading": "ゔぃゔぃふろーらいとあいずそんぐ",
+    "year": 2021,
+    "genres": [
+      "SF",
+      "アクション",
+      "ドラマ"
+    ],
+    "moods": [
+      "考えたい",
+      "熱くなりたい",
+      "ハラハラしたい"
+    ],
+    "episodes": 13,
+    "minutes": 24,
+    "format": "TVシリーズ",
+    "accent": "#ff7b54",
+    "summary": "歌で人を幸せにするAIの前へ、百年後から別のAIが来る。人類とAIの戦争を止める長い任務が始まる。",
+    "characters": [
+      {
+        "name": "ヴィヴィ",
+        "role": "歌うことを使命とする自律人型AI"
+      },
+      {
+        "name": "マツモト",
+        "role": "未来から来たおしゃべりなAI"
+      }
+    ],
+    "official_url": "https://vivy-portal.com/",
+    "amazon_query": "Vivy prototype 1",
+    "hint": "計画の期限は百年後。",
+    "image_url": "https://cdn.myanimelist.net/images/anime/1551/128960.jpg",
+    "image_thumb": "https://cdn.myanimelist.net/images/anime/1551/128960t.jpg",
+    "image_credit": "MyAnimeList",
+    "image_source_url": "https://myanimelist.net/anime/46095"
   }
 ]

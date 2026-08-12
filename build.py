@@ -342,7 +342,7 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
   <div class="pop-hero-art" aria-hidden="true">
     <img src="/assets/sekai-log-hero.webp" alt="">
     <span class="hero-sticker hero-sticker--one">どれにする？</span>
-    <span class="hero-sticker hero-sticker--two">26作品</span>
+    <span class="hero-sticker hero-sticker--two">{len(anime)}作品</span>
   </div>
 </section>
 
@@ -407,7 +407,7 @@ def render_home(articles: list[dict], anime: list[dict]) -> str:
         "SEKAI LOG — 今夜のアニメをルーレットで決めよう",
         "観るアニメが決まらない夜に。ジャンル・気分・時間で絞って回せる、無料のアニメルーレット。",
         body, current="index", canonical=SITE_URL + "/", structured_data=schema,
-        asset_version="20260812-pop2",
+        asset_version="20260812-covers100",
     )
 
 
@@ -503,7 +503,7 @@ def render_about() -> str:
 <div class="prose-page">
   <section><p class="eyebrow"><span>PROFILE</span></p><h2>藤乃宮 遊</h2><p>関西在住。2011年ごろからアニメやライトノベルを追い、SF・ファンタジーを中心に作品を見てきました。設定の整理だけではなく、作品が人間や社会をどう捉えているかを考えるのが好きです。</p></section>
   <section><p class="eyebrow"><span>WHY SEKAI LOG</span></p><h2>選べない夜を、遊べる時間に。</h2><p>配信サービスを開いても、候補を眺めるだけで時間が過ぎる。SEKAI LOGは、気分・ジャンル・使える時間から候補を絞り、ルーレットで最後の一押しをする場所です。決まったあとは公式情報、視聴先、原作へすぐ進めます。</p></section>
-  <section><p class="eyebrow"><span>DATA POLICY</span></p><h2>短く、確かに、行動できる情報を。</h2><ul><li>あらすじと人物紹介は核心のネタバレを避け、独自の文章で要約します。</li><li>作品情報は公式サイトを優先し、配信状況は外部サービスの最新表示で確認できる導線を設けます。</li><li>権利が明確でない場面写真やポスターは転載しません。</li><li>商品リンクには広告であることを明示し、Amazonアソシエイトの規約に沿って掲載します。</li></ul></section>
+  <section><p class="eyebrow"><span>DATA POLICY</span></p><h2>短く、確かに、行動できる情報を。</h2><ul><li>あらすじと人物紹介は核心のネタバレを避け、独自の文章で要約します。</li><li>作品情報は公式サイトを優先し、配信状況は外部サービスの最新表示で確認できる導線を設けます。</li><li>作品ビジュアルは識別と紹介のために縮小表示し、画像ごとに出典ページへリンクします。画像は外部配信元から表示し、当サイトでは複製・加工しません。</li><li>商品リンクには広告であることを明示し、Amazonアソシエイトの規約に沿って掲載します。</li></ul><p>基本情報と画像URLの照合には、<a href="https://github.com/manami-project/anime-offline-database" target="_blank" rel="noopener">manami-project「anime-offline-database」</a>（ODbL 1.0 / DbCL 1.0）を利用しています。各画像の権利はそれぞれの権利者に帰属します。</p></section>
   <section><p class="eyebrow"><span>WHAT REMAINS</span></p><h2>評論記事は「見たあと」の場所へ。</h2><p>これまで公開した評論は削除せず、読みものとして残しています。作品を選ぶ場所と、見終わった作品を考える場所。その両方を一つのサイトでつなぎます。</p></section>
 </div>"""
     return page("このサイトについて — SEKAI LOG", "次に見るアニメを選ぶSEKAI LOGの使い方と、運営者・藤乃宮遊の情報方針。", body, current="about", canonical=SITE_URL + "/about.html")
@@ -517,7 +517,7 @@ def render_privacy() -> str:
   <section><h2>Amazonアソシエイト</h2><p>Amazonのアソシエイトとして、SEKAI LOGは適格販売により収入を得ています。商品リンクには「広告」または同等の表示を付けます。リンク先の商品価格・在庫・販売条件は変更される場合があり、購入時にはAmazon.co.jpの表示が適用されます。</p></section>
   <section><h2>個人情報</h2><p>お問い合わせのために利用者がメールで送信した氏名、メールアドレス、本文は、返信と必要な連絡のためにのみ利用します。法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p></section>
   <section><h2>免責事項</h2><p>正確な情報を掲載するよう努めますが、内容の完全性や最新性を保証するものではありません。当サイトまたはリンク先の利用によって生じた損害について、運営者は責任を負いかねます。</p></section>
-  <section><h2>著作権・引用</h2><p>記事本文の著作権は運営者に帰属します。作品名、企業名などの権利は各権利者に帰属します。批評に必要な引用を行う場合は、引用部分と本文を区別し、出典を示します。権利上の問題がある場合はお問い合わせください。</p></section>
+  <section><h2>著作権・画像出典</h2><p>記事本文の著作権は運営者に帰属します。作品名、画像、企業名などの権利は各権利者に帰属します。作品ビジュアルは作品の識別と紹介を目的に縮小表示し、各画像上の出典リンクから掲載元を確認できるようにしています。当サイトのサーバーでは画像を複製・加工していません。権利上の問題や削除・差し替えのご要望は、お問い合わせページからご連絡ください。</p><p>作品の基本情報と画像URLの照合には、<a href="https://github.com/manami-project/anime-offline-database" target="_blank" rel="noopener">manami-project「anime-offline-database」</a>（Open Database License 1.0 / Database Contents License 1.0）を利用しています。</p></section>
   <section><h2>方針の変更</h2><p>利用サービスや法令の変更に応じ、本ページを更新することがあります。重要な変更は本ページ上で告知します。</p></section>
 </div>"""
     return page("プライバシー・広告 — SEKAI LOG", "SEKAI LOGのプライバシー、アクセス解析、Amazonアソシエイト、著作権に関する方針。", body, canonical=SITE_URL + "/privacy.html")

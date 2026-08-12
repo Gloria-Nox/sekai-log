@@ -689,12 +689,19 @@ body:has(.pop-hero) .site-nav a.is-active { color: white; background: var(--pop-
 .anime-result.is-revealing { animation: pop-result .55s cubic-bezier(.18,.82,.26,1.35) both; }
 @keyframes pop-result { from { opacity: .25; transform: scale(.92) rotate(-2deg); } }
 .result-burst { position: absolute; z-index: 5; right: -18px; top: -25px; display: grid; width: 90px; height: 90px; place-items: center; color: var(--pop-ink); background: var(--pop-yellow); clip-path: polygon(50% 0,61% 27%,85% 15%,73% 39%,100% 50%,73% 61%,85% 85%,61% 73%,50% 100%,39% 73%,15% 85%,27% 61%,0 50%,27% 39%,15% 15%,39% 27%); font-size: .75rem; font-weight: 950; transform: rotate(8deg); }
-.anime-poster { position: relative; min-height: 260px; display: grid; place-items: center; overflow: hidden; color: var(--pop-ink); background: var(--poster); isolation: isolate; }
-.anime-poster::before { content: ""; position: absolute; width: 72%; aspect-ratio: 1; border: 4px solid currentColor; border-radius: 36% 64% 55% 45%; background: rgba(255,255,255,.16); transform: rotate(18deg); }
-.anime-poster::after { content: ""; position: absolute; width: 46%; aspect-ratio: 1; right: -15%; top: -11%; border: 12px solid rgba(255,255,255,.4); border-radius: 50%; }
-.anime-poster b { position: relative; z-index: 1; font-size: clamp(3rem,6vw,6rem); font-weight: 950; letter-spacing: -.08em; text-shadow: 5px 5px 0 rgba(255,255,255,.65); }
-.anime-poster small { position: absolute; left: 1rem; bottom: 1rem; z-index: 2; padding: .4rem .6rem; border: 2px solid currentColor; border-radius: 999px; background: rgba(255,255,255,.75); font-size: .58rem; font-weight: 950; }
+.anime-poster { position: relative; min-height: 260px; display: block; overflow: hidden; margin: 0; color: var(--pop-ink); background: var(--poster); isolation: isolate; }
+.anime-poster img { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 25%; transition: transform .3s ease; }
+.anime-tile:hover .anime-poster img,
+.anime-tile:focus-visible .anime-poster img { transform: scale(1.035); }
+.poster-fallback { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; background: var(--poster); }
+.poster-fallback::before { content: ""; position: absolute; width: 72%; aspect-ratio: 1; border: 4px solid currentColor; border-radius: 36% 64% 55% 45%; background: rgba(255,255,255,.16); transform: rotate(18deg); }
+.poster-fallback::after { content: ""; position: absolute; width: 46%; aspect-ratio: 1; right: -15%; top: -11%; border: 12px solid rgba(255,255,255,.4); border-radius: 50%; }
+.poster-fallback b { position: relative; z-index: 1; font-size: clamp(3rem,6vw,6rem); font-weight: 950; letter-spacing: -.08em; text-shadow: 5px 5px 0 rgba(255,255,255,.65); }
+.poster-fallback small { position: absolute; left: 1rem; bottom: 1rem; z-index: 2; padding: .4rem .6rem; border: 2px solid currentColor; border-radius: 999px; background: rgba(255,255,255,.75); font-size: .58rem; font-weight: 950; }
 .poster-spark { position: absolute; right: 1rem; top: .7rem; z-index: 2; color: white; font-size: 2rem; text-shadow: 2px 2px 0 var(--pop-ink); }
+.anime-poster figcaption { position: absolute; z-index: 3; right: .55rem; bottom: .55rem; max-width: calc(100% - 1.1rem); }
+.anime-poster figcaption a { display: block; overflow: hidden; padding: .34rem .5rem; border-radius: 999px; color: white; background: rgba(18,15,35,.78); text-decoration: none; text-overflow: ellipsis; white-space: nowrap; backdrop-filter: blur(5px); font-size: .48rem; font-weight: 800; }
+.anime-poster figcaption a:hover { color: var(--pop-ink); background: var(--pop-yellow); }
 .anime-poster--result { min-height: 100%; border-radius: 29px 0 0 29px; }
 .result-copy { display: flex; flex-direction: column; padding: clamp(1.6rem,3vw,3rem); }
 .result-picked { margin: 0 0 .7rem; color: var(--pop-pink); font-size: .78rem; font-weight: 950; }
@@ -733,7 +740,7 @@ body:has(.pop-hero) .site-nav a.is-active { color: white; background: var(--pop-
 .anime-tile:nth-child(4n+3) { transform: rotate(-1deg); }
 .anime-tile:hover,
 .anime-tile:focus-visible { transform: translate(-3px,-5px) rotate(0); box-shadow: 10px 12px 0 var(--pop-ink); }
-.anime-tile .anime-poster { min-height: 240px; border-bottom: var(--pop-border); }
+.anime-tile .anime-poster { min-height: 240px; aspect-ratio: 3 / 4; border-bottom: var(--pop-border); }
 .tile-copy { padding: 1rem; }
 .tile-copy > div { display: flex; gap: .7rem; color: #756e83; font-size: .57rem; font-weight: 900; }
 .tile-copy h3 { margin: .55rem 0 .4rem; font-family: var(--sans); font-size: 1rem; font-weight: 950; line-height: 1.4; }

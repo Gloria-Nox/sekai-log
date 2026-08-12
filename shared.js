@@ -86,6 +86,13 @@
   const watchUrl = (item) => `https://www.justwatch.com/jp/検索?q=${encodeURIComponent(item.title)}`;
   const initials = (item) => item.glyph || item.title.slice(0, 2);
 
+  document.addEventListener('error', (event) => {
+    const image = event.target;
+    if (!(image instanceof HTMLImageElement) || !image.matches('.anime-poster img')) return;
+    image.closest('.anime-poster')?.classList.add('is-fallback');
+    image.remove();
+  }, true);
+
   const candidates = () => anime.filter((item) =>
     (genreFilter.value === 'all' || item.genres.includes(genreFilter.value)) &&
     (moodFilter.value === 'all' || item.moods.includes(moodFilter.value)) &&
@@ -125,10 +132,17 @@
   const characterMarkup = (item) => item.characters.map((person) => `
     <li><b>${escapeHtml(person.name)}</b><span>${escapeHtml(person.role)}</span></li>`).join('');
 
-  const poster = (item, size = '') => `
-    <div class="anime-poster ${size}" style="--poster:${escapeHtml(item.accent)}" aria-hidden="true">
-      <span class="poster-spark">✦</span><b>${escapeHtml(initials(item))}</b><small>${escapeHtml(item.genres[0])}</small>
-    </div>`;
+  const poster = (item, size = '') => {
+    const eager = size.includes('result') || size.includes('dialog');
+    const source = item.image_source_url || item.official_url;
+    const credit = item.image_credit || '画像出典';
+    return `
+      <figure class="anime-poster ${size}" style="--poster:${escapeHtml(item.accent)}">
+        <div class="poster-fallback" aria-hidden="true"><span class="poster-spark">✦</span><b>${escapeHtml(initials(item))}</b><small>${escapeHtml(item.genres[0])}</small></div>
+        ${item.image_url ? `<img src="${escapeHtml(size ? item.image_url : (item.image_thumb || item.image_url))}" alt="${escapeHtml(item.title)}の作品ビジュアル" loading="${eager ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer">` : ''}
+        <figcaption><a href="${escapeHtml(source)}" target="_blank" rel="noopener" data-image-credit>画像：${escapeHtml(credit)} <span>↗</span></a></figcaption>
+      </figure>`;
+  };
 
   const renderResult = (item) => {
     result.classList.remove('is-empty');
@@ -282,6 +296,7 @@
   }));
   showMore.addEventListener('click', () => { displayLimit += 12; renderCatalog(); });
   grid.addEventListener('click', (event) => {
+    if (event.target.closest('[data-image-credit]')) return;
     const tile = event.target.closest('.anime-tile');
     if (tile) openDialog(anime.find((item) => item.id === tile.dataset.id));
   });
